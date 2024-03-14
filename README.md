@@ -1,8 +1,5 @@
-# React + Vite
+# Informatica
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Questo progetto ha lo scopo di unire in un unico luogo tutte le risorze necessarie ad uno studente di informatica.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ognuno può aggiungere, migliorare, modificare il progetto in modo da ottimizzarlo sempre di più-
