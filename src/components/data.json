@@ -1,42 +1,42 @@
 {
-    "data":[
+    "dati":[
         {
             "id": 0, 
             "anno": 1,
-            "immagine": "https://art.pixilart.com/256717ead86611d.png",
+            "immagine": "https://art.pixilart.com/59e0b0ad8dfba7b.png",
 
-            "materia": "matematica discreta",
+            "materia": "Matematica discreta",
             "classroom": "POYLYUV",
 
             "webex": "https://unicam.webex.com/meet/alessandro.dellacorte",
             
-            "aggiornamento": "2024-03-16"
+            "aggiornamento": "03/16/2024"
         },
         {
             "id": 1,
             "anno": 1,
             "immagine": "https://art.pixilart.com/0f3d89586edaadf.png",
 
-            "materia": "matematica logica",
+            "materia": "Matematica logica",
             "classroom": "g52fvrb",
 
             "webex": "https://unicam.webex.com/meet/sonia.linnocente",
 
-            "aggiornamento": "2024-03-16"
+            "aggiornamento": "03/16/2024"
         },
         {
             "id": 2,
             "anno": 1,
             "immagine": "https://art.pixilart.com/sr2d8603a3e5205.png",
 
-            "materia": "programmazione",
+            "materia": "Programmazione",
             "classroom": null,
 
             "webex": "https://unicam.webex.com/meet/luca.padovani",
             "webexlab": "https://unicam.webex.com/meet/leonardo.mostarda",
             "webexlab2": "https://unicam.webex.com/meet/rosario.culmone",
 
-            "aggiornamento": "2024-03-16"
+            "aggiornamento": "03/16/2024"
         }
     ]
 }
