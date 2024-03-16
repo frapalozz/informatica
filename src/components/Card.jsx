@@ -1,4 +1,4 @@
-export default function Card( {immagine, materia, anno, agg} ) {
+export default function Card( {immagine, materia, anno, agg, click} ) {
 
     let date1 = new Date(agg);
     let date2 = new Date();
@@ -8,7 +8,7 @@ export default function Card( {immagine, materia, anno, agg} ) {
 
     return(
         <>
-            <div className="w-full  h-96 flex flex-col border border-2 border-zinc-700 hover:border-zinc-500 transition-all duration-300 rounded-lg">
+            <div onClick={(i) => click(i)} className="w-full  h-96 flex flex-col border border-2 border-zinc-700 hover:border-zinc-500 transition-all duration-300 rounded-lg">
 
                 <div className="h-4/6 bg-zinc-900 w-full border border-0 rounded-t-md flex justify-center items-center">
                     <img src={immagine} className="w-32 h-32 border border-0 rounded-lg shadow-2xl shadow-zinc-950"/>

@@ -30,6 +30,7 @@
             "immagine": "https://art.pixilart.com/sr2d8603a3e5205.png",
 
             "materia": "Programmazione",
+            "descrizione": "Algoritmi, programmi, linguaggi di programmazione. Compilatori, interpreti e approccio Java. Tipi di dato primitivi in Java. Sistema dei tipi, strutture dati di base e relativi algoritmi. Concetti fondamentali di programmazione procedurale. Iterazione e ricorsione. Programmazione orientata agli oggetti in Java. Ambiente di sviluppo Eclipse.",
             "classroom": null,
 
             "webex": "https://unicam.webex.com/meet/luca.padovani",

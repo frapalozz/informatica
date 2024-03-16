@@ -3,7 +3,7 @@ import Card from "./Card"
 import { useState } from "react"
 import data from "./data.json"
 
-export default function CardGrid() {
+export default function CardGrid( {stato} ) {
 
     
 
@@ -24,7 +24,7 @@ export default function CardGrid() {
 
                 <div className="grid lg:grid-cols-4 gap-5 w-full mt-12">
                     {datiMaterie.map((item) => (
-                        <Card immagine={item.immagine} materia={item.materia} anno={item.anno} agg={item.aggiornamento}/>
+                        <Card click={() => stato(item.id)} key={item.id} immagine={item.immagine} materia={item.materia} anno={item.anno} agg={item.aggiornamento}/>
                     ))}
                 </div>
 
