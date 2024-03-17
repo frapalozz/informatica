@@ -1,7 +1,5 @@
 import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
 import Footer from "./components/Footer"
-import CardGrid from "./components/CardGrid"
 import Container from "./components/Container"
 
 export default function App() {
