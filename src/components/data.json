@@ -1,43 +1,70 @@
 {
     "dati":[
-        {
+        { 
+            "_comment": "Matematica Discreta",
+
             "id": 0, 
             "anno": 1,
             "immagine": "https://art.pixilart.com/59e0b0ad8dfba7b.png",
 
             "materia": "Matematica discreta",
-            "classroom": "POYLYUV",
+            "materiale": ["https://drive.google.com/drive/folders/1l6FY-yBaVCq9A4vp-yLFlbSR3-0fByKIfVs733nMJGW_crPowRzfWA4B2cAJ7SIgfckmhfKl?usp=drive_link", "Drive"],
+            "registrazioni": ["https://classroom.google.com/u/7/c/NDAyNjAxMTEzMDE0", "Classroom"],
+            "prove": ["https://drive.google.com/drive/folders/1l6FY-yBaVCq9A4vp-yLFlbSR3-0fByKIfVs733nMJGW_crPowRzfWA4B2cAJ7SIgfckmhfKl?usp=drive_link", "Drive"],
 
             "webex": "https://unicam.webex.com/meet/alessandro.dellacorte",
+
+            "quantity": [0,1],
+            "extraName": ["Pass. Classroom", "Formulario"],
+            "extra": ["POYLYUV", "Notion"],
+            "extraLink": ["https://classroom.google.com/u/7/c/NDAyNjAxMTEzMDE0", "https://francescopalozzi.notion.site/Formulario-Discreta-ae0a264c560142c0941f35e896fc7016?pvs=4"],
             
-            "aggiornamento": "03/16/2024"
+            "aggiornamento": "03/17/2024"
         },
+
         {
+            "_comment": "Matematica Logica",
+
             "id": 1,
             "anno": 1,
             "immagine": "https://art.pixilart.com/0f3d89586edaadf.png",
 
             "materia": "Matematica logica",
-            "classroom": "g52fvrb",
+            "materiale": ["https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0", "Classroom"],
+            "registrazioni": ["https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0", "Classroom"],
+            "prove": ["https://francescopalozzi.notion.site/Esami-Passati-e9d2df28ecf94e1584f3c907f387127a?pvs=4", "Notion"],
 
             "webex": "https://unicam.webex.com/meet/sonia.linnocente",
 
-            "aggiornamento": "03/16/2024"
+            "quantity": [0,1],
+            "extraName": ["Pass. Classroom", "Formulario"],
+            "extra": ["g52fvrb", "Notion"],
+            "extraLink": ["https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0", "https://francescopalozzi.notion.site/Formulario-Logica-04f20f360e28446e8af964d05f170db1?pvs=4"],
+
+            "aggiornamento": "03/17/2024"
         },
+
         {
+            "_comment": "Programmazione",
+
             "id": 2,
             "anno": 1,
             "immagine": "https://art.pixilart.com/sr2d8603a3e5205.png",
 
             "materia": "Programmazione",
             "descrizione": "Algoritmi, programmi, linguaggi di programmazione. Compilatori, interpreti e approccio Java. Tipi di dato primitivi in Java. Sistema dei tipi, strutture dati di base e relativi algoritmi. Concetti fondamentali di programmazione procedurale. Iterazione e ricorsione. Programmazione orientata agli oggetti in Java. Ambiente di sviluppo Eclipse.",
-            "classroom": null,
+            "materiale": ["https://elearning.unicam.it/course/view.php?id=391", "Elearning"],
+            "registrazioni": ["https://elearning.unicam.it/course/view.php?id=391", "Elearning"],
+            "prove": ["https://francescopalozzi.notion.site/Programmazione-c19362411ae34d31bf66595d78f48ee6?pvs=4", "Notion"],
 
             "webex": "https://unicam.webex.com/meet/luca.padovani",
-            "webexlab": "https://unicam.webex.com/meet/leonardo.mostarda",
-            "webexlab2": "https://unicam.webex.com/meet/rosario.culmone",
 
-            "aggiornamento": "03/16/2024"
+            "quantity": [0,1],
+            "extraName": ["Webex Mostarda", "Webex Culmone"],
+            "extra": ["Webex", "Webex"],
+            "extraLink": ["https://unicam.webex.com/meet/leonardo.mostarda", "https://unicam.webex.com/meet/rosario.culmone"],
+
+            "aggiornamento": "03/17/2024"
         }
     ]
 }

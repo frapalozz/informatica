@@ -13,7 +13,7 @@ export default function CardOpen( {stato, index} ) {
 
     return(
         <>
-            <section className="max-w-screen-2xl w-screen min-h-screen center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-8 mb-9">
+            <section className="max-w-screen-2xl w-screen items-center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-8 mb-9">
 
                 <div onClick={stato} className="flex flex-row text-white font-medium text-sm justify-start items-center w-full gap-1">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 fill-white cursor-pointer">
@@ -22,9 +22,9 @@ export default function CardOpen( {stato, index} ) {
                     <p className="cursor-pointer">Indietro</p>
                 </div>
 
-                <div className="flex flex-col lg:flex-row gap-16 text-white w-full h-5/6 mt-10">
+                <div className="flex flex-col md:flex-row md:gap-10 gap-16 text-white w-full h-5/6 mt-10">
                     {datiMateria.map((item) => (
-                        <CardSubopen key={item.id} immagine={item.immagine} materia={item.materia} descrizione={item.descrizione} webex={item.webex}/>
+                        <CardSubopen key={item.id} immagine={item.immagine} materia={item.materia} descrizione={item.descrizione} webex={item.webex} materiale={item.materiale} registrazioni={item.registrazioni} prove={item.prove} extraName={item.extraName} extra={item.extra} extraLink={item.extraLink} quantity={item.quantity}/>
                     ))}
                 </div>
 
