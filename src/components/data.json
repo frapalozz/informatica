@@ -65,6 +65,98 @@
             "extraLink": ["https://unicam.webex.com/meet/leonardo.mostarda", "https://unicam.webex.com/meet/rosario.culmone"],
 
             "aggiornamento": "03/17/2024"
+        },
+
+        {
+            "_comment": "Statistica",
+
+            "id": 3,
+            "anno": 1,
+            "immagine": "https://art.pixilart.com/6cc31f9ae9fde9d.png",
+
+            "materia": "Statistica",
+            "descrizione": "",
+            "materiale": ["https://elearning.unicam.it/course/view.php?id=441", "Elearning"],
+            "registrazioni": ["https://elearning.unicam.it/course/view.php?id=441", "Elearning"],
+            "prove": ["", "Nulla"],
+
+            "webex": "https://unicam.webex.com/meet/simona.bernabei",
+
+            "quantity": [0],
+            "extraName": ["Pass. Elearning"],
+            "extra": ["Statistica2024"],
+            "extraLink": ["https://elearning.unicam.it/course/view.php?id=441"],
+
+            "aggiornamento": "03/17/2024"
+        }, 
+
+        {
+            "_comment": "Architettura degli Elaboratori",
+
+            "id": 4,
+            "anno": 1,
+            "immagine": "https://art.pixilart.com/190f5db1b87dbfc.png",
+
+            "materia": "Architettura Elab.",
+            "descrizione": "",
+            "materiale": ["https://drive.google.com/drive/u/7/folders/1-SGODclTwGAbJrGFwyGe_3olB6Axsl4f", "Drive"],
+            "registrazioni": ["https://docenti.unicam.it/pdett.aspx?UteId=555&tv=lr&ru=PA", "Portale D."],
+            "prove": ["", "Nulla"],
+
+            "webex": "https://unicam.webex.com/meet/diletta.cacciagrano",
+
+            "quantity": [0],
+            "extraName": ["Webex Trojani"],
+            "extra": ["Webex"],
+            "extraLink": ["https://unicam.webex.com/meet/massimo.trojani"],
+
+            "aggiornamento": "03/17/2024"
+        }, 
+
+        {
+            "_comment": "Fondamenti Informatica",
+
+            "id": 5,
+            "anno": 1,
+            "immagine": "https://art.pixilart.com/92b29f741979c8b.png",
+
+            "materia": "Fondamenti Inf.",
+            "descrizione": "",
+            "materiale": ["https://t.me/+OBxl7LOP9XdhZTlk", "Telegram"],
+            "registrazioni": ["https://t.me/+OBxl7LOP9XdhZTlk", "Telegram"],
+            "prove": ["", "Nulla"],
+
+            "webex": "https://unicam.webex.com/meet/flavio.corradini",
+
+            "quantity": [0],
+            "extraName": ["Libro bozza"],
+            "extra": ["Notion"],
+            "extraLink": ["#"],
+
+            "aggiornamento": "03/17/2024"
+        }, 
+
+        {
+            "_comment": "Business",
+
+            "id": 6,
+            "anno": 1,
+            "immagine": "https://art.pixilart.com/512a3f3675c2.png",
+
+            "materia": "Business",
+            "descrizione": "",
+            "materiale": ["https://docenti.unicam.it/pdett.aspx?UteId=617&tv=m&ru=RU", "Portale D."],
+            "registrazioni": ["", "Nulla"],
+            "prove": ["", "Nulla"],
+
+            "webex": "https://unicam.webex.com/meet/grid.thoma",
+
+            "quantity": [],
+            "extraName": [],
+            "extra": [],
+            "extraLink": [],
+
+            "aggiornamento": "03/17/2024"
         }
     ]
 }
