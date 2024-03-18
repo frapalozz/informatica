@@ -7,8 +7,8 @@ export default function CardSubopen( {immagine, materia, descrizione, webex, mat
             <div className="w-full">
                 <div className="w-full h-[2px] rounded-xl bg-zinc-700 mt-3 mb-3"></div>
                 <div className="flex flex-row justify-between items-cente w-full">
-                    <p className="font-semibold">{extraName[i]}</p>
-                    <a href={extraLink[i]} target="_blank" className="font-medium text-white/65">{extra[i]}</a>
+                    <p className="font-semibold cursor-default">{extraName[i]}</p>
+                    <a href={extraLink[i]} target="_blank" className="font-medium text-white/65 underline ">{extra[i]}</a>
                 </div>
             </div>
         );
@@ -46,25 +46,25 @@ export default function CardSubopen( {immagine, materia, descrizione, webex, mat
 
 
             <div className="lg:w-6/12 w-full flex flex-col justify-center items-start">
-                <h1 className="text-3xl font-bold mb-4 md:mb-5">{materia}</h1>
-                <p className="text-sm text-zinc-400">{descrizione}</p>
+                <h1 className="text-3xl font-bold mb-4 md:mb-5 cursor-default">{materia}</h1>
+                <p className="text-sm text-zinc-400 cursor-default">{descrizione}</p>
                 <a href={webex} className="bg-white px-5 py-3 text-zinc-900 font-bold text-lg border border-0 rounded-md mt-5 mb-3">Webex</a>
 
                 <div className="w-full h-[2px] rounded-xl bg-zinc-700 mt-3 mb-3"></div>
                 <div className="flex flex-row justify-between items-cente w-full">
-                    <p className="font-semibold text-lg">Materiale didattico</p>
+                    <p className="font-semibold text-lg cursor-default">Materiale didattico</p>
                     <a href={materiale[0]} target="_blank" className="font-medium text-lg text-white/65 underline">{materiale[1]}</a>
                 </div>
 
                 <div className="w-full h-[2px] rounded-xl bg-zinc-700 mt-3 mb-3"></div>
                 <div className="flex flex-row justify-between items-cente w-full">
-                    <p className="font-semibold text-lg">Registrazioni</p>
+                    <p className="font-semibold text-lg cursor-default">Registrazioni</p>
                     <a href={registrazioni[0]} target="_blank" className="font-medium text-lg text-white/65 underline">{registrazioni[1]}</a>
                 </div>
 
                 <div className="w-full h-[2px] rounded-xl bg-zinc-700 mt-3 mb-3"></div>
                 <div className="flex flex-row justify-between items-cente w-full">
-                    <p className="font-semibold text-lg">Prove passate</p>
+                    <p className="font-semibold text-lg cursor-default">Prove passate</p>
                     <a href={prove[0]} target="_blank" className="font-medium text-lg text-white/65 underline">{prove[1]}</a>
                 </div>
                 

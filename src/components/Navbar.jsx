@@ -2,7 +2,7 @@
 export default function Navbar() {
     return(
         <>
-            <header className="max-w-screen-2xl w-screen center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center">
+            <header className="bg-stone-950/40 backdrop-blur-md max-w-screen-2xl w-screen center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center fixed z-50 top-0 mb-9">
 
                 <nav className="flex flex-row justify-between items-center w-full h-full xl:mt-9 lg:mt-7 md:mt-5 mt-4">
                     <div>

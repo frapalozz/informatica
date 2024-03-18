@@ -8,7 +8,7 @@ export default function Card( {immagine, materia, anno, agg, click} ) {
 
     return(
         <>
-            <div onClick={(i) => click(i)} className="w-full  h-96 flex flex-col border border-2 border-zinc-700 hover:border-zinc-500 transition-all duration-300 rounded-lg">
+            <div onClick={(i) => click(i)} className="w-full  h-96 flex flex-col border border-2 border-zinc-700 hover:border-zinc-500 transition-all duration-300 rounded-lg cursor-pointer">
 
                 <div className="h-4/6 bg-zinc-900 w-full border border-0 rounded-t-md flex justify-center items-center">
                     <img src={immagine} className="w-32 h-32 border border-0 rounded-lg shadow-2xl shadow-zinc-950"/>

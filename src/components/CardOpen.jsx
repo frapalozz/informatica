@@ -13,7 +13,7 @@ export default function CardOpen( {stato, index} ) {
 
     return(
         <>
-            <section className="max-w-screen-2xl w-screen items-center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-8 mb-9">
+            <section className="max-w-screen-2xl w-screen items-center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center xl:mt-50 lg:mt-48 md:mt-40 mt-32">
 
                 <div onClick={stato} className="flex flex-row text-white font-medium text-sm justify-start items-center w-full gap-1">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 fill-white cursor-pointer">
