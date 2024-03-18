@@ -1,7 +1,7 @@
 import Button from "./Button"
 import Card from "./Card"
 import { useState } from "react"
-import data from "./data.json"
+import data from "../dati/data.json"
 
 export default function CardGrid( {stato} ) {
 
@@ -9,6 +9,14 @@ export default function CardGrid( {stato} ) {
 
     const[status, setStatus] = useState(1);
     const datiMaterie = data.dati.filter((item) => item.anno == status);
+    let text;
+    if(datiMaterie.length === 0) {
+        text = (
+            <div className="w-screen bg-gray text-white text-3xl font-semibold flex justify-center items-center">
+                Ancora Nulla 😓
+            </div>
+        );
+    }
 
     return(
         <>
@@ -27,6 +35,7 @@ export default function CardGrid( {stato} ) {
                         <Card click={() => stato(item.id)} key={item.id} immagine={item.immagine} materia={item.materia} anno={item.anno} agg={item.aggiornamento}/>
                     ))}
                 </div>
+                {text}
 
             </section>
         </>

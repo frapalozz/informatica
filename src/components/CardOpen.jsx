@@ -1,4 +1,4 @@
-import data from "./data.json"
+import data from "../dati/data.json"
 import CardSubopen from "./CardSubOpen";
 
 export default function CardOpen( {stato, index} ) {
@@ -7,9 +7,8 @@ export default function CardOpen( {stato, index} ) {
         window.scrollTo(0,0);
     }
     scrollToTop();
-    console.log(index);
+
     const datiMateria = data.dati.filter((item) => item.id == index);
-    console.log(datiMateria);
 
     return(
         <>
@@ -17,8 +16,8 @@ export default function CardOpen( {stato, index} ) {
 
                 <div className="flex flex-row text-white font-medium text-sm justify-start items-center w-full">
                     <div onClick={stato} className="flex flex-row justify-start items-center gap-1 cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 fill-white">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 fill-white">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
                         </svg>
                         <p>Indietro</p>
                     </div>
