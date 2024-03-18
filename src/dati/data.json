@@ -8,6 +8,7 @@
             "immagine": "https://art.pixilart.com/59e0b0ad8dfba7b.png",
 
             "materia": "Matematica discreta",
+            "descrizione": "Introduzione: insiemi ed operazioni tra insiemi. Relazioni e funzioni. Numeri naturali,numeri interi, divisibilità e congruenze modulari. Logica preposizionale: formule e valutazioni. Decomposizione in CNF e DNF. Deduzione Naturale. Logica dei predicati: formalizzazione. Introduzione dei numeri razionali e reali. Concetto di applicazione, successione, limite, serie. Concetto di vettore e di matrice, operazioni con i vettori e le matrici. Determinanti e sistemi lineari. Introduzione alla statistica. Introduzione alle strutture algebriche. Cenni sulla cardinalità di insiemi infiniti.",
             "materiale": ["https://drive.google.com/drive/folders/1l6FY-yBaVCq9A4vp-yLFlbSR3-0fByKIfVs733nMJGW_crPowRzfWA4B2cAJ7SIgfckmhfKl?usp=drive_link", "Drive"],
             "registrazioni": ["https://classroom.google.com/u/7/c/NDAyNjAxMTEzMDE0", "Classroom"],
             "prove": ["https://drive.google.com/drive/folders/1l6FY-yBaVCq9A4vp-yLFlbSR3-0fByKIfVs733nMJGW_crPowRzfWA4B2cAJ7SIgfckmhfKl?usp=drive_link", "Drive"],
@@ -19,7 +20,7 @@
             "extra": ["POYLYUV", "Notion"],
             "extraLink": ["https://classroom.google.com/u/7/c/NDAyNjAxMTEzMDE0", "https://francescopalozzi.notion.site/Formulario-Discreta-ae0a264c560142c0941f35e896fc7016?pvs=4"],
             
-            "aggiornamento": "03/17/2024"
+            "aggiornamento": "03/18/2024"
         },
 
         {
@@ -30,6 +31,7 @@
             "immagine": "https://art.pixilart.com/0f3d89586edaadf.png",
 
             "materia": "Matematica logica",
+            "descrizione": "Introduzione: insiemi ed operazioni tra insiemi. Relazioni e funzioni. Numeri naturali,numeri interi, divisibilità e congruenze modulari. Logica preposizionale: formule e valutazioni. Decomposizione in CNF e DNF. Deduzione Naturale. Logica dei predicati: formalizzazione. Introduzione dei numeri razionali e reali. Concetto di applicazione, successione, limite, serie. Concetto di vettore e di matrice, operazioni con i vettori e le matrici. Determinanti e sistemi lineari. Introduzione alla statistica. Introduzione alle strutture algebriche. Cenni sulla cardinalità di insiemi infiniti.",
             "materiale": ["https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0", "Classroom"],
             "registrazioni": ["https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0", "Classroom"],
             "prove": ["https://francescopalozzi.notion.site/Esami-Passati-e9d2df28ecf94e1584f3c907f387127a?pvs=4", "Notion"],
@@ -41,7 +43,7 @@
             "extra": ["g52fvrb", "Notion"],
             "extraLink": ["https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0", "https://francescopalozzi.notion.site/Formulario-Logica-04f20f360e28446e8af964d05f170db1?pvs=4"],
 
-            "aggiornamento": "03/17/2024"
+            "aggiornamento": "03/18/2024"
         },
 
         {
@@ -64,7 +66,7 @@
             "extra": ["Webex", "Webex"],
             "extraLink": ["https://unicam.webex.com/meet/leonardo.mostarda", "https://unicam.webex.com/meet/rosario.culmone"],
 
-            "aggiornamento": "03/17/2024"
+            "aggiornamento": "03/18/2024"
         },
 
         {
@@ -75,7 +77,7 @@
             "immagine": "https://art.pixilart.com/6cc31f9ae9fde9d.png",
 
             "materia": "Statistica",
-            "descrizione": "",
+            "descrizione": "Assiomi della Probabilità. Probabilità condizionata ed indipendenza. Teorema di Bayes. Variabili aleatorie discrete e continue. Funzioni di distribuzione di una variabile aleatoria discreta e continua e concetto di integrale. Teoremi limite ed applicazioni. Catene di Markov.                       Popolazione e campione. Statistica descrittiva. Intervalli di fiducia. Test statistici. Laboratorio di probabilità e statistica utilizzando il software statistico R.",
             "materiale": ["https://elearning.unicam.it/course/view.php?id=441", "Elearning"],
             "registrazioni": ["https://elearning.unicam.it/course/view.php?id=441", "Elearning"],
             "prove": ["", "Nulla"],
@@ -87,7 +89,7 @@
             "extra": ["statistica2024"],
             "extraLink": ["https://elearning.unicam.it/course/view.php?id=441"],
 
-            "aggiornamento": "03/17/2024"
+            "aggiornamento": "03/18/2024"
         }, 
 
         {
@@ -98,7 +100,7 @@
             "immagine": "https://art.pixilart.com/190f5db1b87dbfc.png",
 
             "materia": "Architettura Elaboratori",
-            "descrizione": "",
+            "descrizione": "Organizzazione della macchina a livello di linguaggio macchina. Organizzazione e architettura del sistema di memoria. Valutazione e prestazioni",
             "materiale": ["https://drive.google.com/drive/u/7/folders/1-SGODclTwGAbJrGFwyGe_3olB6Axsl4f", "Drive"],
             "registrazioni": ["https://docenti.unicam.it/pdett.aspx?UteId=555&tv=lr&ru=PA", "Portale D."],
             "prove": ["", "Nulla"],
@@ -110,7 +112,7 @@
             "extra": ["Webex"],
             "extraLink": ["https://unicam.webex.com/meet/massimo.trojani"],
 
-            "aggiornamento": "03/17/2024"
+            "aggiornamento": "03/18/2024"
         }, 
 
         {
@@ -121,7 +123,7 @@
             "immagine": "https://art.pixilart.com/92b29f741979c8b.png",
 
             "materia": "Fondamenti Informatica",
-            "descrizione": "",
+            "descrizione": "Il corso intende dare una trattazione complessiva di modelli astratti di computazione utili a studiare le principali proprietà di linguaggi e modelli di calcolo, di algoritmi e programmi nonché dei problemi che si devono affrontare e risolvere con l'elaboratore.",
             "materiale": ["https://t.me/+OBxl7LOP9XdhZTlk", "Telegram"],
             "registrazioni": ["https://t.me/+OBxl7LOP9XdhZTlk", "Telegram"],
             "prove": ["", "Nulla"],
@@ -144,7 +146,7 @@
             "immagine": "https://art.pixilart.com/512a3f3675c2.png",
 
             "materia": "Business",
-            "descrizione": "",
+            "descrizione": "L'impresa e il suo ambiente: economia, tecnologia e istituzioni. Il comportamento dell'impresa: modelli. Il management della produzione. Il marketing. La struttura organizzativa. La strategia: quadro introduttivo. Innovazione e vantaggio competitivo. Funzione finanziaria.",
             "materiale": ["https://docenti.unicam.it/pdett.aspx?UteId=617&tv=m&ru=RU", "Portale D."],
             "registrazioni": ["", "Nulla"],
             "prove": ["", "Nulla"],
@@ -156,7 +158,7 @@
             "extra": [],
             "extraLink": [],
 
-            "aggiornamento": "03/17/2024"
+            "aggiornamento": "03/18/2024"
         }
     ]
 }
