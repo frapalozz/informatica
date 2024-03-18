@@ -84,7 +84,7 @@
 
             "quantity": [0],
             "extraName": ["Pass. Elearning"],
-            "extra": ["Statistica2024"],
+            "extra": ["statistica2024"],
             "extraLink": ["https://elearning.unicam.it/course/view.php?id=441"],
 
             "aggiornamento": "03/17/2024"
@@ -130,10 +130,10 @@
 
             "quantity": [0],
             "extraName": ["Libro bozza"],
-            "extra": ["Notion"],
-            "extraLink": ["#"],
+            "extra": ["Drive"],
+            "extraLink": ["https://drive.google.com/file/d/1dHIB-SXXtNlO1423E9lhvY0LkvfaPM_f/view?usp=sharing"],
 
-            "aggiornamento": "03/17/2024"
+            "aggiornamento": "03/18/2024"
         }, 
 
         {
