@@ -80,7 +80,7 @@
             "descrizione": "Assiomi della Probabilità. Probabilità condizionata ed indipendenza. Teorema di Bayes. Variabili aleatorie discrete e continue. Funzioni di distribuzione di una variabile aleatoria discreta e continua e concetto di integrale. Teoremi limite ed applicazioni. Catene di Markov.                       Popolazione e campione. Statistica descrittiva. Intervalli di fiducia. Test statistici. Laboratorio di probabilità e statistica utilizzando il software statistico R.",
             "materiale": ["https://elearning.unicam.it/course/view.php?id=441", "Elearning"],
             "registrazioni": ["https://elearning.unicam.it/course/view.php?id=441", "Elearning"],
-            "prove": ["", "Nulla"],
+            "prove": ["https://francescopalozzi.notion.site/Prove-statistica-8ffc9d7060aa459dac274613fdcb9712?pvs=4", "Notion"],
 
             "webex": "https://unicam.webex.com/meet/simona.bernabei",
 
@@ -103,7 +103,7 @@
             "descrizione": "Organizzazione della macchina a livello di linguaggio macchina. Organizzazione e architettura del sistema di memoria. Valutazione e prestazioni",
             "materiale": ["https://drive.google.com/drive/u/7/folders/1-SGODclTwGAbJrGFwyGe_3olB6Axsl4f", "Drive"],
             "registrazioni": ["https://docenti.unicam.it/pdett.aspx?UteId=555&tv=lr&ru=PA", "Portale D."],
-            "prove": ["", "Nulla"],
+            "prove": ["https://francescopalozzi.notion.site/Prove-Teoria-Architettura-590c359d26584d8789e0843e6a2c8d7e?pvs=4", "Notion"],
 
             "webex": "https://unicam.webex.com/meet/diletta.cacciagrano",
 
@@ -126,7 +126,7 @@
             "descrizione": "Il corso intende dare una trattazione complessiva di modelli astratti di computazione utili a studiare le principali proprietà di linguaggi e modelli di calcolo, di algoritmi e programmi nonché dei problemi che si devono affrontare e risolvere con l'elaboratore.",
             "materiale": ["https://t.me/+OBxl7LOP9XdhZTlk", "Telegram"],
             "registrazioni": ["https://t.me/+OBxl7LOP9XdhZTlk", "Telegram"],
-            "prove": ["", "Nulla"],
+            "prove": ["https://francescopalozzi.notion.site/Prove-fondamenti-9d584903b25e4e7b90c9c77f30314cfc?pvs=4", "Notion"],
 
             "webex": "https://unicam.webex.com/meet/flavio.corradini",
 
@@ -153,10 +153,10 @@
 
             "webex": "https://unicam.webex.com/meet/grid.thoma",
 
-            "quantity": [],
-            "extraName": [],
-            "extra": [],
-            "extraLink": [],
+            "quantity": [0],
+            "extraName": ["Domande ripasso"],
+            "extra": ["Notion"],
+            "extraLink": ["https://francescopalozzi.notion.site/Domande-ripasso-Business-494cec77f2bd427ca92a0e838b413cfd?pvs=4"],
 
             "aggiornamento": "03/18/2024"
         }
