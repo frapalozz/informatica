@@ -107,12 +107,12 @@
 
             "webex": "https://unicam.webex.com/meet/diletta.cacciagrano",
 
-            "quantity": [0],
-            "extraName": ["Webex Trojani"],
-            "extra": ["Webex"],
-            "extraLink": ["https://unicam.webex.com/meet/massimo.trojani"],
+            "quantity": [0, 1],
+            "extraName": ["Webex Trojani", "Registrazioni Lab."],
+            "extra": ["Webex", "Drive"],
+            "extraLink": ["https://unicam.webex.com/meet/massimo.trojani", "https://drive.google.com/drive/u/7/folders/1wTD2N9nnugsagZaMa6K-6_gm85hJT3Xf"],
 
-            "aggiornamento": "03/19/2024"
+            "aggiornamento": "03/20/2024"
         }, 
 
         {
