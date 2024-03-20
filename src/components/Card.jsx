@@ -4,7 +4,10 @@ export default function Card( {immagine, materia, anno, agg, click} ) {
     let date2 = new Date();
 
     let differenzaTempo = date2.getTime() - date1.getTime();
-    let differenzaGiorni = Math.round(differenzaTempo / (1000*3600*24));
+    let differenzaGiorni = Math.round(differenzaTempo / (1000*3600*24)) - 1;
+
+    let text = "" + differenzaGiorni + " giorni fa";
+    if(differenzaGiorni === 0) {text = "oggi";}
 
     return(
         <>
@@ -21,7 +24,7 @@ export default function Card( {immagine, materia, anno, agg, click} ) {
 
                     <div className="flex flex-row w-full justify-between items-center">
                         <div className="bg-zinc-300 rounded-full px-2 py-px font-semibold">{anno}° anno</div>
-                        <div className="text-white/45 text-xs">Aggiornato {differenzaGiorni} giorni fa</div>
+                        <div className="text-white/45 text-xs">Aggiornato {text}</div>
                     </div>
                 </div>
 
