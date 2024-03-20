@@ -14,9 +14,9 @@ export default function CardOpen( {stato, index} ) {
         <>
             <section className="max-w-screen-2xl w-screen items-center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center xl:mt-50 lg:mt-48 md:mt-40 mt-32">
 
-                <div className="flex flex-row text-white font-medium text-sm justify-start items-center w-full">
+                <div className="flex flex-row dark:text-white text-black font-medium text-sm justify-start items-center w-full">
                     <div onClick={stato} className="flex flex-row justify-start items-center gap-1 cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 fill-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 dark:fill-white fill-black">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
                         </svg>
                         <p>Indietro</p>

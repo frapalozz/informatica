@@ -12,7 +12,7 @@ export default function CardGrid( {stato} ) {
     let text;
     if(datiMaterie.length === 0) {
         text = (
-            <div className="w-screen bg-gray text-white text-3xl font-semibold flex justify-center items-center">
+            <div className="w-screen bg-gray dark:text-white text-black text-3xl font-semibold flex justify-center items-center">
                 Ancora Nulla 😓
             </div>
         );
@@ -21,7 +21,7 @@ export default function CardGrid( {stato} ) {
     return(
         <>
             <section className="max-w-screen-2xl w-screen center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-5">
-                <div className="flex justify-center items-center text-white border-solid rounded-md border-zinc-700 border ">
+                <div className="flex justify-center items-center text-white border-solid rounded-md dark:border-zinc-700 border-zinc-400 border ">
 
                     <Button text="1° Anno" status={status == 1} select={() => setStatus(1)} first="true" />
                     <Button text="2° Anno" status={status == 2} select={() => setStatus(2)} />
