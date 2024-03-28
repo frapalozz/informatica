@@ -5,13 +5,16 @@ import Container from "./components/Container"
 export default function App() {
 
   return (
-    <main className="flex flex-col w-screen justify-center items-center font-montserrat dark:bg-stone-950 bg-stone-100 min-h-dvh">
-      <Navbar />
+    <div className="font-mono">
+      <main className="flex flex-col w-screen justify-center items-center font-montserrat dark:bg-stone-950 bg-stone-100 min-h-dvh">
+        <Navbar />
 
-      <Container />
+        <Container />
 
-      <Footer />
-    </main>
+        <Footer />
+      </main>
+    </div>
+    
   )
 }
 
