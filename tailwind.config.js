@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Montserrat'],
+        sans: ['Mono'],
         'montserrat': ['Montserrat'],
       }
     },
