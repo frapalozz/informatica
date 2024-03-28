@@ -11,13 +11,13 @@ export default function Card( {immagine, materia, anno, agg, click} ) {
 
     return(
         <>
-            <div onClick={(i) => click(i)} className="w-full  h-96 flex flex-col border border-2 dark:border-zinc-700 border-zinc-400 dark:hover:border-zinc-500 hover:border-zinc-600 transition-all duration-300 rounded-lg cursor-pointer">
+            <div onClick={(i) => click(i)} className="w-full  h-96 flex flex-col border-2 dark:border-zinc-700 border-zinc-400 dark:hover:border-zinc-500 hover:border-zinc-600 transition-all duration-300 rounded-lg cursor-pointer">
 
-                <div className="h-4/6 dark:bg-zinc-900 bg-zinc-200 w-full border border-0 rounded-t-md flex justify-center items-center">
-                    <img rel="preload" src={immagine} className="w-32 h-32 border border-0 rounded-lg shadow-2xl dark:shadow-zinc-950 shadow-zinc-500"/>
+                <div className="h-4/6 dark:bg-zinc-900 bg-zinc-200 w-full border-0 rounded-t-md flex justify-center items-center">
+                    <img rel="preconnect" src={immagine} className="w-32 h-32 border-0 rounded-lg shadow-2xl dark:shadow-zinc-950 shadow-zinc-500"/>
                 </div>
 
-                <div className="w-full dark:bg-neutral-950 bg-neutral-300 h-2/6 border border-0 rounded-b-md px-5 py-3 flex flex-col justify-between items-start">
+                <div className="w-full dark:bg-neutral-950 bg-neutral-300 h-2/6 border-0 rounded-b-md px-5 py-3 flex flex-col justify-between items-start">
                     <div>
                         <h1 className="dark:text-white text-black min-h-7 font-semibold text-lg">{materia}</h1>
                     </div>
