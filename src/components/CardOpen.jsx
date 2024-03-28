@@ -12,7 +12,7 @@ export default function CardOpen( {stato, index} ) {
 
     return(
         <>
-            <section className="max-w-screen-2xl w-screen items-center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center xl:mt-50 lg:mt-48 md:mt-40 mt-32">
+            <section className="max-w-screen-2xl w-screen px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center xl:mt-50 lg:mt-48 md:mt-40 mt-32">
 
                 <div className="flex flex-row dark:text-white text-black font-medium text-sm justify-start items-center w-full">
                     <div onClick={stato} className="flex flex-row justify-start items-center gap-1 cursor-pointer">
