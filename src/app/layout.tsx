@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} dark:bg-stone-950 bg-stone-100`}>
+      <body className={`${montserrat.className} dark:bg-stone-950 bg-stone-100 min-h-screen flex flex-col justify-between`}>
         <Navbar></Navbar>
         <Hero></Hero>
           {children}

@@ -1,5 +1,9 @@
+import CardGrid from "../components/cardgrid"
+
 export default function Extra(){
     return(
-        <h1>Extra</h1>
+        <main className="flex flex-col items-center justify-center w-full">
+            <CardGrid anno="extra"></CardGrid>
+        </main>
     )
 }

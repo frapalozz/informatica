@@ -22,7 +22,7 @@ export default async function CardGrid( {anno}: any) {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 w-full mt-12">
                     {datiMaterie.map((item: any) => (
-                        <Card link={item.materia} key={item.id} chiave={item.id} immagine={item.immagine} materia={item.materia} anno={item.anno} agg={item.aggiornamento} corso={item.corso}/>
+                        <Card link={item.materia} key={item.materia} immagine={item.immagine} materia={item.materia} anno={item.anno} agg={item.aggiornamento} corso={item.corso}/>
                     ))}
                 </div>
                 {text}

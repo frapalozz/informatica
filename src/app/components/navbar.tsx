@@ -15,7 +15,7 @@ export default function Navbar() {
                 </div>
 
                 <div>
-                    <a href="https://forms.gle/tGFM4bSCNoKdDKJi6" className="md:min-h-[43px] md:min-w-[184px] dark:bg-white bg-black text-white dark:text-black xl:px-5 lg:px-4 md:px-3.5 px-3 xl:py-3.5 lg:py-3 py-2 rounded-lg xl:text-lg font-bold hover:shadow-lg dark:hover:shadow-zinc-700 hover:shadow-zinc-300 duration-300 transition-all">Aggiungi risorsa +</a>
+                    <a href="https://forms.gle/tGFM4bSCNoKdDKJi6" className="md:min-h-[43px] md:min-w-[184px] dark:bg-white bg-black text-white dark:text-black xl:px-5 lg:px-4 md:px-3.5 px-3 xl:py-3.5 lg:py-3 py-2 rounded-lg xl:text-lg font-bold hover:shadow-lg dark:hover:shadow-zinc-700 hover:shadow-zinc-300 duration-300 transition-all">Aggiungi risorsa</a>
                 </div>
             </nav>
 
