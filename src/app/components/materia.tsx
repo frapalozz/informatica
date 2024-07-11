@@ -1,5 +1,6 @@
 "use client" 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Materia({ immagine, materia, descrizione, webex, materiale, registrazioni, prove, extraName, extra, extraLink, quantity }: any) {
 
@@ -26,7 +27,7 @@ export default function Materia({ immagine, materia, descrizione, webex, materia
                     </svg>
                 </div>
                 
-                <img rel="preconnect" alt="sprites" src={immagine} className="border-0 rounded-2xl lg:w-56 w-40 shadow-2xl dark:shadow-zinc-950 shadow-zinc-500"/>
+                <Image rel="preconnect" width={400} height={400} alt="sprites" src={immagine} className="border-0 rounded-2xl lg:w-56 w-40 shadow-2xl dark:shadow-zinc-950 shadow-zinc-500"/>
             </div>
         )
     }

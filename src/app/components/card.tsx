@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Card( {immagine, materia, anno, agg, corso, link, chiave}: any) {
 
@@ -20,7 +21,7 @@ export default function Card( {immagine, materia, anno, agg, corso, link, chiave
             <div className={`absolute rounded-full bg-red-500 ${notifRed} z-10 animate-ping ${(differenzaGiorni <= 0)? "": "hidden"}`}></div>
 
             <div className="h-4/6 dark:bg-zinc-900 bg-zinc-200 w-full border-0 rounded-t-md flex justify-center items-center">
-                <img rel="preconnect" alt="sprites" src={immagine} className="w-32 h-32 border-0 rounded-lg shadow-2xl dark:shadow-zinc-950 shadow-zinc-500"/>
+                <Image rel="preconnect" alt="sprites" width={400} height={400} src={immagine} className="w-32 h-32 border-0 rounded-lg shadow-2xl dark:shadow-zinc-950 shadow-zinc-500"/>
             </div>
 
             <div className="w-full dark:bg-neutral-950 bg-neutral-300 h-2/6 border-0 rounded-b-md px-5 py-3 flex flex-col justify-between items-start">
@@ -30,7 +31,7 @@ export default function Card( {immagine, materia, anno, agg, corso, link, chiave
                 </div>
                 <div className="relative flex flex-row gap-1">
                     {corso.map((item: any) => (
-                        <div className="text-stone-700 dark:text-stone-500 text-xs rounded-full px-2 py-px text-center font-semibold border border-stone-700 dark:border-stone-500">{item}</div>
+                        <div key={item} className="text-stone-700 dark:text-stone-500 text-xs rounded-full px-2 py-px text-center font-semibold border border-stone-700 dark:border-stone-500">{item}</div>
                     ))}
                 </div>
                 </div>
