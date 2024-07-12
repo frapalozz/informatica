@@ -1,9 +1,10 @@
+import path from "path";
 import Card from "./card"
 import { promises as fs } from 'fs'
 
 export default async function CardGrid( {anno}: any) {
 
-    const file = await fs.readFile(process.cwd() + '/public/dati/data.json', 'utf8')
+    const file = await fs.readFile(path.resolve('./src/dati/data.json'), 'utf8')
     const data = JSON.parse(file)
 
     const datiMaterie = data.dati.filter((item: any) => item.anno == anno);

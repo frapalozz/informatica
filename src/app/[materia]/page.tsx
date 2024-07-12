@@ -1,18 +1,15 @@
 import { promises as fs } from 'fs'
 import Materia from '../components/materia';
+import path from 'path';
 
 export default async function MateriaPage({ params }: {params: {materia: string}}) {
 
-    const file = await fs.readFile(process.cwd() + './public/dati/data.json', 'utf8')
+    const file = await fs.readFile(path.resolve('./src/dati/data.json'), 'utf8')
     const data = JSON.parse(file)
 
     const datiMateria = data.dati.filter((item: any) => item.materia == params.materia);
 
     return(
-        <>
-            {datiMateria.map((item: any) => (
-                <Materia key={item.materia} immagine={item.immagine} materia={item.materia} descrizione={item.descrizione} webex={item.webex} materiale={item.materiale} registrazioni={item.registrazioni} prove={item.prove} extraName={item.extraName} extra={item.extra} extraLink={item.extraLink} quantity={item.quantity}/>
-            ))}
-        </>
+        <Materia key={datiMateria[0].materia} immagine={datiMateria[0].immagine} materia={datiMateria[0].materia} descrizione={datiMateria[0].descrizione} webex={datiMateria[0].webex} materiale={datiMateria[0].materiale} registrazioni={datiMateria[0].registrazioni} prove={datiMateria[0].prove} extraName={datiMateria[0].extraName} extra={datiMateria[0].extra} extraLink={datiMateria[0].extraLink} quantity={datiMateria[0].quantity}/>
     )
 }
