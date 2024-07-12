@@ -3,7 +3,7 @@ import MateriaCard from "./materiaCard"
 export default function Materia({ immagine, materia, descrizione, webex, materiale, registrazioni, prove, extraName, extra, extraLink, quantity }: any) {
 
     return(
-        <section className="max-w-screen-2xl w-full px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-20">
+        <section className="max-w-screen-2xl w-full px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-5">
 
             <div className="flex flex-col md:flex-row md:gap-10 gap-16 text-white w-full h-5/6 mt-10">
                 
