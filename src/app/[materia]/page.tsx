@@ -3,7 +3,7 @@ import Materia from '../components/materia';
 
 export default async function MateriaPage({ params }: {params: {materia: string}}) {
 
-    const file = await fs.readFile(process.cwd() + '/public/dati/data.json', 'utf8')
+    const file = await fs.readFile(process.cwd() + '../public/dati/data.json', 'utf8')
     const data = JSON.parse(file)
 
     const datiMateria = data.dati.filter((item: any) => item.materia == params.materia);
