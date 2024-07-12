@@ -21,7 +21,7 @@ export default function Card( {immagine, materia, anno, agg, corso, link, chiave
             <div className={`absolute rounded-full bg-red-500 ${notifRed} z-10 animate-ping ${(differenzaGiorni <= 0)? "": "hidden"}`}></div>
 
             <div className="h-4/6 dark:bg-zinc-900 bg-zinc-200 w-full border-0 rounded-t-md flex justify-center items-center">
-                <Image rel="preconnect" alt="sprites" width={400} height={400} src={immagine} className="w-32 h-32 border-0 rounded-lg shadow-2xl dark:shadow-zinc-950 shadow-zinc-500"/>
+                <Image rel="preconnect" alt="sprites" width={128} height={128} src={immagine} className="w-32 h-32 border-0 rounded-lg shadow-2xl dark:shadow-zinc-950 shadow-zinc-500"/>
             </div>
 
             <div className="w-full dark:bg-neutral-950 bg-neutral-300 h-2/6 border-0 rounded-b-md px-5 py-3 flex flex-col justify-between items-start">
