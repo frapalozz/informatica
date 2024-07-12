@@ -1,4 +1,9 @@
 import CardGrid from "../components/cardgrid"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: '3° Anno',
+}
 
 export default function Tanno(){
     return(

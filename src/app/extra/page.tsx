@@ -1,4 +1,9 @@
 import CardGrid from "../components/cardgrid"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: 'Extra',
+}
 
 export default function Extra(){
     return(

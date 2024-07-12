@@ -1,6 +1,24 @@
 import { promises as fs } from 'fs'
 import Materia from '../components/materia';
 import path from 'path';
+import { Metadata, ResolvingMetadata } from 'next';
+
+type Props = {
+    params: { materia: string }
+    searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export async function generateMetadata(
+    { params, searchParams }: Props,
+    parent: ResolvingMetadata
+    ): Promise<Metadata> {
+    // read route params
+    const id = params.materia
+
+    return {
+        title: id,
+    }
+}
 
 export default async function MateriaPage({ params }: {params: {materia: string}}) {
 
