@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+.nav {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
