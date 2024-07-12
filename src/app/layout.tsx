@@ -16,6 +16,17 @@ export const metadata: Metadata = {
   description: "Tutto ciò che serve agli studenti informatici in un luogo solo",
   icons: {
     icon: "/icon.svg"
+  },
+  openGraph: {
+    title: {
+      absolute: "1° Anno | Informatica",
+      default: "Informatica",
+      template: "%s | Informatica"
+    },
+    description: "Tutto ciò che serve agli studenti informatici in un luogo solo",
+    images: {
+      url: "https://art.pixilart.com/c562a069cbc4da4.png",
+    }
   }
 };
 
