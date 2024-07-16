@@ -33,9 +33,8 @@ export default async function MateriaPage({ params }: {params: {materia: string}
     const data = JSON.parse(file)
 
     const datiMateria = data.dati.filter((item: any) => item.materia == params.materia);
-    console.log(datiMateria[0].immagine)
 
     return(
-        <Materia key={datiMateria[0].materia} immagine={datiMateria[0].immagine} materia={datiMateria[0]._comment} descrizione={datiMateria[0].descrizione} webex={datiMateria[0].webex} materiale={datiMateria[0].materiale} registrazioni={datiMateria[0].registrazioni} prove={datiMateria[0].prove} extraName={datiMateria[0].extraName} extra={datiMateria[0].extra} extraLink={datiMateria[0].extraLink} quantity={datiMateria[0].quantity}/>
+        <Materia key={datiMateria[0].materia} immagine={datiMateria[0].immagine} materia={datiMateria[0]._comment} descrizione={datiMateria[0].descrizione} webex={datiMateria[0].webex} materiale={datiMateria[0].materiale} registrazioni={datiMateria[0].registrazioni} prove={datiMateria[0].prove} extraName={datiMateria[0].extraName} extra={datiMateria[0].extra} extraLink={datiMateria[0].extraLink} quantity={datiMateria[0].quantity} anno={datiMateria[0].anno}/>
     )
 }

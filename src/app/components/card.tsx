@@ -15,6 +15,11 @@ export default function Card( {immagine, materia, anno, agg, corso, link, chiave
 
     let notifRed = "w-2.5 h-2.5 -top-1 -right-1";
 
+    let tipo: string;
+    if(anno === "extra") {tipo = "extra"}
+    else {tipo = anno + "° anno"}
+    
+
     return(
         <Link href={link} key={chiave} className="relative w-full  h-96 flex flex-col border-2 dark:border-zinc-700 border-zinc-400 dark:hover:border-zinc-500 hover:border-zinc-600 transition-all duration-300 rounded-lg cursor-pointer">
             <div className={`absolute rounded-full bg-red-500 ${notifRed} z-10 ${(differenzaGiorni <= 0)? "": "hidden"}`}></div>
@@ -40,7 +45,7 @@ export default function Card( {immagine, materia, anno, agg, corso, link, chiave
                     <div className="flex flex-row justify-start items-center">
                         <div className="dark:bg-zinc-100 bg-zinc-900 dark:text-black text-white rounded-full px-2 py-px font-medium">
                             <p className="text-sm">
-                                {anno}° anno
+                                {tipo}
                             </p>
                         </div>
                         
