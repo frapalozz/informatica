@@ -159,6 +159,80 @@
             "extraLink": ["https://francescopalozzi.notion.site/Domande-ripasso-Business-494cec77f2bd427ca92a0e838b413cfd?pvs=4", "https://francescopalozzi.notion.site/Riassunto-Libro-Business-54eab5cea7974061b17c8056c18dec78?pvs=4", "https://francescopalozzi.notion.site/Riassunto-Parrucci-0707b6b7bdb8400c823e2a9684f2251b?pvs=4", "https://docs.google.com/forms/d/e/1FAIpQLSeRbvRAhKFfjkgx7wRBwQNtgMZl0Y1fR4HRHXtibWgc_OFRcA/viewform"],
 
             "aggiornamento": "06/27/2024"
+        }, 
+
+
+
+
+
+
+
+
+
+        {
+            "_comment": "Roadmap.sh",
+
+            "anno": "extra",
+            "immagine": "https://art.pixilart.com/cbf297b4b91a053.png",
+            "corso": ["Frontend", "Backend"],
+
+            "materia": "Developer_Roadmaps",
+            "descrizione": "roadmap.sh is a community effort to create roadmaps, guides and other educational content to help guide developers in picking up a path and guide their learnings.",
+
+            "webex": "https://roadmap.sh/",
+            "aggiornamento": "07/16/2024",
+
+            "quantity": [],
+            "extraName": [],
+            "extra": [],
+            "extraLink": [],
+            "materiale": [],
+            "registrazioni": [],
+            "prove": []
+        },
+
+        {
+            "_comment": "The Valley Of Code",
+
+            "anno": "extra",
+            "immagine": "https://art.pixilart.com/71d0d15d7e2be0d.png",
+            "corso": ["Web development"],
+
+            "materia": "The_Valley_Of_Code",
+            "descrizione": "your web development manual",
+
+            "webex": "https://thevalleyofcode.com/",
+            "aggiornamento": "07/16/2024",
+
+            "quantity": [],
+            "extraName": [],
+            "extra": [],
+            "extraLink": [],
+            "materiale": [],
+            "registrazioni": [],
+            "prove": []
+        },
+
+        {
+            "_comment": "mycodeschool",
+
+            "anno": "extra",
+            "immagine": "https://art.pixilart.com/sr23b033d1664aws3.png",
+            "corso": ["Math", "Algorithms", "C/C++", "Altro"],
+
+            "materia": "mycodeschool",
+            "descrizione": "mycodeschool is an educational initiative. Our aim is to present some core concepts of computer programming through illustrated examples and creative teaching techniques. ",
+
+            "webex": "https://www.youtube.com/@mycodeschool",
+            "aggiornamento": "07/16/2024",
+
+            "quantity": [],
+            "extraName": [],
+            "extra": [],
+            "extraLink": [],
+            "materiale": [],
+            "registrazioni": [],
+            "prove": []
         }
     ]
 }

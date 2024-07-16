@@ -28,7 +28,7 @@ export default function MateriaCard({ quantity, extraLink, extraName, extra, imm
                     </svg>
                 </div>
                 
-                <Image rel="preconnect" width={224} height={224} alt="sprites" src={immagine} className="border-0 rounded-2xl lg:w-56 w-40 shadow-2xl dark:shadow-zinc-950 shadow-zinc-500"/>
+                <Image rel="preconnect" unoptimized width={224} height={224} alt="sprites" src={immagine} className="border-0 rounded-2xl lg:w-56 w-40 shadow-2xl dark:shadow-zinc-950 shadow-zinc-500"/>
             </div>
         )
     }
