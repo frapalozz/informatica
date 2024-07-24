@@ -170,6 +170,38 @@
 
 
         {
+            "_comment": "Internet Reti e Sicurezza",
+
+            "anno": 2,
+            "immagine": "https://art.pixilart.com/3f4ded3871ba.png",
+            "corso": ["Informatica", "Comunicazione"],
+
+            "materia": "Internet_Reti_Sicurezza",
+            "descrizione": "Cosa è internet 🌐",
+            "materiale": ["https://computerscience.unicam.it/marcantoni/", "Sito Docente"],
+            "registrazioni": ["", "Nulla"],
+            "prove": ["", "Nulla"],
+
+            "webex": "https://unicam.webex.com/meet/grid.thoma",
+
+            "quantity": [],
+            "extraName": [],
+            "extra": [],
+            "extraLink": [],
+
+            "aggiornamento": "07/24/2024"
+        }, 
+
+
+        
+
+
+        
+
+
+
+
+        {
             "_comment": "Roadmap.sh",
 
             "anno": "extra",
