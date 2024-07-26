@@ -179,7 +179,7 @@
             "materia": "Internet_Reti_Sicurezza",
             "descrizione": "Cosa è internet 🌐",
             "materiale": ["https://computerscience.unicam.it/marcantoni/", "Sito Docente"],
-            "registrazioni": ["", "Nulla"],
+            "registrazioni": ["https://drive.google.com/drive/folders/1GUvMhxT-Vh0eK5hCo3G4FFVkRpbRTuN4?usp=sharing", "Drive"],
             "prove": ["", "Nulla"],
 
             "webex": "https://unicam.webex.com/meet/fausto.marcantoni",
@@ -189,7 +189,7 @@
             "extra": [],
             "extraLink": [],
 
-            "aggiornamento": "07/24/2024"
+            "aggiornamento": "07/26/2024"
         }, 
         {
             "_comment": "Sistemi Operativi",
