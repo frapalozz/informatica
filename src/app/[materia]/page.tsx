@@ -16,7 +16,7 @@ export async function generateMetadata(
     const id = params.materia
 
     return {
-        title: id,
+        title: params._comment,
         openGraph: {
             title: id,
             description: "Tutto ciò che serve agli studenti informatici in un luogo solo",
