@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode; 
 }>) {
   return (
-    <html lang="en">
+    <html lang="it">
       <body className={`${montserrat.className} dark:bg-stone-950 bg-stone-100 min-h-screen flex flex-col justify-between`}>
         <Navbar></Navbar>
         <Hero></Hero>
