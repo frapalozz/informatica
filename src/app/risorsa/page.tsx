@@ -36,10 +36,10 @@ export default function Risorsa() {
                     className="flex flex-col gap-3 mt-5 justify-center"
                     onSubmit={Submit}>
 
-                    <label className="flex flex-col justify-center gap-1" htmlFor="Titolo">Quale risorsa vuoi aggiungere?<input className="px-4 py-2 rounded-md text-sm font-medium dark:bg-black bg-white border dark:border-white/20 border-black/20" type="text" name="Titolo" placeholder="Titolo Risorsa" required /></label>
+                    <label className="flex flex-col justify-center gap-1" htmlFor="Titolo">Quale risorsa vuoi aggiungere?<input className="px-4 py-2 rounded text-sm font-medium dark:bg-black bg-white border dark:border-white/20 border-black/20" type="text" name="Titolo" placeholder="Titolo Risorsa" required /></label>
                     <label className="flex flex-col justify-center gap-1" htmlFor="Anno">
                         Di quale anno si tratta?
-                        <select name="Anno" id="" className="dark:bg-black bg-white text-sm rounded-md border dark:border-white/20 border-black/20 font-medium px-2 py-px w-fit" required>
+                        <select name="Anno" id="" className="dark:bg-black bg-white text-sm rounded border dark:border-white/20 border-black/20 font-medium px-2 py-px w-fit" required>
                             <option value="1 Anno">1° Anno</option>
                             <option value="2 Anno">2° Anno</option>
                             <option value="3 Anno">3° Anno</option>
@@ -48,11 +48,11 @@ export default function Risorsa() {
                     </label>
                     <label htmlFor="Links" className="flex flex-col justify-center gap-1">
                         Links risorsa
-                        <textarea className="dark:bg-black bg-white border dark:border-white/20 border-black/20 px-4 py-2 text-sm" name="Links" id=""></textarea>
+                        <textarea className="dark:bg-black bg-white border dark:border-white/20 border-black/20 px-4 py-2 text-sm rounded" name="Links" placeholder="esempio.com"></textarea>
                     </label>
                     <label htmlFor="Altro" className="flex flex-col justify-center gap-1">
                         Altre informazioni
-                        <textarea className="border dark:border-white/20 border-black/20 dark:bg-black bg-white px-4 py-2 text-sm" name="Altro" id=""></textarea>
+                        <textarea className="border dark:border-white/20 border-black/20 dark:bg-black bg-white px-4 py-2 text-sm rounded" name="Altro"></textarea>
                     </label>
                     <div className="flex flex-row items-center gap-3">
                         <button id="submit-button" type="submit" className="dark:bg-white bg-black dark:text-black text-white font-semibold w-fit px-4 py-1 rounded-md flex flex-row gap-1 items-center justify-center">Invia</button>
