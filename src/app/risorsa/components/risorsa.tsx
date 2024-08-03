@@ -40,7 +40,7 @@ export default function Risorsa() {
                 <h1 className="text-center text-4xl font-bold">Nuova Risorsa</h1>
                 <form
                     id="form"
-                    className="flex flex-col gap-3 mt-5 justify-center"
+                    className="flex flex-col gap-3 mt-5 justify-center w-full sm:w-[500px]"
                     onSubmit={Submit}>
 
                     <label className="flex flex-col justify-center gap-1 font-medium" htmlFor="Titolo">Quale risorsa vuoi aggiungere?<input className="font-normal px-4 py-2 rounded text-sm dark:bg-black bg-white border dark:border-white/20 border-black/20" type="text" name="Titolo" placeholder="Titolo Risorsa" required /></label>
