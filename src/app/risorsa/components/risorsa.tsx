@@ -62,7 +62,7 @@ export default function Risorsa() {
                         <textarea className="border dark:border-white/20 border-black/20 dark:bg-black bg-white px-4 py-2 text-sm rounded font-normal" name="Altro"></textarea>
                     </label>
                     <div className="flex flex-row items-center gap-3">
-                        <button id="submit-button" type="submit" disabled={submit == 0 || submit == 3} className={`${(submit == 0 || submit == 3)? "dark:bg-neutral-400 bg-neutral-800": "dark:bg-white bg-black"} dark:text-black text-white font-semibold w-fit px-4 py-1 rounded-md flex flex-row gap-1 items-center justify-center`}>Invia</button>
+                        <button id="submit-button" type="submit" disabled={(submit == 0 || submit == 3)} className={`${(submit == 0 || submit == 3)? "dark:bg-neutral-400 bg-neutral-800": "dark:bg-white bg-black"} dark:text-black text-white font-semibold w-fit px-4 py-1 rounded-md flex flex-row gap-1 items-center justify-center`}>Invia</button>
                         <svg className={`${submit == 2? "animate-spin inline": "hidden"} dark:invert`} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_108_2)">
                             <path d="M10.1374 17.5341C8.62356 17.5548 7.13892 17.1169 5.87867 16.2779C4.61843 15.439 3.64158 14.2383 3.07659 12.8337C2.51159 11.4291 2.3849 9.88645 2.71317 8.40852C3.04145 6.93059 3.80931 5.58661 4.9158 4.5533C6.02229 3.51999 7.4156 2.84574 8.91251 2.6192C10.4094 2.39267 11.9398 2.62446 13.3025 3.28409C14.6652 3.94373 15.7964 5.00032 16.5473 6.31494C17.2981 7.62956 17.6336 9.14064 17.5095 10.6495" stroke="black" stroke-opacity="0.35" stroke-width="5"/>
