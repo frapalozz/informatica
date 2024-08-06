@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Card( {immagine, materia, anno, agg, corso, link, chiave}: any) {
+export default function Card( {immagine, materia, anno, semestre, agg, corso, link, chiave}: any) {
 
     let date1 = new Date(agg);
     let date2 = new Date();
@@ -16,8 +16,8 @@ export default function Card( {immagine, materia, anno, agg, corso, link, chiave
     let notifRed = "w-2.5 h-2.5 -top-1 -right-1";
 
     let tipo: string;
-    if(anno === "extra") {tipo = "extra"}
-    else {tipo = anno + "° anno"}
+    if(semestre === "extra") {tipo = "extra"}
+    else {tipo = semestre + "° Semestre"}
     
 
     return(
@@ -44,7 +44,7 @@ export default function Card( {immagine, materia, anno, agg, corso, link, chiave
                 <div className="flex flex-row w-full justify-between items-center">
                     <div className="flex flex-row justify-start items-center">
                         <div className="dark:bg-zinc-100 bg-zinc-900 dark:text-black text-white rounded-full px-2 py-px font-medium">
-                            <p className="text-sm">
+                            <p className="text-[12px]">
                                 {tipo}
                             </p>
                         </div>

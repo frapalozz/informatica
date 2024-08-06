@@ -4,6 +4,7 @@
             "_comment": "Matematica Discreta",
  
             "anno": 1,
+            "semestre": 1,
             "immagine": "https://art.pixilart.com/59e0b0ad8dfba7b.png",
             "corso": ["Informatica", "Comunicazione"],
 
@@ -27,6 +28,7 @@
             "_comment": "Matematica Logica",
 
             "anno": 1,
+            "semestre": 1,
             "immagine": "https://art.pixilart.com/0f3d89586edaadf.png",
             "corso": ["Informatica", "Comunicazione"],
 
@@ -50,6 +52,7 @@
             "_comment": "Programmazione",
 
             "anno": 1,
+            "semestre": 1,
             "immagine": "https://art.pixilart.com/sr2d8603a3e5205.png",
             "corso": ["Informatica", "Comunicazione"],
 
@@ -73,6 +76,7 @@
             "_comment": "Probabilita e Statistica",
 
             "anno": 1, 
+            "semestre": 2,
             "immagine": "https://art.pixilart.com/6cc31f9ae9fde9d.png",
             "corso": ["Informatica"],
 
@@ -96,6 +100,7 @@
             "_comment": "Architettura degli Elaboratori",
 
             "anno": 1,
+            "semestre": 2,
             "immagine": "https://art.pixilart.com/190f5db1b87dbfc.png",
             "corso": ["Informatica", "Comunicazione"],
 
@@ -119,6 +124,7 @@
             "_comment": "Fondamenti Informatica",
 
             "anno": 1,
+            "semestre": 2,
             "immagine": "https://art.pixilart.com/92b29f741979c8b.png",
             "corso": ["Informatica", "Comunicazione"],
 
@@ -142,6 +148,7 @@
             "_comment": "Business",
 
             "anno": 1,
+            "semestre": 2,
             "immagine": "https://art.pixilart.com/512a3f3675c2.png",
             "corso": ["Informatica"],
 
@@ -173,6 +180,7 @@
             "_comment": "Internet Reti e Sicurezza",
 
             "anno": 2,
+            "semestre": 1,
             "immagine": "https://art.pixilart.com/5edefdf2e8ed41b.gif",
             "corso": ["Informatica", "Comunicazione"],
 
@@ -195,6 +203,7 @@
             "_comment": "Sistemi Operativi",
 
             "anno": 2,
+            "semestre": 1,
             "immagine": "https://art.pixilart.com/e55b9483ad24675.png",
             "corso": ["Informatica", "Comunicazione"],
 
@@ -227,6 +236,7 @@
             "_comment": "Roadmap.sh",
 
             "anno": "extra",
+            "semestre": "extra",
             "immagine": "https://art.pixilart.com/cbf297b4b91a053.png",
             "corso": ["Frontend", "Backend"],
 
@@ -249,6 +259,7 @@
             "_comment": "The Valley Of Code",
 
             "anno": "extra",
+            "semestre": "extra",
             "immagine": "https://art.pixilart.com/71d0d15d7e2be0d.png",
             "corso": ["Web development"],
 
@@ -271,6 +282,7 @@
             "_comment": "mycodeschool",
 
             "anno": "extra",
+            "semestre": "extra",
             "immagine": "https://art.pixilart.com/sr23b033d1664aws3.png",
             "corso": ["Math", "Algorithms", "C/C++", "Altro"],
 
