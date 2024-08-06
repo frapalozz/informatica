@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function Risorsa() {
 
-    const [submit, setSubmit] = useState(0);
+    const [submit, setSubmit] = useState(9);
     const [inviato, setInviato] = useState(false);
 
     const Submit = (e: any) => {
