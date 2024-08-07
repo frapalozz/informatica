@@ -3,35 +3,28 @@ import { useState } from "react";
 
 export default function Risorsa() {
 
-    const [submit, setSubmit] = useState(9);
-    const [inviato, setInviato] = useState(false);
+    const [submit, setSubmit] = useState(9)
 
-    const Submit = (e: any) => {
-        e.preventDefault();
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxH0U7uo1B7g77evBtItiSTBYUmXsQtXSeRpQl_EEkrx9C_AfsWIvfgosx07Pkyoop3/exec'
-        const form = document.getElementById("form") as HTMLFormElement
-
-        if(inviato && form != null) {
-            setSubmit(3);
-        }else{
-            setSubmit(2);
-
-            if(form != null){
-                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    console.log('Success!', response);
-                    setSubmit(0);
-                    form.reset();
-                    setInviato(true);
-                })
-                .catch(error => {
-                    console.error('Error!', error.message)
-                    setSubmit(1);
-                })
-            }
-        }
-            
-    }
+    async function saveToNotion(name: string, anno: string, links: string, altro: string) {
+        const url = '/risorsa/submit-to-notion';
+        setSubmit(2)
+        await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, anno, links, altro })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            setSubmit(0)
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            setSubmit(3)
+        });
+      }
 
 
     return(
@@ -40,14 +33,25 @@ export default function Risorsa() {
                 <h1 className="text-center text-4xl font-bold">Nuova Risorsa</h1>
                 <p className="w-full sm:w-[500px] text-center text-sm">Per aggiungere un file bisogna creare una cartella Google drive (con accesso pubblico) e inserire il link nel campo <span className="underline">Links risorsa</span></p>
                 <form
-                    id="form"
                     className="flex flex-col gap-3 mt-5 justify-center w-full sm:w-[500px]"
-                    onSubmit={Submit}>
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        const name = (document.getElementById('name') as HTMLInputElement).value;
+                        const anno = (document.getElementById('anno') as HTMLSelectElement).value;
+                        const links = (document.getElementById('links') as HTMLTextAreaElement).value;
+                        const altro = (document.getElementById('altro') as HTMLTextAreaElement).value;
+                        // Call the backend script to save data to Notion
+                        saveToNotion(name, anno, links, altro);
+                      }}>
 
-                    <label className="flex flex-col justify-center gap-1 font-medium" htmlFor="Titolo">Quale risorsa vuoi aggiungere?<input className="font-normal px-4 py-2 rounded text-sm dark:bg-black bg-white border dark:border-white/20 border-black/20" type="text" name="Titolo" placeholder="Titolo Risorsa" required /></label>
+                    
+                    <label className="flex flex-col justify-center gap-1 font-medium" htmlFor="Titolo">
+                        Quale risorsa vuoi aggiungere?
+                        <input className="font-normal px-4 py-2 rounded text-sm dark:bg-black bg-white border dark:border-white/20 border-black/20" type="text" name="Titolo" placeholder="Titolo Risorsa" id="name" required />
+                    </label>
                     <label className="flex flex-col justify-center gap-1 font-medium" htmlFor="Anno">
                         Di quale anno si tratta?
-                        <select name="Anno" id="" className="dark:bg-black bg-white text-sm rounded border dark:border-white/20 border-black/20 px-2 py-px w-fit font-normal" required>
+                        <select name="Anno" id="anno" className="dark:bg-black bg-white text-sm rounded border dark:border-white/20 border-black/20 px-2 py-px w-fit font-normal" required>
                             <option value="1 Anno">1° Anno</option>
                             <option value="2 Anno">2° Anno</option>
                             <option value="3 Anno">3° Anno</option>
@@ -56,12 +60,13 @@ export default function Risorsa() {
                     </label>
                     <label htmlFor="Links" className="flex flex-col justify-center gap-1 font-medium">
                         Links risorsa
-                        <textarea className="dark:bg-black bg-white border dark:border-white/20 border-black/20 px-4 py-2 text-sm rounded font-normal" name="Links" placeholder="esempio.com" required></textarea>
+                        <textarea className="dark:bg-black bg-white border dark:border-white/20 border-black/20 px-4 py-2 text-sm rounded font-normal" name="Links" id="links" placeholder="esempio.com" required></textarea>
                     </label>
                     <label htmlFor="Altro" className="flex flex-col justify-center gap-1 font-medium">
                         Altre informazioni
-                        <textarea className="border dark:border-white/20 border-black/20 dark:bg-black bg-white px-4 py-2 text-sm rounded font-normal" name="Altro"></textarea>
+                        <textarea className="border dark:border-white/20 border-black/20 dark:bg-black bg-white px-4 py-2 text-sm rounded font-normal" name="Altro" id="altro"></textarea>
                     </label>
+                    
                     <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-3 w-full sm:w-auto">
                         <button id="submit-button" type="submit" disabled={(submit == 0 || submit == 3)} className={`${(submit == 0 || submit == 3)? "dark:bg-neutral-400 bg-neutral-800": "dark:bg-white bg-black"} dark:text-black text-white font-semibold w-full sm:w-fit px-4 py-1 rounded-md grid grid-cols-3 gap-3`}>
                             <div className="flex justify-end my-auto">
