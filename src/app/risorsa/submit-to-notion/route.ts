@@ -28,7 +28,7 @@ export async function POST(req: Request) {
             // Add more properties based on your Notion database schema
         }
     };
-
+ 
    const result = await fetch(url, {
         method: 'POST',
         headers: {
