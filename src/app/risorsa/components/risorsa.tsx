@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function Risorsa() {
 
-    const [submit, setSubmit] = useState(9)
+    const [submit, setSubmit] = useState(2)
 
     async function saveToNotion(name: string, anno: string, links: string, altro: string) {
         const url = '/risorsa/submit-to-notion';
@@ -24,7 +24,7 @@ export default function Risorsa() {
             console.error('Error:', error);
             setSubmit(3)
         });
-      }
+    }
 
 
     return(
@@ -68,7 +68,7 @@ export default function Risorsa() {
                     </label>
                     
                     <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-3 w-full sm:w-auto">
-                        <button id="submit-button" type="submit" disabled={(submit == 0 || submit == 3)} className={`${(submit == 0 || submit == 3)? "dark:bg-neutral-400 bg-neutral-800": "dark:bg-white bg-black"} dark:text-black text-white font-semibold w-full sm:w-fit px-4 py-1 rounded-md grid grid-cols-3 gap-3`}>
+                        <button id="submit-button" type="submit" disabled={(submit == 0 || submit == 3)} className={`${(submit == 0 || submit == 3)? "dark:bg-neutral-400 bg-neutral-800": "dark:bg-white bg-black"} dark:text-black text-white font-semibold w-full sm:w-fit px-4 py-1 rounded-md flex flex-row items-center justify-center gap-2`}>
                             <div className="flex justify-end my-auto">
                                 <svg className={`${submit == 2? "animate-spin inline": "hidden"} dark:invert-0 invert`} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_108_2)">
