@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function Risorsa() {
 
-    const [submit, setSubmit] = useState(2)
+    const [submit, setSubmit] = useState(9)
 
     async function saveToNotion(name: string, anno: string, links: string, altro: string) {
         const url = '/risorsa/submit-to-notion';
