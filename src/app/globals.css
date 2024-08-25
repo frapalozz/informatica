@@ -6,3 +6,8 @@
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
 }
+
+.popup {
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
+}
