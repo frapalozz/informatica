@@ -9,7 +9,7 @@ export default function Popup() {
         if(window.location.href === "https://frapalozzinformatica.netlify.app/") {
             setVisible(true)
         } else {
-            setVisible(true)
+            setVisible(false)
         }
     }, [])
 
