@@ -13,7 +13,8 @@ export async function generateMetadata(
     parent: ResolvingMetadata
     ): Promise<Metadata> {
     // read route params
-    const id = params.materia
+    let id = params.materia;
+    id = id.replace("_", " ")
 
     return {
         title: id,
