@@ -222,6 +222,29 @@
 
             "aggiornamento": "07/24/2024"
         }, 
+        {
+            "_comment": "Algoritmi e Strutture Dati",
+
+            "anno": 2,
+            "semestre": 1,
+            "immagine": "https://art.pixilart.com/original/sr2b220d07934aws3.gif",
+            "corso": ["Informatica", "Comunicazione"],
+
+            "materia": "Algoritmi_e_Strutture",
+            "descrizione": "Il ruolo degli algoritmi nel processo di problem solving, Differenze tra il caso ottimo, medio e pessimo dei comportamenti di un algoritmo, Analisi asintotica di limiti superiori o medi di complessità, Notazione \"O grande\": definizione formale, Notazione \"O grande\": uso, Notazione \"o piccolo\", \"omega grande\" e \"theta grande\", Misurazioni empiriche di prestazioni...",
+            "materiale": ["", "Nulla"],
+            "registrazioni": ["", "Nulla"],
+            "prove": ["", "Nulla"],
+
+            "webex": "",
+
+            "quantity": [],
+            "extraName": [],
+            "extra": [],
+            "extraLink": [],
+
+            "aggiornamento": "09/03/2024"
+        },
 
 
         
