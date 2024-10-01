@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Card( {immagine, materia, anno, semestre, agg, corso, link, chiave}: any) {
+export default function Card( {immagine, materia, semestre, agg, corso, link, chiave}: any) {
 
     let date1 = new Date(agg);
     let date2 = new Date();
