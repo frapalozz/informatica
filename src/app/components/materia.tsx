@@ -1,6 +1,6 @@
 import MateriaCard from "./materiaCard"
 
-export default function Materia({ immagine, materia, descrizione, webex, materiale, registrazioni, prove, extraName, extra, extraLink, quantity, anno }: any) {
+export default function Materia({ immagine, materia, descrizione, webex, materiale, registrazioni, prove, extraName, extra, extraLink, anno }: any) {
 
     if(anno === "extra"){
         return(
@@ -8,7 +8,7 @@ export default function Materia({ immagine, materia, descrizione, webex, materia
 
                 <div className="flex flex-col md:flex-row md:gap-10 gap-16 text-white w-full h-5/6 mt-10">
                     
-                    <MateriaCard quantity={quantity} extraLink={extraLink} extraName={extraName} extra={extra} immagine={immagine} anno={anno}></MateriaCard>
+                    <MateriaCard extraLink={extraLink} extraName={extraName} extra={extra} immagine={immagine} anno={anno}></MateriaCard>
 
 
                     <div className="lg:w-6/12 w-full flex flex-col justify-center items-start">
@@ -27,7 +27,7 @@ export default function Materia({ immagine, materia, descrizione, webex, materia
 
             <div className="flex flex-col md:flex-row md:gap-10 gap-16 text-white w-full h-5/6 mt-10">
                 
-                <MateriaCard quantity={quantity} extraLink={extraLink} extraName={extraName} extra={extra} immagine={immagine}></MateriaCard>
+                <MateriaCard extraLink={extraLink} extraName={extraName} extra={extra} immagine={immagine}></MateriaCard>
 
 
                 <div className="lg:w-6/12 w-full flex flex-col justify-center items-start">

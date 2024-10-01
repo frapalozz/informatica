@@ -29,9 +29,9 @@ export async function generateMetadata(
 
 export default function MateriaPage({ params }: {params: {materia: string}}) {
 
-    const datiMateria = dati.filter((item: any) => item.materia == params.materia);
+    const datiMateria = dati.filter((item: any) => item.materia == params.materia)[0];
 
     return(
-        <Materia key={datiMateria[0].materia} immagine={datiMateria[0].immagine} materia={datiMateria[0]._comment} descrizione={datiMateria[0].descrizione} webex={datiMateria[0].webex} materiale={datiMateria[0].materiale} registrazioni={datiMateria[0].registrazioni} prove={datiMateria[0].prove} extraName={datiMateria[0].extraName} extra={datiMateria[0].extra} extraLink={datiMateria[0].extraLink} quantity={datiMateria[0].quantity} anno={datiMateria[0].anno}/>
+        <Materia key={datiMateria.materia} immagine={datiMateria.immagine} materia={datiMateria._comment} descrizione={datiMateria.descrizione} webex={datiMateria.webex} materiale={datiMateria.materiale} registrazioni={datiMateria.registrazioni} prove={datiMateria.prove} extraName={datiMateria.extraName} extra={datiMateria.extra} extraLink={datiMateria.extraLink} anno={datiMateria.anno}/>
     )
 }

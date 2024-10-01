@@ -4,16 +4,16 @@ import Image from "next/image";
 import { useState } from "react";
 
 
-export default function MateriaCard({ quantity, extraLink, extraName, extra, immagine, anno}: any){
+export default function MateriaCard({ extraLink, extraName, extra, immagine, anno}: any){
     
     const [card, setCard] = useState(false);
 
-    let extras = quantity.map((i: any) => 
-        <div key={i} className="w-full">
+    let extras = extra.map((item: string, index: number) => 
+        <div key={index} className="w-full">
             <div className="w-full h-[2px] rounded-xl dark:bg-zinc-700 bg-zinc-400 bg- mt-3 mb-3"></div>
             <div className="flex flex-row justify-between items-cente w-full">
-                <p className="font-semibold cursor-default dark:text-white text-black">{extraName[i]}</p>
-                <a href={extraLink[i]} target="_blank" className="font-medium dark:text-white/65 text-black/65 underline ">{extra[i]}</a>
+                <p className="font-semibold cursor-default dark:text-white text-black">{extraName[index]}</p>
+                <a href={extraLink[index]} target="_blank" className="font-medium dark:text-white/65 text-black/65 underline ">{item}</a>
             </div>
         </div>
     )
