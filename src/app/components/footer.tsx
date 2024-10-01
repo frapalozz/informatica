@@ -4,7 +4,7 @@ export default function Footer() {
             <div  className="w-full h-[2px] rounded-xl dark:bg-zinc-700 bg-zinc-400 xl:mt-9 lg:mt-7 md:mt-5 mt-4"></div>
 
             <div className="flex flex-row justify-between items-center w-full xl:mt-10 lg:mt-8 md:mt-6 mt-5">
-                <p className="dark:text-white text-black text-sm min-h-4">❤️‍🔥 da <a href="https://www.palozz.com" target="_blank" className="underline">Frapalozz</a></p>
+                <p className="dark:text-white text-black text-sm min-h-4">❤️‍🔥 da <a href="https://www.palozz.com" target="_blank" className="underline">Palozz</a></p>
                 
                 <div className="flex flex-row justify-center items-center gap-5">
                     <a href="https://chat.whatsapp.com/DJNA2KG0PnS5XG6pfFQCZU" target="_blank" aria-label="Gruppo Whatsapp">

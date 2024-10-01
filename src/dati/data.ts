@@ -15,7 +15,6 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/alessandro.dellacorte",
 
-        quantity: [0,1],
         extraName: ["Pass. Classroom", "Formulario"],
         extra: ["POYLYUV", "Notion"],
         extraLink: ["https://classroom.google.com/u/7/c/NDAyNjAxMTEzMDE0", "https://francescopalozzi.notion.site/Formulario-Discreta-ae0a264c560142c0941f35e896fc7016?pvs=4"],
@@ -39,7 +38,6 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/sonia.linnocente",
 
-        quantity: [0,1],
         extraName: ["Pass. Classroom", "Formulario"],
         extra: ["g52fvrb", "Notion"],
         extraLink: ["https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0", "https://francescopalozzi.notion.site/Formulario-Logica-04f20f360e28446e8af964d05f170db1?pvs=4"],
@@ -63,7 +61,6 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/luca.padovani",
 
-        quantity: [0,1],
         extraName: ["Webex Mostarda", "Webex Culmone"],
         extra: ["Webex", "Webex"],
         extraLink: ["https://unicam.webex.com/meet/leonardo.mostarda", "https://unicam.webex.com/meet/rosario.culmone"],
@@ -87,7 +84,6 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/simona.bernabei",
 
-        quantity: [0, 1, 2, 3, 4],
         extraName: ["Pass. Elearning", "Esercizi risolti", "R", "R Studio", "Quick-R"],
         extra: ["statistica2024", "Notion", "download R", "posit.co", "statmethods.net"],
         extraLink: ["https://elearning.unicam.it/course/view.php?id=441", "https://francescopalozzi.notion.site/Esercizi-Probabilit-e-Statistica-44f29abfa6ec4abca0c734b910a31611?pvs=4", "https://cran.mirror.garr.it/CRAN/", "https://posit.co/downloads/", "https://www.statmethods.net/"],
@@ -111,7 +107,6 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/diletta.cacciagrano",
 
-        quantity: [0, 1, 2, 3, 4, 5, 6],
         extraName: ["Webex Trojani", "Registrazioni Lab.", "Lezioni Teoria", "Flowgorithm", "Wokwi", "Falstad", "Modulo Progetto"],
         extra: ["Webex", "Drive", "Notion", "flowgorithm.org", "wokwi.com", "falstad.com", "docs.google.com"],
         extraLink: ["https://unicam.webex.com/meet/massimo.trojani", "https://drive.google.com/drive/u/7/folders/1wTD2N9nnugsagZaMa6K-6_gm85hJT3Xf", "https://francescopalozzi.notion.site/Lezioni-AdE-06af90cb1cd240cda5ea5a7fdfc12341?pvs=4", "http://flowgorithm.org", "https://wokwi.com/", "https://www.falstad.com/circuit/circuitjs.html", "https://docs.google.com/forms/d/e/1FAIpQLSf3yUBGSruq9gcv_2Ts5QsZhGJ9f7cJx2RZ6pJf_UK7GtEIbg/viewform"],
@@ -135,7 +130,6 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/flavio.corradini",
 
-        quantity: [0, 1, 2, 3],
         extraName: ["Esercizi","Formulario", "Appunti", "Libro bozza"],
         extra: ["Github","Notion", "Notion", "Drive"],
         extraLink: ["https://097475.github.io/computazione-calcolabilita/excercises.html","https://francescopalozzi.notion.site/Formulario-Fondamenti-efd19dff3ff94e488d24661e0fd325d7?pvs=4", "https://francescopalozzi.notion.site/Appunti-39bc6581d2c9426280d354c261187919?pvs=4", "https://drive.google.com/file/d/1dHIB-SXXtNlO1423E9lhvY0LkvfaPM_f/view?usp=sharing"],
@@ -159,7 +153,6 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/grid.thoma",
 
-        quantity: [0, 1, 2, 3],
         extraName: ["Domande ripasso", "Riassunto libro", "Riassunto Parrucci", "Modulo domande"],
         extra: ["Notion", "Notion", "Notion", "Moduli"],
         extraLink: ["https://francescopalozzi.notion.site/Domande-ripasso-Business-494cec77f2bd427ca92a0e838b413cfd?pvs=4", "https://francescopalozzi.notion.site/Riassunto-Libro-Business-54eab5cea7974061b17c8056c18dec78?pvs=4", "https://francescopalozzi.notion.site/Riassunto-Parrucci-0707b6b7bdb8400c823e2a9684f2251b?pvs=4", "https://docs.google.com/forms/d/e/1FAIpQLSeRbvRAhKFfjkgx7wRBwQNtgMZl0Y1fR4HRHXtibWgc_OFRcA/viewform"],
@@ -191,7 +184,6 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/fausto.marcantoni",
 
-        quantity: [],
         extraName: [],
         extra: [],
         extraLink: [],
@@ -214,7 +206,6 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/diletta.cacciagrano",
 
-        quantity: [],
         extraName: [],
         extra: [],
         extraLink: [],
@@ -237,7 +228,6 @@ export const dati =[
 
         webex: "",
 
-        quantity: [0],
         extraName: ["Pass. Classroom"],
         extra: ["keyvo55"],
         extraLink: ["https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4"],
@@ -268,7 +258,6 @@ export const dati =[
         webex: "https://roadmap.sh/",
         aggiornamento: "07/16/2024",
 
-        quantity: [],
         extraName: [],
         extra: [],
         extraLink: [],
@@ -291,7 +280,6 @@ export const dati =[
         webex: "https://thevalleyofcode.com/",
         aggiornamento: "07/16/2024",
 
-        quantity: [],
         extraName: [],
         extra: [],
         extraLink: [],
@@ -314,7 +302,6 @@ export const dati =[
         webex: "https://www.youtube.com/@mycodeschool",
         aggiornamento: "07/16/2024",
 
-        quantity: [],
         extraName: [],
         extra: [],
         extraLink: [],
@@ -337,7 +324,6 @@ export const dati =[
         webex: "https://see.stanford.edu/Course/CS106A",
         aggiornamento: "08/30/2024",
 
-        quantity: [],
         extraName: [],
         extra: [],
         extraLink: [],
