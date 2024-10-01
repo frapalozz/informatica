@@ -13,7 +13,7 @@ export async function generateMetadata(
     ): Promise<Metadata> {
     // read route params
     let id = params.materia;
-    id = id.replace("_", " ")
+    while(id.indexOf("_") > -1) id = id.replace("_", " ")
 
     return {
         title: id,
