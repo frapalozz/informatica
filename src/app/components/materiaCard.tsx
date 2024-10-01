@@ -21,7 +21,7 @@ export default function MateriaCard({ extraLink, extraName, extra, immagine, ann
     if(!card) {
         return (
             <div className="relative lg:w-6/12 w-full dark:bg-zinc-900 bg-zinc-200 lg:p-10 p-16 rounded-2xl flex justify-center items-center border-4 dark:border-zinc-700 border-zinc-400 dark:hover:border-zinc-500 hover:border-zinc-500 transition-all duration-300">
-                <div className={`${(anno === "extra")? "hidden": ""} absolute right-2 top-2`}>
+                <div className={`${(anno === "extra" || extra.length == 0)? "hidden": ""} absolute right-2 top-2`}>
                     <div onClick={() => setCard(!card)} className="relative z-10 cursor-pointer bg-green-600/20 hover:bg-green-600/25 text-green-600 px-5 py-1 rounded-md transition-all duration-300 ease-in-out">
                         altro
                     </div>
