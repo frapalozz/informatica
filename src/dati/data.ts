@@ -224,15 +224,15 @@ export const dati =[
         descrizione: "Il ruolo degli algoritmi nel processo di problem solving, Differenze tra il caso ottimo, medio e pessimo dei comportamenti di un algoritmo, Analisi asintotica di limiti superiori o medi di complessità, Notazione \"O grande\": definizione formale, Notazione \"O grande\": uso, Notazione \"o piccolo\", \"omega grande\" e \"theta grande\", Misurazioni empiriche di prestazioni...",
         materiale: ["https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "Classroom"],
         registrazioni: ["https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5", "Classroom 23/24"],
-        prove: ["", "Nulla"],
+        prove: ["https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5", "Classroom 23/24"],
 
         webex: "https://unicam.webex.com/meet/emanuela.merelli",
 
-        extraName: ["Pass. Classroom", "Classroom 23/24"],
-        extra: ["keyvo55", "iyvt7bp"],
-        extraLink: ["https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5"],
+        extraName: ["Pass. Classroom", "Classroom 23/24", "Esercizi"],
+        extra: ["keyvo55", "iyvt7bp", "Notion"],
+        extraLink: ["https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5", "https://francescopalozzi.notion.site/Esercizi-Algoritmi-10c4f1c8724e8072a2a7ed899086be56?pvs=4"],
 
-        aggiornamento: "10/08/2024"
+        aggiornamento: "10/15/2024"
     },
 
 
