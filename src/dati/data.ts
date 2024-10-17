@@ -184,11 +184,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/fausto.marcantoni",
 
-        extraName: [],
-        extra: [],
-        extraLink: [],
+        extraName: ["Appunti"],
+        extra: ["Notion"],
+        extraLink: ["https://francescopalozzi.notion.site/Appunti-Internet-10c4f1c8724e8064ad7bf9b17c7ca846?pvs=4"],
 
-        aggiornamento: "07/26/2024"
+        aggiornamento: "10/17/2024"
     }, 
     {
         "_comment": "Sistemi Operativi",
@@ -206,11 +206,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/diletta.cacciagrano",
 
-        extraName: [],
-        extra: [],
-        extraLink: [],
+        extraName: ["Appunti"],
+        extra: ["Notion"],
+        extraLink: ["https://francescopalozzi.notion.site/Appunti-Sistemi-Operativi-10c4f1c8724e80f1ada2fe9f1e3e5a00?pvs=4"],
 
-        aggiornamento: "07/24/2024"
+        aggiornamento: "10/17/2024"
     }, 
     {
         "_comment": "Algoritmi e Strutture Dati",
@@ -228,11 +228,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/emanuela.merelli",
 
-        extraName: ["Pass. Classroom", "Classroom 23/24", "Esercizi"],
-        extra: ["keyvo55", "iyvt7bp", "Notion"],
-        extraLink: ["https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5", "https://francescopalozzi.notion.site/Esercizi-Algoritmi-10c4f1c8724e8072a2a7ed899086be56?pvs=4"],
+        extraName: ["Pass. Classroom", "Classroom 23/24", "Esercizi", "Webex Tutorato"],
+        extra: ["keyvo55", "iyvt7bp", "Notion", "Webex"],
+        extraLink: ["https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5", "https://francescopalozzi.notion.site/Esercizi-Algoritmi-10c4f1c8724e8072a2a7ed899086be56?pvs=4", "https://unicam.webex.com/meet/aula01.tutorato"],
 
-        aggiornamento: "10/15/2024"
+        aggiornamento: "10/17/2024"
     },
 
 
