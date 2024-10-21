@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Hero from "./components/hero";
@@ -44,8 +45,9 @@ export default function RootLayout({
           {children}
         <Footer></Footer>
         <DonationButton />
-        <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
       </body>
+
+      <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
     </html>
   );
 }
