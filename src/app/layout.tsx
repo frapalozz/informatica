@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Hero from "./components/hero";
+import DonationButton from "./components/donation/DonationButton";
 
 const montserrat = Montserrat({ subsets: ["cyrillic"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] });
 
@@ -42,6 +43,7 @@ export default function RootLayout({
         <Hero></Hero>
           {children}
         <Footer></Footer>
+        <DonationButton />
         <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
       </body>
     </html>
