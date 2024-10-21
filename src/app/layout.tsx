@@ -16,9 +16,6 @@ export const metadata: Metadata = {
     template: "%s | Informatica"
   },
   description: "Tutto ciò che serve agli studenti informatici in un luogo solo",
-  icons: {
-    icon: "/icon.svg"
-  },
   openGraph: {
     title: {
       absolute: "1° Anno | Informatica",
