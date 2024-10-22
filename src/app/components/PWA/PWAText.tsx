@@ -32,7 +32,7 @@ export default function PWAText() {
     return (
         <>
             <div className={`text-white flex flex-col items-center justify-center text-xs mt-5 gap-1 min-h-[44px]`}>
-                <p className={`${(textShow || !flag)? " opacity-0" : "inline opacity-100"} transition-all duration-700`}>Aggiungi App alla home page</p>
+                <p className={`${(textShow || !flag)? " opacity-0" : "inline opacity-100"} transition-all duration-700 dark:text-white text-black`}>Aggiungi App alla home page</p>
                 <div onClick={handleAggiungi} className={`${(textShow || !flag)? " opacity-0" : "inline opacity-100"} bg-gray-800 px-3 py-1 rounded transition-all duration-[3s]`}>Aggiungi</div>
             </div>
 
