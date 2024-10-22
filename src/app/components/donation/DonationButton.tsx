@@ -43,8 +43,8 @@ export default function DonationButton() {
             case 4999:
                 text = "5000 monete 🤖"
                 break;
-            case 4999:
-                text = "5000 monete 🕴️"
+            case 9999:
+                text = "10000 monete 🕴️"
                 break;
             default:
                 text = "+1 monetina"
