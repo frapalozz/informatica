@@ -6,6 +6,7 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Hero from "./components/hero";
 import DonationButton from "./components/donation/DonationButton";
+import PWAText from "./components/PWA/PWAText";
 
 const montserrat = Montserrat({ subsets: ["cyrillic"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({
       <body className={`${montserrat.className} dark:bg-stone-950 bg-stone-100 min-h-screen flex flex-col justify-between items-center relative z-0`}>
         <Navbar></Navbar>
         <Hero></Hero>
+        <PWAText />
           {children}
         <Footer></Footer>
         <DonationButton />

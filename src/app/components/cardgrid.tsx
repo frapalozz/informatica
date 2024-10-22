@@ -15,7 +15,7 @@ export default function CardGrid( {anno}: any) {
 
     return(
         <>
-            <section className="max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-5">
+            <section className="max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center">
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 w-full mt-12">
                     {datiMaterie.map((item: any) => (
