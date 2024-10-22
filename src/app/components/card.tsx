@@ -12,10 +12,13 @@ export default function Card( {immagine, materia, semestre, agg, corso, link, ch
 
     let text = "" + differenzaGiorni + " giorni fa";
     if(differenzaGiorni <= 0) text = "oggi";
+    /*
     else if(differenzaGiorni >= 30 && differenzaGiorni < 90) {text = "30+ giorni fa";}
-    else if(differenzaGiorni >= 90 && differenzaGiorni < 365) {text = "90+ giorni fa";}
+    else if(differenzaGiorni >= 90 && differenzaGiorni < 180) {text = "90+ giorni fa";}
+    else if(differenzaGiorni >= 180 && differenzaGiorni < 365) {text = "180+ giorni fa";}
     else if(differenzaGiorni >= 365) {text = "1 anno fa";}
     else if(differenzaGiorni >= (365 + 365/2)) {text = "1+ anno fa";}
+    */
 
     let notifRed = "w-2.5 h-2.5 -top-1 -right-1";
 
