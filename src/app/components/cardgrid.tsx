@@ -9,7 +9,7 @@ export default function CardGrid( {anno}: any) {
 
     let datiMaterie: any;
     if(materia == "") datiMaterie = dati.filter((item: any) => item.anno == anno);
-    else datiMaterie = dati.filter((item: any) => item["_comment"].toLowerCase().includes(materia.toLowerCase()) )
+    else datiMaterie = dati.filter((item: any) => (item["_comment"].toLowerCase().includes(materia.toLowerCase()) && item.anno <= 3) )
     
 
 
