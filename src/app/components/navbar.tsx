@@ -4,11 +4,11 @@ export default function Navbar() {
     return(
         <header className="nav dark:bg-stone-950/40 bg-stone-100/40 backdrop-blur-md max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center fixed z-50 top-0 mb-9">
 
-            <div className="w-screen py-1 bg-neutral-950 text-white flex items-center justify-center">
-                <Link target="_blank" href={"https://adventofcode.com/"} className="text-white underline">❄️Advent Of Code❄️</Link>
+            <div className="w-screen bg-transparent mt-1 flex items-center justify-center">
+                <Link target="_blank" href={"https://adventofcode.com/"} className="text-blue-400">❄️Advent Of Code❄️</Link>
             </div>
 
-            <nav className="flex flex-row justify-between items-center w-full h-full xl:mt-9 lg:mt-7 md:mt-5 mt-4">
+            <nav className="flex flex-row justify-between items-center w-full h-full xl:mt-4 lg:mt-2 mt-1"> {/**xl:mt-9 lg:mt-7 md:mt-5 mt-4 */}
                 <div>
                     <Link aria-label="Home" href="/" className="text-white flex flex-row justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-12 h-12 stroke-black dark:stroke-white">

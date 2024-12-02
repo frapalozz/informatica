@@ -7,6 +7,7 @@ import Footer from "./components/footer";
 import Hero from "./components/hero";
 import DonationButton from "./components/donation/DonationButton";
 import PWAText from "./components/PWA/PWAText";
+import Snow from "./components/snow";
 
 const montserrat = Montserrat({ subsets: ["cyrillic"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] });
 
@@ -38,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body className={`${montserrat.className} dark:bg-stone-950 bg-stone-100 min-h-screen flex flex-col justify-between items-center relative z-0`}>
+        <Snow/>
         <Navbar></Navbar>
         <Hero></Hero>
         <PWAText />
