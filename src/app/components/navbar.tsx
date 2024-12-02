@@ -4,6 +4,10 @@ export default function Navbar() {
     return(
         <header className="nav dark:bg-stone-950/40 bg-stone-100/40 backdrop-blur-md max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center fixed z-50 top-0 mb-9">
 
+            <div className="w-screen py-1 bg-neutral-950 text-white flex items-center justify-center">
+                <Link target="_blank" href={"https://adventofcode.com/"} className="text-white underline">❄️Advent Of Code❄️</Link>
+            </div>
+
             <nav className="flex flex-row justify-between items-center w-full h-full xl:mt-9 lg:mt-7 md:mt-5 mt-4">
                 <div>
                     <Link aria-label="Home" href="/" className="text-white flex flex-row justify-center items-center">

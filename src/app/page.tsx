@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Popup />
       <main className="flex min-h-screen flex-col items-center justify-start w-full">
-        <CardGrid anno="1"></CardGrid>
+        <CardGrid anno="1" />
       </main>
     </>
     
