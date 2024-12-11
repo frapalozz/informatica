@@ -9,7 +9,7 @@ export default function Hero() {
 
                 <p className="dark:text-zinc-400 text-zinc-600 min-h-6 text-sm md:text-base font-medium mt-5">Aggiungi, Modifica, Migliora</p>
 
-                <div className="grid grid-cols-4 max-h-5 justify-center items-center text-white border-solid rounded-md dark:border-zinc-700 border-zinc-400 border mt-6">
+                <div className="grid grid-cols-4 max-h-12 justify-center items-center text-white border-solid rounded-md dark:border-zinc-700 border-zinc-400 border mt-6">
 
                     <Button text="1° Anno" link="/" first={true} />
                     <Button text="2° Anno" link="/2anno" center={true} />
