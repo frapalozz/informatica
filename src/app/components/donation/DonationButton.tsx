@@ -52,7 +52,7 @@ export default function DonationButton() {
         }
 
         const element = (
-            <div className='text-yellow-600 text-sm relative'>
+            <div className='text-yellow-600 text-sm relative z-[100]'>
                 <div id={id.toString()} className='flex items-center text-center w-full justify-center absolute bottom-0 right-auto left-auto transition-all duration-[1s] ease-in-out'>
                     <svg width="25" height="25" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 6H13V7H19V6Z" fill="#FFC110"/>
@@ -176,7 +176,7 @@ export default function DonationButton() {
 
     return (
         <>
-            <div id='btn-container' className={`${vt323.className} fixed -bottom-16 right-auto left-auto flex flex-col-reverse transition-all duration-500 ease-in-out`}>
+            <div id='btn-container' className={`${vt323.className} fixed z-[100] -bottom-16 right-auto left-auto flex flex-col-reverse transition-all duration-500 ease-in-out`}>
                 
                 <div id='btn' onClick={handleClick} className='flex flex-col items-center justify-center dark:text-white text-black select-none dark:bg-zinc-700/5 bg-zinc-200/50 border-2 dark:border-zinc-700 border-zinc-400 hover:border-zinc-300 backdrop-blur px-5 py-3 rounded-md cursor-pointer transition-all duration-300'>
                     <p className='leading-none'>Prendi una Moneta</p>
@@ -282,7 +282,7 @@ export default function DonationButton() {
                 {monete.map((item) => (item))}
             </div>
             {(click==10 && popupOpen) && 
-                <div className={`${vt323.className} fixed w-screen h-screen bg-gray-400/30 z-50 flex flex-col items-center justify-center`}>
+                <div className={`${vt323.className} fixed w-screen h-screen bg-gray-400/30 z-[100] flex flex-col items-center justify-center`}>
                     <div className='bg-white rounded px-5 py-3 max-w-[300px] flex flex-col items-center justify-center gap-3'>
                         <div onClick={() => setPopupOpen(false)} className='px-3 bg-red-600/20 text-red-600 rounded cursor-pointer'>chiudi</div>
                         <p className='text-center'>Dato che ora hai tante monetine, che ne dici di una donazione? 🥺</p>

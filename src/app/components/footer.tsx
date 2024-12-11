@@ -1,7 +1,7 @@
 export default function Footer() {
     return(
-        <section className="max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mb-6 mt-auto">
-            <div  className="w-full h-[2px] rounded-xl dark:bg-zinc-700 bg-zinc-400 xl:mt-9 lg:mt-7 md:mt-5 mt-4"></div>
+        <section className="max-w-screen-2xl dark:bg-stone-950/30 bg-stone-100/30 backdrop-blur-sm relative z-[60] w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center pb-6 mt-auto">
+            <div  className="w-full h-[2px] rounded-xl dark:bg-zinc-700 bg-zinc-400"></div>
 
             <div className="flex flex-row justify-between items-center w-full xl:mt-10 lg:mt-8 md:mt-6 mt-5">
                 <p className="dark:text-white text-black text-sm min-h-4">❤️‍🔥 da <a href="https://www.palozz.com" target="_blank" className="underline">Palozz</a></p>

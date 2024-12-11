@@ -28,11 +28,11 @@ export default function Card( {immagine, materia, semestre, agg, corso, link, ch
     
 
     return(
-        <Link href={link} key={chiave} className="relative w-full  h-96 flex flex-col border-2 dark:border-zinc-700 border-zinc-400 dark:hover:border-zinc-500 hover:border-zinc-600 transition-all duration-300 rounded-lg cursor-pointer">
+        <Link href={link} key={chiave} className="relative w-full h-96 flex flex-col border-2 dark:border-zinc-700 border-zinc-400 dark:hover:border-zinc-500 hover:border-zinc-600 transition-all duration-300 rounded-lg cursor-pointer">
             <div className={`absolute rounded-full bg-red-500 ${notifRed} z-10 ${(differenzaGiorni <= 0)? "": "hidden"}`}></div>
             <div className={`absolute rounded-full bg-red-500 ${notifRed} z-10 animate-ping ${(differenzaGiorni <= 0)? "": "hidden"}`}></div>
 
-            <div className="h-4/6 dark:bg-zinc-900 bg-zinc-200 w-full border-0 rounded-t-md flex justify-center items-center">
+            <div className="h-4/6 dark:bg-zinc-900/20 bg-zinc-20/20 w-full border-0 rounded-t-md flex justify-center items-center backdrop-blur-sm">
                 <Image rel="preconnect" alt="sprites" width={128} height={128} src={immagine} unoptimized className="w-32 h-32 border-0 rounded-lg shadow-2xl dark:shadow-zinc-950 shadow-zinc-500"/>
             </div>
 

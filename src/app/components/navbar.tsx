@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Navbar() {
     return(
-        <header className="nav dark:bg-stone-950/40 bg-stone-100/40 backdrop-blur-md max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center fixed z-50 top-0 mb-9">
+        <header className="nav dark:bg-stone-950/30 bg-stone-100/30 backdrop-blur-sm max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center fixed z-[100] top-0 mb-9">
 
             <div className="w-screen bg-transparent mt-1 flex items-center justify-center">
                 <Link target="_blank" href={"https://adventofcode.com/"} className="text-blue-400">❄️Advent Of Code❄️</Link>

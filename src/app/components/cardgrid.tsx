@@ -23,7 +23,7 @@ export default function CardGrid( {anno}: any) {
     }
 
     return(
-        <section className="max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-2">
+        <section className="relative max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-2 z-[60]">
 
             <div className="flex flex-col items-center justify-center font-medium text-sm">
                 <p className="dark:text-white text-black">Cerca materia</p>

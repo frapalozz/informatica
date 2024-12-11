@@ -4,14 +4,14 @@ export default function Materia({ immagine, materia, descrizione, webex, materia
 
     if(anno === "extra"){
         return(
-            <section className="max-w-screen-2xl w-full px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-5">
+            <section className="max-w-screen-2xl w-full px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-5 xl:mb-9 lg:mb-7 md:mb-5 mb-4">
 
                 <div className="flex flex-col md:flex-row md:gap-10 gap-16 text-white w-full h-5/6 mt-10">
                     
                     <MateriaCard extraLink={extraLink} extraName={extraName} extra={extra} immagine={immagine} anno={anno}></MateriaCard>
 
 
-                    <div className="lg:w-6/12 w-full flex flex-col justify-center items-start">
+                    <div className="lg:w-6/12 w-full flex flex-col justify-center items-start relative z-[60]">
                         <h1 className="dark:text-white text-black text-3xl font-bold mb-4 md:mb-5 cursor-default">{materia}</h1>
                         <p className="text-sm dark:text-zinc-400 text-zinc-600 cursor-default">{descrizione}</p>
                         <a href={webex} className="dark:bg-white bg-black px-5 py-3 dark:text-zinc-900 text-zinc-100 font-bold text-lg border-0 rounded-md mt-5 mb-3">Visualizza Risorsa</a>
@@ -23,14 +23,14 @@ export default function Materia({ immagine, materia, descrizione, webex, materia
     }
 
     return(
-        <section className="max-w-screen-2xl w-full px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-5">
+        <section className="max-w-screen-2xl w-full px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-5 xl:mb-9 lg:mb-7 md:mb-5 mb-4">
 
             <div className="flex flex-col md:flex-row md:gap-10 gap-16 text-white w-full h-5/6 mt-10">
                 
                 <MateriaCard extraLink={extraLink} extraName={extraName} extra={extra} immagine={immagine}></MateriaCard>
 
 
-                <div className="lg:w-6/12 w-full flex flex-col justify-center items-start">
+                <div className="lg:w-6/12 w-full flex flex-col justify-center items-start relative z-[60]">
                     <h1 className="dark:text-white text-black text-3xl font-bold mb-4 md:mb-5 cursor-default">{materia}</h1>
                     <p className="text-sm dark:text-zinc-400 text-zinc-600 cursor-default">{descrizione}</p>
                     <a href={webex} className="dark:bg-white bg-black px-5 py-3 dark:text-zinc-900 text-zinc-100 font-bold text-lg border-0 rounded-md mt-5 mb-3">Webex</a>

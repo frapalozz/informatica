@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function Tanno(){
     return(
-        <main className="flex flex-col items-center justify-center w-full">
+        <main className="flex flex-col items-center justify-center w-full xl:mb-9 lg:mb-7 md:mb-5 mb-4">
             <CardGrid anno="3"></CardGrid>
         </main>
     )

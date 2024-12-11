@@ -4,6 +4,6 @@ import Snowfall from 'react-snowfall'
 
 export default function Snow() {
   return (
-    <Snowfall style={{ zIndex: 100 }}/>
+    <Snowfall style={{ zIndex: 50 }}/>
   )
 }
