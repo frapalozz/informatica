@@ -37,7 +37,7 @@ export default function PWAText() {
             </div>
 
             {window && 
-                <div className={`${vt323.className} fixed w-screen h-screen flex items-center justify-center bg-gray-600/40 z-50`}>
+                <div className={`${vt323.className} fixed w-screen h-screen flex items-center justify-center bg-gray-600/40 z-[61]`}>
                     <div className='flex flex-col items-center justify-center bg-white max-w-[300px] rounded-md px-3 py-2 gap-2'>
                         <div className='flex items-center justify-between w-full'>
                             <p className='text-lg'>Aggiungi App</p>
