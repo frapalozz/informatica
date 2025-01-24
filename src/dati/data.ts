@@ -16,10 +16,10 @@ export const dati =[
         webex: "https://unicam.webex.com/meet/alessandro.dellacorte",
 
         extraName: ["Pass. Classroom", "Formulario"],
-        extra: ["POYLYUV", "Notion"],
-        extraLink: ["https://classroom.google.com/u/7/c/NDAyNjAxMTEzMDE0", "https://francescopalozzi.notion.site/Formulario-Discreta-ae0a264c560142c0941f35e896fc7016?pvs=4"],
+        extra: ["POYLYUV", "Notion", "Altre Prove"],
+        extraLink: ["https://classroom.google.com/u/7/c/NDAyNjAxMTEzMDE0", "https://francescopalozzi.notion.site/Formulario-Discreta-ae0a264c560142c0941f35e896fc7016?pvs=4", "https://francescopalozzi.notion.site/Altre-Prove-1854f1c8724e807ebcfdebc61a850242?pvs=4"],
         
-        aggiornamento: "03/18/2024"
+        aggiornamento: "01/24/2025"
     },
 
     {
