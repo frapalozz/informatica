@@ -34,7 +34,7 @@ export default function MateriaPage({ params }: {params: {materia: string}}) {
 
     return(
         <>
-            <Popup path={params.materia} />
+            <Popup path={"/"+params.materia} />
             <Materia key={datiMateria.materia} immagine={datiMateria.immagine} materia={datiMateria._comment} descrizione={datiMateria.descrizione} webex={datiMateria.webex} materiale={datiMateria.materiale} registrazioni={datiMateria.registrazioni} prove={datiMateria.prove} extraName={datiMateria.extraName} extra={datiMateria.extra} extraLink={datiMateria.extraLink} anno={datiMateria.anno}/>
         </> 
         
