@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Risorsa from "./components/risorsa";
+import Popup from "../components/Popup";
 
 export const metadata: Metadata = {
     title: 'Aggiungi Risorsa',
@@ -13,5 +14,11 @@ export const metadata: Metadata = {
 }
 
 export default function NuovaRisorsa() {
-    return(<Risorsa></Risorsa>)
+    return(
+        <>
+            <Popup path="/risorsa" />
+            <Risorsa />
+        </>
+        
+    )
 }

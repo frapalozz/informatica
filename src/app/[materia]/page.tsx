@@ -1,6 +1,7 @@
 import Materia from '../components/materia';
 import { Metadata, ResolvingMetadata } from 'next';
 import { dati } from '@/dati/data';
+import Popup from '../components/Popup';
 
 type Props = {
     params: { materia: string }
@@ -32,6 +33,10 @@ export default function MateriaPage({ params }: {params: {materia: string}}) {
     const datiMateria = dati.filter((item: any) => item.materia == params.materia)[0];
 
     return(
-        <Materia key={datiMateria.materia} immagine={datiMateria.immagine} materia={datiMateria._comment} descrizione={datiMateria.descrizione} webex={datiMateria.webex} materiale={datiMateria.materiale} registrazioni={datiMateria.registrazioni} prove={datiMateria.prove} extraName={datiMateria.extraName} extra={datiMateria.extra} extraLink={datiMateria.extraLink} anno={datiMateria.anno}/>
+        <>
+            <Popup path={params.materia} />
+            <Materia key={datiMateria.materia} immagine={datiMateria.immagine} materia={datiMateria._comment} descrizione={datiMateria.descrizione} webex={datiMateria.webex} materiale={datiMateria.materiale} registrazioni={datiMateria.registrazioni} prove={datiMateria.prove} extraName={datiMateria.extraName} extra={datiMateria.extra} extraLink={datiMateria.extraLink} anno={datiMateria.anno}/>
+        </> 
+        
     )
 }

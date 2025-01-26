@@ -1,17 +1,21 @@
 "use client"
 import React, { useEffect, useState } from 'react'
+import { redirect } from 'next/navigation'
 
-export default function Popup() {
+export default function Popup({ path }: {
+    path: string
+}) {
 
     const [visible, setVisible] = useState(false)
 
     useEffect(() => {
-        if(window.location.href === "https://frapalozzinformatica.netlify.app/") {
-            setVisible(true)
+        if(window.location.href === "https://frapalozzinformatica.netlify.app" + path) {
+            setVisible(true);
+            redirect('https://informatica.palozz.com' + path);
         } else {
             setVisible(false)
         }
-    }, [])
+    }, [path])
 
   return (
     <div className={'h-screen w-screen fixed z-[70] flex items-center justify-center ' + (visible? '':'hidden')}>

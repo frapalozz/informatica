@@ -29,7 +29,7 @@ export default function Risorsa() {
 
     return(
         <main className="flex flex-col items-center justify-center w-full dark:text-white text-black mt-10">
-            <section className="max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col justify-start items-center mt-5">
+            <section className="max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col justify-start items-center mt-5 mb-5">
                 <h1 className="text-center text-4xl font-bold">Nuova Risorsa</h1>
                 <p className="w-full sm:w-[500px] text-center text-sm">Per aggiungere un file bisogna creare una cartella Google drive (con accesso pubblico) e inserire il link nel campo <span className="underline">Links risorsa</span></p>
                 <form
