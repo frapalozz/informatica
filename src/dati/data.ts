@@ -210,7 +210,7 @@ export const dati =[
         extra: ["Notion", "Notion", "Notion"],
         extraLink: ["https://francescopalozzi.notion.site/Appunti-Sistemi-Operativi-10c4f1c8724e80f1ada2fe9f1e3e5a00?pvs=4", "https://francescopalozzi.notion.site/Formulario-Sistemi-Operativi-1844f1c8724e80ee837cea409c6b614e?pvs=4", "https://francescopalozzi.notion.site/Esercizi-10c4f1c8724e80f3966afaf2aa25146f?pvs=4"],
 
-        aggiornamento: "02/02/2024"
+        aggiornamento: "02/02/2025"
     }, 
     {
         "_comment": "Algoritmi e Strutture Dati",
