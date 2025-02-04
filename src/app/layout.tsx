@@ -6,8 +6,8 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Hero from "./components/hero";
 import DonationButton from "./components/donation/DonationButton";
-import PWAText from "./components/PWA/PWAText";
 import Snow from "./components/snow";
+import Whiteboard from "./components/Whiteboard";
 
 const montserrat = Montserrat({ subsets: ["cyrillic"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] });
 
@@ -42,7 +42,7 @@ export default function RootLayout({
         {/*<Snow/>*/}
         <Navbar></Navbar>
         <Hero></Hero>
-        <PWAText />
+        <Whiteboard />
           {children}
         <Footer></Footer>
         <DonationButton />
