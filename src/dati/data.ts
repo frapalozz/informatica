@@ -65,7 +65,7 @@ export const dati =[
         extra: ["Webex", "Webex"],
         extraLink: ["https://unicam.webex.com/meet/leonardo.mostarda", "https://unicam.webex.com/meet/rosario.culmone"],
 
-        aggiornamento: "02/04/2024"
+        aggiornamento: "02/04/2025"
     },
 
     {
