@@ -42,7 +42,7 @@ export const dati =[
         extra: ["g52fvrb", "Notion"],
         extraLink: ["https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0", "https://francescopalozzi.notion.site/Formulario-Logica-04f20f360e28446e8af964d05f170db1?pvs=4"],
 
-        aggiornamento: "03/18/2024"
+        aggiornamento: "02/04/2025"
     },
 
     {
@@ -65,7 +65,7 @@ export const dati =[
         extra: ["Webex", "Webex"],
         extraLink: ["https://unicam.webex.com/meet/leonardo.mostarda", "https://unicam.webex.com/meet/rosario.culmone"],
 
-        aggiornamento: "03/18/2024"
+        aggiornamento: "02/04/2024"
     },
 
     {
