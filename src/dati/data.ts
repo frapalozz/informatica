@@ -202,7 +202,7 @@ export const dati =[
         descrizione: "Un sistema operativo, in informatica, è un software di base, detto anche piattaforma operativa (composto normalmente da più sottosistemi o componenti software: kernel, scheduler, file system, gestore della memoria, gestore delle periferiche, interfaccia utente e spooler di stampa), che gestisce le risorse hardware e software della macchina, fornendo servizi di base ai software applicativi.",
         materiale: ["https://docenti.unicam.it/pdett.aspx?UteId=555&IDPADRE=315&tv=m&ru=PA", "Portale D."],
         registrazioni: ["https://docenti.unicam.it/pdett.aspx?UteId=555&tv=lr&ru=PA", "Portale D."],
-        prove: ["", "Nulla"],
+        prove: ["https://francescopalozzi.notion.site/Prove-Passate-1934f1c8724e80cbb6f7ce64ca4408e7?pvs=4", "Notion"],
 
         webex: "https://unicam.webex.com/meet/diletta.cacciagrano",
 
