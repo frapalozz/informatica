@@ -237,68 +237,68 @@ export const dati =[
     {
         "_comment": "Basi di Dati",
 
-        anno: 9,
+        anno: 2,
         semestre: 2,
         immagine: "https://art.pixilart.com/watermark/06ddca2df223cfa.png",
         corso: ["Informatica", "Comunicazione"],
 
         materia: "Basi_di_Dati",
         descrizione: "In informatica una base di dati, detta anche database, è una collezione di dati organizzati immagazzinata e accessibile per via elettronica.",
-        materiale: ["", ""],
-        registrazioni: ["", ""],
-        prove: ["", ""],
+        materiale: ["", "Nulla"],
+        registrazioni: ["", "Nulla"],
+        prove: ["", "Nulla"],
 
-        webex: "#",
+        webex: "https://unicam.webex.com/meet/barbara.re",
 
-        extraName: [],
-        extra: [],
-        extraLink: [],
+        extraName: ["Webex Gagliardi"],
+        extra: ["Webex"],
+        extraLink: ["https://unicam.webex.com/meet/barbara.re"],
 
-        aggiornamento: "11/07/2024"
+        aggiornamento: "02/27/2025"
     },
     {
         "_comment": "Metodologie di Programmazione",
 
-        anno: 9,
+        anno: 2,
         semestre: 2,
         immagine: "https://art.pixilart.com/watermark/sr29185f134d1ae.png",
         corso: ["Informatica"],
 
         materia: "Metodologie_di_Programmazione",
         descrizione: "Metodologia orientata agli oggetti per la costruzione del software, principi della programmazione funzionale e la loro integrazione nei linguaggi orientati agli oggetti con particolare attenzione all'elaborazione dei dati",
-        materiale: ["", ""],
-        registrazioni: ["", ""],
-        prove: ["", ""],
+        materiale: ["", "Nulla"],
+        registrazioni: ["", "Nulla"],
+        prove: ["", "Nulla"],
 
-        webex: "#",
+        webex: "https://unicam.webex.com/meet/michele.loreti",
 
-        extraName: [],
-        extra: [],
-        extraLink: [],
+        extraName: ["Webex Rossi"],
+        extra: ["Webex"],
+        extraLink: ["https://unicam.webex.com/meet/lorenzo.rossi"],
 
-        aggiornamento: "11/07/2024"
+        aggiornamento: "02/27/2025"
     },
     {
         "_comment": "Ricerca Operativa",
 
-        anno: 9,
+        anno: 2,
         semestre: 2,
         immagine: "https://art.pixilart.com/e4a9bb929af8630.gif",
         corso: ["Informatica"],
 
         materia: "Ricerca_Operativa",
-        descrizione: "La ricerca operativa (nota anche come teoria delle decisioni, scienza della gestione o, in inglese, operations research (\"Operational Research\" in Europa) e indicata con le sigle RO o OR) è la branca della matematica applicata in cui problemi decisionali complessi vengono analizzati e risolti mediante modelli matematici e metodi quantitativi avanzati (ottimizzazione, simulazione, ecc.) come supporto alle decisioni stesse. La ricerca operativa riveste un ruolo importante nelle attività decisionali perché permette di operare le scelte migliori per raggiungere un determinato obiettivo rispettando vincoli che sono imposti dall'esterno e non sono sotto il controllo di chi deve compiere le decisioni.",
-        materiale: ["", ""],
-        registrazioni: ["", ""],
-        prove: ["", ""],
+        descrizione: "La ricerca operativa (nota anche come teoria delle decisioni, scienza della gestione o, in inglese, operations research (\"Operational Research\" in Europa) e indicata con le sigle RO o OR) è la branca della matematica applicata in cui problemi decisionali complessi vengono analizzati e risolti mediante modelli matematici e metodi quantitativi avanzati...",
+        materiale: ["", "Nulla"],
+        registrazioni: ["", "Nulla"],
+        prove: ["", "Nulla"],
 
-        webex: "#",
+        webex: "https://unicam.webex.com/meet/renato.deleone",
 
         extraName: [],
         extra: [],
         extraLink: [],
 
-        aggiornamento: "11/07/2024"
+        aggiornamento: "02/27/2025"
     },
 
 
