@@ -184,11 +184,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/fausto.marcantoni",
 
-        extraName: ["Appunti", "Classroom", "Classroom Tut. 23/24"],
-        extra: ["Notion", "t6ki77a", "m3nfww5"],
-        extraLink: ["https://francescopalozzi.notion.site/Appunti-Internet-10c4f1c8724e8064ad7bf9b17c7ca846?pvs=4", "https://classroom.google.com/u/1/c/NzM1ODg1MDY4NjM4", "https://classroom.google.com/u/2/c/NjQ0MTI5MjM3MzU5"],
+        extraName: ["Appunti", "Classroom", "Classroom Tut. 23/24", "Domande Ripasso"],
+        extra: ["Notion", "t6ki77a", "m3nfww5", "nukleo.site"],
+        extraLink: ["https://francescopalozzi.notion.site/Appunti-Internet-10c4f1c8724e8064ad7bf9b17c7ca846?pvs=4", "https://classroom.google.com/u/1/c/NzM1ODg1MDY4NjM4", "https://classroom.google.com/u/2/c/NjQ0MTI5MjM3MzU5", "https://nukleo.site/uni/reti/index.html"],
 
-        aggiornamento: "12/06/2024"
+        aggiornamento: "02/28/2025"
     }, 
     {
         "_comment": "Sistemi Operativi",
