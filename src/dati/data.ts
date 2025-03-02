@@ -272,11 +272,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/michele.loreti",
 
-        extraName: ["Webex Rossi"],
-        extra: ["Webex"],
-        extraLink: ["https://unicam.webex.com/meet/lorenzo.rossi"],
+        extraName: ["Webex Rossi", "Classroom 23/24"],
+        extra: ["Webex", "sy4gfi6"],
+        extraLink: ["https://unicam.webex.com/meet/lorenzo.rossi", "https://classroom.google.com/u/1/c/NjUxODYxMDU0ODM5"],
 
-        aggiornamento: "02/27/2025"
+        aggiornamento: "03/02/2025"
     },
     {
         "_comment": "Ricerca Operativa",
