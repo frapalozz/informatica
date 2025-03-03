@@ -288,7 +288,7 @@ export const dati =[
 
         materia: "Ricerca_Operativa",
         descrizione: "La ricerca operativa (nota anche come teoria delle decisioni, scienza della gestione o, in inglese, operations research (\"Operational Research\" in Europa) e indicata con le sigle RO o OR) è la branca della matematica applicata in cui problemi decisionali complessi vengono analizzati e risolti mediante modelli matematici e metodi quantitativi avanzati...",
-        materiale: ["", "Nulla"],
+        materiale: ["https://classroom.google.com/u/1/c/NzU2MTc3MjEyNzUz", "Classroom"],
         registrazioni: ["https://docenti.unicam.it/pdett.aspx?UteId=305&tv=lr&ru=PO", "Portale D."],
         prove: ["", "Nulla"],
 
