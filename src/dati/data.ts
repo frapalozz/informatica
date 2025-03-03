@@ -244,17 +244,17 @@ export const dati =[
 
         materia: "Basi_di_Dati",
         descrizione: "In informatica una base di dati, detta anche database, è una collezione di dati organizzati immagazzinata e accessibile per via elettronica.",
-        materiale: ["", "Nulla"],
-        registrazioni: ["", "Nulla"],
+        materiale: ["https://elearning.unicam.it/course/view.php?id=473", "Moodle"],
+        registrazioni: ["https://elearning.unicam.it/course/view.php?id=473", "Moodle"],
         prove: ["https://elearning.unicam.it/course/view.php?id=435", "Moodle 23/24"],
 
         webex: "https://unicam.webex.com/meet/barbara.re",
 
-        extraName: ["Webex Gagliardi", "Moodle 23/24"],
-        extra: ["Webex", "BD_23_24"],
-        extraLink: ["https://unicam.webex.com/meet/roberto.gagliardi", "https://elearning.unicam.it/course/view.php?id=435"],
+        extraName: ["Webex Gagliardi", "Moodle 23/24", "Pass. Moodle"],
+        extra: ["Webex", "BD_23_24", "dati24"],
+        extraLink: ["https://unicam.webex.com/meet/roberto.gagliardi", "https://elearning.unicam.it/course/view.php?id=435", "https://elearning.unicam.it/course/view.php?id=473"],
 
-        aggiornamento: "03/02/2025"
+        aggiornamento: "03/03/2025"
     },
     {
         "_comment": "Metodologie di Programmazione",
