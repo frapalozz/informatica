@@ -266,8 +266,8 @@ export const dati =[
 
         materia: "Metodologie_di_Programmazione",
         descrizione: "Metodologia orientata agli oggetti per la costruzione del software, principi della programmazione funzionale e la loro integrazione nei linguaggi orientati agli oggetti con particolare attenzione all'elaborazione dei dati",
-        materiale: ["", "Nulla"],
-        registrazioni: ["", "Nulla"],
+        materiale: ["https://elearning.unicam.it/course/view.php?id=515", "Moodle"],
+        registrazioni: ["https://elearning.unicam.it/course/view.php?id=515", "Moodle"],
         prove: ["", "Nulla"],
 
         webex: "https://unicam.webex.com/meet/michele.loreti",
