@@ -250,11 +250,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/barbara.re",
 
-        extraName: ["Webex Gagliardi", "Moodle 23/24", "Pass. Moodle"],
-        extra: ["Webex", "BD_23_24", "dati24"],
-        extraLink: ["https://unicam.webex.com/meet/roberto.gagliardi", "https://elearning.unicam.it/course/view.php?id=435", "https://elearning.unicam.it/course/view.php?id=473"],
+        extraName: ["Webex Gagliardi", "Moodle 23/24", "Pass. Moodle", "Ex. Lab"],
+        extra: ["Webex", "BD_23_24", "dati24", "cs.unicam.it"],
+        extraLink: ["https://unicam.webex.com/meet/roberto.gagliardi", "https://elearning.unicam.it/course/view.php?id=435", "https://elearning.unicam.it/course/view.php?id=473", "http://analyzer.cs.unicam.it:8080/"],
 
-        aggiornamento: "03/03/2025"
+        aggiornamento: "03/25/2025"
     },
     {
         "_comment": "Metodologie di Programmazione",
