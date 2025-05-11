@@ -252,7 +252,7 @@ export const dati =[
 
         extraName: ["Webex Gagliardi", "Moodle 23/24", "Pass. Moodle", "Ex. Lab", "Esercizi", "Slide Tutorato"],
         extra: ["Webex", "BD_23_24", "dati24", "cs.unicam.it", "Notion", "drive"],
-        extraLink: ["https://unicam.webex.com/meet/roberto.gagliardi", "https://elearning.unicam.it/course/view.php?id=435", "https://elearning.unicam.it/course/view.php?id=473", "http://analyzer.cs.unicam.it:8080/", "https://francescopalozzi.notion.site/Esercizi-1dd4f1c8724e8021abd9f9c5b3323e77?pvs=4", "https://drive.google.com/drive/folders/1hFOk6Ny6QdjYcDUEmk_U3r8h_F0nqmx7?usp=sharing"],
+        extraLink: ["https://unicam.webex.com/meet/roberto.gagliardi", "https://elearning.unicam.it/course/view.php?id=435", "https://elearning.unicam.it/course/view.php?id=473", "http://analyzer.cs.unicam.it:8080/", "https://francescopalozzi.notion.site/Esercizi-Esame-1f04f1c8724e80d1b38eda7dd144529d?pvs=4", "https://drive.google.com/drive/folders/1hFOk6Ny6QdjYcDUEmk_U3r8h_F0nqmx7?usp=sharing"],
 
         aggiornamento: "04/24/2025"
     },
