@@ -78,17 +78,17 @@ export const dati =[
 
         materia: "Probabilita_e_Statistica",
         descrizione: "Assiomi della Probabilità. Probabilità condizionata ed indipendenza. Teorema di Bayes. Variabili aleatorie discrete e continue. Funzioni di distribuzione di una variabile aleatoria discreta e continua e concetto di integrale. Teoremi limite ed applicazioni. Catene di Markov.                       Popolazione e campione. Statistica descrittiva. Intervalli di fiducia. Test statistici. Laboratorio di probabilità e statistica utilizzando il software statistico R.",
-        materiale: ["https://elearning.unicam.it/course/view.php?id=441", "Elearning"],
-        registrazioni: ["https://elearning.unicam.it/course/view.php?id=441", "Elearning"],
+        materiale: ["https://elearning.unicam.it/course/view.php?id=506", "Moodle"],
+        registrazioni: ["https://elearning.unicam.it/course/view.php?id=506", "Moodle"],
         prove: ["https://francescopalozzi.notion.site/Prove-statistica-8ffc9d7060aa459dac274613fdcb9712?pvs=4", "Notion"],
 
         webex: "https://unicam.webex.com/meet/simona.bernabei",
 
-        extraName: ["Pass. Elearning", "Esercizi risolti", "R", "R Studio", "Quick-R"],
+        extraName: ["Moodle 23/24", "Esercizi risolti", "R", "R Studio", "Quick-R"],
         extra: ["statistica2024", "Notion", "download R", "posit.co", "statmethods.net"],
         extraLink: ["https://elearning.unicam.it/course/view.php?id=441", "https://francescopalozzi.notion.site/Esercizi-Probabilit-e-Statistica-44f29abfa6ec4abca0c734b910a31611?pvs=4", "https://cran.mirror.garr.it/CRAN/", "https://posit.co/downloads/", "https://www.statmethods.net/"],
 
-        aggiornamento: "05/18/2024"
+        aggiornamento: "06/01/2025"
     }, 
 
     {
