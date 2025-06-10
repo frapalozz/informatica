@@ -246,7 +246,7 @@ export const dati =[
         descrizione: "In informatica una base di dati, detta anche database, è una collezione di dati organizzati immagazzinata e accessibile per via elettronica.",
         materiale: ["https://elearning.unicam.it/course/view.php?id=473", "Moodle"],
         registrazioni: ["https://elearning.unicam.it/course/view.php?id=473", "Moodle"],
-        prove: ["https://elearning.unicam.it/course/view.php?id=435", "Moodle 23/24"],
+        prove: ["https://francescopalozzi.notion.site/Prove-passate-20e4f1c8724e80c2b6b5c960175c6a84?source=copy_link", "Notion"],
 
         webex: "https://unicam.webex.com/meet/barbara.re",
 
@@ -254,7 +254,7 @@ export const dati =[
         extra: ["Webex", "BD_23_24", "dati24", "cs.unicam.it", "Notion", "drive"],
         extraLink: ["https://unicam.webex.com/meet/roberto.gagliardi", "https://elearning.unicam.it/course/view.php?id=435", "https://elearning.unicam.it/course/view.php?id=473", "http://analyzer.cs.unicam.it:8080/", "https://francescopalozzi.notion.site/Esercizi-Esame-1f04f1c8724e80d1b38eda7dd144529d?pvs=4", "https://drive.google.com/drive/folders/1hFOk6Ny6QdjYcDUEmk_U3r8h_F0nqmx7?usp=sharing"],
 
-        aggiornamento: "04/24/2025"
+        aggiornamento: "06/10/2025"
     },
     {
         "_comment": "Metodologie di Programmazione",
