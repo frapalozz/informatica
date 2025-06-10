@@ -88,7 +88,7 @@ export const dati =[
         extra: ["statistica2024", "Notion", "download R", "posit.co", "statmethods.net"],
         extraLink: ["https://elearning.unicam.it/course/view.php?id=441", "https://francescopalozzi.notion.site/Esercizi-Probabilit-e-Statistica-44f29abfa6ec4abca0c734b910a31611?pvs=4", "https://cran.mirror.garr.it/CRAN/", "https://posit.co/downloads/", "https://www.statmethods.net/"],
 
-        aggiornamento: "06/01/2025"
+        aggiornamento: "06/10/2025"
     }, 
 
     {
