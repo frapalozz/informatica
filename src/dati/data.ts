@@ -294,11 +294,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/renato.deleone",
 
-        extraName: ["Form Classroom", "Esercizi"],
-        extra: ["Google Fogli", "Notion"],
-        extraLink: ["https://docs.google.com/spreadsheets/d/1iIzOzXc3GFQ7TYVzZIyykRiRX4DLsGOdHIxgOOgyjXs/edit?pli=1&gid=0#gid=0", "https://francescopalozzi.notion.site/Esercizi-Ricerca-Operativa-1f04f1c8724e80a0943df864d074499c?pvs=4"],
+        extraName: ["Form Classroom", "Appunti", "Esercizi"],
+        extra: ["Google Fogli", "Obsidian", "Notion"],
+        extraLink: ["https://docs.google.com/spreadsheets/d/1iIzOzXc3GFQ7TYVzZIyykRiRX4DLsGOdHIxgOOgyjXs/edit?pli=1&gid=0#gid=0", "https://share.note.sx/o891g7u0#dQENASPX/I9wcw4BJILdyrg5KuYfeiq+FVJrCQF4F2s", "https://francescopalozzi.notion.site/Esercizi-Ricerca-Operativa-1f04f1c8724e80a0943df864d074499c?pvs=4"],
 
-        aggiornamento: "05/10/2025"
+        aggiornamento: "06/10/2025"
     },
 
 
