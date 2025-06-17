@@ -28,7 +28,11 @@ export const metadata: Metadata = {
     images: {
       url: "https://art.pixilart.com/c562a069cbc4da4.png",
     }
+  },
+  other: {
+    "google-adsense-account": "ca-pub-8738596364045665"
   }
+  
 };
 
 export default function RootLayout({
