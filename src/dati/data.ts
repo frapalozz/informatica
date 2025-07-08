@@ -276,7 +276,7 @@ export const dati =[
         extra: ["Webex", "sy4gfi6", "Obsidian"],
         extraLink: ["https://unicam.webex.com/meet/lorenzo.rossi", "https://classroom.google.com/u/1/c/NjUxODYxMDU0ODM5", "https://share.note.sx/9r3dxm7m#F+L6403hYxXivNVTC58gb3LP1eahZ4iYvPnv/tGBNMs"],
 
-        aggiornamento: "07/07/2025"
+        aggiornamento: "07/08/2025"
     },
     {
         "_comment": "Ricerca Operativa",
