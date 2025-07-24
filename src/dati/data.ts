@@ -262,7 +262,7 @@ export const dati =[
         anno: 2,
         semestre: 2,
         immagine: "https://art.pixilart.com/watermark/sr29185f134d1ae.png",
-        corso: ["Informatica"],
+        corso: ["Informatica", "Comunicazione"],
 
         materia: "Metodologie_di_Programmazione",
         descrizione: "Metodologia orientata agli oggetti per la costruzione del software, principi della programmazione funzionale e la loro integrazione nei linguaggi orientati agli oggetti con particolare attenzione all'elaborazione dei dati",
@@ -311,7 +311,7 @@ export const dati =[
         anno: 3,
         semestre: 1,
         immagine: "https://art.pixilart.com/4d6681bab8fe189.png",
-        corso: ["Informatica"],
+        corso: ["Informatica", "Comunicazione"],
 
         materia: "Ignegneria_del_Software",
         descrizione: "L'ingegneria del software è una disciplina che applica principi e metodologie ingegneristiche allo sviluppo, la gestione e la manutenzione di sistemi software. In pratica, si tratta di un approccio sistematico e rigoroso per creare software affidabile, efficiente e che soddisfi le esigenze degli utenti.",
@@ -377,7 +377,7 @@ export const dati =[
         anno: "3",
         semestre: "1",
         immagine: "https://art.pixilart.com/da5950b8eead.gif",
-        corso: ["Comunicazione Digitale"],
+        corso: ["Comunicazione"],
 
         materia: "Game_Design",
         descrizione: "Caratteristiche di un gioco e teoria del divertimento; La differenza tra game e play e tra giocattolo, gioco e giocare, il compito e i doveri etici del game designer; Principali caratteristiche dei giochi con uno sguardo particolare a boardgame, serious game, urban game; Approcci, processi e tecniche di game design; Caratteristiche generali e organizzazione delle infrastrutture di supporto: protocolli di comunicazione, problematiche relative alla comunicazione real-time, problematiche relative ai device mobili, e scalabilità; Peculiarità di design, prototipizzazione e testing dei giochi multigiocatore; Ambiente di sviluppo Unity.",
