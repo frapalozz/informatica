@@ -339,13 +339,13 @@ export const dati =[
         descrizione: "In informatica, i linguaggi e i compilatori sono elementi fondamentali per la programmazione e l'esecuzione di software. I linguaggi di programmazione sono strumenti che permettono agli sviluppatori di scrivere istruzioni che un computer può comprendere ed eseguire. I compilatori, invece, sono programmi che traducono il codice scritto in un linguaggio di programmazione in un linguaggio che il computer può direttamente eseguire, chiamato linguaggio macchina.",
         materiale: ["", "Nulla"],
         registrazioni: ["", "Nulla"],
-        prove: ["", "Nulla"],
+        prove: ["https://francescopalozzi.notion.site/Prove-passate-23a4f1c8724e80ad881ee3b3c5de9dc4?source=copy_link", "Notion"],
 
-        webex: "",
+        webex: "https://unicam.webex.com/meet/luca.tesei",
 
-        extraName: [],
-        extra: [],
-        extraLink: [],
+        extraName: ["Classroom 24/25"],
+        extra: ["q72jhr5"],
+        extraLink: ["https://classroom.google.com/u/1/c/NzE4NzMwNzIwMjI2"],
 
         aggiornamento: "07/24/2025"
     },
