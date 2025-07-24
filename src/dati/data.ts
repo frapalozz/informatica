@@ -303,10 +303,82 @@ export const dati =[
 
 
     
+    
+
+    {
+        "_comment": "Ingegneria del Software",
+
+        anno: 3,
+        semestre: 1,
+        immagine: "https://art.pixilart.com/4d6681bab8fe189.png",
+        corso: ["Informatica"],
+
+        materia: "Ignegneria_del_Software",
+        descrizione: "L'ingegneria del software è una disciplina che applica principi e metodologie ingegneristiche allo sviluppo, la gestione e la manutenzione di sistemi software. In pratica, si tratta di un approccio sistematico e rigoroso per creare software affidabile, efficiente e che soddisfi le esigenze degli utenti.",
+        materiale: ["", "Nulla"],
+        registrazioni: ["", "Nulla"],
+        prove: ["", "Nulla"],
+
+        webex: "",
+
+        extraName: [],
+        extra: [],
+        extraLink: [],
+
+        aggiornamento: "07/24/2025"
+    },
+    {
+        "_comment": "Linguaggi e Compilatori",
+
+        anno: 3,
+        semestre: 1,
+        immagine: "https://art.pixilart.com/original/sr5zc4712bd746aws3.gif",
+        corso: ["Informatica"],
+
+        materia: "Linguaggi_e_Compilatori",
+        descrizione: "In informatica, i linguaggi e i compilatori sono elementi fondamentali per la programmazione e l'esecuzione di software. I linguaggi di programmazione sono strumenti che permettono agli sviluppatori di scrivere istruzioni che un computer può comprendere ed eseguire. I compilatori, invece, sono programmi che traducono il codice scritto in un linguaggio di programmazione in un linguaggio che il computer può direttamente eseguire, chiamato linguaggio macchina.",
+        materiale: ["", "Nulla"],
+        registrazioni: ["", "Nulla"],
+        prove: ["", "Nulla"],
+
+        webex: "",
+
+        extraName: [],
+        extra: [],
+        extraLink: [],
+
+        aggiornamento: "07/24/2025"
+    },
+    {
+        "_comment": "Paradigmi Avanzati di Programmazione",
+
+        anno: 3,
+        semestre: 1,
+        immagine: "https://art.pixilart.com/1b279a302cf2f25.gif",
+        corso: ["Informatica"],
+
+        materia: "Paradigmi_Avanzati_di_Programmazione",
+        descrizione: "Chiusura di funzioni: significato e definizione della cattura dell'ambiente; Argomenti canonici: callback, argomenti negli iteratori, codice riutilizzabile tramite gli argomenti delle funzioni; L'utilizzo della chiusura per incapsulare i dati nel proprio ambiente; Currying e applicazione su argomenti incompleti; Definire operazioni di ordine superiore su dati aggregati e in particolare l'uso di map, reduce e filter; Nozioni di base sul lambda calcolo; Cenni sul linguaggio LISP; Elementi del linguaggio di programmazione LUA; Elementi del linguaggio di programmazione Haskell.",
+        materiale: ["", "Nulla"],
+        registrazioni: ["", "Nulla"],
+        prove: ["", "Nulla"],
+
+        webex: "",
+
+        extraName: [],
+        extra: [],
+        extraLink: [],
+
+        aggiornamento: "07/24/2025"
+    },
 
 
     
 
+
+
+
+    
 
 
 
