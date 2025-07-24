@@ -371,7 +371,29 @@ export const dati =[
 
         aggiornamento: "07/24/2025"
     },
+    {
+        "_comment": "Game Design",
 
+        anno: "3",
+        semestre: "1",
+        immagine: "https://art.pixilart.com/da5950b8eead.gif",
+        corso: ["Comunicazione Digitale"],
+
+        materia: "Game Design",
+        descrizione: "Caratteristiche di un gioco e teoria del divertimento; La differenza tra game e play e tra giocattolo, gioco e giocare, il compito e i doveri etici del game designer; Principali caratteristiche dei giochi con uno sguardo particolare a boardgame, serious game, urban game; Approcci, processi e tecniche di game design; Caratteristiche generali e organizzazione delle infrastrutture di supporto: protocolli di comunicazione, problematiche relative alla comunicazione real-time, problematiche relative ai device mobili, e scalabilità; Peculiarità di design, prototipizzazione e testing dei giochi multigiocatore; Ambiente di sviluppo Unity.",
+        materiale: ["https://drive.google.com/drive/folders/1Z8S_7WjyfN1NuPx7wevqUFKKrvORwb42", "Google Drive"],
+        registrazioni: ["https://docs.google.com/spreadsheets/d/1E9QQElXXp4xzKx77zBk0K_yoTRNwNhXYlfaL9Ybex98/edit?gid=0#gid=0", "Google Sheets"],
+        prove: ["https://docs.google.com/forms/d/e/1FAIpQLSdnG6xLO9Me8kIfs11P8SByOfZu2pAg7xXPY1poQj-CKmPJiA/viewform", "Form"],
+
+        webex: "",
+
+        extraName: [],
+        extra: [],
+        extraLink: [],
+
+        aggiornamento: "07/24/2025"
+    },
+    
 
     
 
@@ -381,7 +403,7 @@ export const dati =[
     
 
 
-
+    
     {
         "_comment": "Roadmap.sh",
 
