@@ -332,7 +332,7 @@ export const dati =[
 
         anno: 3,
         semestre: 1,
-        immagine: "https://art.pixilart.com/original/sr5zc4712bd746aws3.gif",
+        immagine: "https://art.pixilart.com/sr20733dbe4f7aws3.png",
         corso: ["Informatica"],
 
         materia: "Linguaggi_e_Compilatori",
