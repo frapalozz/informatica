@@ -176,6 +176,10 @@ export const dati =[
 
         webex: "",
 
+        extraName: [],
+        extra: [],
+        extraLink: [],
+
         aggiornamento: "08/07/2025"
     }, 
 
