@@ -176,9 +176,9 @@ export const dati =[
 
         webex: "",
 
-        extraName: [],
-        extra: [],
-        extraLink: [],
+        extraName: ["Riassunto"],
+        extra: ["PDF"],
+        extraLink: ["https://nukleo.me/uni/diritto/riassunto.pdf"],
 
         aggiornamento: "08/07/2025"
     }, 
