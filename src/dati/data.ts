@@ -160,6 +160,25 @@ export const dati =[
         aggiornamento: "06/27/2024"
     }, 
 
+    {
+        "_comment": "Diritto",
+
+        anno: 1,
+        semestre: 2,
+        immagine: "https://art.pixilart.com/sr2a4ad25067baws3.png",
+        corso: ["Comunicazione"],
+
+        materia: "Diritto Prodotti Digitali",
+        descrizione: "Il diritto dei prodotti digitali, in Italia e in Europa, riguarda la disciplina giuridica dei beni e servizi offerti in formato digitale, come software, contenuti digitali e servizi online.",
+        materiale: ["https://docenti.unicam.it/pdett.aspx?UteId=526&IDPADRE=3334&tv=m&ru=PO", "Portale D."],
+        registrazioni: ["https://docenti.unicam.it/pdett.aspx?UteId=526&tv=lr&ru=PO", "Portale D."],
+        prove: ["", "Nulla"],
+
+        webex: "",
+
+        aggiornamento: "08/07/2024"
+    }, 
+
 
 
 
