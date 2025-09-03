@@ -410,11 +410,11 @@ export const dati =[
 
         webex: "",
 
-        extraName: [],
-        extra: [],
-        extraLink: [],
+        extraName: ["Appunti"],
+        extra: ["Obsidian"],
+        extraLink: ["https://share.note.sx/n6tun7hi#uqOMd9PsiOEO7jBrOjVXNSsxDajLcaBmFFe+42qOoBw"],
 
-        aggiornamento: "07/24/2025"
+        aggiornamento: "09/03/2025"
     },
     
 
