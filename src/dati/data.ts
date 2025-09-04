@@ -291,7 +291,7 @@ export const dati =[
         descrizione: "Metodologia orientata agli oggetti per la costruzione del software, principi della programmazione funzionale e la loro integrazione nei linguaggi orientati agli oggetti con particolare attenzione all'elaborazione dei dati",
         materiale: ["https://elearning.unicam.it/course/view.php?id=515", "Moodle"],
         registrazioni: ["https://elearning.unicam.it/course/view.php?id=515", "Moodle"],
-        prove: ["https://francescopalozzi.notion.site/Prove-passate-22a4f1c8724e80488712eb70f6e89c8a?source=copy_link", "Notion"],
+        prove: ["https://nukleo.me/uni/old/metodologie/index.html", "Nukleo"],
 
         webex: "https://unicam.webex.com/meet/michele.loreti",
 
@@ -299,7 +299,7 @@ export const dati =[
         extra: ["Webex", "sy4gfi6", "Obsidian"],
         extraLink: ["https://unicam.webex.com/meet/lorenzo.rossi", "https://classroom.google.com/u/1/c/NjUxODYxMDU0ODM5", "https://share.note.sx/9r3dxm7m#F+L6403hYxXivNVTC58gb3LP1eahZ4iYvPnv/tGBNMs"],
 
-        aggiornamento: "07/08/2025"
+        aggiornamento: "09/04/2025"
     },
     {
         "_comment": "Ricerca Operativa",
