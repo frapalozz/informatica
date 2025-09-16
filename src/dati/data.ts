@@ -19,7 +19,7 @@ export const dati =[
         extra: ["Gumroad", "Gumroad", "POYLYUV", "Notion"],
         extraLink: ["https://frapalozz.gumroad.com/l/formulario-matematica-discreta", "https://frapalozz.gumroad.com/l/matematica-discreta-esercizi", "https://classroom.google.com/u/7/c/NDAyNjAxMTEzMDE0", "https://francescopalozzi.notion.site/Altre-Prove-1854f1c8724e807ebcfdebc61a850242?pvs=4"],
         
-        aggiornamento: "01/24/2025"
+        aggiornamento: "09/16/2025"
     },
 
     {
@@ -38,11 +38,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/sonia.linnocente",
 
-        extraName: ["Pass. Classroom", "Formulario"],
-        extra: ["g52fvrb", "Notion"],
-        extraLink: ["https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0", "https://francescopalozzi.notion.site/Formulario-Logica-04f20f360e28446e8af964d05f170db1?pvs=4"],
+        extraName: ["Formulario", "Esercizi Risolti", "Pass. Classroom"],
+        extra: ["Gumroad", "Gumroad", "g52fvrb"],
+        extraLink: ["https://frapalozz.gumroad.com/l/formulario-matematica-logica", "https://frapalozz.gumroad.com/l/matematica-logica-esercizi-e-esempi-esame", "https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0"],
 
-        aggiornamento: "02/04/2025"
+        aggiornamento: "09/16/2025"
     },
 
     {
