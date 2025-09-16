@@ -84,11 +84,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/simona.bernabei",
 
-        extraName: ["Moodle 23/24", "Esercizi risolti", "R", "R Studio", "Quick-R"],
-        extra: ["statistica2024", "Notion", "download R", "posit.co", "statmethods.net"],
-        extraLink: ["https://elearning.unicam.it/course/view.php?id=441", "https://francescopalozzi.notion.site/Esercizi-Probabilit-e-Statistica-44f29abfa6ec4abca0c734b910a31611?pvs=4", "https://cran.mirror.garr.it/CRAN/", "https://posit.co/downloads/", "https://www.statmethods.net/"],
+        extraName: ["Esercizi risolti", "Moodle 23/24", "R", "R Studio", "Quick-R"],
+        extra: ["Gumroad", "statistica2024", "download R", "posit.co", "statmethods.net"],
+        extraLink: ["https://frapalozz.gumroad.com/l/probabilita-statistica-esercizi", "https://elearning.unicam.it/course/view.php?id=441", "https://cran.mirror.garr.it/CRAN/", "https://posit.co/downloads/", "https://www.statmethods.net/"],
 
-        aggiornamento: "06/10/2025"
+        aggiornamento: "09/16/2025"
     }, 
 
     {
