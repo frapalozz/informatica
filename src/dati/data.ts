@@ -157,7 +157,7 @@ export const dati =[
         extra: ["Gumroad", "Notion", "Moduli"],
         extraLink: ["https://frapalozz.gumroad.com/l/business-domande", "https://francescopalozzi.notion.site/Riassunto-Libro-Business-54eab5cea7974061b17c8056c18dec78?pvs=4", "https://docs.google.com/forms/d/e/1FAIpQLSeRbvRAhKFfjkgx7wRBwQNtgMZl0Y1fR4HRHXtibWgc_OFRcA/viewform"],
 
-        aggiornamento: "09/16/2024"
+        aggiornamento: "09/16/2025"
     }, 
 
     {
