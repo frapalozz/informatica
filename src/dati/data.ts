@@ -130,11 +130,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/flavio.corradini",
 
-        extraName: ["Esercizi","Formulario", "Appunti", "Appunti Danilo", "App. Danilo Github", "Libro bozza"],
-        extra: ["Github", "Notion", "Notion", "share.note", "Github", "Drive"],
-        extraLink: ["https://097475.github.io/computazione-calcolabilita/excercises.html","https://francescopalozzi.notion.site/Formulario-Fondamenti-efd19dff3ff94e488d24661e0fd325d7?pvs=4", "https://francescopalozzi.notion.site/Appunti-39bc6581d2c9426280d354c261187919?pvs=4", "https://share.note.sx/kpt7zdpy#SFVgtoBmnCXdpbKyaR8bKF6HApBqtzbx8i2+TwLIjJQ", "https://github.com/danilo-quattrini/my-notes/blob/main/6%20-%20The%20Real%20Notes/Foundaments%20of%20Computer%20Science.md", "https://drive.google.com/file/d/1dHIB-SXXtNlO1423E9lhvY0LkvfaPM_f/view?usp=sharing"],
+        extraName: ["Formulario", "Appunti", "Esercizi", "App. Danilo Github", "Libro bozza"],
+        extra: ["Gumroad", "Gumroad", "Github", "Github", "Drive"],
+        extraLink: ["https://frapalozz.gumroad.com/l/formulario-fondamenti-informatica", "https://frapalozz.gumroad.com/l/appunti-fondamenti-informatica", "https://097475.github.io/computazione-calcolabilita/excercises.html", "https://drive.google.com/file/d/1dHIB-SXXtNlO1423E9lhvY0LkvfaPM_f/view?usp=sharing"],
 
-        aggiornamento: "04/02/2025"
+        aggiornamento: "16/09/2025"
     }, 
 
     {
