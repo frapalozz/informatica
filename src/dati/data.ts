@@ -153,11 +153,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/grid.thoma",
 
-        extraName: ["Domande ripasso", "Riassunto libro", "Riassunto Parrucci", "Modulo domande"],
-        extra: ["Notion", "Notion", "Notion", "Moduli"],
-        extraLink: ["https://francescopalozzi.notion.site/Domande-ripasso-Business-494cec77f2bd427ca92a0e838b413cfd?pvs=4", "https://francescopalozzi.notion.site/Riassunto-Libro-Business-54eab5cea7974061b17c8056c18dec78?pvs=4", "https://francescopalozzi.notion.site/Riassunto-Parrucci-0707b6b7bdb8400c823e2a9684f2251b?pvs=4", "https://docs.google.com/forms/d/e/1FAIpQLSeRbvRAhKFfjkgx7wRBwQNtgMZl0Y1fR4HRHXtibWgc_OFRcA/viewform"],
+        extraName: ["Domande ripasso", "Riassunto libro", "Modulo domande"],
+        extra: ["Gumroad", "Notion", "Moduli"],
+        extraLink: ["https://frapalozz.gumroad.com/l/business-domande", "https://francescopalozzi.notion.site/Riassunto-Libro-Business-54eab5cea7974061b17c8056c18dec78?pvs=4", "https://docs.google.com/forms/d/e/1FAIpQLSeRbvRAhKFfjkgx7wRBwQNtgMZl0Y1fR4HRHXtibWgc_OFRcA/viewform"],
 
-        aggiornamento: "06/27/2024"
+        aggiornamento: "09/16/2024"
     }, 
 
     {
