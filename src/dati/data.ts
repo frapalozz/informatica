@@ -134,7 +134,7 @@ export const dati =[
         extra: ["Gumroad", "Gumroad", "Github", "Github", "Drive"],
         extraLink: ["https://frapalozz.gumroad.com/l/formulario-fondamenti-informatica", "https://frapalozz.gumroad.com/l/appunti-fondamenti-informatica", "https://097475.github.io/computazione-calcolabilita/excercises.html", "https://drive.google.com/file/d/1dHIB-SXXtNlO1423E9lhvY0LkvfaPM_f/view?usp=sharing"],
 
-        aggiornamento: "16/09/2025"
+        aggiornamento: "09/16/2025"
     }, 
 
     {
