@@ -251,11 +251,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/emanuela.merelli",
 
-        extraName: ["Appunti", "Webex laboratorio", "Webex Tutorato", "Pass. Classroom", "Classroom 23/24", "Esercizi"],
-        extra: ["Notion", "Webex", "Webex", "keyvo55", "iyvt7bp", "Notion"],
-        extraLink: ["https://francescopalozzi.notion.site/Appunti-Alg-10c4f1c8724e80fa9a5ed650e4a8795d?pvs=4", "https://unicam.webex.com/meet/luca.tesei", "https://unicam.webex.com/meet/aula01.tutorato", "https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5", "https://francescopalozzi.notion.site/Esercizi-Algoritmi-10c4f1c8724e8072a2a7ed899086be56?pvs=4"],
+        extraName: ["Appunti", "Esercizi", "Webex laboratorio", "Webex Tutorato", "Pass. Classroom", "Classroom 23/24"],
+        extra: ["Gumroad", "Gumroad", "Webex", "Webex", "keyvo55", "iyvt7bp"],
+        extraLink: ["https://frapalozz.gumroad.com/l/algoritmi-e-strutture-dati-appunti", "https://frapalozz.gumroad.com/l/algoritmi-e-strutture-dati-esercizi", "https://unicam.webex.com/meet/luca.tesei", "https://unicam.webex.com/meet/aula01.tutorato", "https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5"],
 
-        aggiornamento: "11/26/2024"
+        aggiornamento: "09/17/2025"
     },
     {
         "_comment": "Basi di Dati",
