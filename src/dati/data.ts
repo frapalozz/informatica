@@ -295,11 +295,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/michele.loreti",
 
-        extraName: ["Webex Rossi", "Classroom 23/24", "Appunti"],
-        extra: ["Webex", "sy4gfi6", "Obsidian"],
-        extraLink: ["https://unicam.webex.com/meet/lorenzo.rossi", "https://classroom.google.com/u/1/c/NjUxODYxMDU0ODM5", "https://share.note.sx/9r3dxm7m#F+L6403hYxXivNVTC58gb3LP1eahZ4iYvPnv/tGBNMs"],
+        extraName: ["Appunti", "Webex Rossi", "Classroom 23/24"],
+        extra: ["Gumroad", "Webex", "sy4gfi6"],
+        extraLink: ["https://frapalozz.gumroad.com/l/metodologie-di-programmazione-appunti", "https://unicam.webex.com/meet/lorenzo.rossi", "https://classroom.google.com/u/1/c/NjUxODYxMDU0ODM5"],
 
-        aggiornamento: "09/04/2025"
+        aggiornamento: "09/17/2025"
     },
     {
         "_comment": "Ricerca Operativa",
@@ -317,11 +317,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/renato.deleone",
 
-        extraName: ["Form Classroom", "Appunti", "Formulario", "Esercizi"],
-        extra: ["Google Fogli", "Obsidian", "Obsidian", "Notion"],
-        extraLink: ["https://docs.google.com/spreadsheets/d/1iIzOzXc3GFQ7TYVzZIyykRiRX4DLsGOdHIxgOOgyjXs/edit?pli=1&gid=0#gid=0", "https://share.note.sx/q9sepq2d#iY+XNOz55HdiO7MknrdD/Ai/H77JMN2HDgJ2v5MpPp4", "https://share.note.sx/46mt7lt8#Ox8gSUFps+XvTy42VrVUf1WmogtF2CnWAnH/O3/tfL8", "https://francescopalozzi.notion.site/Esercizi-Ricerca-Operativa-1f04f1c8724e80a0943df864d074499c?pvs=4"],
+        extraName: ["Appunti", "Formulario", "Esercizi", "Form Classroom"],
+        extra: ["Gumroad", "Gumroad", "Gumroad", "Google Fogli"],
+        extraLink: ["https://frapalozz.gumroad.com/l/ricerca-operativa-appunti", "https://frapalozz.gumroad.com/l/ricerca-operativa-formulario", "https://frapalozz.gumroad.com/l/uqbdi", "https://docs.google.com/spreadsheets/d/1iIzOzXc3GFQ7TYVzZIyykRiRX4DLsGOdHIxgOOgyjXs/edit?pli=1&gid=0#gid=0"],
 
-        aggiornamento: "06/10/2025"
+        aggiornamento: "09/17/2025"
     },
 
 
