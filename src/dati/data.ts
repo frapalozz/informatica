@@ -153,11 +153,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/grid.thoma",
 
-        extraName: ["Domande ripasso", "Riassunto libro", "Modulo domande"],
-        extra: ["Gumroad", "Notion", "Moduli"],
-        extraLink: ["https://frapalozz.gumroad.com/l/business-domande", "https://francescopalozzi.notion.site/Riassunto-Libro-Business-54eab5cea7974061b17c8056c18dec78?pvs=4", "https://docs.google.com/forms/d/e/1FAIpQLSeRbvRAhKFfjkgx7wRBwQNtgMZl0Y1fR4HRHXtibWgc_OFRcA/viewform"],
+        extraName: ["Domande ripasso", "Appunti libro", "Modulo domande"],
+        extra: ["Gumroad", "Gumroad", "Moduli"],
+        extraLink: ["https://frapalozz.gumroad.com/l/business-domande", "https://frapalozz.gumroad.com/l/business-appunti-libro", "https://docs.google.com/forms/d/e/1FAIpQLSeRbvRAhKFfjkgx7wRBwQNtgMZl0Y1fR4HRHXtibWgc_OFRcA/viewform"],
 
-        aggiornamento: "09/16/2025"
+        aggiornamento: "09/17/2025"
     }, 
 
     {
