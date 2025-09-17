@@ -269,7 +269,7 @@ export const dati =[
         descrizione: "In informatica una base di dati, detta anche database, è una collezione di dati organizzati immagazzinata e accessibile per via elettronica.",
         materiale: ["https://elearning.unicam.it/course/view.php?id=473", "Moodle"],
         registrazioni: ["https://elearning.unicam.it/course/view.php?id=473", "Moodle"],
-        prove: ["https://francescopalozzi.notion.site/Prove-passate-20e4f1c8724e80c2b6b5c960175c6a84?source=copy_link", "Notion"],
+        prove: ["https://francescopalozzi.notion.site/Prove-passate-2704f1c8724e804b8cbcd8b6bca454ae?source=copy_link", "Notion"],
 
         webex: "https://unicam.webex.com/meet/barbara.re",
 
