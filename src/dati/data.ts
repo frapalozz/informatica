@@ -229,7 +229,7 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/diletta.cacciagrano",
 
-        extraName: ["Appunti", "Appunti 2", "Appunti Tut." "Formulario", "Esercizi"],
+        extraName: ["Appunti", "Appunti 2", "Appunti Tut.", "Formulario", "Esercizi"],
         extra: ["Gumroad", "Gumroad", "Gumroad", "Gumroad", "Gumroad"],
         extraLink: ["https://frapalozz.gumroad.com/l/sistemi-operativi-appunti", "https://scuola.gumroad.com/l/so", "https://scuola.gumroad.com/l/sot", "https://frapalozz.gumroad.com/l/sistemi-operativi-formulario", "https://frapalozz.gumroad.com/l/sistemi-operativi-esercizi"],
 
