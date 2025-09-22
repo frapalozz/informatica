@@ -192,71 +192,73 @@ export const dati =[
 
 
     {
-        "_comment": "Internet Reti e Sicurezza",
-
-        anno: 2,
-        semestre: 1,
-        immagine: "https://art.pixilart.com/5edefdf2e8ed41b.gif",
-        corso: ["Informatica", "Comunicazione"],
-
-        materia: "Internet_Reti_Sicurezza",
-        descrizione: "Cosa è internet 🌐",
-        materiale: ["https://computerscience.unicam.it/marcantoni/", "Sito Docente"],
-        registrazioni: ["https://drive.google.com/drive/folders/1GUvMhxT-Vh0eK5hCo3G4FFVkRpbRTuN4?usp=sharing", "Drive"],
-        prove: ["", "Nulla"],
-
-        webex: "https://unicam.webex.com/meet/fausto.marcantoni",
-
-        extraName: ["Appunti", "Classroom", "Classroom Tut. 23/24", "Domande Ripasso", "Domande R. Scott"],
-        extra: ["Gumroad", "t6ki77a", "m3nfww5", "nukleo.site", "Google Form"],
-        extraLink: ["https://frapalozz.gumroad.com/l/internet-reti-e-sicurezza-appunti", "https://classroom.google.com/u/1/c/NzM1ODg1MDY4NjM4", "https://classroom.google.com/u/2/c/NjQ0MTI5MjM3MzU5", "https://nukleo.site/uni/reti/index.html", "https://forms.gle/FBDzrqPLJ74e6f5i9"],
-
-        aggiornamento: "09/17/2025"
-    }, 
+    "_comment": "Internet Reti e Sicurezza",
+    anno: 2,
+    semestre: 1,
+    immagine: "https://art.pixilart.com/5edefdf2e8ed41b.gif",
+    corso: ["Informatica", "Comunicazione"],
+    materia: "Internet_Reti_Sicurezza",
+    descrizione: "Cosa è internet 🌐",
+    materiale: ["https://computerscience.unicam.it/marcantoni/", "Sito Docente"],
+    registrazioni: ["https://drive.google.com/drive/folders/1GUvMhxT-Vh0eK5hCo3G4FFVkRpbRTuN4?usp=sharing", "Drive"],
+    prove: ["", "Nulla"],
+    webex: "https://unicam.webex.com/meet/fausto.marcantoni",
+    extraName: ["Appunti", "Classroom", "Domande Ripasso", "Appunti Gumroad"],
+    extra: ["Gumroad", "t6ki77a", "nukleo.site", "Gumroad"],
+    extraLink: [
+      "https://frapalozz.gumroad.com/l/internet-reti-e-sicurezza-appunti",
+      "https://classroom.google.com/u/1/c/NzM1ODg1MDY4NjM4",
+      "https://nukleo.site/uni/reti/index.html",
+      "https://scuola.gumroad.com/l/reti"
+    ],
+    aggiornamento: "09/17/2025"
+  }, 
     {
-        "_comment": "Sistemi Operativi",
-
-        anno: 2,
-        semestre: 1,
-        immagine: "https://art.pixilart.com/e55b9483ad24675.png",
-        corso: ["Informatica"],
-
-        materia: "Sistemi_Operativi",
-        descrizione: "Un sistema operativo, in informatica, è un software di base, detto anche piattaforma operativa (composto normalmente da più sottosistemi o componenti software: kernel, scheduler, file system, gestore della memoria, gestore delle periferiche, interfaccia utente e spooler di stampa), che gestisce le risorse hardware e software della macchina, fornendo servizi di base ai software applicativi.",
-        materiale: ["https://docenti.unicam.it/pdett.aspx?UteId=555&IDPADRE=315&tv=m&ru=PA", "Portale D."],
-        registrazioni: ["https://docenti.unicam.it/pdett.aspx?UteId=555&tv=lr&ru=PA", "Portale D."],
-        prove: ["https://francescopalozzi.notion.site/Prove-Passate-1934f1c8724e80cbb6f7ce64ca4408e7?pvs=4", "Notion"],
-
-        webex: "https://unicam.webex.com/meet/diletta.cacciagrano",
-
-        extraName: ["Appunti", "Formulario", "Esercizi"],
-        extra: ["Notion", "Notion", "Notion"],
-        extraLink: ["https://francescopalozzi.notion.site/Appunti-Sistemi-Operativi-10c4f1c8724e80f1ada2fe9f1e3e5a00?pvs=4", "https://francescopalozzi.notion.site/Formulario-Sistemi-Operativi-1844f1c8724e80ee837cea409c6b614e?pvs=4", "https://francescopalozzi.notion.site/Esercizi-10c4f1c8724e80f3966afaf2aa25146f?pvs=4"],
-
-        aggiornamento: "02/07/2025"
-    }, 
+    "_comment": "Sistemi Operativi",
+    anno: 2,
+    semestre: 1,
+    immagine: "https://art.pixilart.com/e55b9483ad24675.png",
+    corso: ["Informatica"],
+    materia: "Sistemi_Operativi",
+    descrizione: "Un sistema operativo …",
+    materiale: ["https://docenti.unicam.it/pdett.aspx?UteId=555&IDPADRE=315&tv=m&ru=PA", "Portale D."],
+    registrazioni: ["https://docenti.unicam.it/pdett.aspx?UteId=555&tv=lr&ru=PA", "Portale D."],
+    prove: ["https://francescopalozzi.notion.site/Prove-Passate-1934f1c8724e80cbb6f7ce64ca4408e7?pvs=4", "Notion"],
+    webex: "https://unicam.webex.com/meet/diletta.cacciagrano",
+    extraName: ["Appunti", "Formulario", "Esercizi", "Appunti Gumroad", "Tutor S.O.", "S.O. Completi"],
+    extra: ["Notion", "Notion", "Notion", "Gumroad", "Gumroad", "Gumroad"],
+    extraLink: [
+      "https://francescopalozzi.notion.site/Appunti-Sistemi-Operativi-10c4f1c8724e80f1ada2fe9f1e3e5a00?pvs=4",
+      "https://francescopalozzi.notion.site/Formulario-Sistemi-Operativi-1844f1c8724e80ee837cea409c6b614e?pvs=4",
+      "https://francescopalozzi.notion.site/Esercizi-10c4f1c8724e80f3966afaf2aa25146f?pvs=4",
+      "https://scuola.gumroad.com/l/so",
+      "https://scuola.gumroad.com/l/sot",
+      "https://scuola.gumroad.com/l/so"
+    ],
+    aggiornamento: "09/17/2025"
+  }, 
     {
-        "_comment": "Algoritmi e Strutture Dati",
-
-        anno: 2,
-        semestre: 1,
-        immagine: "https://art.pixilart.com/f3a2793473dd936.png",
-        corso: ["Informatica", "Comunicazione"],
-
-        materia: "Algoritmi_e_Strutture",
-        descrizione: "Il ruolo degli algoritmi nel processo di problem solving, Differenze tra il caso ottimo, medio e pessimo dei comportamenti di un algoritmo, Analisi asintotica di limiti superiori o medi di complessità, Notazione \"O grande\": definizione formale, Notazione \"O grande\": uso, Notazione \"o piccolo\", \"omega grande\" e \"theta grande\", Misurazioni empiriche di prestazioni...",
-        materiale: ["https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "Classroom"],
-        registrazioni: ["https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5", "Classroom 23/24"],
-        prove: ["https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5", "Classroom 23/24"],
-
-        webex: "https://unicam.webex.com/meet/emanuela.merelli",
-
-        extraName: ["Appunti", "Esercizi", "Webex laboratorio", "Webex Tutorato", "Pass. Classroom", "Classroom 23/24"],
-        extra: ["Gumroad", "Gumroad", "Webex", "Webex", "keyvo55", "iyvt7bp"],
-        extraLink: ["https://frapalozz.gumroad.com/l/algoritmi-e-strutture-dati-appunti", "https://frapalozz.gumroad.com/l/algoritmi-e-strutture-dati-esercizi", "https://unicam.webex.com/meet/luca.tesei", "https://unicam.webex.com/meet/aula01.tutorato", "https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5"],
-
-        aggiornamento: "09/17/2025"
-    },
+    "_comment": "Algoritmi e Strutture Dati",
+    anno: 2,
+    semestre: 1,
+    immagine: "https://art.pixilart.com/f3a2793473dd936.png",
+    corso: ["Informatica", "Comunicazione"],
+    materia: "Algoritmi_e_Strutture",
+    descrizione: "Il ruolo degli algoritmi nel processo di problem solving …",
+    materiale: ["https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "Classroom"],
+    registrazioni: ["https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5", "Classroom 23/24"],
+    prove: ["https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5", "Classroom 23/24"],
+    webex: "https://unicam.webex.com/meet/emanuela.merelli",
+    extraName: ["Appunti", "Esercizi", "Webex laboratorio", "Appunti Gumroad"],
+    extra: ["Gumroad", "Gumroad", "Webex", "Gumroad"],
+    extraLink: [
+      "https://frapalozz.gumroad.com/l/algoritmi-e-strutture-dati-appunti",
+      "https://frapalozz.gumroad.com/l/algoritmi-e-strutture-dati-esercizi",
+      "https://unicam.webex.com/meet/luca.tesei",
+      "https://scuola.gumroad.com/l/ncigte"
+    ],
+    aggiornamento: "09/17/2025"
+  },
     {
         "_comment": "Basi di Dati",
 
@@ -280,49 +282,45 @@ export const dati =[
         aggiornamento: "09/17/2025"
     },
     {
-        "_comment": "Metodologie di Programmazione",
-
-        anno: 2,
-        semestre: 2,
-        immagine: "https://art.pixilart.com/watermark/sr29185f134d1ae.png",
-        corso: ["Informatica", "Comunicazione"],
-
-        materia: "Metodologie_di_Programmazione",
-        descrizione: "Metodologia orientata agli oggetti per la costruzione del software, principi della programmazione funzionale e la loro integrazione nei linguaggi orientati agli oggetti con particolare attenzione all'elaborazione dei dati",
-        materiale: ["https://elearning.unicam.it/course/view.php?id=515", "Moodle"],
-        registrazioni: ["https://elearning.unicam.it/course/view.php?id=515", "Moodle"],
-        prove: ["https://nukleo.me/uni/old/metodologie/index.html", "Nukleo"],
-
-        webex: "https://unicam.webex.com/meet/michele.loreti",
-
-        extraName: ["Appunti", "Webex Rossi", "Classroom 23/24"],
-        extra: ["Gumroad", "Webex", "sy4gfi6"],
-        extraLink: ["https://frapalozz.gumroad.com/l/metodologie-di-programmazione-appunti", "https://unicam.webex.com/meet/lorenzo.rossi", "https://classroom.google.com/u/1/c/NjUxODYxMDU0ODM5"],
-
-        aggiornamento: "09/17/2025"
-    },
+    "_comment": "Metodologie di Programmazione",
+    anno: 2,
+    semestre: 2,
+    immagine: "https://art.pixilart.com/watermark/sr29185f134d1ae.png",
+    corso: ["Informatica", "Comunicazione"],
+    materia: "Metodologie_di_Programmazione",
+    descrizione: "Metodologia orientata agli oggetti per la costruzione del software, principi della programmazione funzionale …",
+    materiale: ["https://elearning.unicam.it/course/view.php?id=515", "Moodle"],
+    registrazioni: ["https://elearning.unicam.it/course/view.php?id=515", "Moodle"],
+    prove: ["https://nukleo.me/uni/old/metodologie/index.html", "Nukleo"],
+    webex: "https://unicam.webex.com/meet/michele.loreti",
+    extraName: ["Appunti Completi", "Appunti Gumroad"],
+    extra: ["Gumroad", "Gumroad"],
+    extraLink: [
+      "https://frapalozz.gumroad.com/l/metodologie-di-programmazione-appunti",
+      "https://scuola.gumroad.com/l/bmlug"
+    ],
+    aggiornamento: "09/17/2025"
+  },
     {
-        "_comment": "Ricerca Operativa",
-
-        anno: 2,
-        semestre: 2,
-        immagine: "https://art.pixilart.com/e4a9bb929af8630.gif",
-        corso: ["Informatica"],
-
-        materia: "Ricerca_Operativa",
-        descrizione: "La ricerca operativa (nota anche come teoria delle decisioni, scienza della gestione o, in inglese, operations research (\"Operational Research\" in Europa) e indicata con le sigle RO o OR) è la branca della matematica applicata in cui problemi decisionali complessi vengono analizzati e risolti mediante modelli matematici e metodi quantitativi avanzati...",
-        materiale: ["https://classroom.google.com/u/1/c/NzU2MTc3MjEyNzUz", "Classroom"],
-        registrazioni: ["https://docenti.unicam.it/pdett.aspx?UteId=305&tv=lr&ru=PO", "Portale D."],
-        prove: ["", "Nulla"],
-
-        webex: "https://unicam.webex.com/meet/renato.deleone",
-
-        extraName: ["Appunti", "Formulario", "Esercizi", "Form Classroom"],
-        extra: ["Gumroad", "Gumroad", "Gumroad", "Google Fogli"],
-        extraLink: ["https://frapalozz.gumroad.com/l/ricerca-operativa-appunti", "https://frapalozz.gumroad.com/l/ricerca-operativa-formulario", "https://frapalozz.gumroad.com/l/uqbdi", "https://docs.google.com/spreadsheets/d/1iIzOzXc3GFQ7TYVzZIyykRiRX4DLsGOdHIxgOOgyjXs/edit?pli=1&gid=0#gid=0"],
-
-        aggiornamento: "09/17/2025"
-    },
+    "_comment": "Ricerca Operativa",
+    anno: 2,
+    semestre: 2,
+    immagine: "https://art.pixilart.com/e4a9bb929af8630.gif",
+    corso: ["Informatica"],
+    materia: "Ricerca_Operativa",
+    descrizione: "La ricerca operativa …",
+    materiale: ["https://classroom.google.com/u/1/c/NzU2MTc3MjEyNzUz", "Classroom"],
+    registrazioni: ["https://docenti.unicam.it/pdett.aspx?UteId=305&tv=lr&ru=PO", "Portale D."],
+    prove: ["", "Nulla"],
+    webex: "https://unicam.webex.com/meet/renato.deleone",
+    extraName: ["Appunti Completi", "Appunti Gumroad"],
+    extra: ["Gumroad", "Gumroad"],
+    extraLink: [
+      "https://frapalozz.gumroad.com/l/ricerca-operativa-appunti",
+      "https://scuola.gumroad.com/l/qctsfm"
+    ],
+    aggiornamento: "09/17/2025"
+  },
 
 
     
