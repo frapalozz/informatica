@@ -207,11 +207,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/fausto.marcantoni",
 
-        extraName: ["Appunti", "Classroom", "Classroom Tut. 23/24", "Domande Ripasso", "Domande R. Scott"],
-        extra: ["Gumroad", "t6ki77a", "m3nfww5", "nukleo.site", "Google Form"],
-        extraLink: ["https://frapalozz.gumroad.com/l/internet-reti-e-sicurezza-appunti", "https://classroom.google.com/u/1/c/NzM1ODg1MDY4NjM4", "https://classroom.google.com/u/2/c/NjQ0MTI5MjM3MzU5", "https://nukleo.site/uni/reti/index.html", "https://forms.gle/FBDzrqPLJ74e6f5i9"],
+        extraName: ["Appunti", "Appunti 2", "Classroom", "Classroom Tut. 23/24", "Domande Ripasso", "Domande R. Scott"],
+        extra: ["Gumroad", "Gumroad", "t6ki77a", "m3nfww5", "nukleo.site", "Google Form"],
+        extraLink: ["https://frapalozz.gumroad.com/l/internet-reti-e-sicurezza-appunti", "https://scuola.gumroad.com/l/reti", "https://classroom.google.com/u/1/c/NzM1ODg1MDY4NjM4", "https://classroom.google.com/u/2/c/NjQ0MTI5MjM3MzU5", "https://nukleo.site/uni/reti/index.html", "https://forms.gle/FBDzrqPLJ74e6f5i9"],
 
-        aggiornamento: "09/17/2025"
+        aggiornamento: "09/22/2025"
     }, 
     {
         "_comment": "Sistemi Operativi",
@@ -225,15 +225,15 @@ export const dati =[
         descrizione: "Un sistema operativo, in informatica, è un software di base, detto anche piattaforma operativa (composto normalmente da più sottosistemi o componenti software: kernel, scheduler, file system, gestore della memoria, gestore delle periferiche, interfaccia utente e spooler di stampa), che gestisce le risorse hardware e software della macchina, fornendo servizi di base ai software applicativi.",
         materiale: ["https://docenti.unicam.it/pdett.aspx?UteId=555&IDPADRE=315&tv=m&ru=PA", "Portale D."],
         registrazioni: ["https://docenti.unicam.it/pdett.aspx?UteId=555&tv=lr&ru=PA", "Portale D."],
-        prove: ["https://francescopalozzi.notion.site/Prove-Passate-1934f1c8724e80cbb6f7ce64ca4408e7?pvs=4", "Notion"],
+        prove: ["https://frapalozz.gumroad.com/l/sistemi-operativi-esercizi-esami", "Gumroad"],
 
         webex: "https://unicam.webex.com/meet/diletta.cacciagrano",
 
-        extraName: ["Appunti", "Formulario", "Esercizi"],
-        extra: ["Notion", "Notion", "Notion"],
-        extraLink: ["https://francescopalozzi.notion.site/Appunti-Sistemi-Operativi-10c4f1c8724e80f1ada2fe9f1e3e5a00?pvs=4", "https://francescopalozzi.notion.site/Formulario-Sistemi-Operativi-1844f1c8724e80ee837cea409c6b614e?pvs=4", "https://francescopalozzi.notion.site/Esercizi-10c4f1c8724e80f3966afaf2aa25146f?pvs=4"],
+        extraName: ["Appunti", "Appunti 2", "Appunti Tut." "Formulario", "Esercizi"],
+        extra: ["Gumroad", "Gumroad", "Gumroad", "Gumroad", "Gumroad"],
+        extraLink: ["https://frapalozz.gumroad.com/l/sistemi-operativi-appunti", "https://scuola.gumroad.com/l/so", "https://scuola.gumroad.com/l/sot", "https://frapalozz.gumroad.com/l/sistemi-operativi-formulario", "https://frapalozz.gumroad.com/l/sistemi-operativi-esercizi"],
 
-        aggiornamento: "02/07/2025"
+        aggiornamento: "09/22/2025"
     }, 
     {
         "_comment": "Algoritmi e Strutture Dati",
@@ -251,11 +251,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/emanuela.merelli",
 
-        extraName: ["Appunti", "Esercizi", "Webex laboratorio", "Webex Tutorato", "Pass. Classroom", "Classroom 23/24"],
-        extra: ["Gumroad", "Gumroad", "Webex", "Webex", "keyvo55", "iyvt7bp"],
-        extraLink: ["https://frapalozz.gumroad.com/l/algoritmi-e-strutture-dati-appunti", "https://frapalozz.gumroad.com/l/algoritmi-e-strutture-dati-esercizi", "https://unicam.webex.com/meet/luca.tesei", "https://unicam.webex.com/meet/aula01.tutorato", "https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5"],
+        extraName: ["Appunti", "Appunti 2", "Esercizi", "Webex laboratorio", "Webex Tutorato", "Pass. Classroom", "Classroom 23/24"],
+        extra: ["Gumroad", "Gumroad", "Gumroad", "Webex", "Webex", "keyvo55", "iyvt7bp"],
+        extraLink: ["https://frapalozz.gumroad.com/l/algoritmi-e-strutture-dati-appunti", "https://scuola.gumroad.com/l/ncigte", "https://frapalozz.gumroad.com/l/algoritmi-e-strutture-dati-esercizi", "https://unicam.webex.com/meet/luca.tesei", "https://unicam.webex.com/meet/aula01.tutorato", "https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5"],
 
-        aggiornamento: "09/17/2025"
+        aggiornamento: "09/22/2025"
     },
     {
         "_comment": "Basi di Dati",
@@ -295,11 +295,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/michele.loreti",
 
-        extraName: ["Appunti", "Webex Rossi", "Classroom 23/24"],
-        extra: ["Gumroad", "Webex", "sy4gfi6"],
-        extraLink: ["https://frapalozz.gumroad.com/l/metodologie-di-programmazione-appunti", "https://unicam.webex.com/meet/lorenzo.rossi", "https://classroom.google.com/u/1/c/NjUxODYxMDU0ODM5"],
+        extraName: ["Appunti", "Domande", "Webex Rossi", "Classroom 23/24"],
+        extra: ["Gumroad", "Gumroad", "Webex", "sy4gfi6"],
+        extraLink: ["https://frapalozz.gumroad.com/l/metodologie-di-programmazione-appunti", "https://scuola.gumroad.com/l/bmlug", "https://unicam.webex.com/meet/lorenzo.rossi", "https://classroom.google.com/u/1/c/NjUxODYxMDU0ODM5"],
 
-        aggiornamento: "09/17/2025"
+        aggiornamento: "09/22/2025"
     },
     {
         "_comment": "Ricerca Operativa",
@@ -317,11 +317,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/renato.deleone",
 
-        extraName: ["Appunti", "Formulario", "Esercizi", "Form Classroom"],
-        extra: ["Gumroad", "Gumroad", "Gumroad", "Google Fogli"],
-        extraLink: ["https://frapalozz.gumroad.com/l/ricerca-operativa-appunti", "https://frapalozz.gumroad.com/l/ricerca-operativa-formulario", "https://frapalozz.gumroad.com/l/uqbdi", "https://docs.google.com/spreadsheets/d/1iIzOzXc3GFQ7TYVzZIyykRiRX4DLsGOdHIxgOOgyjXs/edit?pli=1&gid=0#gid=0"],
+        extraName: ["Appunti", "Teoremi", "Formulario", "Esercizi", "Form Classroom"],
+        extra: ["Gumroad", "Gumroad", "Gumroad", "Gumroad", "Google Fogli"],
+        extraLink: ["https://frapalozz.gumroad.com/l/ricerca-operativa-appunti", "https://scuola.gumroad.com/l/qctsfm", "https://frapalozz.gumroad.com/l/ricerca-operativa-formulario", "https://frapalozz.gumroad.com/l/uqbdi", "https://docs.google.com/spreadsheets/d/1iIzOzXc3GFQ7TYVzZIyykRiRX4DLsGOdHIxgOOgyjXs/edit?pli=1&gid=0#gid=0"],
 
-        aggiornamento: "09/17/2025"
+        aggiornamento: "09/22/2025"
     },
 
 
