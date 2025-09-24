@@ -274,10 +274,10 @@ export const dati =[
         webex: "https://unicam.webex.com/meet/barbara.re",
 
         extraName: ["Esercizi", "Appunti", "Webex Gagliardi", "Moodle 23/24", "Pass. Moodle", "Ex. Lab", "Slide Tutorato"],
-        extra: ["Gumroad", "Gumroad", "Webex", "BD_23_24", "dati24", "cs.unicam.it", "drive"],
-        extraLink: ["https://frapalozz.gumroad.com/l/basi-di-dati-esercizi-esame", "https://frapalozz.gumroad.com/l/basi-di-dati-appunti", "https://unicam.webex.com/meet/roberto.gagliardi", "https://elearning.unicam.it/course/view.php?id=435", "https://elearning.unicam.it/course/view.php?id=473", "http://analyzer.cs.unicam.it:8080/", "https://drive.google.com/drive/folders/1hFOk6Ny6QdjYcDUEmk_U3r8h_F0nqmx7?usp=sharing"],
+        extra: ["Notion", "Notion", "Webex", "BD_23_24", "dati24", "cs.unicam.it", "drive"],
+        extraLink: ["https://francescopalozzi.notion.site/Esercizi-Esame-1f04f1c8724e80d1b38eda7dd144529d?source=copy_link", "https://francescopalozzi.notion.site/Appunti-BDD-2784f1c8724e8019b45fff8a5642f88c?source=copy_link", "https://unicam.webex.com/meet/roberto.gagliardi", "https://elearning.unicam.it/course/view.php?id=435", "https://elearning.unicam.it/course/view.php?id=473", "http://analyzer.cs.unicam.it:8080/", "https://drive.google.com/drive/folders/1hFOk6Ny6QdjYcDUEmk_U3r8h_F0nqmx7?usp=sharing"],
 
-        aggiornamento: "09/17/2025"
+        aggiornamento: "09/24/2025"
     },
     {
         "_comment": "Metodologie di Programmazione",
@@ -296,10 +296,10 @@ export const dati =[
         webex: "https://unicam.webex.com/meet/michele.loreti",
 
         extraName: ["Appunti", "Domande", "Webex Rossi", "Classroom 23/24"],
-        extra: ["Gumroad", "Gumroad", "Webex", "sy4gfi6"],
-        extraLink: ["https://frapalozz.gumroad.com/l/metodologie-di-programmazione-appunti", "https://scuola.gumroad.com/l/bmlug", "https://unicam.webex.com/meet/lorenzo.rossi", "https://classroom.google.com/u/1/c/NjUxODYxMDU0ODM5"],
+        extra: ["Notion", "Gumroad", "Webex", "sy4gfi6"],
+        extraLink: ["https://francescopalozzi.notion.site/Appunti-Metodologie-2784f1c8724e807fb50ecf3d2b4453f8?source=copy_link", "https://scuola.gumroad.com/l/bmlug", "https://unicam.webex.com/meet/lorenzo.rossi", "https://classroom.google.com/u/1/c/NjUxODYxMDU0ODM5"],
 
-        aggiornamento: "09/22/2025"
+        aggiornamento: "09/24/2025"
     },
     {
         "_comment": "Ricerca Operativa",
@@ -318,10 +318,10 @@ export const dati =[
         webex: "https://unicam.webex.com/meet/renato.deleone",
 
         extraName: ["Appunti", "Teoremi", "Formulario", "Esercizi", "Form Classroom"],
-        extra: ["Gumroad", "Gumroad", "Gumroad", "Gumroad", "Google Fogli"],
-        extraLink: ["https://frapalozz.gumroad.com/l/ricerca-operativa-appunti", "https://scuola.gumroad.com/l/qctsfm", "https://frapalozz.gumroad.com/l/ricerca-operativa-formulario", "https://frapalozz.gumroad.com/l/uqbdi", "https://docs.google.com/spreadsheets/d/1iIzOzXc3GFQ7TYVzZIyykRiRX4DLsGOdHIxgOOgyjXs/edit?pli=1&gid=0#gid=0"],
+        extra: ["Notion", "Gumroad", "Notion", "Notion", "Google Fogli"],
+        extraLink: ["https://francescopalozzi.notion.site/Appunti-Ricerca-Operativa-2784f1c8724e80b9a3abceaeee311166?source=copy_link", "https://scuola.gumroad.com/l/qctsfm", "https://francescopalozzi.notion.site/Formulario-Ricerca-Operativa-2784f1c8724e80c8a737ebd4a0d5a41a?source=copy_link", "https://francescopalozzi.notion.site/Esercizi-Ricerca-Operativa-1f04f1c8724e80a0943df864d074499c?source=copy_link", "https://docs.google.com/spreadsheets/d/1iIzOzXc3GFQ7TYVzZIyykRiRX4DLsGOdHIxgOOgyjXs/edit?pli=1&gid=0#gid=0"],
 
-        aggiornamento: "09/22/2025"
+        aggiornamento: "09/24/2025"
     },
 
 
