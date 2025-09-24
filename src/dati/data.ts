@@ -39,10 +39,10 @@ export const dati =[
         webex: "https://unicam.webex.com/meet/sonia.linnocente",
 
         extraName: ["Formulario", "Esercizi Risolti", "Pass. Classroom"],
-        extra: ["Gumroad", "Gumroad", "g52fvrb"],
-        extraLink: ["https://frapalozz.gumroad.com/l/formulario-matematica-logica", "https://frapalozz.gumroad.com/l/matematica-logica-esercizi-e-esempi-esame", "https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0"],
+        extra: ["Notion", "Notion", "g52fvrb"],
+        extraLink: ["https://francescopalozzi.notion.site/Formulario-Logica-2774f1c8724e804fb948f02e4bcb038e", "https://francescopalozzi.notion.site/Esercizi-Logica-2774f1c8724e801eb4b9c934097c0395", "https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0"],
 
-        aggiornamento: "09/16/2025"
+        aggiornamento: "09/24/2025"
     },
 
     {
