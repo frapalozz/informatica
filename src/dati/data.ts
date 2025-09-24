@@ -57,7 +57,7 @@ export const dati =[
         descrizione: "Algoritmi, programmi, linguaggi di programmazione. Compilatori, interpreti e approccio Java. Tipi di dato primitivi in Java. Sistema dei tipi, strutture dati di base e relativi algoritmi. Concetti fondamentali di programmazione procedurale. Iterazione e ricorsione. Programmazione orientata agli oggetti in Java. Ambiente di sviluppo Eclipse.",
         materiale: ["https://elearning.unicam.it/course/view.php?id=391", "Elearning"],
         registrazioni: ["https://elearning.unicam.it/course/view.php?id=391", "Elearning"],
-        prove: ["https://frapalozz.gumroad.com/l/programmazione", "Gumroad"],
+        prove: ["https://francescopalozzi.notion.site/Programmazione-c19362411ae34d31bf66595d78f48ee6?source=copy_link", "Notion"],
 
         webex: "https://unicam.webex.com/meet/luca.padovani",
 
@@ -65,7 +65,7 @@ export const dati =[
         extra: ["Webex", "Webex"],
         extraLink: ["https://unicam.webex.com/meet/leonardo.mostarda", "https://unicam.webex.com/meet/rosario.culmone"],
 
-        aggiornamento: "09/16/2025"
+        aggiornamento: "09/24/2025"
     },
 
     {
