@@ -85,10 +85,10 @@ export const dati =[
         webex: "https://unicam.webex.com/meet/simona.bernabei",
 
         extraName: ["Esercizi risolti", "Moodle 23/24", "R", "R Studio", "Quick-R"],
-        extra: ["Gumroad", "statistica2024", "download R", "posit.co", "statmethods.net"],
-        extraLink: ["https://frapalozz.gumroad.com/l/probabilita-statistica-esercizi", "https://elearning.unicam.it/course/view.php?id=441", "https://cran.mirror.garr.it/CRAN/", "https://posit.co/downloads/", "https://www.statmethods.net/"],
+        extra: ["Notion", "statistica2024", "download R", "posit.co", "statmethods.net"],
+        extraLink: ["https://francescopalozzi.notion.site/Esercizi-Probabilit-e-Statistica-44f29abfa6ec4abca0c734b910a31611?source=copy_link", "https://elearning.unicam.it/course/view.php?id=441", "https://cran.mirror.garr.it/CRAN/", "https://posit.co/downloads/", "https://www.statmethods.net/"],
 
-        aggiornamento: "09/16/2025"
+        aggiornamento: "09/24/2025"
     }, 
 
     {
@@ -154,10 +154,10 @@ export const dati =[
         webex: "https://unicam.webex.com/meet/grid.thoma",
 
         extraName: ["Domande ripasso", "Appunti libro", "Modulo domande"],
-        extra: ["Gumroad", "Gumroad", "Moduli"],
-        extraLink: ["https://frapalozz.gumroad.com/l/business-domande", "https://frapalozz.gumroad.com/l/business-appunti-libro", "https://docs.google.com/forms/d/e/1FAIpQLSeRbvRAhKFfjkgx7wRBwQNtgMZl0Y1fR4HRHXtibWgc_OFRcA/viewform"],
+        extra: ["Notion", "Notion", "Moduli"],
+        extraLink: ["https://francescopalozzi.notion.site/Domande-ripasso-Business-494cec77f2bd427ca92a0e838b413cfd?source=copy_link", "https://francescopalozzi.notion.site/Riassunto-Libro-Business-54eab5cea7974061b17c8056c18dec78?source=copy_link", "https://docs.google.com/forms/d/e/1FAIpQLSeRbvRAhKFfjkgx7wRBwQNtgMZl0Y1fR4HRHXtibWgc_OFRcA/viewform"],
 
-        aggiornamento: "09/17/2025"
+        aggiornamento: "09/24/2025"
     }, 
 
     {
