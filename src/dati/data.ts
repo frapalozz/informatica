@@ -130,11 +130,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/flavio.corradini",
 
-        extraName: ["Formulario", "Appunti", "Esercizi", "App. Danilo Github", "Libro bozza"],
-        extra: ["Gumroad", "Gumroad", "Github", "Github", "Drive"],
-        extraLink: ["https://frapalozz.gumroad.com/l/formulario-fondamenti-informatica", "https://frapalozz.gumroad.com/l/appunti-fondamenti-informatica", "https://097475.github.io/computazione-calcolabilita/excercises.html", "https://drive.google.com/file/d/1dHIB-SXXtNlO1423E9lhvY0LkvfaPM_f/view?usp=sharing"],
+        extraName: ["Formulario", "Appunti", "Esercizi", "App. Danilo", "App. Danilo Github", "Libro bozza"],
+        extra: ["Notion", "Notion", "Github", "Obsidian", "Github", "Drive"],
+        extraLink: ["https://francescopalozzi.notion.site/Formulario-Fondamenti-di-Informatica-ff66cee317f34a939e2bb2ca2253452f?source=copy_link", "https://francescopalozzi.notion.site/Appunti-Fondamenti-8651a865b8d9492ea1a9b1fe1d757c83?source=copy_link", "https://097475.github.io/computazione-calcolabilita/excercises.html", "https://share.note.sx/kpt7zdpy#SFVgtoBmnCXdpbKyaR8bKF6HApBqtzbx8i2+TwLIjJQ", "https://github.com/danilo-quattrini/my-notes/blob/main/6%20-%20The%20Real%20Notes/Foundaments%20of%20Computer%20Science.md", "https://drive.google.com/file/d/1dHIB-SXXtNlO1423E9lhvY0LkvfaPM_f/view?usp=sharing"],
 
-        aggiornamento: "09/16/2025"
+        aggiornamento: "09/24/2025"
     }, 
 
     {
