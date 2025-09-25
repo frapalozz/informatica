@@ -340,7 +340,7 @@ export const dati =[
         descrizione: "L'ingegneria del software è una disciplina che applica principi e metodologie ingegneristiche allo sviluppo, la gestione e la manutenzione di sistemi software. In pratica, si tratta di un approccio sistematico e rigoroso per creare software affidabile, efficiente e che soddisfi le esigenze degli utenti.",
         materiale: ["", "Nulla"],
         registrazioni: ["", "Nulla"],
-        prove: ["", "Nulla"],
+        prove: ["https://francescopalozzi.notion.site/Esami-Passati-IDS-2794f1c8724e8007b9dedea86d413f21?source=copy_link", "Notion"],
 
         webex: "",
 
@@ -348,7 +348,7 @@ export const dati =[
         extra: [],
         extraLink: [],
 
-        aggiornamento: "07/24/2025"
+        aggiornamento: "09/25/2025"
     },
     {
         "_comment": "Linguaggi e Compilatori",
