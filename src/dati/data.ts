@@ -382,7 +382,7 @@ export const dati =[
 
         materia: "Paradigmi_Avanzati_di_Programmazione",
         descrizione: "Chiusura di funzioni: significato e definizione della cattura dell'ambiente; Argomenti canonici: callback, argomenti negli iteratori, codice riutilizzabile tramite gli argomenti delle funzioni; L'utilizzo della chiusura per incapsulare i dati nel proprio ambiente; Currying e applicazione su argomenti incompleti; Definire operazioni di ordine superiore su dati aggregati e in particolare l'uso di map, reduce e filter; Nozioni di base sul lambda calcolo; Cenni sul linguaggio LISP; Elementi del linguaggio di programmazione LUA; Elementi del linguaggio di programmazione Haskell.",
-        materiale: ["", "Nulla"],
+        materiale: ["https://drive.google.com/drive/folders/1orvFLQOWnWvHpncWRUAHuhKBb4erTK3M?usp=drive_link", "Drive"],
         registrazioni: ["", "Nulla"],
         prove: ["", "Nulla"],
 
@@ -392,7 +392,7 @@ export const dati =[
         extra: [],
         extraLink: [],
 
-        aggiornamento: "07/24/2025"
+        aggiornamento: "10/01/2025"
     },
     {
         "_comment": "Game Design",
