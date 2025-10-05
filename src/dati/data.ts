@@ -338,17 +338,17 @@ export const dati =[
 
         materia: "Ignegneria_del_Software",
         descrizione: "L'ingegneria del software è una disciplina che applica principi e metodologie ingegneristiche allo sviluppo, la gestione e la manutenzione di sistemi software. In pratica, si tratta di un approccio sistematico e rigoroso per creare software affidabile, efficiente e che soddisfi le esigenze degli utenti.",
-        materiale: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:ids:main", "Wiki"],
-        registrazioni: ["https://classroom.google.com/c/ODEwNjMyNDUwNzE5?cjc=25otuefr", "Wiki"],
+        materiale: ["https://classroom.google.com/c/ODEwNjMyNDUwNzE5?cjc=25otuefr", "Classroom"],
+        registrazioni: ["https://classroom.google.com/c/ODEwNjMyNDUwNzE5?cjc=25otuefr", "Classroom"],
         prove: ["https://francescopalozzi.notion.site/Esami-Passati-IDS-2794f1c8724e8007b9dedea86d413f21?source=copy_link", "Notion"],
 
-        webex: "",
+        webex: "https://unicam.webex.com/meet/andrea.morichetta",
 
-        extraName: [],
-        extra: [],
-        extraLink: [],
+        extraName: ["Risorse", "Webex Polini", "Webex Morrichetta"],
+        extra: ["Wiki", "Webex", "Webex"],
+        extraLink: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:ids:main", "https://unicam.webex.com/meet/andrea.polini", "https://unicam.webex.com/meet/andrea.morichetta"],
 
-        aggiornamento: "10/02/2025"
+        aggiornamento: "10/05/2025"
     },
     {
         "_comment": "Linguaggi e Compilatori",
@@ -382,17 +382,17 @@ export const dati =[
 
         materia: "Paradigmi_Avanzati_di_Programmazione",
         descrizione: "Chiusura di funzioni: significato e definizione della cattura dell'ambiente; Argomenti canonici: callback, argomenti negli iteratori, codice riutilizzabile tramite gli argomenti delle funzioni; L'utilizzo della chiusura per incapsulare i dati nel proprio ambiente; Currying e applicazione su argomenti incompleti; Definire operazioni di ordine superiore su dati aggregati e in particolare l'uso di map, reduce e filter; Nozioni di base sul lambda calcolo; Cenni sul linguaggio LISP; Elementi del linguaggio di programmazione LUA; Elementi del linguaggio di programmazione Haskell.",
-        materiale: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:pap:main", "Wiki"],
+        materiale: ["https://drive.google.com/drive/folders/1orvFLQOWnWvHpncWRUAHuhKBb4erTK3M?usp=drive_link", "Drive"],
         registrazioni: ["", "Nulla"],
         prove: ["", "Nulla"],
 
-        webex: "",
+        webex: "https://unicam.webex.com/meet/rosario.culmone",
 
-        extraName: [],
-        extra: [],
-        extraLink: [],
+        extraName: ["Risorse"],
+        extra: ["Wiki"],
+        extraLink: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:pap:main"],
 
-        aggiornamento: "10/02/2025"
+        aggiornamento: "10/05/2025"
     },
     {
         "_comment": "Game Design",
