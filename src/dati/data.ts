@@ -366,11 +366,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/luca.tesei",
 
-        extraName: ["Classroom 24/25"],
-        extra: ["q72jhr5"],
-        extraLink: ["https://classroom.google.com/u/1/c/NzE4NzMwNzIwMjI2"],
+        extraName: ["Classroom 24/25", "Esercizi"],
+        extra: ["q72jhr5", "Notion"],
+        extraLink: ["https://classroom.google.com/u/1/c/NzE4NzMwNzIwMjI2", "https://francescopalozzi.notion.site/Esercizi-Linguaggi-e-Compilatori-2834f1c8724e80e2bf1ccd4c273e95ab?source=copy_link"],
 
-        aggiornamento: "09/29/2025"
+        aggiornamento: "10/06/2025"
     },
     {
         "_comment": "Paradigmi Avanzati di Programmazione",
