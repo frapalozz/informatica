@@ -388,9 +388,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/rosario.culmone",
 
-        extraName: ["Risorse"],
-        extra: ["Wiki"],
-        extraLink: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:pap:main"],
+        extraName: ["Risorse", "Webex Paoloni"],
+        extra: ["Wiki", "Webex"],
+        extraLink: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:pap:main", "https://unicam.webex.com/meet/federico01.paoloni"],
 
         aggiornamento: "10/10/2025"
     },
