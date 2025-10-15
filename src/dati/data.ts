@@ -255,7 +255,7 @@ export const dati =[
         extra: ["Notion", "Gumroad", "Notion", "Webex", "Webex", "keyvo55", "iyvt7bp"],
         extraLink: ["https://francescopalozzi.notion.site/Appunti-Alg-10c4f1c8724e80fa9a5ed650e4a8795d?source=copy_link", "https://scuola.gumroad.com/l/ncigte", "https://francescopalozzi.notion.site/Esercizi-Algoritmi-10c4f1c8724e8072a2a7ed899086be56?source=copy_link", "https://unicam.webex.com/meet/luca.tesei", "https://unicam.webex.com/meet/aula01.tutorato", "https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5"],
 
-        aggiornamento: "09/24/2025"
+        aggiornamento: "10/15/2025"
     },
     {
         "_comment": "Basi di Dati",
