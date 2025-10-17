@@ -15,11 +15,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/alessandro.dellacorte",
 
-        extraName: ["Formulario", "Esercizi risolti", "Pass. Classroom", "Altre Prove"],
-        extra: ["Notion", "Notion", "POYLYUV", "Notion"],
-        extraLink: ["https://francescopalozzi.notion.site/Formulario-discreta-2774f1c8724e806a904deb7f9f191dcb?source=copy_link", "https://francescopalozzi.notion.site/Esercizi-Discreta-2774f1c8724e80a48af5d8db2cd9d6c5?source=copy_link", "https://classroom.google.com/u/7/c/NDAyNjAxMTEzMDE0", "https://francescopalozzi.notion.site/Altre-Prove-1854f1c8724e807ebcfdebc61a850242?pvs=4"],
+        extraName: ["Formulario", "Esercizi risolti", "Pass. Classroom", "Altre Prove", "Appunti Gionkez"],
+        extra: ["Notion", "Notion", "POYLYUV", "Notion", "pdf"],
+        extraLink: ["https://francescopalozzi.notion.site/Formulario-discreta-2774f1c8724e806a904deb7f9f191dcb?source=copy_link", "https://francescopalozzi.notion.site/Esercizi-Discreta-2774f1c8724e80a48af5d8db2cd9d6c5?source=copy_link", "https://classroom.google.com/u/7/c/NDAyNjAxMTEzMDE0", "https://francescopalozzi.notion.site/Altre-Prove-1854f1c8724e807ebcfdebc61a850242?pvs=4", "https://gionkez.github.io/icd-appunti/pdfs/0_mdc.pdf"],
         
-        aggiornamento: "09/23/2025"
+        aggiornamento: "10/17/2025"
     },
 
     {
@@ -38,11 +38,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/sonia.linnocente",
 
-        extraName: ["Formulario", "Esercizi Risolti", "Pass. Classroom"],
-        extra: ["Notion", "Notion", "g52fvrb"],
-        extraLink: ["https://francescopalozzi.notion.site/Formulario-Logica-2774f1c8724e804fb948f02e4bcb038e", "https://francescopalozzi.notion.site/Esercizi-Logica-2774f1c8724e801eb4b9c934097c0395", "https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0"],
+        extraName: ["Formulario", "Esercizi Risolti", "Pass. Classroom", "Appunti Gionkez"],
+        extra: ["Notion", "Notion", "g52fvrb", "pdf"],
+        extraLink: ["https://francescopalozzi.notion.site/Formulario-Logica-2774f1c8724e804fb948f02e4bcb038e", "https://francescopalozzi.notion.site/Esercizi-Logica-2774f1c8724e801eb4b9c934097c0395", "https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0", "https://gionkez.github.io/icd-appunti/pdfs/0_mlg.pdf"],
 
-        aggiornamento: "09/24/2025"
+        aggiornamento: "10/17/2025"
     },
 
     {
