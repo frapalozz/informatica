@@ -61,11 +61,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/luca.padovani",
 
-        extraName: ["Webex Mostarda", "Webex Culmone"],
-        extra: ["Webex", "Webex"],
-        extraLink: ["https://unicam.webex.com/meet/leonardo.mostarda", "https://unicam.webex.com/meet/rosario.culmone"],
+        extraName: ["Webex Mostarda", "Webex Culmone", "Appunti Gionkez"],
+        extra: ["Webex", "Webex", "pdf"],
+        extraLink: ["https://unicam.webex.com/meet/leonardo.mostarda", "https://unicam.webex.com/meet/rosario.culmone", "https://gionkez.github.io/icd-appunti/pdfs/0_prg.pdf"],
 
-        aggiornamento: "09/24/2025"
+        aggiornamento: "10/17/2025"
     },
 
     {
@@ -107,11 +107,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/diletta.cacciagrano",
 
-        extraName: ["Webex Trojani", "Registrazioni Lab.", "Lezioni Teoria", "Flowgorithm", "Wokwi", "Falstad", "Modulo Progetto"],
-        extra: ["Webex", "Drive", "Notion", "flowgorithm.org", "wokwi.com", "falstad.com", "docs.google.com"],
-        extraLink: ["https://unicam.webex.com/meet/massimo.trojani", "https://drive.google.com/drive/u/7/folders/1wTD2N9nnugsagZaMa6K-6_gm85hJT3Xf", "https://francescopalozzi.notion.site/Lezioni-AdE-06af90cb1cd240cda5ea5a7fdfc12341?pvs=4", "http://flowgorithm.org", "https://wokwi.com/", "https://www.falstad.com/circuit/circuitjs.html", "https://docs.google.com/forms/d/e/1FAIpQLSf3yUBGSruq9gcv_2Ts5QsZhGJ9f7cJx2RZ6pJf_UK7GtEIbg/viewform"],
+        extraName: ["Webex Trojani", "Registrazioni Lab.", "Lezioni Teoria", "Flowgorithm", "Wokwi", "Falstad", "Modulo Progetto", "Appunti Gionkez"],
+        extra: ["Webex", "Drive", "Notion", "flowgorithm.org", "wokwi.com", "falstad.com", "docs.google.com", "pdf"],
+        extraLink: ["https://unicam.webex.com/meet/massimo.trojani", "https://drive.google.com/drive/u/7/folders/1wTD2N9nnugsagZaMa6K-6_gm85hJT3Xf", "https://francescopalozzi.notion.site/Lezioni-AdE-06af90cb1cd240cda5ea5a7fdfc12341?pvs=4", "http://flowgorithm.org", "https://wokwi.com/", "https://www.falstad.com/circuit/circuitjs.html", "https://docs.google.com/forms/d/e/1FAIpQLSf3yUBGSruq9gcv_2Ts5QsZhGJ9f7cJx2RZ6pJf_UK7GtEIbg/viewform", "https://gionkez.github.io/icd-appunti/pdfs/0_ael.pdf"],
 
-        aggiornamento: "05/20/2024"
+        aggiornamento: "10/17/2025"
     }, 
 
     {
@@ -130,11 +130,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/flavio.corradini",
 
-        extraName: ["Formulario", "Appunti", "Esercizi", "App. Danilo", "App. Danilo Github", "Libro bozza"],
-        extra: ["Notion", "Notion", "Github", "Obsidian", "Github", "Drive"],
-        extraLink: ["https://francescopalozzi.notion.site/Formulario-Fondamenti-di-Informatica-ff66cee317f34a939e2bb2ca2253452f?source=copy_link", "https://francescopalozzi.notion.site/Appunti-Fondamenti-8651a865b8d9492ea1a9b1fe1d757c83?source=copy_link", "https://097475.github.io/computazione-calcolabilita/excercises.html", "https://share.note.sx/kpt7zdpy#SFVgtoBmnCXdpbKyaR8bKF6HApBqtzbx8i2+TwLIjJQ", "https://github.com/danilo-quattrini/my-notes/blob/main/6%20-%20The%20Real%20Notes/Foundaments%20of%20Computer%20Science.md", "https://drive.google.com/file/d/1dHIB-SXXtNlO1423E9lhvY0LkvfaPM_f/view?usp=sharing"],
+        extraName: ["Formulario", "Appunti", "Esercizi", "App. Danilo", "App. Danilo Github", "Libro bozza", "Appunti Gionkez"],
+        extra: ["Notion", "Notion", "Github", "Obsidian", "Github", "Drive", "pdf"],
+        extraLink: ["https://francescopalozzi.notion.site/Formulario-Fondamenti-di-Informatica-ff66cee317f34a939e2bb2ca2253452f?source=copy_link", "https://francescopalozzi.notion.site/Appunti-Fondamenti-8651a865b8d9492ea1a9b1fe1d757c83?source=copy_link", "https://097475.github.io/computazione-calcolabilita/excercises.html", "https://share.note.sx/kpt7zdpy#SFVgtoBmnCXdpbKyaR8bKF6HApBqtzbx8i2+TwLIjJQ", "https://github.com/danilo-quattrini/my-notes/blob/main/6%20-%20The%20Real%20Notes/Foundaments%20of%20Computer%20Science.md", "https://drive.google.com/file/d/1dHIB-SXXtNlO1423E9lhvY0LkvfaPM_f/view?usp=sharing", "https://gionkez.github.io/icd-appunti/pdfs/0_fif.pdf"],
 
-        aggiornamento: "09/24/2025"
+        aggiornamento: "10/17/2025"
     }, 
 
     {
@@ -176,11 +176,11 @@ export const dati =[
 
         webex: "",
 
-        extraName: ["Riassunto"],
-        extra: ["PDF"],
-        extraLink: ["https://nukleo.me/uni/diritto/riassunto.pdf"],
+        extraName: ["Riassunto", "Appunti Gionkez"],
+        extra: ["PDF", "pdf"],
+        extraLink: ["https://nukleo.me/uni/diritto/riassunto.pdf", "https://gionkez.github.io/icd-appunti/pdfs/0_dpd.pdf"],
 
-        aggiornamento: "08/07/2025"
+        aggiornamento: "10/17/2025"
     }, 
 
 
@@ -207,11 +207,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/fausto.marcantoni",
 
-        extraName: ["Appunti", "Appunti 2", "Classroom", "Classroom Tut. 23/24", "Domande Ripasso", "Domande R. Scott"],
-        extra: ["Notion", "Gumroad", "t6ki77a", "m3nfww5", "nukleo.site", "Google Form"],
-        extraLink: ["https://francescopalozzi.notion.site/Appunti-Internet-10c4f1c8724e8064ad7bf9b17c7ca846?source=copy_link", "https://scuola.gumroad.com/l/reti", "https://classroom.google.com/u/1/c/NzM1ODg1MDY4NjM4", "https://classroom.google.com/u/2/c/NjQ0MTI5MjM3MzU5", "https://nukleo.site/uni/reti/index.html", "https://forms.gle/FBDzrqPLJ74e6f5i9"],
+        extraName: ["Appunti", "Appunti 2", "Classroom", "Classroom Tut. 23/24", "Domande Ripasso", "Domande R. Scott", "Appunti Gionkez"],
+        extra: ["Notion", "Gumroad", "t6ki77a", "m3nfww5", "nukleo.site", "Google Form", "pdf"],
+        extraLink: ["https://francescopalozzi.notion.site/Appunti-Internet-10c4f1c8724e8064ad7bf9b17c7ca846?source=copy_link", "https://scuola.gumroad.com/l/reti", "https://classroom.google.com/u/1/c/NzM1ODg1MDY4NjM4", "https://classroom.google.com/u/2/c/NjQ0MTI5MjM3MzU5", "https://nukleo.site/uni/reti/index.html", "https://forms.gle/FBDzrqPLJ74e6f5i9", "https://gionkez.github.io/icd-appunti/pdfs/0_dpd.pdf"],
 
-        aggiornamento: "09/24/2025"
+        aggiornamento: "10/17/2025"
     }, 
     {
         "_comment": "Sistemi Operativi",
@@ -229,11 +229,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/diletta.cacciagrano",
 
-        extraName: ["Appunti", "Appunti 2", "Appunti Tut.", "Formulario", "Esercizi"],
-        extra: ["Notion", "Gumroad", "Gumroad", "Notion", "Notion"],
-        extraLink: ["https://francescopalozzi.notion.site/Appunti-Sistemi-Operativi-10c4f1c8724e80f1ada2fe9f1e3e5a00?source=copy_link", "https://scuola.gumroad.com/l/so", "https://scuola.gumroad.com/l/sot", "https://francescopalozzi.notion.site/Formulario-Sistemi-Operativi-1844f1c8724e80ee837cea409c6b614e?source=copy_link", "https://francescopalozzi.notion.site/Esercizi-ricerca-operativa-10c4f1c8724e80f3966afaf2aa25146f?source=copy_link"],
+        extraName: ["Appunti", "Appunti 2", "Appunti Tut.", "Formulario", "Esercizi", "Appunti Gionkez"],
+        extra: ["Notion", "Gumroad", "Gumroad", "Notion", "Notion", "pdf"],
+        extraLink: ["https://francescopalozzi.notion.site/Appunti-Sistemi-Operativi-10c4f1c8724e80f1ada2fe9f1e3e5a00?source=copy_link", "https://scuola.gumroad.com/l/so", "https://scuola.gumroad.com/l/sot", "https://francescopalozzi.notion.site/Formulario-Sistemi-Operativi-1844f1c8724e80ee837cea409c6b614e?source=copy_link", "https://francescopalozzi.notion.site/Esercizi-ricerca-operativa-10c4f1c8724e80f3966afaf2aa25146f?source=copy_link", "https://gionkez.github.io/icd-appunti/pdfs/0_dpd.pdf"],
 
-        aggiornamento: "09/24/2025"
+        aggiornamento: "10/17/2025"
     }, 
     {
         "_comment": "Algoritmi e Strutture Dati",
@@ -251,11 +251,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/emanuela.merelli",
 
-        extraName: ["Appunti", "Appunti 2", "Esercizi", "Webex laboratorio", "Webex Tutorato", "Pass. Classroom", "Classroom 23/24"],
-        extra: ["Notion", "Gumroad", "Notion", "Webex", "Webex", "keyvo55", "iyvt7bp"],
-        extraLink: ["https://francescopalozzi.notion.site/Appunti-Alg-10c4f1c8724e80fa9a5ed650e4a8795d?source=copy_link", "https://scuola.gumroad.com/l/ncigte", "https://francescopalozzi.notion.site/Esercizi-Algoritmi-10c4f1c8724e8072a2a7ed899086be56?source=copy_link", "https://unicam.webex.com/meet/luca.tesei", "https://unicam.webex.com/meet/aula01.tutorato", "https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5"],
+        extraName: ["Appunti", "Appunti 2", "Esercizi", "Webex laboratorio", "Webex Tutorato", "Pass. Classroom", "Classroom 23/24", "Appunti Gionkez"],
+        extra: ["Notion", "Gumroad", "Notion", "Webex", "Webex", "keyvo55", "iyvt7bp", "pdf"],
+        extraLink: ["https://francescopalozzi.notion.site/Appunti-Alg-10c4f1c8724e80fa9a5ed650e4a8795d?source=copy_link", "https://scuola.gumroad.com/l/ncigte", "https://francescopalozzi.notion.site/Esercizi-Algoritmi-10c4f1c8724e8072a2a7ed899086be56?source=copy_link", "https://unicam.webex.com/meet/luca.tesei", "https://unicam.webex.com/meet/aula01.tutorato", "https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5", "https://gionkez.github.io/icd-appunti/pdfs/0_asd.pdf"],
 
-        aggiornamento: "10/15/2025"
+        aggiornamento: "10/17/2025"
     },
     {
         "_comment": "Basi di Dati",
@@ -273,11 +273,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/barbara.re",
 
-        extraName: ["Esercizi", "Appunti", "Webex Gagliardi", "Moodle 23/24", "Pass. Moodle", "Ex. Lab", "Slide Tutorato"],
-        extra: ["Notion", "Notion", "Webex", "BD_23_24", "dati24", "cs.unicam.it", "drive"],
-        extraLink: ["https://francescopalozzi.notion.site/Esercizi-Esame-1f04f1c8724e80d1b38eda7dd144529d?source=copy_link", "https://francescopalozzi.notion.site/Appunti-BDD-2784f1c8724e8019b45fff8a5642f88c?source=copy_link", "https://unicam.webex.com/meet/roberto.gagliardi", "https://elearning.unicam.it/course/view.php?id=435", "https://elearning.unicam.it/course/view.php?id=473", "http://analyzer.cs.unicam.it:8080/", "https://drive.google.com/drive/folders/1hFOk6Ny6QdjYcDUEmk_U3r8h_F0nqmx7?usp=sharing"],
+        extraName: ["Esercizi", "Appunti", "Webex Gagliardi", "Moodle 23/24", "Pass. Moodle", "Ex. Lab", "Slide Tutorato", "Appunti Gionkez"],
+        extra: ["Notion", "Notion", "Webex", "BD_23_24", "dati24", "cs.unicam.it", "drive", "pdf"],
+        extraLink: ["https://francescopalozzi.notion.site/Esercizi-Esame-1f04f1c8724e80d1b38eda7dd144529d?source=copy_link", "https://francescopalozzi.notion.site/Appunti-BDD-2784f1c8724e8019b45fff8a5642f88c?source=copy_link", "https://unicam.webex.com/meet/roberto.gagliardi", "https://elearning.unicam.it/course/view.php?id=435", "https://elearning.unicam.it/course/view.php?id=473", "http://analyzer.cs.unicam.it:8080/", "https://drive.google.com/drive/folders/1hFOk6Ny6QdjYcDUEmk_U3r8h_F0nqmx7?usp=sharing", "https://gionkez.github.io/icd-appunti/pdfs/0_asd.pdf"],
 
-        aggiornamento: "09/24/2025"
+        aggiornamento: "10/17/2025"
     },
     {
         "_comment": "Metodologie di Programmazione",
@@ -295,11 +295,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/michele.loreti",
 
-        extraName: ["Appunti", "Domande", "Webex Rossi", "Classroom 23/24"],
-        extra: ["Notion", "Gumroad", "Webex", "sy4gfi6"],
-        extraLink: ["https://francescopalozzi.notion.site/Appunti-Metodologie-2784f1c8724e807fb50ecf3d2b4453f8?source=copy_link", "https://scuola.gumroad.com/l/bmlug", "https://unicam.webex.com/meet/lorenzo.rossi", "https://classroom.google.com/u/1/c/NjUxODYxMDU0ODM5"],
+        extraName: ["Appunti", "Domande", "Webex Rossi", "Classroom 23/24", "Appunti Gionkez"],
+        extra: ["Notion", "Gumroad", "Webex", "sy4gfi6", "pdf"],
+        extraLink: ["https://francescopalozzi.notion.site/Appunti-Metodologie-2784f1c8724e807fb50ecf3d2b4453f8?source=copy_link", "https://scuola.gumroad.com/l/bmlug", "https://unicam.webex.com/meet/lorenzo.rossi", "https://classroom.google.com/u/1/c/NjUxODYxMDU0ODM5", "https://gionkez.github.io/icd-appunti/pdfs/0_mgc.pdf"],
 
-        aggiornamento: "09/24/2025"
+        aggiornamento: "10/17/2025"
     },
     {
         "_comment": "Ricerca Operativa",
@@ -344,11 +344,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/andrea.morichetta",
 
-        extraName: ["Risorse", "Webex Polini", "Webex Morrichetta"],
-        extra: ["Wiki", "Webex", "Webex"],
-        extraLink: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:ids:main", "https://unicam.webex.com/meet/andrea.polini", "https://unicam.webex.com/meet/andrea.morichetta"],
+        extraName: ["Risorse", "Webex Polini", "Webex Morrichetta", "Appunti Gionkez"],
+        extra: ["Wiki", "Webex", "Webex", "pdf"],
+        extraLink: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:ids:main", "https://unicam.webex.com/meet/andrea.polini", "https://unicam.webex.com/meet/andrea.morichetta", "https://gionkez.github.io/icd-appunti/pdfs/0_isw.pdf"],
 
-        aggiornamento: "10/05/2025"
+        aggiornamento: "10/17/2025"
     },
     {
         "_comment": "Linguaggi e Compilatori",
@@ -410,11 +410,11 @@ export const dati =[
 
         webex: "",
 
-        extraName: ["Appunti"],
-        extra: ["Obsidian"],
-        extraLink: ["https://share.note.sx/n6tun7hi#uqOMd9PsiOEO7jBrOjVXNSsxDajLcaBmFFe+42qOoBw"],
+        extraName: ["Appunti", "Appunti Gionkez"],
+        extra: ["Obsidian", "pdf"],
+        extraLink: ["https://share.note.sx/n6tun7hi#uqOMd9PsiOEO7jBrOjVXNSsxDajLcaBmFFe+42qOoBw", "https://gionkez.github.io/icd-appunti/pdfs/0_isw.pdf"],
 
-        aggiornamento: "09/03/2025"
+        aggiornamento: "10/17/2025"
     },
     
 
