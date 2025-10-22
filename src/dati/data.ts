@@ -178,9 +178,9 @@ export const dati =[
 
         extraName: ["Riassunto", "Appunti Gionkez"],
         extra: ["PDF", "pdf"],
-        extraLink: ["https://nukleo.me/uni/diritto/riassunto.pdf", "https://gionkez.github.io/icd-appunti/pdfs/0_dpd.pdf"],
+        extraLink: ["https://nukleo.me/uni/old/diritto/riassunto.pdf", "https://gionkez.github.io/icd-appunti/pdfs/0_dpd.pdf"],
 
-        aggiornamento: "10/17/2025"
+        aggiornamento: "10/22/2025"
     }, 
 
 
