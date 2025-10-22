@@ -207,9 +207,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/fausto.marcantoni",
 
-        extraName: ["Appunti", "Appunti 2", "Classroom", "Classroom Tut. 23/24", "Domande Ripasso", "Domande R. Scott", "Appunti Gionkez"],
-        extra: ["Notion", "Gumroad", "t6ki77a", "m3nfww5", "nukleo.site", "Google Form", "pdf"],
-        extraLink: ["https://francescopalozzi.notion.site/Appunti-Internet-10c4f1c8724e8064ad7bf9b17c7ca846?source=copy_link", "https://scuola.gumroad.com/l/reti", "https://classroom.google.com/u/1/c/NzM1ODg1MDY4NjM4", "https://classroom.google.com/u/2/c/NjQ0MTI5MjM3MzU5", "https://nukleo.site/uni/reti/index.html", "https://forms.gle/FBDzrqPLJ74e6f5i9", "https://gionkez.github.io/icd-appunti/pdfs/0_dpd.pdf"],
+        extraName: ["Libro", "Appunti", "Appunti 2", "Classroom", "Classroom Tut. 23/24", "Domande Ripasso", "Domande R. Scott", "Appunti Gionkez"],
+        extra: ["Amazon", "Notion", "Gumroad", "t6ki77a", "m3nfww5", "nukleo.site", "Google Form", "pdf"],
+        extraLink: ["https://amzn.to/4owUq6Y", "https://francescopalozzi.notion.site/Appunti-Internet-10c4f1c8724e8064ad7bf9b17c7ca846?source=copy_link", "https://scuola.gumroad.com/l/reti", "https://classroom.google.com/u/1/c/NzM1ODg1MDY4NjM4", "https://classroom.google.com/u/2/c/NjQ0MTI5MjM3MzU5", "https://nukleo.site/uni/reti/index.html", "https://forms.gle/FBDzrqPLJ74e6f5i9", "https://gionkez.github.io/icd-appunti/pdfs/0_dpd.pdf"],
 
         aggiornamento: "10/17/2025"
     }, 
@@ -229,9 +229,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/diletta.cacciagrano",
 
-        extraName: ["Appunti", "Appunti 2", "Appunti Tut.", "Formulario", "Esercizi", "Appunti Gionkez"],
-        extra: ["Notion", "Gumroad", "Gumroad", "Notion", "Notion", "pdf"],
-        extraLink: ["https://francescopalozzi.notion.site/Appunti-Sistemi-Operativi-10c4f1c8724e80f1ada2fe9f1e3e5a00?source=copy_link", "https://scuola.gumroad.com/l/so", "https://scuola.gumroad.com/l/sot", "https://francescopalozzi.notion.site/Formulario-Sistemi-Operativi-1844f1c8724e80ee837cea409c6b614e?source=copy_link", "https://francescopalozzi.notion.site/Esercizi-ricerca-operativa-10c4f1c8724e80f3966afaf2aa25146f?source=copy_link", "https://gionkez.github.io/icd-appunti/pdfs/0_dpd.pdf"],
+        extraName: ["Libro", "Appunti", "Appunti 2", "Appunti Tut.", "Formulario", "Esercizi", "Appunti Gionkez"],
+        extra: ["Amazon", "Notion", "Gumroad", "Gumroad", "Notion", "Notion", "pdf"],
+        extraLink: ["https://amzn.to/4nha8Sw", "https://francescopalozzi.notion.site/Appunti-Sistemi-Operativi-10c4f1c8724e80f1ada2fe9f1e3e5a00?source=copy_link", "https://scuola.gumroad.com/l/so", "https://scuola.gumroad.com/l/sot", "https://francescopalozzi.notion.site/Formulario-Sistemi-Operativi-1844f1c8724e80ee837cea409c6b614e?source=copy_link", "https://francescopalozzi.notion.site/Esercizi-ricerca-operativa-10c4f1c8724e80f3966afaf2aa25146f?source=copy_link", "https://gionkez.github.io/icd-appunti/pdfs/0_dpd.pdf"],
 
         aggiornamento: "10/17/2025"
     }, 
@@ -251,9 +251,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/emanuela.merelli",
 
-        extraName: ["Appunti", "Appunti 2", "Esercizi", "Webex laboratorio", "Webex Tutorato", "Pass. Classroom", "Classroom 23/24", "Appunti Gionkez"],
-        extra: ["Notion", "Gumroad", "Notion", "Webex", "Webex", "keyvo55", "iyvt7bp", "pdf"],
-        extraLink: ["https://francescopalozzi.notion.site/Appunti-Alg-10c4f1c8724e80fa9a5ed650e4a8795d?source=copy_link", "https://scuola.gumroad.com/l/ncigte", "https://francescopalozzi.notion.site/Esercizi-Algoritmi-10c4f1c8724e8072a2a7ed899086be56?source=copy_link", "https://unicam.webex.com/meet/luca.tesei", "https://unicam.webex.com/meet/aula01.tutorato", "https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5", "https://gionkez.github.io/icd-appunti/pdfs/0_asd.pdf"],
+        extraName: ["Libro", "Appunti", "Appunti 2", "Esercizi", "Webex laboratorio", "Webex Tutorato", "Pass. Classroom", "Classroom 23/24", "Appunti Gionkez"],
+        extra: ["Amazon", "Notion", "Gumroad", "Notion", "Webex", "Webex", "keyvo55", "iyvt7bp", "pdf"],
+        extraLink: ["https://amzn.to/4otePtt", "https://francescopalozzi.notion.site/Appunti-Alg-10c4f1c8724e80fa9a5ed650e4a8795d?source=copy_link", "https://scuola.gumroad.com/l/ncigte", "https://francescopalozzi.notion.site/Esercizi-Algoritmi-10c4f1c8724e8072a2a7ed899086be56?source=copy_link", "https://unicam.webex.com/meet/luca.tesei", "https://unicam.webex.com/meet/aula01.tutorato", "https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4", "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5", "https://gionkez.github.io/icd-appunti/pdfs/0_asd.pdf"],
 
         aggiornamento: "10/17/2025"
     },
@@ -273,9 +273,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/barbara.re",
 
-        extraName: ["Esercizi", "Appunti", "Webex Gagliardi", "Moodle 23/24", "Pass. Moodle", "Ex. Lab", "Slide Tutorato", "Appunti Gionkez"],
-        extra: ["Notion", "Notion", "Webex", "BD_23_24", "dati24", "cs.unicam.it", "drive", "pdf"],
-        extraLink: ["https://francescopalozzi.notion.site/Esercizi-Esame-1f04f1c8724e80d1b38eda7dd144529d?source=copy_link", "https://francescopalozzi.notion.site/Appunti-BDD-2784f1c8724e8019b45fff8a5642f88c?source=copy_link", "https://unicam.webex.com/meet/roberto.gagliardi", "https://elearning.unicam.it/course/view.php?id=435", "https://elearning.unicam.it/course/view.php?id=473", "http://analyzer.cs.unicam.it:8080/", "https://drive.google.com/drive/folders/1hFOk6Ny6QdjYcDUEmk_U3r8h_F0nqmx7?usp=sharing", "https://gionkez.github.io/icd-appunti/pdfs/0_asd.pdf"],
+        extraName: ["Libro", "Esercizi", "Appunti", "Webex Gagliardi", "Moodle 23/24", "Pass. Moodle", "Ex. Lab", "Slide Tutorato", "Appunti Gionkez"],
+        extra: ["Amazon", "Notion", "Notion", "Webex", "BD_23_24", "dati24", "cs.unicam.it", "drive", "pdf"],
+        extraLink: ["https://amzn.to/47pcJUR", "https://francescopalozzi.notion.site/Esercizi-Esame-1f04f1c8724e80d1b38eda7dd144529d?source=copy_link", "https://francescopalozzi.notion.site/Appunti-BDD-2784f1c8724e8019b45fff8a5642f88c?source=copy_link", "https://unicam.webex.com/meet/roberto.gagliardi", "https://elearning.unicam.it/course/view.php?id=435", "https://elearning.unicam.it/course/view.php?id=473", "http://analyzer.cs.unicam.it:8080/", "https://drive.google.com/drive/folders/1hFOk6Ny6QdjYcDUEmk_U3r8h_F0nqmx7?usp=sharing", "https://gionkez.github.io/icd-appunti/pdfs/0_asd.pdf"],
 
         aggiornamento: "10/17/2025"
     },
@@ -295,9 +295,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/michele.loreti",
 
-        extraName: ["Appunti", "Domande", "Webex Rossi", "Classroom 23/24", "Appunti Gionkez"],
-        extra: ["Notion", "Gumroad", "Webex", "sy4gfi6", "pdf"],
-        extraLink: ["https://francescopalozzi.notion.site/Appunti-Metodologie-2784f1c8724e807fb50ecf3d2b4453f8?source=copy_link", "https://scuola.gumroad.com/l/bmlug", "https://unicam.webex.com/meet/lorenzo.rossi", "https://classroom.google.com/u/1/c/NjUxODYxMDU0ODM5", "https://gionkez.github.io/icd-appunti/pdfs/0_mgc.pdf"],
+        extraName: ["Libro", "Appunti", "Domande", "Webex Rossi", "Classroom 23/24", "Appunti Gionkez"],
+        extra: ["Amazon", "Notion", "Gumroad", "Webex", "sy4gfi6", "pdf"],
+        extraLink: ["https://amzn.to/4ne0kc1", "https://francescopalozzi.notion.site/Appunti-Metodologie-2784f1c8724e807fb50ecf3d2b4453f8?source=copy_link", "https://scuola.gumroad.com/l/bmlug", "https://unicam.webex.com/meet/lorenzo.rossi", "https://classroom.google.com/u/1/c/NjUxODYxMDU0ODM5", "https://gionkez.github.io/icd-appunti/pdfs/0_mgc.pdf"],
 
         aggiornamento: "10/17/2025"
     },
@@ -317,9 +317,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/renato.deleone",
 
-        extraName: ["Appunti", "Teoremi", "Formulario", "Esercizi", "Form Classroom"],
-        extra: ["Notion", "Gumroad", "Notion", "Notion", "Google Fogli"],
-        extraLink: ["https://francescopalozzi.notion.site/Appunti-Ricerca-Operativa-2784f1c8724e80b9a3abceaeee311166?source=copy_link", "https://scuola.gumroad.com/l/qctsfm", "https://francescopalozzi.notion.site/Formulario-Ricerca-Operativa-2784f1c8724e80c8a737ebd4a0d5a41a?source=copy_link", "https://francescopalozzi.notion.site/Esercizi-Ricerca-Operativa-1f04f1c8724e80a0943df864d074499c?source=copy_link", "https://docs.google.com/spreadsheets/d/1iIzOzXc3GFQ7TYVzZIyykRiRX4DLsGOdHIxgOOgyjXs/edit?pli=1&gid=0#gid=0"],
+        extraName: ["Libro", "Appunti", "Teoremi", "Formulario", "Esercizi", "Form Classroom"],
+        extra: ["Amazon", "Notion", "Gumroad", "Notion", "Notion", "Google Fogli"],
+        extraLink: ["https://amzn.to/473N597", "https://francescopalozzi.notion.site/Appunti-Ricerca-Operativa-2784f1c8724e80b9a3abceaeee311166?source=copy_link", "https://scuola.gumroad.com/l/qctsfm", "https://francescopalozzi.notion.site/Formulario-Ricerca-Operativa-2784f1c8724e80c8a737ebd4a0d5a41a?source=copy_link", "https://francescopalozzi.notion.site/Esercizi-Ricerca-Operativa-1f04f1c8724e80a0943df864d074499c?source=copy_link", "https://docs.google.com/spreadsheets/d/1iIzOzXc3GFQ7TYVzZIyykRiRX4DLsGOdHIxgOOgyjXs/edit?pli=1&gid=0#gid=0"],
 
         aggiornamento: "09/24/2025"
     },
@@ -344,9 +344,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/andrea.morichetta",
 
-        extraName: ["Risorse", "Webex Polini", "Webex Morrichetta", "Appunti Gionkez"],
-        extra: ["Wiki", "Webex", "Webex", "pdf"],
-        extraLink: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:ids:main", "https://unicam.webex.com/meet/andrea.polini", "https://unicam.webex.com/meet/andrea.morichetta", "https://gionkez.github.io/icd-appunti/pdfs/0_isw.pdf"],
+        extraName: ["Risorse", "Libro Patterns", "Libro UML", "Webex Polini", "Webex Morrichetta", "Appunti Gionkez"],
+        extra: ["Wiki", "Amazon", "Amazon", "Webex", "Webex", "pdf"],
+        extraLink: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:ids:main", "https://amzn.to/47lS6so", "https://amzn.to/49i4U5J", "https://unicam.webex.com/meet/andrea.polini", "https://unicam.webex.com/meet/andrea.morichetta", "https://gionkez.github.io/icd-appunti/pdfs/0_isw.pdf"],
 
         aggiornamento: "10/17/2025"
     },
@@ -366,9 +366,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/luca.tesei",
 
-        extraName: ["Classroom 24/25", "Esercizi", "Webex Tutorato"],
-        extra: ["q72jhr5", "Notion", "Webex"],
-        extraLink: ["https://classroom.google.com/u/1/c/NzE4NzMwNzIwMjI2", "https://francescopalozzi.notion.site/Esercizi-Linguaggi-e-Compilatori-2834f1c8724e80e2bf1ccd4c273e95ab?source=copy_link", "https://unicam.webex.com/meet/aula05.tutorato"],
+        extraName: ["Libro", "Classroom 24/25", "Esercizi", "Webex Tutorato"],
+        extra: ["Amazon", "q72jhr5", "Notion", "Webex"],
+        extraLink: ["https://amzn.to/3WlBNa3", "https://classroom.google.com/u/1/c/NzE4NzMwNzIwMjI2", "https://francescopalozzi.notion.site/Esercizi-Linguaggi-e-Compilatori-2834f1c8724e80e2bf1ccd4c273e95ab?source=copy_link", "https://unicam.webex.com/meet/aula05.tutorato"],
 
         aggiornamento: "10/22/2025"
     },
@@ -388,9 +388,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/rosario.culmone",
 
-        extraName: ["Risorse", "Enterprise", "Webex Paoloni"],
-        extra: ["Wiki", "Drive", "Webex"],
-        extraLink: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:pap:main", "https://drive.google.com/drive/folders/12-HmSE3UsmzFmITFzk2WJOrHcQBF81-c?usp=drive_link", "https://unicam.webex.com/meet/federico01.paoloni"],
+        extraName: ["Risorse", "Enterprise", "Libro Haskell", "Webex Paoloni"],
+        extra: ["Wiki", "Drive", "Amazon", "Webex"],
+        extraLink: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:pap:main", "https://drive.google.com/drive/folders/12-HmSE3UsmzFmITFzk2WJOrHcQBF81-c?usp=drive_link", "https://amzn.to/4qow7tE", "https://unicam.webex.com/meet/federico01.paoloni"],
 
         aggiornamento: "10/10/2025"
     },
