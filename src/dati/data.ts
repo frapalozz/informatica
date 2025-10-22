@@ -15,9 +15,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/alessandro.dellacorte",
 
-        extraName: ["Formulario", "Esercizi risolti", "Pass. Classroom", "Altre Prove", "Appunti Gionkez"],
-        extra: ["Notion", "Notion", "POYLYUV", "Notion", "pdf"],
-        extraLink: ["https://francescopalozzi.notion.site/Formulario-discreta-2774f1c8724e806a904deb7f9f191dcb?source=copy_link", "https://francescopalozzi.notion.site/Esercizi-Discreta-2774f1c8724e80a48af5d8db2cd9d6c5?source=copy_link", "https://classroom.google.com/u/7/c/NDAyNjAxMTEzMDE0", "https://francescopalozzi.notion.site/Altre-Prove-1854f1c8724e807ebcfdebc61a850242?pvs=4", "https://gionkez.github.io/icd-appunti/pdfs/0_mdc.pdf"],
+        extraName: ["Formulario", "Esercizi risolti", "Pass. Classroom", "Altre Prove", "Appunti Gionkez", "Libro"],
+        extra: ["Notion", "Notion", "POYLYUV", "Notion", "pdf", "Amazon"],
+        extraLink: ["https://francescopalozzi.notion.site/Formulario-discreta-2774f1c8724e806a904deb7f9f191dcb?source=copy_link", "https://francescopalozzi.notion.site/Esercizi-Discreta-2774f1c8724e80a48af5d8db2cd9d6c5?source=copy_link", "https://classroom.google.com/u/7/c/NDAyNjAxMTEzMDE0", "https://francescopalozzi.notion.site/Altre-Prove-1854f1c8724e807ebcfdebc61a850242?pvs=4", "https://gionkez.github.io/icd-appunti/pdfs/0_mdc.pdf", "https://amzn.to/3WiUXxm"],
         
         aggiornamento: "10/17/2025"
     },
@@ -38,9 +38,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/sonia.linnocente",
 
-        extraName: ["Formulario", "Esercizi Risolti", "Pass. Classroom", "Appunti Gionkez"],
-        extra: ["Notion", "Notion", "g52fvrb", "pdf"],
-        extraLink: ["https://francescopalozzi.notion.site/Formulario-Logica-2774f1c8724e804fb948f02e4bcb038e", "https://francescopalozzi.notion.site/Esercizi-Logica-2774f1c8724e801eb4b9c934097c0395", "https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0", "https://gionkez.github.io/icd-appunti/pdfs/0_mlg.pdf"],
+        extraName: ["Formulario", "Esercizi Risolti", "Pass. Classroom", "Appunti Gionkez", "Libro"],
+        extra: ["Notion", "Notion", "g52fvrb", "pdf", "Amazon"],
+        extraLink: ["https://francescopalozzi.notion.site/Formulario-Logica-2774f1c8724e804fb948f02e4bcb038e", "https://francescopalozzi.notion.site/Esercizi-Logica-2774f1c8724e801eb4b9c934097c0395", "https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0", "https://gionkez.github.io/icd-appunti/pdfs/0_mlg.pdf", "https://amzn.to/3WiUXxm"],
 
         aggiornamento: "10/17/2025"
     },
@@ -61,9 +61,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/luca.padovani",
 
-        extraName: ["Webex Mostarda", "Webex Culmone", "Appunti Gionkez"],
-        extra: ["Webex", "Webex", "pdf"],
-        extraLink: ["https://unicam.webex.com/meet/leonardo.mostarda", "https://unicam.webex.com/meet/rosario.culmone", "https://gionkez.github.io/icd-appunti/pdfs/0_prg.pdf"],
+        extraName: ["Webex Mostarda", "Webex Culmone", "Appunti Gionkez", "Libro"],
+        extra: ["Webex", "Webex", "pdf", "Amazon"],
+        extraLink: ["https://unicam.webex.com/meet/leonardo.mostarda", "https://unicam.webex.com/meet/rosario.culmone", "https://gionkez.github.io/icd-appunti/pdfs/0_prg.pdf", "https://amzn.to/43ok1Xw"],
 
         aggiornamento: "10/17/2025"
     },
@@ -84,9 +84,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/simona.bernabei",
 
-        extraName: ["Esercizi risolti", "Moodle 23/24", "R", "R Studio", "Quick-R"],
-        extra: ["Notion", "statistica2024", "download R", "posit.co", "statmethods.net"],
-        extraLink: ["https://francescopalozzi.notion.site/Esercizi-Probabilit-e-Statistica-44f29abfa6ec4abca0c734b910a31611?source=copy_link", "https://elearning.unicam.it/course/view.php?id=441", "https://cran.mirror.garr.it/CRAN/", "https://posit.co/downloads/", "https://www.statmethods.net/"],
+        extraName: ["Esercizi risolti", "Libro", "Moodle 23/24", "R", "R Studio", "Quick-R"],
+        extra: ["Notion", "Amazon", "statistica2024", "download R", "posit.co", "statmethods.net"],
+        extraLink: ["https://francescopalozzi.notion.site/Esercizi-Probabilit-e-Statistica-44f29abfa6ec4abca0c734b910a31611?source=copy_link", "https://amzn.to/3Wfv4yr", "https://elearning.unicam.it/course/view.php?id=441", "https://cran.mirror.garr.it/CRAN/", "https://posit.co/downloads/", "https://www.statmethods.net/"],
 
         aggiornamento: "09/24/2025"
     }, 
@@ -107,9 +107,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/diletta.cacciagrano",
 
-        extraName: ["Webex Trojani", "Registrazioni Lab.", "Lezioni Teoria", "Flowgorithm", "Wokwi", "Falstad", "Modulo Progetto", "Appunti Gionkez"],
-        extra: ["Webex", "Drive", "Notion", "flowgorithm.org", "wokwi.com", "falstad.com", "docs.google.com", "pdf"],
-        extraLink: ["https://unicam.webex.com/meet/massimo.trojani", "https://drive.google.com/drive/u/7/folders/1wTD2N9nnugsagZaMa6K-6_gm85hJT3Xf", "https://francescopalozzi.notion.site/Lezioni-AdE-06af90cb1cd240cda5ea5a7fdfc12341?pvs=4", "http://flowgorithm.org", "https://wokwi.com/", "https://www.falstad.com/circuit/circuitjs.html", "https://docs.google.com/forms/d/e/1FAIpQLSf3yUBGSruq9gcv_2Ts5QsZhGJ9f7cJx2RZ6pJf_UK7GtEIbg/viewform", "https://gionkez.github.io/icd-appunti/pdfs/0_ael.pdf"],
+        extraName: ["Libro", "Webex Trojani", "Registrazioni Lab.", "Lezioni Teoria", "Flowgorithm", "Wokwi", "Falstad", "Modulo Progetto", "Appunti Gionkez"],
+        extra: ["Amazon", "Webex", "Drive", "Notion", "flowgorithm.org", "wokwi.com", "falstad.com", "docs.google.com", "pdf"],
+        extraLink: ["https://amzn.to/3IVrS8c", "https://unicam.webex.com/meet/massimo.trojani", "https://drive.google.com/drive/u/7/folders/1wTD2N9nnugsagZaMa6K-6_gm85hJT3Xf", "https://francescopalozzi.notion.site/Lezioni-AdE-06af90cb1cd240cda5ea5a7fdfc12341?pvs=4", "http://flowgorithm.org", "https://wokwi.com/", "https://www.falstad.com/circuit/circuitjs.html", "https://docs.google.com/forms/d/e/1FAIpQLSf3yUBGSruq9gcv_2Ts5QsZhGJ9f7cJx2RZ6pJf_UK7GtEIbg/viewform", "https://gionkez.github.io/icd-appunti/pdfs/0_ael.pdf"],
 
         aggiornamento: "10/17/2025"
     }, 
@@ -153,9 +153,9 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/grid.thoma",
 
-        extraName: ["Domande ripasso", "Appunti libro", "Modulo domande"],
-        extra: ["Notion", "Notion", "Moduli"],
-        extraLink: ["https://francescopalozzi.notion.site/Domande-ripasso-Business-494cec77f2bd427ca92a0e838b413cfd?source=copy_link", "https://francescopalozzi.notion.site/Riassunto-Libro-Business-54eab5cea7974061b17c8056c18dec78?source=copy_link", "https://docs.google.com/forms/d/e/1FAIpQLSeRbvRAhKFfjkgx7wRBwQNtgMZl0Y1fR4HRHXtibWgc_OFRcA/viewform"],
+        extraName: ["Domande ripasso", "Appunti libro", "Libro", "Modulo domande"],
+        extra: ["Notion", "Notion", "Amazon", "Moduli"],
+        extraLink: ["https://francescopalozzi.notion.site/Domande-ripasso-Business-494cec77f2bd427ca92a0e838b413cfd?source=copy_link", "https://francescopalozzi.notion.site/Riassunto-Libro-Business-54eab5cea7974061b17c8056c18dec78?source=copy_link", "https://amzn.to/4owUmnK", "https://docs.google.com/forms/d/e/1FAIpQLSeRbvRAhKFfjkgx7wRBwQNtgMZl0Y1fR4HRHXtibWgc_OFRcA/viewform"],
 
         aggiornamento: "09/24/2025"
     }, 
