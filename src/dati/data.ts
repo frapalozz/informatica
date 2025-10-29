@@ -344,11 +344,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/andrea.morichetta",
 
-        extraName: ["Risorse", "Libro Patterns", "Libro UML", "Webex Polini", "Webex Morrichetta", "Appunti Gionkez"],
-        extra: ["Wiki", "Amazon", "Amazon", "Webex", "Webex", "pdf"],
-        extraLink: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:ids:main", "https://amzn.to/47lS6so", "https://amzn.to/49i4U5J", "https://unicam.webex.com/meet/andrea.polini", "https://unicam.webex.com/meet/andrea.morichetta", "https://gionkez.github.io/icd-appunti/pdfs/0_isw.pdf"],
+        extraName: ["Risorse", "Design Patterns", "Design Patterns", "Libro Patterns", "Libro UML", "Webex Polini", "Webex Morrichetta", "Appunti Gionkez"],
+        extra: ["Wiki", "Ref. Guru", "Youtube", "Amazon", "Amazon", "Webex", "Webex", "pdf"],
+        extraLink: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:ids:main", "https://refactoring.guru/design-patterns", "https://www.youtube.com/watch?v=mE3qTp1TEbg&list=PLlsmxlJgn1HJpa28yHzkBmUY-Ty71ZUGc", "https://amzn.to/47lS6so", "https://amzn.to/49i4U5J", "https://unicam.webex.com/meet/andrea.polini", "https://unicam.webex.com/meet/andrea.morichetta", "https://gionkez.github.io/icd-appunti/pdfs/0_isw.pdf"],
 
-        aggiornamento: "10/17/2025"
+        aggiornamento: "10/29/2025"
     },
     {
         "_comment": "Linguaggi e Compilatori",
