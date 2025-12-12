@@ -1,12 +1,21 @@
+"use client"
 import Link from "next/link"
 
 export default function Navbar() {
+    const month = new Date().getMonth()+1;
+    const day = new Date().getDate();
+    let adventofcode = false;
+
+    if(month == 12 && day < 26) {
+        adventofcode = true;
+    }
+
     return(
         <header className="nav dark:bg-stone-950/30 bg-stone-100/30 backdrop-blur-sm max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center fixed z-[100] top-0 mb-9">
 
-            <div className="w-screen bg-transparent mt-1 flex items-center justify-center absolute">
+            {adventofcode && <div className="w-screen bg-transparent mt-1 flex items-center justify-center absolute">
                 <Link target="_blank" href={"https://adventofcode.com/"} className="text-blue-400">❄️Advent Of Code❄️</Link>
-            </div>
+            </div>}
 
             <nav className="flex flex-row justify-between items-center w-full h-full xl:mt-9 lg:mt-7 md:mt-5 mt-5">
                 <div>
