@@ -384,7 +384,7 @@ export const dati =[
         descrizione: "Chiusura di funzioni: significato e definizione della cattura dell'ambiente; Argomenti canonici: callback, argomenti negli iteratori, codice riutilizzabile tramite gli argomenti delle funzioni; L'utilizzo della chiusura per incapsulare i dati nel proprio ambiente; Currying e applicazione su argomenti incompleti; Definire operazioni di ordine superiore su dati aggregati e in particolare l'uso di map, reduce e filter; Nozioni di base sul lambda calcolo; Cenni sul linguaggio LISP; Elementi del linguaggio di programmazione LUA; Elementi del linguaggio di programmazione Haskell.",
         materiale: ["https://drive.google.com/drive/folders/1orvFLQOWnWvHpncWRUAHuhKBb4erTK3M?usp=drive_link", "Drive"],
         registrazioni: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:pap:main", "Wiki"],
-        prove: ["", "Nulla"],
+        prove: ["https://share.note.sx/7g4s0gjz#9aO+v81ypWdiSVOOXkmvZUhE4CSl8LfKjWywStEGLaI", "Obsidian"],
 
         webex: "https://unicam.webex.com/meet/rosario.culmone",
 
@@ -392,7 +392,7 @@ export const dati =[
         extra: ["Wiki", "Drive", "Amazon", "Webex"],
         extraLink: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:pap:main", "https://drive.google.com/drive/folders/12-HmSE3UsmzFmITFzk2WJOrHcQBF81-c?usp=drive_link", "https://amzn.to/4qow7tE", "https://unicam.webex.com/meet/federico01.paoloni"],
 
-        aggiornamento: "10/10/2025"
+        aggiornamento: "12/27/2025"
     },
     {
         "_comment": "Game Design",
