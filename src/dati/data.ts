@@ -388,11 +388,11 @@ export const dati =[
 
         webex: "https://unicam.webex.com/meet/rosario.culmone",
 
-        extraName: ["Risorse", "Enterprise", "Libro Haskell", "Webex Paoloni"],
-        extra: ["Wiki", "Drive", "Amazon", "Webex"],
-        extraLink: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:pap:main", "https://drive.google.com/drive/folders/12-HmSE3UsmzFmITFzk2WJOrHcQBF81-c?usp=drive_link", "https://amzn.to/4qow7tE", "https://unicam.webex.com/meet/federico01.paoloni"],
+        extraName: ["Risorse", "Enterprise", "Appunti", "Libro Haskell", "Webex Paoloni"],
+        extra: ["Wiki", "Drive", "Obsidian", "Amazon", "Webex"],
+        extraLink: ["http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:pap:main", "https://drive.google.com/drive/folders/12-HmSE3UsmzFmITFzk2WJOrHcQBF81-c?usp=drive_link", "https://share.note.sx/3a5migwe#MgBsjShuBmPLMxlJL8X5wVuSEmpOV+8M9fvqhHBgsaM", "https://amzn.to/4qow7tE", "https://unicam.webex.com/meet/federico01.paoloni"],
 
-        aggiornamento: "12/27/2025"
+        aggiornamento: "12/28/2025"
     },
     {
         "_comment": "Game Design",
