@@ -408,7 +408,7 @@ export const dati =[
         registrazioni: ["https://docs.google.com/spreadsheets/d/1E9QQElXXp4xzKx77zBk0K_yoTRNwNhXYlfaL9Ybex98/edit?gid=0#gid=0", "Google Sheets"],
         prove: ["https://docs.google.com/forms/d/e/1FAIpQLSdnG6xLO9Me8kIfs11P8SByOfZu2pAg7xXPY1poQj-CKmPJiA/viewform", "Form"],
 
-        webex: "",
+        webex: "https://unicam.webex.com/meet/carlo.cuomo",
 
         extraName: ["Appunti", "Appunti Gionkez"],
         extra: ["Obsidian", "pdf"],
