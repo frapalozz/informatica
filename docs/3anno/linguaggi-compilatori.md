@@ -1,6 +1,5 @@
 # Linguaggi e Compilatori
-[Home](../index.md)
-
+ 
 - Materiale Didattico - [Classroom](https://classroom.google.com/c/ODE0NDM0MzExNjMy?cjc=a42iw2hq)
 - Registrazioni - [Classroom](https://classroom.google.com/c/ODE0NDM0MzExNjMy?cjc=a42iw2hq)
 - Prove Passate - [Notion](https://francescopalozzi.notion.site/Prove-passate-23a4f1c8724e80ad881ee3b3c5de9dc4?source=copy_link)

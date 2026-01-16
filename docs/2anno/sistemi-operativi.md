@@ -1,6 +1,5 @@
 # Sistemi Operativi
-[Home](../index.md)
-
+ 
 - Materiale Didattico - [Portale D.](https://docenti.unicam.it/pdett.aspx?UteId=555&IDPADRE=315&tv=m&ru=PA)
 - Registrazioni - [Portale D.](https://docenti.unicam.it/pdett.aspx?UteId=555&tv=lr&ru=PA)
 - Prove Passate - [Notion](https://francescopalozzi.notion.site/Prove-Passate-2704f1c8724e80b58329e54acb49d9d0?source=copy_link)

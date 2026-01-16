@@ -1,6 +1,5 @@
 # Ingegneria del Software
-[Home](../index.md)
-
+ 
 - Materiale Didattico - [Classroom](https://classroom.google.com/c/ODEwNjMyNDUwNzE5?cjc=25otuefr)
 - Registrazioni - [Classroom](https://classroom.google.com/c/ODEwNjMyNDUwNzE5?cjc=25otuefr)
 - Prove Passate - [Notion](https://francescopalozzi.notion.site/Esami-Passati-IDS-2794f1c8724e8007b9dedea86d413f21?source=copy_link)

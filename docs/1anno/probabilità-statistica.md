@@ -1,6 +1,5 @@
 # Probabilità e Statistica
-[Home](../index.md)
-
+ 
 - Materiale Didattico - [Moodle](https://elearning.unicam.it/course/view.php?id=506)
 - Registrazioni - [Moodle](https://elearning.unicam.it/course/view.php?id=506)
 - Prove Passate - [Notion](https://francescopalozzi.notion.site/Prove-statistica-8ffc9d7060aa459dac274613fdcb9712?pvs=4)

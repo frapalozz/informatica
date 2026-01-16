@@ -1,6 +1,5 @@
 # Metodologie di Programmazione
-[Home](../index.md)
-
+ 
 - Materiale Didattico - [Moodle](https://elearning.unicam.it/course/view.php?id=515)
 - Registrazioni - [Moodle](https://elearning.unicam.it/course/view.php?id=515)
 - Prove Passate - [Nukleo](https://nukleo.me/uni/old/metodologie/index.html)

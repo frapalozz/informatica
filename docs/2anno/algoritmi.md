@@ -1,6 +1,5 @@
 # Algoritmi e Strutture Dati
-[Home](../index.md)
-
+ 
 - Materiale Didattico - [Classroom](https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4)
 - Registrazioni - [Classroom 23/24](https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5)
 - Prove Passate - [Classroom 23/24](https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5)

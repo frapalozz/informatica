@@ -1,6 +1,5 @@
 # Matematica Discreta
-[Home](../index.md)
-
+ 
 - Materiale Didattico - [Drive](https://drive.google.com/drive/folders/1l6FY-yBaVCq9A4vp-yLFlbSR3-0fByKIfVs733nMJGW_crPowRzfWA4B2cAJ7SIgfckmhfKl?usp=drive_link)
 - Registrazioni - [Classroom](https://classroom.google.com/u/7/c/NDAyNjAxMTEzMDE0)
 - Prove Passate - [Drive](https://drive.google.com/drive/folders/1l6FY-yBaVCq9A4vp-yLFlbSR3-0fByKIfVs733nMJGW_crPowRzfWA4B2cAJ7SIgfckmhfKl?usp=drive_link)

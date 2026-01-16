@@ -1,6 +1,5 @@
 # Matematica Logica
-[Home](../index.md)
-
+ 
 - Materiale Didattico - [classroom](https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0)
 - Registrazioni - [Classroom](https://classroom.google.com/u/7/c/NjI2Mjk5Mzk3MTc0)
 - Prove Passate - [Notion](https://francescopalozzi.notion.site/Esami-Passati-e9d2df28ecf94e1584f3c907f387127a?pvs=4)

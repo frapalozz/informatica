@@ -1,6 +1,5 @@
 # Business
-[Home](../index.md)
-
+ 
 - Materiale Didattico - [Portale D.](https://docenti.unicam.it/pdett.aspx?UteId=617&tv=m&ru=RU)
 - Registrazioni - ...
 - Prove Passate - ...

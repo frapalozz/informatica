@@ -1,6 +1,5 @@
 # Architettura degli Elaboratori
-[Home](../index.md)
-
+ 
 - Materiale Didattico - [Drive](https://drive.google.com/drive/u/7/folders/1-SGODclTwGAbJrGFwyGe_3olB6Axsl4f)
 - Registrazioni - [Portale D.](https://docenti.unicam.it/pdett.aspx?UteId=555&tv=lr&ru=PA)
 - Prove Passate - [Notion](https://francescopalozzi.notion.site/Prove-Teoria-Architettura-590c359d26584d8789e0843e6a2c8d7e?pvs=4)

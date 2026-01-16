@@ -1,5 +1,4 @@
 # Programmazione Enterprise
-[Home](../index.md)
 
 - Materiale Didattico - [Drive](https://drive.google.com/drive/folders/12-HmSE3UsmzFmITFzk2WJOrHcQBF81-c?usp=drive_link)
 - Registrazioni - [Wiki](https://drive.google.com/drive/folders/12-HmSE3UsmzFmITFzk2WJOrHcQBF81-c?usp=drive_link)

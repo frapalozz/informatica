@@ -1,6 +1,5 @@
 # Diritto dei Prodotti Digitali
-[Home](../index.md)
-
+ 
 - Materiale Didattico - [Sito Docente](https://computerscience.unicam.it/marcantoni/)
 - Registrazioni - [Drive](https://drive.google.com/drive/folders/1GUvMhxT-Vh0eK5hCo3G4FFVkRpbRTuN4?usp=sharing)
 - Prove Passate - ...

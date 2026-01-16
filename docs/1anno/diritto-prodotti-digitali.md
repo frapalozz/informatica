@@ -1,6 +1,5 @@
 # Diritto dei Prodotti Digitali
-[Home](../index.md)
-
+ 
 - Materiale Didattico - [Portale D.](https://docenti.unicam.it/pdett.aspx?UteId=526&IDPADRE=3334&tv=m&ru=PO)
 - Registrazioni - [Portale D.](https://docenti.unicam.it/pdett.aspx?UteId=526&tv=lr&ru=PO)
 - Prove Passate - ...

@@ -1,6 +1,5 @@
 # Ricerca Operativa
-[Home](../index.md)
-
+ 
 - Materiale Didattico - [Classroom](https://classroom.google.com/u/1/c/NzU2MTc3MjEyNzUz)
 - Registrazioni - [Portale D.](https://docenti.unicam.it/pdett.aspx?UteId=305&tv=lr&ru=PO)
 - Prove Passate - ...

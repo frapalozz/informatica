@@ -1,6 +1,5 @@
 # Fondamenti di Informatica
-[Home](../index.md)
-
+ 
 - Materiale Didattico - [Telegram](https://t.me/+OBxl7LOP9XdhZTlk)
 - Registrazioni - [Telegram](https://t.me/+OBxl7LOP9XdhZTlk)
 - Prove Passate - [Github](https://097475.github.io/computazione-calcolabilita/excercises.html)

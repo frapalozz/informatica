@@ -1,6 +1,5 @@
 # Basi di Dati
-[Home](../index.md)
-
+ 
 - Materiale Didattico - [Moodle](https://elearning.unicam.it/course/view.php?id=473)
 - Registrazioni - [Moodle](https://elearning.unicam.it/course/view.php?id=473)
 - Prove Passate - [Notion](https://francescopalozzi.notion.site/Prove-passate-2704f1c8724e804b8cbcd8b6bca454ae?source=copy_link)
