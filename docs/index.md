@@ -1,4 +1,5 @@
-# Tutto ciò che serve agli **studenti informatici** in un luogo solo
+# Informatica
+## Tutto ciò che serve agli **studenti informatici** in un luogo solo
 *Aggiungi, Modifica, Migliora* -> [GitHub](https://github.com/frapalozz/informatica)
 
 [1°Anno](#1-anno) | [2°Anno](#2-anno) | [3°Anno](#1-anno) | [Extra](#extra)
@@ -36,3 +37,10 @@
 - [The Valley of Code](https://thevalleyofcode.com/)
 - [mycodeschool](https://www.youtube.com/@mycodeschool)
 - [C106A](https://see.stanford.edu/Course/CS106A)
+
+---
+- [WhatsApp](https://chat.whatsapp.com/Hc7jrbuVukO6lU0vQqdcmM)
+- [Telegram](https://t.me/+5JM3ec-W3Sg3MDJk)
+
+---
+❤️ da [frapalozz](https://github.com/frapalozz)
