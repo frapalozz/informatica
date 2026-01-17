@@ -11,3 +11,5 @@
 - Libro Patterns - [Amazon](https://amzn.to/47lS6so)
 - Libro UML - [Amazon](https://amzn.to/49i4U5J)
 - Appunti Gionkez - [pdf](https://gionkez.github.io/icd-appunti/pdfs/0_isw.pdf)
+- Appunti Danilo 1 - [IDS-Theory/UML](https://share.note.sx/1c1c1kk5#y9OhafJT09gABPLqtR06sU/q+X6DDNx5yc02Ani0cCQ)
+- Appunti Danilo 2 - [Design Pattern](https://share.note.sx/4b53fo9v#KL/1j2iPkchuJXQszkeNjtdKFazHDjXiTEm6FafDpTw)
