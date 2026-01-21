@@ -1,8 +1,8 @@
 # Algoritmi e Strutture Dati
  
 - Materiale Didattico - [Classroom](https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4)
-- Registrazioni - [Classroom 23/24](https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5)
-- Prove Passate - [Classroom 23/24](https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5)
+- Registrazioni - ...
+- Prove Passate - [repo](./assets/algoritmi/provePassate/prove-passate.md)
 
 ---
 - Libro - [Amazon](https://amzn.to/4otePtt)
