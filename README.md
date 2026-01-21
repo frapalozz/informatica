@@ -14,7 +14,36 @@ https://informatica.palozz.com
   - Prove passate (link a repository, obsidian, pdf)
   - Altre risorse esterne (libri, articoli, corsi consigliati)
 
+## 📂 Struttura delle risorse per materie
+
+Per organizzare meglio i file locali (come prove passate, esercizi, appunti), è possibile creare una struttura di cartelle così organizzata:
+text
+
+```
+/2anno/
+├── /assets/
+│   └── /algoritmi/
+│       ├── /prove-passate/
+│       │   ├── prova-2023-01.pdf
+│       │   ├── prova-2023-02.pdf
+│       │   └── prova-2024-01.pdf
+│       ├── /esercizi/
+│       │   ├── esercizi-svolti-1.pdf
+│       │   └── soluzioni.md
+│       └── /appunti/
+│           └── appunti-completi.pdf
+```
+
 ## 🤝 Come contribuire
+
+> [!WARNING] 
+> Quando viene inserito un link a un pdf inserire il tag `{:download}` per evitare di aprire la finestra di stampa su firefox
+>
+> Ad esempio:
+> ```
+> - [test](prova.pdf){:download}
+> ```
+
 Puoi contribuire in diversi modi:
 ### 1. Aggiungere nuove risorse a una materia esistente
 - Modifica il file della materia nella cartella corrispondente (es. /3anno/funzionale.md)
