@@ -7,3 +7,4 @@
 ---
 - Risorse - [Wiki](http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:pap:main)
 - Appunti - [Obsidian](https://share.note.sx/3a5migwe#MgBsjShuBmPLMxlJL8X5wVuSEmpOV+8M9fvqhHBgsaM)
+- Appunti Scotti - [pdf](https://nukleo.me/uni/old/enterprise/risposte.pdf)
