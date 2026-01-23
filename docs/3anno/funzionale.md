@@ -7,3 +7,4 @@
 ---
 - Risorse - [Wiki](http://didattica.cs.unicam.it/doku.php?id=didattica:ay2526:pap:main)
 - Libro Haskell - [Amazon](https://amzn.to/4qow7tE)
+- Appunti - [Obsidian](https://share.note.sx/71lb1698#R1aacxW1aEOGOBd7e1+DzZyWe6Ls1VCJ+DlY2eV9ZEQ)
