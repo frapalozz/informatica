@@ -18,3 +18,4 @@
 - Appunti Danilo 2 - [Design Pattern](https://share.note.sx/4b53fo9v#KL/1j2iPkchuJXQszkeNjtdKFazHDjXiTEm6FafDpTw)
 - FlashCard Scotti - [Design Pattern](https://nukleo.me/uni/ids/designQuiz.html)
 - Soluzioni Esami - [Notion](https://francescopalozzi.notion.site/Soluzioni-Esami-2e84f1c8724e80b3bcfbd5d06d754395?source=copy_link)
+- Activity Diagram - [page](./assets/ids/appunti/activity-diagram.html)
