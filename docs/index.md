@@ -3,6 +3,10 @@
 [1°Anno](#1-anno) | [2°Anno](#2-anno) | [3°Anno](#1-anno) | [Extra](#extra)
 
 ---
+> [!WARNING]
+> Se le pagine notion non si aprono usate il browser in incognito
+
+---
 ## 1° Anno
 - Matematica Generale
     - [Matematica Discreta](./1anno/matematica-discreta.md)
