@@ -19,3 +19,4 @@
 - FlashCard Scotti - [Design Pattern](https://nukleo.me/uni/old/ids/designQuiz.html){:target="_blank"}
 - Soluzioni Esami - [Notion](https://francescopalozzi.notion.site/Soluzioni-Esami-2e84f1c8724e80b3bcfbd5d06d754395?source=copy_link){:target="_blank"}
 - Activity Diagram - [page](./assets/ids/appunti/activity-diagram.html){:target="_blank"}
+- Progetto HackHub 27/30 - [GitHub](https://github.com/frapalozz/HackHub-uni){:target="_blank"}
