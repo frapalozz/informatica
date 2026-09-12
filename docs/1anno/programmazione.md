@@ -5,5 +5,6 @@
 - Prove Passate - [Notion](https://francescopalozzi.notion.site/Programmazione-2704f1c8724e8017bb74dfddaf1a81f4?source=copy_link)
 
 ---
+- Risorsa integrativa - [Guida italiana a TypeScript](https://gibbok.github.io/typescript-book/it-it/)
 - Appunti Gionkez - [pdf](https://gionkez.github.io/icd-appunti/pdfs/0_prg.pdf)
 - Libro - [amazon](https://amzn.to/43ok1Xw)
