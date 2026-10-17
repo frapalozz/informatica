@@ -23,10 +23,10 @@ prove:
 extra:
   - nome: "Domande ripasso"
     label: "Notion"
-    url: "https://francescopalozzi.notion.site/Domande-ripasso-Business-494cec77f2bd427ca92a0e838b413cfd?source=copy_link"
+    url: "https://francescopalozzi.notion.site/Domande-ripasso-Business-2704f1c8724e801983cee606d540983e?source=copy_link"
   - nome: "Appunti libro"
     label: "Notion"
-    url: "https://francescopalozzi.notion.site/Riassunto-Libro-Business-54eab5cea7974061b17c8056c18dec78?source=copy_link"
+    url: "https://francescopalozzi.notion.site/Riassunto-Libro-Business-2704f1c8724e8068ac56e3899e68e429?source=copy_link"
   - nome: "Libro"
     label: "Amazon"
     url: "https://amzn.to/4owUmnK"

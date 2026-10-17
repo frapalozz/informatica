@@ -1,0 +1,18 @@
+{%- comment -%}
+  Link a una risorsa. Parametri: url, label, class.
+  - url vuoto            -> solo testo (nessun link)
+  - url con "://"        -> link esterno, nuova scheda
+  - url con "/assets/"   -> file del sito (pdf, immagini, pagine statiche), nuova scheda
+  - altro (es. /informatica/...) -> pagina del sito, stessa scheda
+  I percorsi interni passano da relative_url, quindi funzionano anche con baseurl.
+{%- endcomment -%}
+{%- assign u = include.url | default: "" -%}
+{%- if u == "" -%}
+<span class="{{ include.class }}">{{ include.label }}</span>
+{%- elsif u contains "://" -%}
+<a href="{{ u }}" target="_blank" rel="noopener" class="{{ include.class }} underline">{{ include.label }}</a>
+{%- elsif u contains "/assets/" -%}
+<a href="{{ u | relative_url }}" target="_blank" rel="noopener" class="{{ include.class }} underline">{{ include.label }}</a>
+{%- else -%}
+<a href="{{ u | relative_url }}" class="{{ include.class }} underline">{{ include.label }}</a>
+{%- endif -%}

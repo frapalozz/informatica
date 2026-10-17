@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{%- comment -%}
+  Pagina "Prove passate" di una materia. Dati nel front matter:
+    prove: lista di { nome, label, url }   (url interni: /assets/prove/...)
+    torna: percorso della pagina della materia
+{%- endcomment -%}
+<section class="max-w-screen-2xl w-full px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-5 xl:mb-9 lg:mb-7 md:mb-5 mb-4">
+  <div class="flex flex-col w-full lg:w-6/12 mt-10 text-white relative z-[60]">
+    <h1 class="dark:text-white text-black text-3xl font-bold mb-4 md:mb-5 cursor-default">{{ page.title }}</h1>
+
+    {% for p in page.prove %}
+    <div class="w-full h-[2px] rounded-xl dark:bg-zinc-700 bg-zinc-400 mt-3 mb-3"></div>
+    <div class="flex flex-row justify-between items-center w-full">
+      <p class="dark:text-white text-black font-semibold text-lg cursor-default">{{ p.nome }}</p>
+      {% include res-link.html url=p.url label=p.label class="font-medium text-lg dark:text-white/65 text-black/65" %}
+    </div>
+    {% endfor %}
+
+    {% if page.torna %}
+    <div class="w-full h-[2px] rounded-xl dark:bg-zinc-700 bg-zinc-400 mt-3 mb-3"></div>
+    <a href="{{ page.torna | relative_url }}" class="font-medium text-lg dark:text-white/65 text-black/65 underline">&larr; Torna alla materia</a>
+    {% endif %}
+  </div>
+</section>

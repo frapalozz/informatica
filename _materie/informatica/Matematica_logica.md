@@ -23,7 +23,10 @@ prove:
 extra:
   - nome: "Formulario"
     label: "Notion"
-    url: "https://francescopalozzi.notion.site/Formulario-Logica-2774f1c8724e804fb948f02e4bcb038e"
+    url: "https://francescopalozzi.notion.site/Formulario-Matematica-Logica-2704f1c8724e802caf9fddd44c1321cf?source=copy_link"
+  - nome: "Esercizi"
+    label: "Notion"
+    url: "https://francescopalozzi.notion.site/Esercizi-risolti-Logica-2704f1c8724e803c9f1ef554c0818513?source=copy_link"
   - nome: "Esercizi Risolti"
     label: "Notion"
     url: "https://francescopalozzi.notion.site/Esercizi-Logica-2774f1c8724e801eb4b9c934097c0395"

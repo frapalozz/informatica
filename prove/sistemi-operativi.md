@@ -1,0 +1,31 @@
+---
+layout: prove
+title: "Prove passate – Sistemi Operativi"
+permalink: /informatica/Sistemi_Operativi/prove/
+torna: "/informatica/Sistemi_Operativi/"
+prove:
+  - nome: "Prova 1"
+    label: "PDF"
+    url: "/assets/prove/so/prova1.pdf"
+  - nome: "Prova 2"
+    label: "Immagine"
+    url: "/assets/prove/so/prova2.jpeg"
+  - nome: "Prova 3"
+    label: "Immagine"
+    url: "/assets/prove/so/prova3.jpeg"
+  - nome: "Prova 4"
+    label: "Immagine"
+    url: "/assets/prove/so/prova4.jpeg"
+  - nome: "Prova 5"
+    label: "Immagine"
+    url: "/assets/prove/so/prova5.jpeg"
+  - nome: "Prova 6"
+    label: "Immagine"
+    url: "/assets/prove/so/prova6.jpeg"
+  - nome: "Prova 7"
+    label: "Immagine"
+    url: "/assets/prove/so/prova7.jpeg"
+  - nome: "Prova 8"
+    label: "Immagine"
+    url: "/assets/prove/so/prova8.jpeg"
+---

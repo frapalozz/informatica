@@ -21,6 +21,9 @@ prove:
   url: "https://francescopalozzi.notion.site/Prove-statistica-8ffc9d7060aa459dac274613fdcb9712?pvs=4"
   label: "Notion"
 extra:
+  - nome: "Esercizi"
+    label: "Notion"
+    url: "https://francescopalozzi.notion.site/Esercizi-Probabilit-e-Statistica-2704f1c8724e80b49661f3057cb9898d?source=copy_link"
   - nome: "Esercizi risolti"
     label: "Notion"
     url: "https://francescopalozzi.notion.site/Esercizi-Probabilit-e-Statistica-44f29abfa6ec4abca0c734b910a31611?source=copy_link"

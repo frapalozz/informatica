@@ -23,10 +23,10 @@ prove:
 extra:
   - nome: "Formulario"
     label: "Notion"
-    url: "https://francescopalozzi.notion.site/Formulario-Fondamenti-di-Informatica-ff66cee317f34a939e2bb2ca2253452f?source=copy_link"
+    url: "https://francescopalozzi.notion.site/Formulario-Fondamenti-2704f1c8724e809dab2be1d71dcd1a61?source=copy_link"
   - nome: "Appunti"
     label: "Notion"
-    url: "https://francescopalozzi.notion.site/Appunti-Fondamenti-8651a865b8d9492ea1a9b1fe1d757c83?source=copy_link"
+    url: "https://francescopalozzi.notion.site/Appunti-Fondamenti-2704f1c8724e8031a70ac3bc8d7404c9?source=copy_link"
   - nome: "Esercizi"
     label: "Github"
     url: "https://097475.github.io/computazione-calcolabilita/excercises.html"

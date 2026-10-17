@@ -18,9 +18,12 @@ registrazioni:
   url: "https://elearning.unicam.it/course/view.php?id=391"
   label: "Elearning"
 prove:
-  url: "https://francescopalozzi.notion.site/Programmazione-c19362411ae34d31bf66595d78f48ee6?source=copy_link"
+  url: "https://francescopalozzi.notion.site/Programmazione-2704f1c8724e8017bb74dfddaf1a81f4?source=copy_link"
   label: "Notion"
 extra:
+  - nome: "Risorsa integrativa"
+    label: "TypeScript"
+    url: "https://gibbok.github.io/typescript-book/it-it/"
   - nome: "Webex Mostarda"
     label: "Webex"
     url: "https://unicam.webex.com/meet/leonardo.mostarda"
