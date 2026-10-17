@@ -1,0 +1,51 @@
+---
+title: "Architettura degli Elaboratori"
+permalink: "/informatica/Architettura_Elaboratori/"
+percorso: "informatica"
+redirect_from: ["/Architettura_Elaboratori/"]
+ordine: 5
+anno: "1"
+semestre: "2"
+aggiornamento: "2025-10-17"
+immagine: "https://art.pixilart.com/190f5db1b87dbfc.png"
+corso: ["Informatica","Comunicazione"]
+descrizione: "Organizzazione della macchina a livello di linguaggio macchina. Organizzazione e architettura del sistema di memoria. Valutazione e prestazioni"
+webex: "https://unicam.webex.com/meet/diletta.cacciagrano"
+materiale:
+  url: "https://drive.google.com/drive/u/7/folders/1-SGODclTwGAbJrGFwyGe_3olB6Axsl4f"
+  label: "Drive"
+registrazioni:
+  url: "https://docenti.unicam.it/pdett.aspx?UteId=555&tv=lr&ru=PA"
+  label: "Portale D."
+prove:
+  url: "https://francescopalozzi.notion.site/Prove-Teoria-Architettura-590c359d26584d8789e0843e6a2c8d7e?pvs=4"
+  label: "Notion"
+extra:
+  - nome: "Libro"
+    label: "Amazon"
+    url: "https://amzn.to/3IVrS8c"
+  - nome: "Webex Trojani"
+    label: "Webex"
+    url: "https://unicam.webex.com/meet/massimo.trojani"
+  - nome: "Registrazioni Lab."
+    label: "Drive"
+    url: "https://drive.google.com/drive/u/7/folders/1wTD2N9nnugsagZaMa6K-6_gm85hJT3Xf"
+  - nome: "Lezioni Teoria"
+    label: "Notion"
+    url: "https://francescopalozzi.notion.site/Lezioni-AdE-06af90cb1cd240cda5ea5a7fdfc12341?pvs=4"
+  - nome: "Flowgorithm"
+    label: "flowgorithm.org"
+    url: "http://flowgorithm.org"
+  - nome: "Wokwi"
+    label: "wokwi.com"
+    url: "https://wokwi.com/"
+  - nome: "Falstad"
+    label: "falstad.com"
+    url: "https://www.falstad.com/circuit/circuitjs.html"
+  - nome: "Modulo Progetto"
+    label: "docs.google.com"
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSf3yUBGSruq9gcv_2Ts5QsZhGJ9f7cJx2RZ6pJf_UK7GtEIbg/viewform"
+  - nome: "Appunti Gionkez"
+    label: "pdf"
+    url: "https://gionkez.github.io/icd-appunti/pdfs/0_ael.pdf"
+---

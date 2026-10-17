@@ -1,0 +1,12 @@
+{
+  "name": "informatica-jekyll",
+  "private": true,
+  "description": "Build del CSS Tailwind per il template Jekyll Informatica",
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i tailwind/input.css -o assets/css/main.css --minify",
+    "watch:css": "tailwindcss -c tailwind.config.js -i tailwind/input.css -o assets/css/main.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

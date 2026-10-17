@@ -1,0 +1,27 @@
+{%- comment -%}
+  Griglia di card + campo di ricerca.
+  Parametri: anno ("1" | "2" | "3" | "extra") e percorso (slug del corso).
+  Vengono renderizzate tutte le materie del corso; main.js mostra solo quelle dell'anno
+  corrente, oppure – quando si cerca – tutte quelle di 1°-3° anno che combaciano.
+{%- endcomment -%}
+{%- assign materie = site.materie | sort: "ordine" -%}
+<section data-cardgrid data-anno="{{ include.anno }}" class="relative max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-2 z-[60]">
+
+  <div class="flex flex-col items-center justify-center font-medium text-sm">
+    <label for="search-class-input" class="dark:text-white text-black">Cerca materia</label>
+    <input id="search-class-input" type="text" autocomplete="off" class="dark:bg-zinc-950 bg-white dark:border-zinc-700 focus:dark:border-zinc-500 border-zinc-400 dark:text-white text-black border-2 rounded px-2 outline-none font-semibold text-base">
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 w-full mt-5">
+    {% for m in materie %}
+      {% if m.percorso == include.percorso %}
+        {% include card.html m=m current=include.anno %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div data-empty class="hidden w-full dark:text-white text-black text-3xl font-semibold justify-center items-center">
+    Ancora Nulla 😓
+  </div>
+
+</section>

@@ -1,0 +1,34 @@
+{%- comment -%}
+  Riquadro con l'immagine della materia. Il pulsante "altro" mostra le risorse
+  extra (appunti, formulari, ...), "chiudi" torna all'immagine. Toggle in main.js.
+{%- endcomment -%}
+{%- assign has_extra = false -%}
+{%- if page.anno != "extra" and page.extra and page.extra.size > 0 -%}{%- assign has_extra = true -%}{%- endif -%}
+
+<div data-materia-card class="relative lg:w-6/12 w-full">
+  <div data-card-front class="relative w-full dark:bg-zinc-900/20 bg-zinc-200/20 backdrop-blur-sm lg:p-10 p-16 rounded-2xl flex justify-center items-center border-4 dark:border-zinc-700 border-zinc-400 dark:hover:border-zinc-500 hover:border-zinc-500 transition-all duration-300 z-[60] h-full">
+    {% if has_extra %}
+    <div class="absolute right-2 top-2">
+      <button type="button" data-card-open class="relative z-10 cursor-pointer bg-green-600/20 hover:bg-green-600/25 text-green-600 px-5 py-1 rounded-md transition-all duration-300 ease-in-out">altro</button>
+    </div>
+    {% endif %}
+    <img width="224" height="224" alt="{{ page.title | escape }}" src="{{ page.immagine }}" class="border-0 rounded-2xl lg:w-56 w-40 shadow-2xl dark:shadow-zinc-950 shadow-zinc-500">
+  </div>
+
+  {% if has_extra %}
+  <div data-card-back class="hidden relative w-full dark:bg-zinc-900 bg-zinc-200 dark:border-zinc-500 dark:hover:border-zinc-400 lg:p-10 px-7 py-9 rounded-2xl flex border-4 border-zinc-500 hover:border-zinc-500 transition-all duration-300 z-[60]">
+    <button type="button" data-card-close class="absolute right-2 top-2 cursor-pointer bg-red-500/20 hover:bg-red-500/25 text-red-500 px-5 py-1 rounded-md">chiudi</button>
+    <div class="text-white w-full">
+      {% for e in page.extra %}
+      <div class="w-full">
+        <div class="w-full h-[2px] rounded-xl dark:bg-zinc-700 bg-zinc-400 mt-3 mb-3"></div>
+        <div class="flex flex-row justify-between items-center w-full">
+          <p class="font-semibold cursor-default dark:text-white text-black">{{ e.nome }}</p>
+          <a href="{{ e.url }}" target="_blank" rel="noopener" class="font-medium dark:text-white/65 text-black/65 underline">{{ e.label }}</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>

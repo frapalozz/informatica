@@ -1,0 +1,51 @@
+---
+title: "Algoritmi e Strutture Dati"
+permalink: "/informatica/Algoritmi_e_Strutture/"
+percorso: "informatica"
+redirect_from: ["/Algoritmi_e_Strutture/"]
+ordine: 11
+anno: "2"
+semestre: "1"
+aggiornamento: "2025-10-17"
+immagine: "https://art.pixilart.com/f3a2793473dd936.png"
+corso: ["Informatica","Comunicazione"]
+descrizione: "Il ruolo degli algoritmi nel processo di problem solving, Differenze tra il caso ottimo, medio e pessimo dei comportamenti di un algoritmo, Analisi asintotica di limiti superiori o medi di complessità, Notazione \"O grande\": definizione formale, Notazione \"O grande\": uso, Notazione \"o piccolo\", \"omega grande\" e \"theta grande\", Misurazioni empiriche di prestazioni..."
+webex: "https://unicam.webex.com/meet/emanuela.merelli"
+materiale:
+  url: "https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4"
+  label: "Classroom"
+registrazioni:
+  url: "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5"
+  label: "Classroom 23/24"
+prove:
+  url: "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5"
+  label: "Classroom 23/24"
+extra:
+  - nome: "Libro"
+    label: "Amazon"
+    url: "https://amzn.to/4otePtt"
+  - nome: "Appunti"
+    label: "Notion"
+    url: "https://francescopalozzi.notion.site/Appunti-Alg-10c4f1c8724e80fa9a5ed650e4a8795d?source=copy_link"
+  - nome: "Appunti 2"
+    label: "Gumroad"
+    url: "https://scuola.gumroad.com/l/ncigte"
+  - nome: "Esercizi"
+    label: "Notion"
+    url: "https://francescopalozzi.notion.site/Esercizi-Algoritmi-10c4f1c8724e8072a2a7ed899086be56?source=copy_link"
+  - nome: "Webex laboratorio"
+    label: "Webex"
+    url: "https://unicam.webex.com/meet/luca.tesei"
+  - nome: "Webex Tutorato"
+    label: "Webex"
+    url: "https://unicam.webex.com/meet/aula01.tutorato"
+  - nome: "Pass. Classroom"
+    label: "keyvo55"
+    url: "https://classroom.google.com/u/2/c/NzE5NTAyMzkwMDQ4"
+  - nome: "Classroom 23/24"
+    label: "iyvt7bp"
+    url: "https://classroom.google.com/u/2/c/NjIyNjc0MTI0MzQ5"
+  - nome: "Appunti Gionkez"
+    label: "pdf"
+    url: "https://gionkez.github.io/icd-appunti/pdfs/0_asd.pdf"
+---

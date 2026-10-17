@@ -1,0 +1,26 @@
+<header class="nav dark:bg-stone-950/30 bg-stone-100/30 backdrop-blur-sm max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center fixed z-[100] top-0 mb-9">
+
+  {% if site.advent_of_code %}
+  <div data-advent class="hidden w-screen bg-transparent mt-1 items-center justify-center absolute">
+    <a target="_blank" rel="noopener" href="https://adventofcode.com/" class="text-blue-400">❄️Advent Of Code❄️</a>
+  </div>
+  {% endif %}
+
+  <nav class="flex flex-row justify-between items-center w-full h-full xl:mt-9 lg:mt-7 md:mt-5 mt-5">
+    <div>
+      <a aria-label="Home" href="{{ '/' | relative_url }}" class="text-white flex flex-row justify-center items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 stroke-black dark:stroke-white">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+        </svg>
+        <span class="xl:text-4xl lg:text-3xl text-center lg:font-bold lg:inline hidden dark:text-white text-black">{{ site.title | upcase }}</span>
+      </a>
+    </div>
+
+    <div>
+      <a aria-label="Risorsa" href="{{ '/risorsa/' | relative_url }}" class="md:min-h-[43px] md:min-w-[184px] dark:bg-white bg-black text-white dark:text-black xl:px-5 lg:px-4 md:px-3.5 px-3 xl:py-3.5 lg:py-3 py-2 rounded-lg xl:text-lg font-bold hover:shadow-lg dark:hover:shadow-zinc-700 hover:shadow-zinc-300 duration-300 transition-all">Aggiungi risorsa</a>
+    </div>
+  </nav>
+
+  <div class="w-full h-[2px] rounded-xl dark:bg-zinc-700 bg-zinc-400 xl:mt-9 lg:mt-7 md:mt-5 mt-4"></div>
+
+</header>

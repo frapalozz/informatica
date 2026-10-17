@@ -1,0 +1,48 @@
+---
+title: "Internet Reti e Sicurezza"
+permalink: "/informatica/Internet_Reti_Sicurezza/"
+percorso: "informatica"
+redirect_from: ["/Internet_Reti_Sicurezza/"]
+ordine: 9
+anno: "2"
+semestre: "1"
+aggiornamento: "2025-10-17"
+immagine: "https://art.pixilart.com/5edefdf2e8ed41b.gif"
+corso: ["Informatica","Comunicazione"]
+descrizione: "Cosa è internet 🌐"
+webex: "https://unicam.webex.com/meet/fausto.marcantoni"
+materiale:
+  url: "https://computerscience.unicam.it/marcantoni/"
+  label: "Sito Docente"
+registrazioni:
+  url: "https://drive.google.com/drive/folders/1GUvMhxT-Vh0eK5hCo3G4FFVkRpbRTuN4?usp=sharing"
+  label: "Drive"
+prove:
+  url: ""
+  label: "Nulla"
+extra:
+  - nome: "Libro"
+    label: "Amazon"
+    url: "https://amzn.to/4owUq6Y"
+  - nome: "Appunti"
+    label: "Notion"
+    url: "https://francescopalozzi.notion.site/Appunti-Internet-10c4f1c8724e8064ad7bf9b17c7ca846?source=copy_link"
+  - nome: "Appunti 2"
+    label: "Gumroad"
+    url: "https://scuola.gumroad.com/l/reti"
+  - nome: "Classroom"
+    label: "t6ki77a"
+    url: "https://classroom.google.com/u/1/c/NzM1ODg1MDY4NjM4"
+  - nome: "Classroom Tut. 23/24"
+    label: "m3nfww5"
+    url: "https://classroom.google.com/u/2/c/NjQ0MTI5MjM3MzU5"
+  - nome: "Domande Ripasso"
+    label: "nukleo.site"
+    url: "https://nukleo.site/uni/reti/index.html"
+  - nome: "Domande R. Scott"
+    label: "Google Form"
+    url: "https://forms.gle/FBDzrqPLJ74e6f5i9"
+  - nome: "Appunti Gionkez"
+    label: "pdf"
+    url: "https://gionkez.github.io/icd-appunti/pdfs/0_dpd.pdf"
+---

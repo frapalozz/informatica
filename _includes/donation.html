@@ -1,0 +1,30 @@
+{%- comment -%}
+  "Prendi una Moneta": mini clicker. Logica in assets/js/donation.js.
+  Si attiva con `donation_url` in _config.yml.
+{%- endcomment -%}
+<div id="btn-container" class="font-vt323 fixed z-[100] -bottom-16 right-auto left-auto flex flex-col-reverse transition-all duration-500 ease-in-out">
+  <div id="btn" class="flex flex-col items-center justify-center dark:text-white text-black select-none dark:bg-zinc-700/5 bg-zinc-200/50 border-2 dark:border-zinc-700 border-zinc-400 hover:border-zinc-300 backdrop-blur px-5 py-3 rounded-md cursor-pointer transition-all duration-300">
+    <p class="leading-none">Prendi una Moneta</p>
+    <div id="coin-counter" class="hidden items-center justify-center">
+      {% include coin.svg size=15 %}
+      <p id="coin-count" class="text-xs leading-none"></p>
+    </div>
+  </div>
+</div>
+
+<template id="coin-template">
+  <div class="text-yellow-600 text-sm relative z-[100]">
+    <div data-coin class="flex items-center text-center w-full justify-center absolute bottom-0 right-auto left-auto transition-all duration-[1s] ease-in-out">
+      {% include coin.svg size=25 %}
+      <span data-coin-text></span>
+    </div>
+  </div>
+</template>
+
+<div id="donation-popup" class="font-vt323 fixed w-screen h-screen bg-gray-400/30 z-[100] hidden flex-col items-center justify-center top-0 left-0">
+  <div class="bg-white rounded px-5 py-3 max-w-[300px] flex flex-col items-center justify-center gap-3">
+    <button type="button" id="donation-close" class="px-3 bg-red-600/20 text-red-600 rounded cursor-pointer">chiudi</button>
+    <p class="text-center">Dato che ora hai tante monetine, che ne dici di una donazione? 🥺</p>
+    <a target="_blank" rel="noopener" href="{{ site.donation_url }}" class="bg-black text-white px-3 py-1 rounded">Donazione</a>
+  </div>
+</div>

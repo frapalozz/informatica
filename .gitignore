@@ -1,1 +1,18 @@
+# Output di Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Dipendenze Ruby
+vendor/
+Gemfile.lock
+
+# Dipendenze Node (servono solo per ricompilare il CSS Tailwind)
+node_modules/
+
+# Sistema operativo / editor
+.DS_Store
+Thumbs.db
+.idea/
 .vscode/

@@ -1,0 +1,38 @@
+{%- assign page_title = page.title | default: site.title -%}
+{%- if page.percorso -%}
+  {%- assign corso_nome = site.data.corsi[page.percorso].nome -%}
+  {%- if corso_nome != site.title -%}{%- assign page_title = page_title | append: " · " | append: corso_nome -%}{%- endif -%}
+{%- endif -%}
+{%- if page_title == site.title -%}
+  {%- assign full_title = site.title -%}
+{%- else -%}
+  {%- assign full_title = page_title | append: " | " | append: site.title -%}
+{%- endif -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ full_title }}</title>
+<meta name="description" content="{{ site.description | escape }}">
+<link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:title" content="{{ full_title | escape }}">
+<meta property="og:description" content="{{ site.description | escape }}">
+<meta property="og:url" content="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+{%- if site.og_image != "" %}
+<meta property="og:image" content="{{ site.og_image }}">
+<meta name="twitter:card" content="summary">
+{%- endif %}
+{%- if site.adsense_account != "" %}
+<meta name="google-adsense-account" content="{{ site.adsense_account }}">
+{%- endif %}
+
+<meta name="theme-color" content="#000000">
+<link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+<link rel="apple-touch-icon" href="{{ '/assets/img/icon-192x192.png' | relative_url }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">

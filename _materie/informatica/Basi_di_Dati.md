@@ -1,0 +1,51 @@
+---
+title: "Basi di Dati"
+permalink: "/informatica/Basi_di_Dati/"
+percorso: "informatica"
+redirect_from: ["/Basi_di_Dati/"]
+ordine: 12
+anno: "2"
+semestre: "2"
+aggiornamento: "2025-10-17"
+immagine: "https://art.pixilart.com/watermark/06ddca2df223cfa.png"
+corso: ["Informatica","Comunicazione"]
+descrizione: "In informatica una base di dati, detta anche database, è una collezione di dati organizzati immagazzinata e accessibile per via elettronica."
+webex: "https://unicam.webex.com/meet/barbara.re"
+materiale:
+  url: "https://elearning.unicam.it/course/view.php?id=473"
+  label: "Moodle"
+registrazioni:
+  url: "https://elearning.unicam.it/course/view.php?id=473"
+  label: "Moodle"
+prove:
+  url: "https://francescopalozzi.notion.site/Prove-passate-2704f1c8724e804b8cbcd8b6bca454ae?source=copy_link"
+  label: "Notion"
+extra:
+  - nome: "Libro"
+    label: "Amazon"
+    url: "https://amzn.to/47pcJUR"
+  - nome: "Esercizi"
+    label: "Notion"
+    url: "https://francescopalozzi.notion.site/Esercizi-Esame-1f04f1c8724e80d1b38eda7dd144529d?source=copy_link"
+  - nome: "Appunti"
+    label: "Notion"
+    url: "https://francescopalozzi.notion.site/Appunti-BDD-2784f1c8724e8019b45fff8a5642f88c?source=copy_link"
+  - nome: "Webex Gagliardi"
+    label: "Webex"
+    url: "https://unicam.webex.com/meet/roberto.gagliardi"
+  - nome: "Moodle 23/24"
+    label: "BD_23_24"
+    url: "https://elearning.unicam.it/course/view.php?id=435"
+  - nome: "Pass. Moodle"
+    label: "dati24"
+    url: "https://elearning.unicam.it/course/view.php?id=473"
+  - nome: "Ex. Lab"
+    label: "cs.unicam.it"
+    url: "http://analyzer.cs.unicam.it:8080/"
+  - nome: "Slide Tutorato"
+    label: "drive"
+    url: "https://drive.google.com/drive/folders/1hFOk6Ny6QdjYcDUEmk_U3r8h_F0nqmx7?usp=sharing"
+  - nome: "Appunti Gionkez"
+    label: "pdf"
+    url: "https://gionkez.github.io/icd-appunti/pdfs/0_asd.pdf"
+---

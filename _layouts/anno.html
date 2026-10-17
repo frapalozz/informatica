@@ -1,0 +1,11 @@
+---
+layout: default
+---
+{%- comment -%}
+  Pagina elenco materie di un corso. Front matter della pagina:
+  `percorso` (slug del corso, vedi _data/corsi.yml) e
+  `anno`: "1", "2", "3" oppure "extra".
+{%- endcomment -%}
+<main class="flex {% if page.anno == '1' %}min-h-screen flex-col items-center justify-start{% else %}flex-col items-center justify-center{% endif %} w-full xl:mb-9 lg:mb-7 md:mb-5 mb-4">
+  {% include cardgrid.html anno=page.anno percorso=page.percorso %}
+</main>

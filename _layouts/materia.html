@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{%- comment -%}
+  Pagina di una singola materia (collection `_materie`).
+  Per gli elementi "extra" (anno: "extra") si mostra solo il link alla risorsa.
+{%- endcomment -%}
+{%- assign is_extra = false -%}
+{%- if page.anno == "extra" -%}{%- assign is_extra = true -%}{%- endif -%}
+
+<section class="max-w-screen-2xl w-full px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-5 xl:mb-9 lg:mb-7 md:mb-5 mb-4">
+
+  <div class="flex flex-col md:flex-row md:gap-10 gap-16 text-white w-full h-5/6 mt-10">
+
+    {% include materia-card.html %}
+
+    <div class="lg:w-6/12 w-full flex flex-col justify-center items-start relative z-[60]">
+      <h1 class="dark:text-white text-black text-3xl font-bold mb-4 md:mb-5 cursor-default">{{ page.title }}</h1>
+      <p class="text-sm dark:text-zinc-400 text-zinc-600 cursor-default">{{ page.descrizione }}</p>
+
+      {% if page.webex %}
+      <a href="{{ page.webex }}" class="dark:bg-white bg-black px-5 py-3 dark:text-zinc-900 text-zinc-100 font-bold text-lg border-0 rounded-md mt-5 mb-3">{% if is_extra %}Visualizza Risorsa{% else %}Webex{% endif %}</a>
+      {% endif %}
+
+      {% unless is_extra %}
+        {% if page.materiale %}
+          {% include materia-row.html titolo="Materiale didattico" voce=page.materiale %}
+        {% endif %}
+        {% if page.registrazioni %}
+          {% include materia-row.html titolo="Registrazioni" voce=page.registrazioni %}
+        {% endif %}
+        {% if page.prove %}
+          {% include materia-row.html titolo="Prove passate" voce=page.prove %}
+        {% endif %}
+      {% endunless %}
+    </div>
+  </div>
+
+</section>

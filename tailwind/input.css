@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.popup {
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
+}
+
+body {
+    font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-vt323 {
+    font-family: "VT323", ui-monospace, monospace;
+}

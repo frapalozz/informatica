@@ -1,0 +1,62 @@
+---
+layout: default
+title: "Aggiungi Risorsa"
+permalink: /risorsa/
+---
+<main class="flex flex-col items-center justify-center w-full dark:text-white text-black mt-10">
+  <section class="max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col justify-start items-center mt-5 mb-5 relative z-[60]">
+    <h1 class="text-center text-4xl font-bold">Nuova Risorsa</h1>
+    <p class="w-full sm:w-[500px] text-center text-sm">Per aggiungere un file bisogna creare una cartella Google drive (con accesso pubblico) e inserire il link nel campo <span class="underline">Links risorsa</span></p>
+
+    <form id="risorsa-form" data-endpoint="{{ site.risorsa.endpoint }}" data-repo="{{ site.risorsa.github_repo }}" class="flex flex-col gap-3 mt-5 justify-center w-full sm:w-[500px]">
+
+      <label class="flex flex-col justify-center gap-1 font-medium" for="name">
+        Quale risorsa vuoi aggiungere?
+        <input class="font-normal px-4 py-2 rounded text-sm dark:bg-black bg-white border dark:border-white/20 border-black/20" type="text" name="Titolo" placeholder="Titolo Risorsa" id="name" required>
+      </label>
+
+      <label class="flex flex-col justify-center gap-1 font-medium" for="corso">
+        Per quale corso?
+        <select name="Corso" id="corso" class="dark:bg-black bg-white text-sm rounded border dark:border-white/20 border-black/20 px-2 py-px w-fit font-normal" required>
+          {% for c in site.data.corsi %}
+          <option value="{{ c[1].nome }}">{{ c[1].nome }}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label class="flex flex-col justify-center gap-1 font-medium" for="anno">
+        Di quale anno si tratta?
+        <select name="Anno" id="anno" class="dark:bg-black bg-white text-sm rounded border dark:border-white/20 border-black/20 px-2 py-px w-fit font-normal" required>
+          <option value="1 Anno">1° Anno</option>
+          <option value="2 Anno">2° Anno</option>
+          <option value="3 Anno">3° Anno</option>
+          <option value="Extra">Extra</option>
+        </select>
+      </label>
+
+      <label class="flex flex-col justify-center gap-1 font-medium" for="links">
+        Links risorsa
+        <textarea class="dark:bg-black bg-white border dark:border-white/20 border-black/20 px-4 py-2 text-sm rounded font-normal" name="Links" id="links" placeholder="esempio.com" required></textarea>
+      </label>
+
+      <label class="flex flex-col justify-center gap-1 font-medium" for="altro">
+        Altre informazioni
+        <textarea class="border dark:border-white/20 border-black/20 dark:bg-black bg-white px-4 py-2 text-sm rounded font-normal" name="Altro" id="altro"></textarea>
+      </label>
+
+      <div class="flex flex-col sm:flex-row items-center gap-1 sm:gap-3 w-full sm:w-auto">
+        <button id="submit-button" type="submit" class="dark:bg-white bg-black dark:text-black text-white font-semibold w-full sm:w-fit px-4 py-1 rounded-md flex flex-row items-center justify-center gap-2">
+          <div class="flex justify-end my-auto">
+            <svg id="spinner" class="animate-spin hidden dark:invert-0 invert" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.1374 17.5341C8.62356 17.5548 7.13892 17.1169 5.87867 16.2779C4.61843 15.439 3.64158 14.2383 3.07659 12.8337C2.51159 11.4291 2.3849 9.88645 2.71317 8.40852C3.04145 6.93059 3.80931 5.58661 4.9158 4.5533C6.02229 3.51999 7.4156 2.84574 8.91251 2.6192C10.4094 2.39267 11.9398 2.62446 13.3025 3.28409C14.6652 3.94373 15.7964 5.00032 16.5473 6.31494C17.2981 7.62956 17.6336 9.14064 17.5095 10.6495" stroke="black" stroke-opacity="0.35" stroke-width="5"/>
+              <path d="M17.5 10C17.5 10.9849 17.306 11.9602 16.9291 12.8701C16.5522 13.7801 15.9997 14.6069 15.3033 15.3033C14.6069 15.9997 13.7801 16.5522 12.8701 16.9291C11.9602 17.306 10.9849 17.5 10 17.5" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          Invia
+        </button>
+        <p id="message" role="status"></p>
+      </div>
+
+    </form>
+  </section>
+</main>

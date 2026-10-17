@@ -1,0 +1,11 @@
+{%- case include.pos -%}
+  {%- when "first" -%}{%- assign pos_class = "rounded-r-none" -%}
+  {%- when "last" -%}{%- assign pos_class = "rounded-l-none" -%}
+  {%- else -%}{%- assign pos_class = "rounded-none" -%}
+{%- endcase -%}
+{%- if include.active == "true" or page.url == include.link -%}
+  {%- assign state_class = "dark:bg-zinc-100 bg-zinc-950 dark:text-zinc-950 text-zinc-100" -%}
+{%- else -%}
+  {%- assign state_class = "dark:text-white text-black" -%}
+{%- endif -%}
+<a href="{{ include.link | relative_url }}" class="flex h-full justify-center items-center border dark:border-zinc-700 border-zinc-400 {{ pos_class }} {{ state_class }} text-sm text-center md:text-base font-medium px-2 py-px rounded transition-all duration-300 min-h-6">{{ include.text }}</a>

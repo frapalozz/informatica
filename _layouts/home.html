@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{%- comment -%}
+  Home: scelta del corso. I corsi si definiscono in _data/corsi.yml.
+{%- endcomment -%}
+<main class="flex flex-col items-center justify-start w-full xl:mb-9 lg:mb-7 md:mb-5 mb-4 relative z-[60]">
+  <section class="max-w-screen-2xl w-full px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-8">
+
+    <h2 class="dark:text-white text-black text-2xl font-bold text-center">Scegli il tuo corso</h2>
+
+    <div class="grid sm:grid-cols-2 gap-5 w-full max-w-4xl mt-6">
+      {% for c in site.data.corsi %}
+        {% assign slug = c[0] %}
+        {% assign corso = c[1] %}
+        {%- assign n_materie = 0 -%}
+        {%- assign n_extra = 0 -%}
+        {%- for m in site.materie -%}
+          {%- if m.percorso == slug -%}
+            {%- if m.anno == "extra" -%}{%- assign n_extra = n_extra | plus: 1 -%}{%- else -%}{%- assign n_materie = n_materie | plus: 1 -%}{%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+        <a href="{{ '/' | append: slug | append: '/1anno/' | relative_url }}" class="group relative w-full flex flex-col items-center text-center gap-4 px-6 py-10 border-2 dark:border-zinc-700 border-zinc-400 dark:hover:border-zinc-500 hover:border-zinc-600 transition-all duration-300 rounded-lg dark:bg-zinc-900/20 bg-zinc-200/20 backdrop-blur-sm">
+          <div class="dark:bg-zinc-100 bg-zinc-900 dark:text-black text-white rounded-2xl p-4 shadow-2xl dark:shadow-zinc-950 shadow-zinc-500">
+            {% include course-icon.html icona=corso.icona %}
+          </div>
+          <h3 class="dark:text-white text-black text-2xl font-bold">{{ corso.nome }}</h3>
+          <p class="text-sm dark:text-zinc-400 text-zinc-600">{{ corso.descrizione }}</p>
+          <div class="flex flex-row gap-1 flex-wrap justify-center">
+            <span class="text-stone-700 dark:text-stone-500 text-xs rounded-full px-2 py-px font-semibold border border-stone-700 dark:border-stone-500">{{ n_materie }} materie</span>
+            {% if n_extra > 0 %}<span class="text-stone-700 dark:text-stone-500 text-xs rounded-full px-2 py-px font-semibold border border-stone-700 dark:border-stone-500">{{ n_extra }} extra</span>{% endif %}
+          </div>
+          <span class="dark:bg-white bg-black dark:text-zinc-900 text-zinc-100 font-bold border-0 rounded-md px-5 py-2 mt-1 transition-all duration-300 group-hover:shadow-lg dark:group-hover:shadow-zinc-700 group-hover:shadow-zinc-300">Entra</span>
+        </a>
+      {% endfor %}
+    </div>
+
+  </section>
+</main>

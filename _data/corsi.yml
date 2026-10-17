@@ -1,0 +1,19 @@
+# Corsi di laurea mostrati nella home.
+# La chiave (es. "informatica") è lo slug usato negli URL, nella cartella
+# del corso e nel campo `percorso` delle materie in _materie/.
+# `anni`: anni attivi del corso, mostrati nella barra di navigazione
+# (la voce "Extra" c'è sempre). Ogni anno richiede la pagina
+# <slug>/<N>anno.html: se togli un anno, elimina anche quel file.
+# Per aggiungere un corso: nuova voce qui + cartella con le pagine degli anni
+# (vedi README, sezione "Aggiungere un corso").
+informatica:
+  nome: "Informatica"
+  descrizione: "Materiale didattico, registrazioni, prove passate e appunti del corso di Informatica."
+  icona: terminal
+  anni: ["1", "2", "3"]
+
+computer-science:
+  nome: "Computer Science"
+  descrizione: "Materiale didattico, registrazioni, prove passate e appunti del corso di Computer Science."
+  icona: cpu
+  anni: ["1", "2"]

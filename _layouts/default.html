@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'it' }}">
+<head>
+  {% include head.html %}
+</head>
+<body class="dark:bg-stone-950 bg-stone-100 min-h-screen flex flex-col justify-between items-center relative z-0">
+  {% if site.snow %}<canvas id="snow-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-50 hidden" aria-hidden="true"></canvas>{% endif %}
+
+  {% include navbar.html %}
+  {% include hero.html %}
+  {% include whiteboard.html %}
+
+  {% if site.legacy_notice.enabled %}{% include popup.html %}{% endif %}
+
+  {{ content }}
+
+  {% include footer.html %}
+  {% if site.donation_url != "" %}{% include donation.html %}{% endif %}
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  {% if site.snow %}<script src="{{ '/assets/js/snow.js' | relative_url }}" defer></script>{% endif %}
+  {% if site.donation_url != "" %}<script src="{{ '/assets/js/donation.js' | relative_url }}" defer></script>{% endif %}
+  {% if site.analytics_script != "" %}<script src="{{ site.analytics_script }}" async defer></script>{% endif %}
+</body>
+</html>

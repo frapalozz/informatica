@@ -1,0 +1,34 @@
+<section class="max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center xl:mt-55 lg:mt-48 md:mt-40 mt-36 relative z-[60]">
+
+  <h1 class="dark:text-zinc-400 text-zinc-600 md:min-h-[180px] md:min-w-[672px] lg:min-w-[896px] text-center text-5xl lg:text-6xl font-extrabold max-w-2xl lg:max-w-4xl lg:tracking-wide">Tutto ciò che serve agli <span class="dark:text-zinc-200 text-zinc-950">studenti informatici</span> in un luogo solo</h1>
+
+  <p class="dark:text-zinc-400 text-zinc-600 min-h-6 text-sm md:text-base font-medium mt-5">Aggiungi, Modifica, Migliora</p>
+
+  {% if page.percorso %}
+    {%- comment -%} Selettore del corso {%- endcomment -%}
+    <div class="flex flex-row max-h-14 justify-center items-center text-white border-solid rounded-md dark:border-zinc-700 border-zinc-400 border mt-6 dark:bg-stone-950/5 bg-stone-100/5 backdrop-blur-sm">
+      {% for c in site.data.corsi %}
+        {%- if forloop.first -%}{%- assign pos = "first" -%}{%- elsif forloop.last -%}{%- assign pos = "last" -%}{%- else -%}{%- assign pos = "center" -%}{%- endif -%}
+        {%- if c[0] == page.percorso -%}{%- assign is_active = "true" -%}{%- else -%}{%- assign is_active = "false" -%}{%- endif -%}
+        {%- assign clink = "/" | append: c[0] | append: "/1anno/" -%}
+        {%- assign cnome = c[1].nome -%}
+        {% include tab-button.html text=cnome link=clink pos=pos active=is_active %}
+      {% endfor %}
+    </div>
+
+    {%- comment -%} Anni: dipendono dal corso (campo `anni` in _data/corsi.yml) + Extra {%- endcomment -%}
+    {%- assign corso = site.data.corsi[page.percorso] -%}
+    {%- assign n_tab = corso.anni.size | plus: 1 -%}
+    <div style="grid-template-columns: repeat({{ n_tab }}, minmax(0, 1fr));" class="grid max-h-14 justify-center items-center text-white border-solid rounded-md dark:border-zinc-700 border-zinc-400 border mt-3 dark:bg-stone-950/5 bg-stone-100/5 backdrop-blur-sm">
+      {% for anno in corso.anni %}
+        {%- if forloop.first -%}{%- assign pos = "first" -%}{%- else -%}{%- assign pos = "center" -%}{%- endif -%}
+        {%- assign alink = "/" | append: page.percorso | append: "/" | append: anno | append: "anno/" -%}
+        {%- assign atext = anno | append: "° Anno" -%}
+        {% include tab-button.html text=atext link=alink pos=pos %}
+      {% endfor %}
+      {%- assign elink = "/" | append: page.percorso | append: "/extra/" -%}
+      {% include tab-button.html text="Extra" link=elink pos="last" %}
+    </div>
+  {% endif %}
+
+</section>

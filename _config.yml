@@ -1,0 +1,72 @@
+# ─────────────────────────────────────────────────────────────
+#  Informatica – template Jekyll
+#  Modifica questi valori per personalizzare il sito.
+# ─────────────────────────────────────────────────────────────
+title: Informatica
+description: Tutto ciò che serve agli studenti informatici in un luogo solo
+lang: it
+
+# Se pubblichi come "project page" (https://utente.github.io/repo) imposta
+# baseurl: "/repo". Per un dominio custom o <utente>.github.io lascia vuoto.
+url: "https://frapalozz.github.io"        # es. "https://informatica.palozz.com"
+baseurl: "/jekyll-informatica"
+
+# Immagine usata nelle anteprime social (Open Graph)
+og_image: https://art.pixilart.com/c562a069cbc4da4.png
+
+# ── Link e funzionalità opzionali (lascia vuoto "" per disattivare) ──
+author: Palozz
+author_url: https://www.palozz.com
+whatsapp_url: https://chat.whatsapp.com/Hc7jrbuVukO6lU0vQqdcmM
+telegram_url: https://t.me/+5JM3ec-W3Sg3MDJk
+whiteboard_url: https://whiteboard.palozz.com
+donation_url: "https://www.paypal.com/paypalme/FrancescoPalozzi?country.x=IT&locale.x=it_IT"
+analytics_script: https://scripts.simpleanalyticscdn.com/latest.js
+adsense_account: ca-pub-8738596364045665
+
+# Effetti stagionali (gestiti lato browser)
+snow: true            # neve da dicembre a febbraio
+advent_of_code: true  # link "Advent Of Code" dall'1 al 25 dicembre
+
+# ── Pagina "Aggiungi risorsa" ──
+# Il sito è statico: non può salvare su Notion come la versione Next.js.
+# 1) Con `endpoint` (es. Formspree: https://formspree.io/f/xxxxxxx) il form
+#    invia i dati in JSON a quell'indirizzo.
+# 2) Senza `endpoint` il form apre una nuova issue precompilata su `github_repo`.
+risorsa:
+  endpoint: ""
+  github_repo: "frapalozz/informatica"
+
+# Avviso di cambio dominio (facoltativo): se il sito viene aperto da `old_origin`
+# mostra un popup e reindirizza a `new_origin`.
+legacy_notice:
+  enabled: false
+  old_origin: "https://frapalozzinformatica.netlify.app"
+  new_origin: "https://informatica.palozz.com"
+
+# ── Build ──
+collections:
+  materie:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: materie
+    values:
+      layout: materia
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from   # vecchi URL (/2anno/, /Matematica_discreta/ …) -> nuovi
+
+exclude:
+  - node_modules
+  - package.json
+  - package-lock.json
+  - tailwind
+  - tailwind.config.js
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

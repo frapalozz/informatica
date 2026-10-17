@@ -1,0 +1,20 @@
+{% if site.whiteboard_url != "" %}
+<div class="text-white mt-3">
+  <a href="{{ site.whiteboard_url }}" target="_blank" rel="noopener">
+    <button type="button" style="--spread:90deg;--shimmer-color:#ffffff;--radius:8px;--speed:3s;--cut:0.05em;--bg:rgba(0, 0, 0, 1)"
+      class="group relative z-0 flex cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap border border-white/10 text-white [background:var(--bg)] [border-radius:var(--radius)] dark:text-black transform-gpu transition-transform duration-300 ease-in-out active:translate-y-px px-3 py-2 border-neutral-700">
+      <!-- spark container -->
+      <div class="-z-30 blur-[2px] absolute inset-0 overflow-visible [container-type:size]">
+        <div class="absolute inset-0 h-[100cqh] animate-shimmer-slide [aspect-ratio:1] [border-radius:0] [mask:none]">
+          <div class="absolute -inset-full w-auto rotate-0 animate-spin-around [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,var(--shimmer-color)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
+        </div>
+      </div>
+      <span class="text-white">Whiteboard</span>
+      <!-- highlight -->
+      <div class="insert-0 absolute size-full rounded-[border-radius] px-4 py-1.5 text-sm font-medium shadow-[inset_0_-8px_10px_#ffffff1f] transform-gpu transition-all duration-300 ease-in-out group-hover:shadow-neutral-700/80 group-active:shadow-[inset_0_-10px_10px_#ffffff3f]"></div>
+      <!-- backdrop -->
+      <div class="absolute -z-20 [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
+    </button>
+  </a>
+</div>
+{% endif %}
