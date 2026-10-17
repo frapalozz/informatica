@@ -8,8 +8,8 @@ lang: it
 
 # Se pubblichi come "project page" (https://utente.github.io/repo) imposta
 # baseurl: "/repo". Per un dominio custom o <utente>.github.io lascia vuoto.
-url: "https://frapalozz.github.io"        # es. "https://informatica.palozz.com"
-baseurl: "/jekyll-informatica"
+url: "https://informatica.palozz.com"        # es. "https://informatica.palozz.com"
+baseurl: ""
 
 # Immagine usata nelle anteprime social (Open Graph)
 og_image: https://art.pixilart.com/c562a069cbc4da4.png
