@@ -1,0 +1,48 @@
+{%- comment -%}
+  Contatore "utenti online adesso" peer-to-peer (WebRTC via Trystero), privacy-first.
+  • Con turn_urls impostato: connessioni solo via relay TURN → gli altri visitatori NON vedono il tuo IP.
+  • Senza TURN: parte solo dopo un clic esplicito ("opt-in"), perché in WebRTC i peer vedono l'IP.
+  • Nessuna richiesta a CDN/tracker/STUN finché non c'è consenso (o relay attivo).
+  • Rispetta Global Privacy Control / Do Not Track: in quel caso non compare nulla.
+  Vedi README → "Contatore utenti online".
+{%- endcomment -%}
+{%- assign lu = site.live_users -%}
+{%- if lu.enabled -%}
+<style>
+  .live-users{display:inline-flex;align-items:center;font-size:.75rem;line-height:1.2;letter-spacing:.01em}
+  .live-users[hidden],.live-users [hidden]{display:none}
+  .live-users__view{display:inline-flex;align-items:center;gap:.4rem;white-space:nowrap;margin:0;opacity:.75}
+  .live-users__dot{width:.375rem;height:.375rem;border-radius:9999px;background:#22c55e;flex:none;animation:live-users-breathe 2.8s ease-in-out infinite}
+  .live-users__count{font-variant-numeric:tabular-nums;font-weight:600}
+  .live-users__label{opacity:.7}
+  .live-users__optin{display:inline-flex;align-items:center;gap:.4rem;font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left;opacity:.65;transition:opacity .2s}
+  .live-users__optin:hover,.live-users__optin:focus-visible{opacity:1}
+  .live-users__ring{width:.375rem;height:.375rem;border-radius:9999px;border:1px solid currentColor;flex:none;box-sizing:border-box}
+  .live-users__optin-text{display:flex;flex-direction:column}
+  .live-users__optin-note{font-size:.625rem;opacity:.7}
+  @keyframes live-users-breathe{0%,100%{opacity:1}50%{opacity:.35}}
+  @media (prefers-reduced-motion:reduce){.live-users__dot{animation:none}}
+</style>
+<div class="live-users dark:text-white text-black" data-live-users hidden
+     data-src="{{ lu.trystero_url | default: 'https://cdn.jsdelivr.net/npm/@trystero-p2p/torrent@0.25.3/+esm' | escape }}"
+     data-app="{{ lu.app_id | default: site.url | escape }}"
+     data-room="{{ lu.room | default: 'online-users' | escape }}"
+     data-respect-signals="{% if lu.respect_privacy_signals == false %}false{% else %}true{% endif %}"
+     data-turn-urls="{{ lu.turn_urls | default: '' | escape }}"
+     data-turn-user="{{ lu.turn_username | default: '' | escape }}"
+     data-turn-cred="{{ lu.turn_credential | default: '' | escape }}">
+  <button type="button" class="live-users__optin" data-live-optin hidden
+          title="Si collega agli altri visitatori con WebRTC: il tuo indirizzo IP sarà visibile agli altri partecipanti. Puoi smettere chiudendo la scheda.">
+    <span class="live-users__ring" aria-hidden="true"></span>
+    <span class="live-users__optin-text">
+      <span>Vedi chi è online</span>
+      <span class="live-users__optin-note">condivide il tuo IP</span>
+    </span>
+  </button>
+  <p class="live-users__view" data-live-view hidden title="Persone che stanno guardando il sito in questo momento">
+    <span class="live-users__dot" aria-hidden="true"></span>
+    <span><span class="live-users__count" data-live-count>1</span> <span class="live-users__label">online</span></span>
+  </p>
+</div>
+<script src="{{ '/assets/js/live-users.js' | relative_url }}" defer></script>
+{%- endif -%}

@@ -24,6 +24,20 @@ donation_url: "https://www.paypal.com/paypalme/FrancescoPalozzi?country.x=IT&loc
 analytics_script: https://scripts.simpleanalyticscdn.com/latest.js
 adsense_account: ca-pub-8738596364045665
 
+# Contatore "utenti online adesso" nel footer, peer-to-peer (WebRTC, libreria Trystero).
+# Vedi README → "Contatore utenti online" per le opzioni di privacy.
+live_users:
+  respect_privacy_signals: true
+  enabled: true
+  room: "online-users"    # nome della stanza condivisa tra i visitatori
+  # PRIVACY: con un server TURN gli altri visitatori non vedono il tuo IP e il contatore
+  # parte da solo. Senza TURN (campi vuoti) il contatore parte solo dopo un clic (opt-in).
+  turn_urls: "turn:free.expressturn.com:3478?transport=udp,turn:free.expressturn.com:3478?transport=tcp"           # es. "turn:eu.relay.example.com:443?transport=tcp" (più URL separati da virgola)
+  turn_username: "000000002107687361"
+  turn_credential: "B3gJtGcUJxi25V0wpRTHlRoolWk="
+  # app_id: ""            # opzionale; di default usa l'url del sito
+  # trystero_url: ""      # opzionale; di default Trystero da jsDelivr (conviene fissare la versione)
+
 # Effetti stagionali (gestiti lato browser)
 snow: true            # neve da dicembre a febbraio
 advent_of_code: true  # link "Advent Of Code" dall'1 al 25 dicembre

@@ -310,6 +310,31 @@ Dopo aver modificato `_config.yml` riavvia `jekyll serve`.
 
 ---
 
+## Contatore utenti online
+
+Nel footer compare "● N utenti online" (visitatori con il sito aperto e in primo piano). È **peer-to-peer**: nessun server tuo. I browser usano WebRTC tramite [Trystero](https://github.com/dmotz/trystero); i tracker BitTorrent pubblici servono solo a farli incontrare. File: `_includes/live-users.html`, `assets/js/live-users.js`, blocco `live_users` in `_config.yml`.
+
+**Privacy (cosa fa il codice)**
+
+- Nessuna richiesta a CDN, tracker o STUN prima del consenso (o del relay).
+- Rispetta *Global Privacy Control* e *Do Not Track*: se attivi, non compare nulla e non ci si collega.
+  Per i test in locale puoi disattivare questo controllo con `respect_privacy_signals: false` (non farlo in produzione).
+- Nessun cookie né localStorage. L'eventuale consenso sta in `sessionStorage` e sparisce chiudendo la scheda.
+- Ci si collega solo mentre la scheda è in primo piano; in background si esce dalla stanza. Non viene scambiato alcun dato applicativo.
+
+**Due modalità**
+
+1. **Relay (consigliata)**: imposta `turn_urls`, `turn_username`, `turn_credential` con un server TURN (anche un piano gratuito di un provider TURN: il traffico è minimo). Le connessioni passano solo dal relay (`iceTransportPolicy: relay`), quindi gli altri visitatori **non** vedono il tuo IP. Parte automaticamente. Le credenziali finiscono nel sito pubblico: usa credenziali dedicate a questo scopo.
+2. **Opt-in (default, senza TURN)**: compare "Vedi utenti online · condivide il tuo IP" e ci si collega solo dopo il clic. Il numero mostrato conta solo chi ha accettato.
+
+**Cosa resta inevitabile**
+
+- Tracker (e TURN, se lo usi) e jsDelivr vedono l'IP del visitatore, come qualsiasi server: se il sito ha una privacy policy, citali.
+- Ogni partecipante si connette a tutti gli altri: va bene per decine di persone contemporanee, oltre diventa pesante e impreciso.
+- Con una sola persona online vedrai "1". Se i tracker non rispondono il contatore resta nascosto.
+- La libreria è fissata a `@trystero-p2p/torrent@0.25.3` (override con `trystero_url`). Se la aggiorni, ricontrolla l'API di `joinRoom` e `onPeerJoin` nel README di Trystero.
+- Se il contatore non compare, apri la console del browser: gli errori sono stampati con il prefisso `[live-users]`.
+
 ## Stile e CSS (Tailwind)
 
 Il sito usa classi **Tailwind CSS** direttamente nei template. Il CSS finale è **già compilato** in `assets/css/main.css` e va committato, perché GitHub Pages non esegue Tailwind.

@@ -4,6 +4,8 @@
   <div class="flex flex-row justify-between items-center w-full xl:mt-10 lg:mt-8 md:mt-6 mt-5">
     <p class="dark:text-white text-black text-sm min-h-4">❤️‍🔥 da {% if site.author_url != "" %}<a href="{{ site.author_url }}" target="_blank" rel="noopener" class="underline">{{ site.author }}</a>{% else %}{{ site.author }}{% endif %}</p>
 
+    {% include live-users.html %}
+
     <div class="flex flex-row justify-center items-center gap-5">
       {% if site.whatsapp_url != "" %}
       <a href="{{ site.whatsapp_url }}" target="_blank" rel="noopener" aria-label="Gruppo Whatsapp">
