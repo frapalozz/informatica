@@ -7,7 +7,7 @@ anno: "1"
 semestre: "1"
 aggiornamento: "2026-10-25"
 immagine: "https://art.pixilart.com/7e45133128f1.png"
-corso: ["Computer Science"]
+corso: ["Artificial Intelligence"]
 descrizione: "Introduzione ai fondamenti del Machine Learning: apprendimento supervisionato e non supervisionato, regressione lineare e logistica, alberi di decisione, support vector machine, clustering, riduzione della dimensionalità, reti neurali, valutazione dei modelli (overfitting, cross-validation, metriche) e applicazione pratica degli algoritmi a dati reali..."
 webex: "https://unicam.webex.com/meet/michele.loreti"
 materiale:
