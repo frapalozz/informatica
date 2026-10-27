@@ -41,6 +41,7 @@ live_users:
 # Effetti stagionali (gestiti lato browser)
 snow: true            # neve da dicembre a febbraio
 advent_of_code: true  # link "Advent Of Code" dall'1 al 25 dicembre
+invader: true         # easter egg: dopo 1 minuto sul sito (solo desktop) un alieno pixel spara al cursore
 
 # ── Pagina "Aggiungi risorsa" ──
 # Il sito è statico: non può salvare su Notion come la versione Next.js.

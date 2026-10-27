@@ -22,7 +22,7 @@ Sito statico per gli studenti UNICAM (https://informatica.palozz.com) che raccog
 | `assets/prove/<materia>/` | PDF e immagini delle prove passate |
 | `_layouts/` | `default`, `home`, `anno`, `materia`, `prove` |
 | `_includes/` | Componenti (card, cardgrid, hero, navbar, footer…) |
-| `assets/js/` | `main.js` (ricerca, "aggiornato X giorni fa", popup), `live-users.js`, `snow.js`, `donation.js` |
+| `assets/js/` | `main.js` (ricerca, "aggiornato X giorni fa", popup), `live-users.js`, `snow.js`, `invader.js` (easter egg), `donation.js` |
 | `tailwind/input.css`, `tailwind.config.js` | Sorgenti del CSS |
 
 Slug dei corsi attuali: `informatica` (anni 1–3) e `computer-science` (anni 1–2).
