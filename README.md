@@ -79,6 +79,7 @@ La home permette di scegliere il corso (**Informatica** o **Computer Science**).
 │   ├── js/
 │   │   ├── main.js             Ricerca, "Aggiornato X giorni fa", toggle "altro", form, popup
 │   │   ├── donation.js         Mini-gioco delle monete
+│   │   ├── invader.js          Easter egg: alieno pixel dopo 1 minuto (solo desktop)
 │   │   └── snow.js             Neve (dicembre–febbraio)
 │   └── img/                    Icone dell'app (192 e 512 px)
 ├── tailwind/input.css          Sorgente del CSS (direttive Tailwind + poche regole custom)
@@ -302,6 +303,7 @@ Tutto in `_config.yml`:
 | `analytics_script` | Script di analytics (vuoto = nessuno) |
 | `adsense_account` | Meta tag Google AdSense (vuoto = nessuno) |
 | `snow` | Neve da dicembre a febbraio |
+| `invader` | Easter egg: dopo 1 minuto sul sito (solo desktop) compare un alieno pixel che spara al cursore; cliccandolo esplode e torna dopo un altro minuto |
 | `advent_of_code` | Link "Advent Of Code" dall'1 al 25 dicembre |
 | `risorsa.endpoint`, `risorsa.github_repo` | Destinazione del form (vedi sopra) |
 | `legacy_notice` | Avviso con redirect se il sito viene aperto dal vecchio dominio (`enabled: false` di default) |
