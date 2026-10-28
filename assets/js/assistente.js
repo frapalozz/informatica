@@ -588,10 +588,22 @@
     return out;
   }
 
+  // Area cliccabile: il rettangolo che contiene il gatto in quella posa (senza gli angoli vuoti
+  // dello sprite), così non si "manca" il gatto cliccando tra la coda e il corpo.
+  function hitRect(rows) {
+    var x0 = COLS, y0 = ROWS, x1 = -1, y1 = -1;
+    rows.forEach(function (row, y) {
+      for (var x = 0; x < row.length; x++) {
+        if (row[x] !== ".") { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); }
+      }
+    });
+    return x1 < 0 ? "" : '<rect class="bit-hit" x="' + x0 + '" y="' + y0 + '" width="' + (x1 - x0 + 1) + '" height="' + (y1 - y0 + 1) + '" fill="transparent"/>';
+  }
+
   function spriteSvg() {
     var g = "";
     Object.keys(FRAMES).forEach(function (name) {
-      g += '<g class="bit-f bit-f-' + name + '">' + rects(FRAMES[name], 0, 0) +
+      g += '<g class="bit-f bit-f-' + name + '">' + hitRect(FRAMES[name]) + rects(FRAMES[name], 0, 0) +
         '<g class="bit-hat">' + rects(HAT, HAT_AT[name][0], HAT_AT[name][1]) + "</g></g>";
     });
     return '<svg class="bit-sprite" viewBox="0 0 ' + COLS + " " + ROWS + '" width="' + W + '" height="' + H +
