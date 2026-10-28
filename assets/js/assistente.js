@@ -1,9 +1,11 @@
 /*
  * Bit, l'assistente del sito.
  *
- * Un gattino pixel che su desktop gira per la pagina (cammina sui titoli, si
- * siede, si addormenta, guarda il cursore) e su telefono resta seduto in un
- * angolo. Cliccandolo si apre una chat: niente AI, le risposte vengono dalle
+ * Un gattino pixel che gira per la pagina, su desktop e su telefono (cammina sui
+ * titoli, si siede, si addormenta, guarda il cursore). Con "riduci movimento" o
+ * con "Mettilo nell'angolo" resta seduto in basso a sinistra; su telefono, in quel
+ * caso, il pulsante "Prendi una Moneta" si nasconde per non stargli addosso.
+ * Cliccandolo si apre una chat: niente AI, le risposte vengono dalle
  * materie (assistente.json, generato da Jekyll) e da _data/assistente.yml.
  * "Portami lì" fa camminare Bit fino al punto giusto della pagina e lo evidenzia.
  *
@@ -391,6 +393,7 @@
   var mq = function (q) { return !!(window.matchMedia && window.matchMedia(q).matches); };
   var reduced = mq("(prefers-reduced-motion: reduce)");
   var desktop = mq("(hover: hover) and (pointer: fine)") && window.innerWidth >= 900;
+  var mobile = !desktop;
 
   function store(kind) {
     try { return window[kind]; } catch (e) { return null; }
@@ -599,7 +602,7 @@
 
   var cat = document.createElement("button");
   cat.type = "button";
-  cat.className = "bit-cat" + (desktop && !reduced ? "" : " bit-docked");
+  cat.className = "bit-cat" + (reduced ? " bit-docked" : "");
   cat.setAttribute("aria-label", "Apri la chat con " + NOME + ", l'assistente del sito");
   cat.setAttribute("aria-expanded", "false");
   cat.setAttribute("aria-controls", "bit-panel");
@@ -623,7 +626,7 @@
     '<div class="bit-head" data-bit-perch>' +
     '  <p class="bit-title">' + NOME + "</p>" +
     '  <div class="bit-head-actions">' +
-    (desktop && !reduced ? '    <button type="button" class="bit-btn-text" data-bit-stay></button>' : "") +
+    (!reduced ? '    <button type="button" class="bit-btn-text" data-bit-stay></button>' : "") +
     '    <button type="button" class="bit-close" aria-label="Chiudi la chat">×</button>' +
     "  </div>" +
     "</div>" +
@@ -811,7 +814,7 @@
   }
 
   // ══════════════════════════════════════════════════════════
-  //  Bit che gira per la pagina (solo desktop, senza "riduci movimento")
+  //  Bit che gira per la pagina (desktop e telefono, senza "riduci movimento")
   // ══════════════════════════════════════════════════════════
   var walker = null;
 
@@ -865,8 +868,10 @@
       offscreenSince: 0, x: 0, y: 0, jump: null, mouse: { x: -1e5, y: -1e5 }, after: null,
     };
     var frame = "sit";
+    var nav = document.querySelector("header.nav");
     var visible = function (p) {
-      var navH = 110;
+      // sotto la barra fissa in alto (più bassa su telefono)
+      var navH = nav ? nav.getBoundingClientRect().bottom + 10 : 110;
       return p.top > window.scrollY + navH && p.top < window.scrollY + window.innerHeight - 10;
     };
 
@@ -918,7 +923,8 @@
 
     var last = performance.now();
     function render() {
-      cat.style.transform = "translate(" + Math.round(s.x) + "px," + Math.round(s.y - H) + "px)";
+      // s.x / s.y sono coordinate di pagina, il livello è fisso: si sottrae lo scroll.
+      cat.style.transform = "translate(" + Math.round(s.x - window.scrollX) + "px," + Math.round(s.y - H - window.scrollY) + "px)";
       cat.dataset.frame = frame;
       cat.dataset.mode = s.mode;
       cat.dataset.dir = String(s.dir);
@@ -1049,11 +1055,13 @@
   }
 
   var stay = applyStay();
-  if (desktop && !reduced && !stay) {
+  if (!reduced && !stay) {
     walker = startWalker();
   } else {
     cat.classList.add("bit-docked", "bit-ready");
     panel.classList.add("bit-panel-docked");
+    // Su telefono il pulsante "Prendi una Moneta" starebbe addosso al gatto: lo nascondiamo.
+    if (mobile) document.documentElement.classList.add("bit-moneta-nascosta");
     setTimeout(showHint, 1500);
   }
   onArrival();

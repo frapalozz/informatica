@@ -27,12 +27,11 @@
 
 /* ── Gattino ─────────────────────────────────────────────── */
 
+/* Livello fisso grande quanto lo schermo: il gatto vicino ai bordi non allarga la pagina. */
 .bit-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
   z-index: 80;
   pointer-events: none;
 }
@@ -104,6 +103,18 @@
 
 .bit-cat.bit-docked .bit-sprite rect {
   pointer-events: none;
+}
+
+/* Su telefono, con il gatto fermo nell'angolo, il pulsante "Prendi una Moneta" non si mostra. */
+html.bit-moneta-nascosta #btn-container {
+  display: none !important;
+}
+
+/* Con il dito i pixel sono un bersaglio troppo piccolo: si tocca tutto il riquadro del gatto. */
+@media (hover: none), (pointer: coarse) {
+  .bit-cat {
+    pointer-events: auto;
+  }
 }
 
 /* Colori: arancione tigrato, e gatto nero con cappello ad Halloween. */
@@ -226,7 +237,7 @@
   position: fixed;
   left: 20px;
   bottom: 20px;
-  z-index: 96;
+  z-index: 101; /* sopra il pulsante "Prendi una Moneta" */
   width: min(380px, calc(100vw - 24px));
   max-height: min(560px, calc(100vh - 140px));
   display: flex;
