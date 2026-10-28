@@ -389,9 +389,8 @@
   var script = document.currentScript;
   var DATA_URL = (script && script.getAttribute("data-dati")) || "/assistente.json";
   var NOME = (script && script.getAttribute("data-nome")) || "Bit";
-  // Dopo quanti secondi senza essere cercato Bit dice una battuta (0 = mai).
-  var CHIACCHIERE = parseFloat(script && script.getAttribute("data-chiacchiere"));
-  if (isNaN(CHIACCHIERE)) CHIACCHIERE = 45;
+  // Battute da solo: la prima subito, la seconda dopo 30 s, poi ogni 45-60 s ("false" = mai).
+  var CHIACCHIERE = !/^(false|0|no)$/i.test((script && script.getAttribute("data-chiacchiere")) || "");
 
   var mq = function (q) { return !!(window.matchMedia && window.matchMedia(q).matches); };
   var reduced = mq("(prefers-reduced-motion: reduce)");
@@ -628,10 +627,6 @@
   cat.dataset.dir = "1";
   cat.innerHTML = spriteSvg() + '<span class="bit-zzz" aria-hidden="true"><span>z</span><span>z</span><span>z</span></span>';
 
-  var hint = document.createElement("span");
-  hint.className = "bit-hint";
-  hint.setAttribute("aria-hidden", "true");
-  hint.textContent = mobile ? "Ciao! Toccami se cerchi qualcosa" : "Ciao! Cliccami se cerchi qualcosa";
 
   // Il fumetto: esce dalla testa di Bit e lo segue.
   var bubble = document.createElement("div");
@@ -659,7 +654,6 @@
     '  <rect x="3" y="3" width="1" height="1" class="bit-tail-ink"/>' +
     "</svg>";
 
-  cat.appendChild(hint);
   layer.appendChild(cat);
   document.body.appendChild(layer);
   document.body.appendChild(bubble);
@@ -835,7 +829,6 @@
 
   function openBubble(opts) {
     opts = opts || {};
-    hideHint();
     clearTimeout(autoClose);
     var wasOpen = talking;
     talking = true;
@@ -897,14 +890,6 @@
   window.addEventListener("resize", placeBubble);
   if (window.visualViewport) window.visualViewport.addEventListener("resize", placeBubble);
 
-  // ── Fumetto di benvenuto (una volta per visitatore) ──────────
-  function hideHint() { hint.classList.remove("bit-hint-on"); }
-  function showHint() {
-    if (getItem("localStorage", "bit-salutato")) return;
-    setItem("localStorage", "bit-salutato", "1");
-    hint.classList.add("bit-hint-on");
-    setTimeout(hideHint, 6000);
-  }
 
   // ── "Portami lì" ───────────────────────────────────────────
   function samePage(url) {
@@ -1110,7 +1095,6 @@
         s.perch = p.el;
         s.relX = rand(0, Math.max(0, p.right - p.left - W));
         cat.classList.add("bit-ready");
-        setTimeout(showHint, 1500);
       }
       var maxRel = Math.max(0, p.right - p.left - W);
       s.relX = clamp(s.relX, 0, maxRel);
@@ -1190,16 +1174,20 @@
   var lastInteraction = Date.now();
 
   function startChatter() {
-    if (!(CHIACCHIERE > 0)) return;
-    var MAX_PER_PAGE = 5;
+    if (!CHIACCHIERE) return;
     var said = 0;
-    var gap = CHIACCHIERE * 1000;
+    var nextAt = 0; // la prima battuta: appena Bit è sulla pagina
 
     function recent() {
       try { return JSON.parse(getItem("sessionStorage", "bit-battute") || "[]"); } catch (e) { return []; }
     }
 
     function pickLine(db) {
+      // Alla primissima visita la prima frase è una presentazione.
+      if (said === 0 && !getItem("localStorage", "bit-salutato")) {
+        setItem("localStorage", "bit-salutato", "1");
+        return "Ciao, sono " + NOME + "! " + (mobile ? "Toccami" : "Cliccami") + " se cerchi qualcosa.";
+      }
       var b = db.battute || {};
       var now = new Date(), h = now.getHours();
       var ora = h + ":" + String(now.getMinutes()).padStart(2, "0");
@@ -1207,8 +1195,9 @@
       var groups = [];
       if (walker && walker.mode() === "sleep") groups.push(b.dorme);
       else {
-        if ((h >= 23 || h < 5) && Math.random() < 0.6) groups.push(b.notte);
-        if (h >= 6 && h < 10 && Math.random() < 0.4) groups.push(b.mattina);
+        // momento della giornata: notte 23-6, mattina 6-12, pranzo 12-14, pomeriggio 14-18, sera 18-23
+        var momento = h >= 23 || h < 6 ? "notte" : h < 12 ? "mattina" : h < 14 ? "pranzo" : h < 18 ? "pomeriggio" : "sera";
+        if (Math.random() < 0.5) groups.push(b[momento]);
         if (witch && Math.random() < 0.5) groups.push(b.strega);
         if (materia && Math.random() < 0.25) groups.push(b.materia);
         groups.push(b.sempre);
@@ -1239,21 +1228,26 @@
       return !!(a && !bubble.contains(a) && (a.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)));
     }
 
+    var busy = false;
     setInterval(function () {
-      if (said >= MAX_PER_PAGE || document.hidden || talking || busyTyping()) return;
-      if (Date.now() - lastInteraction < gap) return;
+      if (busy || document.hidden || talking || busyTyping()) return;
+      if (Date.now() < nextAt) return;
+      // dopo che qualcuno ha parlato con Bit, almeno 30 secondi di silenzio
+      if (said > 0 && Date.now() - lastInteraction < 30000) return;
       if (!cat.classList.contains("bit-ready") || !catOnScreen()) return;
       if (walker && walker.mode() === "jump") return;
+      busy = true;
       loadDb().then(function (db) {
+        busy = false;
         if (talking) return;
         var line = pickLine(db);
         if (!line) return;
         said++;
-        lastInteraction = Date.now();
-        gap = CHIACCHIERE * 1000 * (1.6 + Math.random() * 1.2);
+        // la seconda dopo 30 secondi, poi ogni 45-60 secondi
+        nextAt = Date.now() + (said === 1 ? 30000 : 45000 + Math.random() * 15000);
         openBubble({ ambient: true, text: line, ms: 5000 });
-      }).catch(function () { /* niente battute senza dati */ });
-    }, 2000);
+      }).catch(function () { busy = false; });
+    }, 500);
   }
 
   // ── Avvio ──────────────────────────────────────────────────
@@ -1284,7 +1278,6 @@
     cat.classList.add("bit-docked", "bit-ready");
     // Su telefono il pulsante "Prendi una Moneta" starebbe addosso al gatto: lo nascondiamo.
     if (mobile) document.documentElement.classList.add("bit-moneta-nascosta");
-    setTimeout(showHint, 1500);
   }
   onArrival();
   startChatter();

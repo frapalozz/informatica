@@ -49,7 +49,7 @@ invader: false        # easter egg: dopo 1 minuto sul sito (solo desktop) un ali
 assistente:
   enabled: true
   nome: "Bit"
-  chiacchiere: 45   # secondi senza essere cercato prima che dica una battuta (0 = mai)
+  chiacchiere: true # battute da solo: la prima subito, la seconda dopo 30 s, poi ogni 45-60 s (false = mai)
 
 # ── Pagina "Aggiungi risorsa" ──
 # Il sito è statico: non può salvare su Notion come la versione Next.js.
