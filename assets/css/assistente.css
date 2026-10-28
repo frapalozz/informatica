@@ -195,15 +195,18 @@ html.bit-moneta-nascosta #btn-container {
 /* Fumetto di benvenuto, una volta sola */
 .bit-hint {
   position: absolute;
-  bottom: calc(100% + 6px);
+  bottom: calc(100% + 8px);
   left: 0;
   width: max-content;
   max-width: 220px;
-  padding: 6px 10px;
-  border: 2px solid var(--bit-text);
-  border-radius: 8px;
+  padding: 5px 9px 4px;
   background: var(--bit-bg);
   color: var(--bit-text);
+  box-shadow:
+    0 -2px 0 0 var(--bit-text),
+    0 2px 0 0 var(--bit-text),
+    -2px 0 0 0 var(--bit-text),
+    2px 0 0 0 var(--bit-text);
   font-family: "VT323", ui-monospace, monospace;
   font-size: 18px;
   line-height: 1.1;
@@ -231,192 +234,222 @@ html.bit-moneta-nascosta #btn-container {
   50% { outline-offset: 2px; outline-color: transparent; }
 }
 
-/* ── Chat ───────────────────────────────────────────────── */
+/* ── Fumetto ─────────────────────────────────────────────── */
 
-.bit-panel {
+/* Bordo "a pixel": quattro ombre piene invece di border + border-radius,
+   così gli angoli restano scalettati come nei giochi. */
+.bit-bubble {
+  --bit-ink: var(--bit-text);
+  --bit-paper: var(--bit-bg);
   position: fixed;
-  left: 20px;
-  bottom: 20px;
-  z-index: 101; /* sopra il pulsante "Prendi una Moneta" */
-  width: min(380px, calc(100vw - 24px));
-  max-height: min(560px, calc(100vh - 140px));
-  display: flex;
-  flex-direction: column;
-  border: 2px solid var(--bit-border);
-  border-radius: 12px;
-  background: var(--bit-bg);
-  color: var(--bit-text);
+  top: 0;
+  left: 0;
+  z-index: 101; /* sopra la barra e il pulsante "Prendi una Moneta" */
+  width: min(300px, calc(100vw - 24px));
+  max-height: calc(100vh - 140px);
+  overflow: visible;
+  padding: 12px 14px 12px;
+  background: var(--bit-paper);
+  color: var(--bit-ink);
+  box-shadow:
+    0 -3px 0 0 var(--bit-ink),
+    0 3px 0 0 var(--bit-ink),
+    -3px 0 0 0 var(--bit-ink),
+    3px 0 0 0 var(--bit-ink),
+    6px 6px 0 0 rgba(0, 0, 0, 0.18);
   font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+  animation: bit-pop 0.16s steps(3);
 }
 
-.bit-panel[hidden] {
+.bit-bubble[hidden] {
   display: none;
 }
 
-/* con il gatto nell'angolo, la chat si apre sopra di lui */
-.bit-panel.bit-panel-docked {
-  bottom: 68px;
+@keyframes bit-pop {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
-.bit-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 10px 12px 10px 16px;
-  border-bottom: 2px solid var(--bit-border);
+/* punta del fumetto verso la testa di Bit */
+.bit-tail {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: calc(var(--bit-tail-x, 50%) - 10px);
+  display: block;
 }
 
-.bit-title {
-  margin: 0;
-  font-family: "VT323", ui-monospace, monospace;
-  font-size: 26px;
-  line-height: 1;
+.bit-tail-ink { fill: var(--bit-ink); }
+.bit-tail-fill { fill: var(--bit-paper); }
+
+.bit-bubble-below .bit-tail {
+  top: auto;
+  bottom: calc(100% + 1px);
+  transform: scaleY(-1);
 }
 
-.bit-head-actions {
-  display: flex;
-  align-items: center;
-  gap: 4px;
+.bit-bubble-notail .bit-tail {
+  display: none;
 }
 
-.bit-btn-text,
-.bit-close {
+.bit-x {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  width: 30px;
+  height: 30px;
   border: 0;
   background: none;
   color: var(--bit-muted);
   font: inherit;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-.bit-btn-text {
-  font-size: 12px;
-  padding: 6px 8px;
-}
-
-.bit-close {
-  width: 32px;
-  height: 32px;
   font-size: 22px;
   line-height: 1;
+  cursor: pointer;
 }
 
-.bit-btn-text:hover,
-.bit-close:hover {
+.bit-x:hover {
   color: var(--bit-text);
-  background: var(--bit-surface);
 }
 
-.bit-log {
-  flex: 1;
-  overflow-y: auto;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.bit-asked {
+  margin: 0 28px 4px 0;
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--bit-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.bit-msg p {
-  margin: 0;
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-size: 14px;
-  line-height: 1.45;
-  max-width: 92%;
-}
-
-.bit-msg-bit p {
-  background: var(--bit-surface);
-  border-top-left-radius: 2px;
-}
-
-.bit-msg-me {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.bit-msg-me p {
-  background: var(--bit-accent);
-  color: var(--bit-accent-text);
-  border-top-right-radius: 2px;
+.bit-say {
+  margin: 0 24px 0 0;
+  min-height: 1.1em;
+  font-family: "VT323", ui-monospace, monospace;
+  font-size: 22px;
+  line-height: 1.1;
+  cursor: default;
 }
 
 .bit-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 8px;
+  gap: 8px 8px;
+  margin-top: 10px;
+  max-height: 38vh;
+  overflow-y: auto;
+  padding: 3px; /* spazio per i bordi a pixel dei pulsanti */
 }
 
+.bit-actions[hidden] {
+  display: none;
+}
+
+/* pulsanti a pixel */
 .bit-action {
   display: inline-block;
-  padding: 6px 10px;
-  border: 1.5px solid var(--bit-border);
-  border-radius: 999px;
-  background: none;
+  padding: 4px 9px 3px;
+  border: 0;
+  background: var(--bit-paper);
   color: var(--bit-text);
-  font: inherit;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.2;
+  box-shadow:
+    0 -2px 0 0 var(--bit-border),
+    0 2px 0 0 var(--bit-border),
+    -2px 0 0 0 var(--bit-border),
+    2px 0 0 0 var(--bit-border);
+  font-family: "VT323", ui-monospace, monospace;
+  font-size: 19px;
+  line-height: 1.1;
   text-decoration: none;
   cursor: pointer;
 }
 
 .bit-action:hover {
-  border-color: var(--bit-text);
+  box-shadow:
+    0 -2px 0 0 var(--bit-text),
+    0 2px 0 0 var(--bit-text),
+    -2px 0 0 0 var(--bit-text),
+    2px 0 0 0 var(--bit-text);
 }
 
 .bit-action-go {
-  background: var(--bit-accent);
-  border-color: var(--bit-accent);
-  color: var(--bit-accent-text);
+  background: var(--bit-mark);
+  color: #1c1917;
+  box-shadow:
+    0 -2px 0 0 var(--bit-text),
+    0 2px 0 0 var(--bit-text),
+    -2px 0 0 0 var(--bit-text),
+    2px 0 0 0 var(--bit-text);
 }
 
 .bit-form {
   display: flex;
   gap: 8px;
-  padding: 10px 12px 12px;
-  border-top: 2px solid var(--bit-border);
+  margin-top: 12px;
 }
 
 .bit-input {
   flex: 1;
   min-width: 0;
-  padding: 9px 12px;
-  border: 1.5px solid var(--bit-border);
-  border-radius: 8px;
-  background: var(--bit-bg);
+  padding: 7px 10px;
+  border: 2px solid var(--bit-border);
+  border-radius: 0;
+  background: var(--bit-paper);
   color: var(--bit-text);
   font: inherit;
   font-size: 16px; /* niente zoom automatico su iPhone */
 }
 
 .bit-input:focus {
-  outline: 2px solid var(--bit-mark);
-  outline-offset: 1px;
+  outline: none;
+  border-color: var(--bit-mark);
 }
 
 .bit-send {
-  padding: 0 14px;
+  width: 40px;
   border: 0;
-  border-radius: 8px;
-  background: var(--bit-accent);
-  color: var(--bit-accent-text);
-  font: inherit;
-  font-weight: 700;
-  font-size: 14px;
+  background: var(--bit-text);
+  color: var(--bit-bg);
+  font-size: 18px;
   cursor: pointer;
+}
+
+.bit-stay {
+  display: block;
+  margin: 8px 0 0 auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--bit-muted);
+  font: inherit;
+  font-size: 11px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+/* "Eccolo!" dopo "Portami lì": solo la frase */
+.bit-bubble-short {
+  width: auto;
+  padding: 8px 14px;
+}
+
+.bit-bubble-short .bit-x,
+.bit-bubble-short .bit-form,
+.bit-bubble-short .bit-stay,
+.bit-bubble-short .bit-actions,
+.bit-bubble-short .bit-asked {
+  display: none;
+}
+
+.bit-bubble-short .bit-say {
+  margin: 0;
 }
 
 .bit-action:focus-visible,
 .bit-send:focus-visible,
-.bit-close:focus-visible,
-.bit-btn-text:focus-visible {
+.bit-x:focus-visible,
+.bit-stay:focus-visible {
   outline: 2px solid var(--bit-mark);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 .bit-sr {
@@ -428,20 +461,10 @@ html.bit-moneta-nascosta #btn-container {
   white-space: nowrap;
 }
 
-@media (max-width: 640px) {
-  /* sotto la barra del sito, sopra il gatto */
-  .bit-panel {
-    left: 12px;
-    right: 12px;
-    width: auto;
-    max-height: calc(100vh - 190px);
-    max-height: calc(100dvh - 190px);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .bit-zzz span { animation: none; opacity: 1; }
   .bit-zzz span:nth-child(2) { transform: translate(5px, -9px); }
   .bit-zzz span:nth-child(3) { transform: translate(10px, -18px); }
   .bit-highlight { animation: none; }
+  .bit-bubble { animation: none; }
 }

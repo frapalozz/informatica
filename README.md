@@ -345,14 +345,14 @@ Nel footer compare "● N utenti online" (visitatori con il sito aperto e in pri
 
 ## Bit, l'assistente del sito
 
-Bit è un gattino pixel che aiuta a trovare le cose. Gira per la pagina, su desktop e su telefono (cammina sui titoli, si siede, si addormenta, guarda il cursore). Con "riduci movimento", o se il visitatore sceglie "Mettilo nell'angolo" nella chat, resta seduto in basso a sinistra; su telefono, in quel caso, il pulsante "Prendi una Moneta" viene nascosto per non stargli addosso. Cliccandolo si apre una chat.
+Bit è un gattino pixel che aiuta a trovare le cose. Gira per la pagina, su desktop e su telefono (cammina sui titoli, si siede, si addormenta, guarda il cursore). Con "riduci movimento", o se il visitatore sceglie "Mettilo nell'angolo" nel fumetto, resta seduto in basso a sinistra; su telefono, in quel caso, il pulsante "Prendi una Moneta" viene nascosto per non stargli addosso. Cliccandolo, Bit si ferma e gli compare sopra un **fumetto pixel**: scrive le risposte lettera per lettera, con i pulsanti e il campo per fare domande dentro il fumetto. Si chiude con ×, con Esc o toccando altrove.
 
 **Non usa AI e non costa niente.** Le risposte vengono da:
 
 - le materie in `_materie/` (titolo, anno, materiale, registrazioni, prove, extra), raccolte da Jekyll in `/assistente.json` a ogni build;
 - `_data/assistente.yml`: domande frequenti, suggerimenti mostrati all'apertura e **alias** delle materie (sigle e nomi usati dagli studenti, es. `SO`, `asd`, `database`).
 
-Capisce domande come «prove di algoritmi», «registrazioni SO», «slide di logica», «materie del 2° anno», anche con errori di battitura. Nella pagina di una materia basta scrivere «prove» o «registrazioni». Il pulsante **Portami lì** fa camminare Bit fino al punto giusto della pagina (o apre la pagina) e lo evidenzia.
+Capisce domande come «prove di algoritmi», «registrazioni SO», «slide di logica», «materie del 2° anno», anche con errori di battitura. Nella pagina di una materia basta scrivere «prove» o «registrazioni». Il pulsante **Portami lì** fa camminare Bit fino al punto giusto della pagina (o apre la pagina), lo evidenzia e Bit dice «Eccolo!».
 
 Dal 15 ottobre al 1° novembre è un gatto nero con il cappello da strega e si sposta volando sulla scopa. Per provarlo: `?gatto=strega` in fondo all'indirizzo.
 

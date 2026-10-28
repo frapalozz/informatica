@@ -5,7 +5,7 @@
  * titoli, si siede, si addormenta, guarda il cursore). Con "riduci movimento" o
  * con "Mettilo nell'angolo" resta seduto in basso a sinistra; su telefono, in quel
  * caso, il pulsante "Prendi una Moneta" si nasconde per non stargli addosso.
- * Cliccandolo si apre una chat: niente AI, le risposte vengono dalle
+ * Cliccandolo, Bit si ferma e parla in un fumetto pixel: niente AI, le risposte vengono dalle
  * materie (assistente.json, generato da Jekyll) e da _data/assistente.yml.
  * "Portami lì" fa camminare Bit fino al punto giusto della pagina e lo evidenzia.
  *
@@ -566,6 +566,8 @@
     "ohhhhhhhhho"
   ];
   var HAT_AT = {walk1: [10, 3], walk2: [10, 3], sit: [3, 3], play: [3, 3], sleep: [10, 7], ride: [11, 1]};
+  // Dov'è la testa in ogni posa (colonna del centro, riga della sommità): il fumetto punta lì.
+  var HEAD_AT = { walk1: [15, 6], walk2: [15, 6], sit: [8, 6], play: [8, 6], sleep: [15, 10], ride: [16, 4] };
   var COLS = 22, ROWS = 18, SCALE = desktop ? 2.5 : 2.25;
   var W = COLS * SCALE, H = ROWS * SCALE;
   var COLORS = {
@@ -603,9 +605,9 @@
   var cat = document.createElement("button");
   cat.type = "button";
   cat.className = "bit-cat" + (reduced ? " bit-docked" : "");
-  cat.setAttribute("aria-label", "Apri la chat con " + NOME + ", l'assistente del sito");
+  cat.setAttribute("aria-label", "Parla con " + NOME + ", l'assistente del sito");
   cat.setAttribute("aria-expanded", "false");
-  cat.setAttribute("aria-controls", "bit-panel");
+  cat.setAttribute("aria-controls", "bit-bubble");
   cat.dataset.skin = skin;
   cat.dataset.frame = "sit";
   cat.dataset.dir = "1";
@@ -614,95 +616,138 @@
   var hint = document.createElement("span");
   hint.className = "bit-hint";
   hint.setAttribute("aria-hidden", "true");
-  hint.textContent = "Ciao! Cliccami se cerchi qualcosa";
+  hint.textContent = mobile ? "Ciao! Toccami se cerchi qualcosa" : "Ciao! Cliccami se cerchi qualcosa";
 
-  var panel = document.createElement("div");
-  panel.id = "bit-panel";
-  panel.className = "bit-panel";
-  panel.setAttribute("role", "dialog");
-  panel.setAttribute("aria-label", "Chat con " + NOME);
-  panel.hidden = true;
-  panel.innerHTML =
-    '<div class="bit-head" data-bit-perch>' +
-    '  <p class="bit-title">' + NOME + "</p>" +
-    '  <div class="bit-head-actions">' +
-    (!reduced ? '    <button type="button" class="bit-btn-text" data-bit-stay></button>' : "") +
-    '    <button type="button" class="bit-close" aria-label="Chiudi la chat">×</button>' +
-    "  </div>" +
-    "</div>" +
-    '<div class="bit-log" aria-live="polite"></div>' +
+  // Il fumetto: esce dalla testa di Bit e lo segue.
+  var bubble = document.createElement("div");
+  bubble.id = "bit-bubble";
+  bubble.className = "bit-bubble";
+  bubble.setAttribute("role", "dialog");
+  bubble.setAttribute("aria-label", NOME);
+  bubble.hidden = true;
+  bubble.innerHTML =
+    '<button type="button" class="bit-x" aria-label="Chiudi">×</button>' +
+    '<p class="bit-asked" hidden></p>' +
+    '<p class="bit-say" aria-hidden="true"></p>' +
+    '<p class="bit-sr" aria-live="polite"></p>' +
+    '<div class="bit-actions"></div>' +
     '<form class="bit-form" autocomplete="off">' +
     '  <label class="bit-sr" for="bit-input">Scrivi una domanda a ' + NOME + "</label>" +
-    '  <input id="bit-input" class="bit-input" type="text" maxlength="160" placeholder="Es. prove di algoritmi">' +
-    '  <button type="submit" class="bit-send">Chiedi</button>' +
-    "</form>";
+    '  <input id="bit-input" class="bit-input" type="text" maxlength="160" placeholder="Chiedimi qualcosa…">' +
+    '  <button type="submit" class="bit-send" aria-label="Chiedi">▸</button>' +
+    "</form>" +
+    (!reduced ? '<button type="button" class="bit-stay" data-bit-stay></button>' : "") +
+    '<svg class="bit-tail" viewBox="0 0 7 4" width="21" height="12" shape-rendering="crispEdges" aria-hidden="true">' +
+    '  <rect x="0" y="0" width="7" height="1" class="bit-tail-ink"/><rect x="1" y="0" width="5" height="1" class="bit-tail-fill"/>' +
+    '  <rect x="1" y="1" width="5" height="1" class="bit-tail-ink"/><rect x="2" y="1" width="3" height="1" class="bit-tail-fill"/>' +
+    '  <rect x="2" y="2" width="3" height="1" class="bit-tail-ink"/><rect x="3" y="2" width="1" height="1" class="bit-tail-fill"/>' +
+    '  <rect x="3" y="3" width="1" height="1" class="bit-tail-ink"/>' +
+    "</svg>";
 
   cat.appendChild(hint);
   layer.appendChild(cat);
   document.body.appendChild(layer);
-  document.body.appendChild(panel);
+  document.body.appendChild(bubble);
 
-  var log = panel.querySelector(".bit-log");
-  var form = panel.querySelector(".bit-form");
-  var input = panel.querySelector(".bit-input");
-  var stayBtn = panel.querySelector("[data-bit-stay]");
+  var asked = bubble.querySelector(".bit-asked");
+  var say = bubble.querySelector(".bit-say");
+  var live = bubble.querySelector(".bit-sr[aria-live]");
+  var actionsBox = bubble.querySelector(".bit-actions");
+  var form = bubble.querySelector(".bit-form");
+  var input = bubble.querySelector(".bit-input");
+  var stayBtn = bubble.querySelector("[data-bit-stay]");
+  var nav = document.querySelector("header.nav");
 
-  // ── Chat ───────────────────────────────────────────────────
-  var greeted = false;
+  // ── Il fumetto ─────────────────────────────────────────────
+  var typing = null;      // scrittura lettera per lettera in corso
+  var talking = false;    // fumetto aperto
+  var autoClose = 0;
 
-  function addMessage(who, text, actions) {
-    var msg = document.createElement("div");
-    msg.className = "bit-msg bit-msg-" + who;
-    var p = document.createElement("p");
-    p.textContent = text;
-    msg.appendChild(p);
-    if (actions && actions.length) {
-      var row = document.createElement("div");
-      row.className = "bit-actions";
-      actions.forEach(function (a) {
-        var el;
-        if (a.href) {
-          el = document.createElement("a");
-          el.href = a.href;
-          if (a.external) { el.target = "_blank"; el.rel = "noopener"; }
-        } else {
-          el = document.createElement("button");
-          el.type = "button";
-          el.addEventListener("click", function () {
-            if (a.ask) ask(a.ask);
-            else if (a.go) goTo(a.go);
-          });
-        }
-        el.className = "bit-action" + (a.go ? " bit-action-go" : "");
-        el.textContent = a.label;
-        row.appendChild(el);
+  function makeAction(a) {
+    var el;
+    if (a.href) {
+      el = document.createElement("a");
+      el.href = a.href;
+      if (a.external) { el.target = "_blank"; el.rel = "noopener"; }
+    } else {
+      el = document.createElement("button");
+      el.type = "button";
+      el.addEventListener("click", function () {
+        if (a.ask) ask(a.ask);
+        else if (a.go) goTo(a.go);
       });
-      msg.appendChild(row);
     }
-    log.appendChild(msg);
-    log.scrollTop = log.scrollHeight;
+    el.className = "bit-action" + (a.go ? " bit-action-go" : "");
+    el.textContent = a.label;
+    return el;
   }
 
+  /** Bit dice qualcosa: il testo si scrive lettera per lettera, poi compaiono i pulsanti. */
+  function speak(text, actions, opts) {
+    opts = opts || {};
+    if (typing) { clearInterval(typing); typing = null; }
+    clearTimeout(autoClose);
+    actionsBox.innerHTML = "";
+    actionsBox.hidden = true;
+    live.textContent = text;
+    var showActions = function () {
+      say.textContent = text;
+      if (actions && actions.length) {
+        actions.forEach(function (a) { actionsBox.appendChild(makeAction(a)); });
+        actionsBox.hidden = false;
+      }
+      placeBubble();
+    };
+    if (reduced) { showActions(); return; }
+    var i = 0;
+    say.textContent = "";
+    typing = setInterval(function () {
+      i += 2;
+      say.textContent = text.slice(0, i);
+      placeBubble();
+      if (i >= text.length) { clearInterval(typing); typing = null; showActions(); }
+    }, 16);
+    say.onclick = function () {
+      if (!typing) return;
+      clearInterval(typing); typing = null; showActions();
+    };
+  }
+
+  var greeted = false;
   function greet() {
-    if (greeted) return;
+    var first = !greeted;
     greeted = true;
-    addMessage("bit", "Ciao, sono " + NOME + "! Chiedimi una materia e cosa ti serve: prove passate, registrazioni, materiale, appunti.");
+    asked.hidden = true;
+    var text = first
+      ? "Ciao, sono " + NOME + "! Dimmi una materia e cosa ti serve: prove, registrazioni, materiale, appunti."
+      : "Eccomi! Cosa cerchi?";
+    speak(text, []);
     loadDb().then(function (db) {
-      var chips = (db.suggerimenti || []).map(function (s) { return { label: s, ask: s }; });
-      if (chips.length) addMessage("bit", "Per esempio:", chips);
+      if (!talking || asked.hidden === false) return;
+      var chips = (db.suggerimenti || []).map(function (q) { return { label: q, ask: q }; });
+      var wait = setInterval(function () {
+        if (typing) return;
+        clearInterval(wait);
+        if (!talking || asked.hidden === false) return;
+        chips.forEach(function (a) { actionsBox.appendChild(makeAction(a)); });
+        actionsBox.hidden = !chips.length;
+        placeBubble();
+      }, 50);
     }).catch(function () { /* l'errore si vede alla prima domanda */ });
   }
 
   function ask(q) {
     q = String(q || "").trim();
     if (!q) return;
-    addMessage("me", q);
+    asked.textContent = "Tu: " + q;
+    asked.hidden = false;
+    speak("…", []);
     loadDb().then(function (db) {
       var a = Engine.answer(db, q, { materia: currentMateria(db) });
-      addMessage("bit", a.text, a.actions);
+      setTimeout(function () { speak(a.text, a.actions); }, reduced ? 0 : 280);
       track(a.kind === "non-capito" ? "bit_non_capito" : "bit_risposta");
     }).catch(function () {
-      addMessage("bit", "Non riesco a leggere l'elenco delle materie. Controlla la connessione e riprova.");
+      speak("Non riesco a leggere l'elenco delle materie. Controlla la connessione e riprova.", []);
     });
   }
 
@@ -726,29 +771,101 @@
     ask(q);
   });
 
-  function openPanel() {
-    if (!panel.hidden) return;
-    panel.hidden = false;
-    cat.setAttribute("aria-expanded", "true");
-    hideHint();
-    greet();
-    track("bit_aperto");
-    setTimeout(function () { input.focus(); }, 30);
-    if (walker) walker.onPanel(true);
+  /** Mette il fumetto sopra la testa di Bit (o sotto, se sopra non c'è spazio), dentro lo schermo. */
+  function placeBubble() {
+    if (bubble.hidden) return;
+    var r = cat.getBoundingClientRect();
+    var frameName = cat.dataset.frame || "sit";
+    var head = HEAD_AT[frameName] || HEAD_AT.sit;
+    var dir = cat.dataset.dir === "-1" ? -1 : 1;
+    var headX = r.left + (dir === 1 ? head[0] : COLS - head[0]) * SCALE;
+    var headTop = r.top + head[1] * SCALE;
+    var feet = r.bottom;
+
+    var vv = window.visualViewport;
+    var viewTop = vv ? vv.offsetTop : 0;
+    var viewH = vv ? vv.height : window.innerHeight;
+    var viewW = vv ? vv.width : window.innerWidth;
+    var navBottom = nav ? Math.max(0, nav.getBoundingClientRect().bottom) : 0;
+    var minTop = Math.max(viewTop, navBottom) + 8;
+    var maxBottom = viewTop + viewH - 8;
+
+    var bw = bubble.offsetWidth, bh = bubble.offsetHeight, gap = 14;
+    var left = clamp(headX - bw / 2, 12, viewW - bw - 12);
+    var top, below = false;
+    if (headTop - gap - bh >= minTop) top = headTop - gap - bh;
+    else if (feet + gap + bh <= maxBottom) { top = feet + gap; below = true; }
+    else top = clamp(headTop - gap - bh, minTop, maxBottom - bh);
+    top = Math.min(top, maxBottom - bh);
+
+    bubble.style.left = Math.round(left) + "px";
+    bubble.style.top = Math.round(top) + "px";
+    bubble.classList.toggle("bit-bubble-below", below);
+    // la punta indica la testa di Bit; se il fumetto è stato spostato troppo, sparisce
+    var tailX = headX - left;
+    var detached = below ? top - feet > gap + 4 : headTop - (top + bh) > gap + 4 || headTop < top + bh;
+    bubble.style.setProperty("--bit-tail-x", Math.round(clamp(tailX, 18, bw - 18)) + "px");
+    bubble.classList.toggle("bit-bubble-notail", detached);
   }
 
-  function closePanel(returnFocus) {
-    if (panel.hidden) return;
-    panel.hidden = true;
+  var follow = 0;
+  function followLoop() {
+    if (!talking) { follow = 0; return; }
+    placeBubble();
+    follow = requestAnimationFrame(followLoop);
+  }
+
+  function openBubble(opts) {
+    opts = opts || {};
+    hideHint();
+    clearTimeout(autoClose);
+    var wasOpen = talking;
+    talking = true;
+    bubble.hidden = false;
+    bubble.classList.toggle("bit-bubble-short", !!opts.short);
+    cat.setAttribute("aria-expanded", "true");
+    if (walker) walker.onTalk(true);
+    if (!follow) follow = requestAnimationFrame(followLoop);
+    if (opts.short) {
+      bubble.dataset.short = "1";
+      asked.hidden = true;
+      speak(opts.text, []);
+      autoClose = setTimeout(function () { closeBubble(false); }, 2600);
+      return;
+    }
+    if (!wasOpen || bubble.dataset.short === "1") {
+      greet();
+      track("bit_aperto");
+    }
+    bubble.dataset.short = "";
+    placeBubble();
+    // su telefono la tastiera si apre solo se si tocca il campo
+    if (!mobile) setTimeout(function () { input.focus({ preventScroll: true }); }, 30);
+  }
+
+  function closeBubble(returnFocus) {
+    if (!talking) return;
+    talking = false;
+    clearTimeout(autoClose);
+    if (typing) { clearInterval(typing); typing = null; }
+    bubble.hidden = true;
     cat.setAttribute("aria-expanded", "false");
     if (returnFocus) cat.focus();
-    if (walker) walker.onPanel(false);
+    if (walker) walker.onTalk(false);
   }
 
-  panel.querySelector(".bit-close").addEventListener("click", function () { closePanel(true); });
+  bubble.querySelector(".bit-x").addEventListener("click", function () { closeBubble(true); });
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && !panel.hidden) closePanel(true);
+    if (e.key === "Escape" && talking) closeBubble(true);
   });
+  // Toccando altrove il fumetto si chiude.
+  document.addEventListener("pointerdown", function (e) {
+    if (!talking) return;
+    if (bubble.contains(e.target) || cat.contains(e.target)) return;
+    closeBubble(false);
+  }, true);
+  window.addEventListener("resize", placeBubble);
+  if (window.visualViewport) window.visualViewport.addEventListener("resize", placeBubble);
 
   // ── Fumetto di benvenuto (una volta per visitatore) ──────────
   function hideHint() { hint.classList.remove("bit-hint-on"); }
@@ -782,12 +899,17 @@
     setTimeout(function () { el.classList.remove("bit-highlight"); }, 2600);
   }
 
+  function arrived(el) {
+    highlight(el);
+    openBubble({ short: true, text: "Eccolo!" });
+  }
+
   function goTo(go) {
     if (samePage(go.url)) {
       var el = findTarget(go.voce);
       if (!el) return;
-      if (!desktop) closePanel(false);
-      if (walker) walker.goTo(el, function () { highlight(el); });
+      closeBubble(false);
+      if (walker) walker.goTo(el, function () { arrived(el); });
       else {
         el.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
         highlight(el);
@@ -808,7 +930,7 @@
     var el = findTarget(info.voce);
     if (!el) return;
     setTimeout(function () {
-      if (walker) walker.goTo(el, function () { highlight(el); });
+      if (walker) walker.goTo(el, function () { arrived(el); });
       else { el.scrollIntoView({ behavior: "auto", block: "center" }); highlight(el); }
     }, 400);
   }
@@ -827,9 +949,7 @@
     var r0 = el.getBoundingClientRect();
     if (!r0.width || !r0.height) return null;
     var left, right, top;
-    if (el.classList.contains("bit-head")) {
-      left = r0.left + 8; right = r0.right - 8; top = r0.top;
-    } else {
+    {
       var range = document.createRange();
       range.selectNodeContents(el);
       var rs = Array.prototype.filter.call(range.getClientRects(), function (r) { return r.width > 0 && r.height > 0; });
@@ -854,9 +974,7 @@
   function perches() {
     return Array.prototype.slice.call(document.querySelectorAll(PERCH_SELECTOR))
       .filter(function (el) {
-        if (el.closest("header.nav, #donation-popup, #legacy-popup")) return false;
-        if (el.closest(".bit-panel") && panel.hidden) return false;
-        return true;
+        return !el.closest("header.nav, #donation-popup, #legacy-popup, .bit-bubble");
       })
       .map(measure)
       .filter(Boolean);
@@ -864,11 +982,10 @@
 
   function startWalker() {
     var s = {
-      perch: null, relX: 0, targetRelX: 0, dir: 1, mode: "sit", until: 0, idles: 0,
+      perch: null, relX: 0, targetRelX: 0, dir: 1, mode: "sit", until: 0, idles: 0, talking: false,
       offscreenSince: 0, x: 0, y: 0, jump: null, mouse: { x: -1e5, y: -1e5 }, after: null,
     };
     var frame = "sit";
-    var nav = document.querySelector("header.nav");
     var visible = function (p) {
       // sotto la barra fissa in alto (più bassa su telefono)
       var navH = nav ? nav.getBoundingClientRect().bottom + 10 : 110;
@@ -876,7 +993,7 @@
     };
 
     function pick(exclude) {
-      var all = perches().filter(function (p) { return p.el !== exclude && !p.el.closest(".bit-panel"); });
+      var all = perches().filter(function (p) { return p.el !== exclude; });
       if (!all.length) return null;
       var vis = all.filter(visible);
       if (vis.length) {
@@ -909,7 +1026,7 @@
 
     function decide(now, p) {
       var maxRel = p.right - p.left - W, r = Math.random();
-      if (!panel.hidden) { s.mode = "sit"; s.until = now + 3000; return; }
+      if (s.talking) { s.mode = "sit"; s.until = now + 3000; return; }
       if (s.idles >= 2 && r < 0.5) { s.mode = "sleep"; s.until = now + rand(9000, 16000); s.idles = 0; }
       else if (r < 0.4) { s.mode = "walk"; s.targetRelX = rand(0, maxRel); s.dir = s.targetRelX >= s.relX ? 1 : -1; }
       else if (r < 0.75) { s.mode = "sit"; s.until = now + rand(2000, 4500); s.idles++; }
@@ -971,7 +1088,7 @@
       s.y = p.top;
 
       // Se il punto dove sta finisce fuori schermo, Bit raggiunge chi legge.
-      if (!visible(p) && !s.after && !p.el.closest(".bit-panel")) {
+      if (!visible(p) && !s.after) {
         if (!s.offscreenSince) s.offscreenSince = now;
         if (now - s.offscreenSince > 1200) {
           s.offscreenSince = 0;
@@ -987,6 +1104,15 @@
         if (s.mode === "sleep" || s.mode === "walk") s.mode = "sit";
         s.until = Math.max(s.until, now + 1500);
         s.idles = 0;
+      }
+
+      if (s.talking && s.mode !== "jump") {
+        // Mentre parla sta seduto e ascolta.
+        s.mode = "sit";
+        frame = "sit";
+        s.x = p.left + s.relX;
+        render();
+        return;
       }
 
       if (s.mode === "walk") {
@@ -1009,15 +1135,9 @@
     requestAnimationFrame(tick);
 
     return {
-      onPanel: function (open) {
-        if (open) {
-          // Bit salta sopra la finestra della chat.
-          var p = measure(panel.querySelector(".bit-head"));
-          if (p) jumpTo(p, performance.now(), { relX: Math.max(0, p.right - p.left - W - 6) });
-        } else if (s.perch && s.perch.closest(".bit-panel")) {
-          var n = pick(null);
-          if (n) jumpTo(n, performance.now());
-        }
+      onTalk: function (open) {
+        s.talking = open;
+        if (!open) { s.mode = "sit"; s.until = performance.now() + rand(1500, 3000); }
       },
       goTo: function (el, done) {
         el.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -1035,8 +1155,8 @@
 
   // ── Avvio ──────────────────────────────────────────────────
   cat.addEventListener("click", function () {
-    if (panel.hidden) openPanel();
-    else closePanel(false);
+    if (!talking || bubble.classList.contains("bit-bubble-short")) openBubble();
+    else closeBubble(false);
   });
 
   var stayKey = "bit-in-angolo";
@@ -1059,7 +1179,6 @@
     walker = startWalker();
   } else {
     cat.classList.add("bit-docked", "bit-ready");
-    panel.classList.add("bit-panel-docked");
     // Su telefono il pulsante "Prendi una Moneta" starebbe addosso al gatto: lo nascondiamo.
     if (mobile) document.documentElement.classList.add("bit-moneta-nascosta");
     setTimeout(showHint, 1500);
