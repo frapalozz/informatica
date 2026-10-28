@@ -706,7 +706,183 @@
     return el;
   }
 
-  /** Avatar e nomi dei collaboratori, ognuno porta al suo profilo GitHub. */
+  // 10 gattini pixel (12x11) per l'elenco dei collaboratori, scelti a caso per ogni persona.
+  var KITTENS = [
+    { // arancione tigrato
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offafaafaffo",
+        "offffaaffffo",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "offffwwffffo",
+        "offfwnnwfffo",
+        ".offwwwwffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#f2b16a", a: "#d9813a", b: "#3a3a3a", w: "#ffffff", y: "#6abf69", k: "#141414", n: "#f39ab0", p: "#f7a5b8"}
+    },
+    { // grigio tigrato
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offafaafaffo",
+        "offffaaffffo",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "offffwwffffo",
+        "offfwnnwfffo",
+        ".offwwwwffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#bdbdbd", a: "#7d7d7d", b: "#3a3a3a", w: "#ffffff", y: "#e8c547", k: "#141414", n: "#f39ab0", p: "#f7a5b8"}
+    },
+    { // nero
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offffffffffo",
+        "offffffffffo",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "offffffffffo",
+        "offffnnffffo",
+        ".offffffffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#0a0a0a", f: "#2e2e33", a: "#d9813a", b: "#3a3a3a", w: "#ffffff", y: "#f59e0b", k: "#141414", n: "#55505c", p: "#55505c"}
+    },
+    { // bianco
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offffffffffo",
+        "offffffffffo",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "offffwwffffo",
+        "offfwnnwfffo",
+        ".offwwwwffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#fafafa", a: "#d9813a", b: "#3a3a3a", w: "#fafafa", y: "#5bb5e0", k: "#141414", n: "#f39ab0", p: "#f7a5b8"}
+    },
+    { // calico
+      rows: [
+        ".o........o.",
+        "opo......obo",
+        "oapooooobbpo",
+        "oaaafffbbbfo",
+        "oaafffffbbfo",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "offffwwffffo",
+        "offfwnnwfffo",
+        ".offwwwwffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#fafafa", a: "#e8913a", b: "#3a3a3a", w: "#fafafa", y: "#6abf69", k: "#141414", n: "#f39ab0", p: "#f7a5b8"}
+    },
+    { // siamese
+      rows: [
+        ".o........o.",
+        "obo......obo",
+        "obboooooobbo",
+        "offffffffffo",
+        "offffffffffo",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "offffbbffffo",
+        "offfbnnbfffo",
+        ".offbbbbffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#efe3cc", a: "#d9813a", b: "#6b4a35", w: "#ffffff", y: "#5bb5e0", k: "#141414", n: "#3b2a20", p: "#f7a5b8"}
+    },
+    { // tuxedo
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offffffffffo",
+        "offffffffffo",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "offfwwwwfffo",
+        "offwwnnwwffo",
+        ".ofwwwwwwfo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#0a0a0a", f: "#2e2e33", a: "#d9813a", b: "#3a3a3a", w: "#fafafa", y: "#6abf69", k: "#141414", n: "#f39ab0", p: "#f39ab0"}
+    },
+    { // grigio e bianco
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offffwwffffo",
+        "offffwwffffo",
+        "ofyyffffyyfo",
+        "ofykfwwfykfo",
+        "offfwwwwfffo",
+        "offfwnnwfffo",
+        ".offwwwwffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#9a9a9a", a: "#d9813a", b: "#3a3a3a", w: "#fafafa", y: "#e8c547", k: "#141414", n: "#f39ab0", p: "#f7a5b8"}
+    },
+    { // tigrato marrone
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offafaafaffo",
+        "oaffaaaaffao",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "oafffwwfffao",
+        "offfwnnwfffo",
+        ".offwwwwffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#a07c56", a: "#5e4630", b: "#3a3a3a", w: "#efe3cc", y: "#6abf69", k: "#141414", n: "#f39ab0", p: "#f7a5b8"}
+    },
+    { // rosso felice
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offffffffffo",
+        "offffffffffo",
+        "offffffffffo",
+        "ofkkffffkkfo",
+        "offffwwffffo",
+        "offfwnnwfffo",
+        ".offwwwwffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#e07a3f", a: "#b85a26", b: "#3a3a3a", w: "#fde7d2", y: "#6abf69", k: "#141414", n: "#f39ab0", p: "#f39ab0"}
+    }
+  ];
+
+  function kittenSvg() {
+    var k = KITTENS[Math.floor(Math.random() * KITTENS.length)];
+    var out = "";
+    k.rows.forEach(function (row, y) {
+      for (var x = 0; x < row.length; x++) {
+        var c = k.c[row[x]];
+        if (c) out += '<rect x="' + x + '" y="' + y + '" width="1" height="1" fill="' + c + '"/>';
+      }
+    });
+    return '<svg viewBox="0 0 12 11" width="36" height="33" shape-rendering="crispEdges" aria-hidden="true" focusable="false">' + out + "</svg>";
+  }
+
+  /** Un gattino pixel (a caso fra 10) e il nome di ogni collaboratore, che porta al suo profilo GitHub. */
   function peopleList(people) {
     var MAX = 12;
     var box = document.createElement("ul");
@@ -719,15 +895,9 @@
       a.target = "_blank";
       a.rel = "noopener";
       a.title = p.login;
-      var img = document.createElement("img");
-      img.src = p.avatar + (p.avatar.indexOf("?") >= 0 ? "&" : "?") + "s=64";
-      img.alt = "";
-      img.width = 32;
-      img.height = 32;
-      img.loading = "lazy";
+      a.innerHTML = kittenSvg();
       var name = document.createElement("span");
       name.textContent = p.login;
-      a.appendChild(img);
       a.appendChild(name);
       li.appendChild(a);
       box.appendChild(li);
@@ -1324,12 +1494,18 @@
       return null;
     }
 
-    // Il messaggio sui collaboratori: una volta per visita, come terza frase.
+    // Il messaggio sui collaboratori gira insieme alle battute, ma esce più spesso
+    // di ciascuna di loro: circa una volta su 5-6, mai come prima frase né due volte di fila.
+    var COLLAB_PROBABILITY = 0.18;
+    var lastWasCollab = false;
     function collabTurn(db) {
-      if (said !== 2 || getItem("sessionStorage", "bit-collab-detto")) return Promise.resolve(false);
+      if (said === 0 || lastWasCollab || Math.random() >= COLLAB_PROBABILITY) {
+        lastWasCollab = false;
+        return Promise.resolve(false);
+      }
       return loadPeople(db).then(function (people) {
         if (!people.length || talking) return false;
-        setItem("sessionStorage", "bit-collab-detto", "1");
+        lastWasCollab = true;
         var a = Engine.collabAnswer(db);
         openBubble({ ambient: true, rich: true, text: a.text, actions: a.actions, people: people, ms: 15000 });
         return true;

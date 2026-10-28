@@ -423,7 +423,7 @@ html.bit-moneta-nascosta #btn-container {
   display: none;
 }
 
-/* Chi ha collaborato: avatar con cornice a pixel e nome */
+/* Chi ha collaborato: un gattino pixel e il nome */
 .bit-people {
   display: flex;
   flex-wrap: wrap;
@@ -444,16 +444,14 @@ html.bit-moneta-nascosta #btn-container {
   text-decoration: none;
 }
 
-.bit-people img {
-  width: 32px;
-  height: 32px;
-  image-rendering: pixelated;
-  background: var(--bit-surface);
-  box-shadow:
-    0 -2px 0 0 var(--bit-text),
-    0 2px 0 0 var(--bit-text),
-    -2px 0 0 0 var(--bit-text),
-    2px 0 0 0 var(--bit-text);
+.bit-people svg {
+  display: block;
+  width: 36px;
+  height: 33px;
+}
+
+.bit-people a:hover svg {
+  transform: translateY(-2px);
 }
 
 .bit-people span {
