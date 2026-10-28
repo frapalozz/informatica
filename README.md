@@ -356,6 +356,8 @@ Capisce domande come «prove di algoritmi», «registrazioni SO», «slide di lo
 
 Bit **dice delle battute** da solo, in un fumetto breve che sparisce dopo 5 secondi: la prima appena si entra nella pagina (alla prima visita è una presentazione), la seconda dopo 30 secondi, poi una ogni 45-60 secondi. Sceglie frasi adatte al momento della giornata (mattina, pranzo, pomeriggio, sera, notte), ad Halloween, alla materia della pagina e al sonno. Dopo che qualcuno gli ha parlato resta zitto almeno 30 secondi; non parla mentre si scrive in un campo della pagina, non ruba il focus e non disturba i lettori di schermo. Toccando la battuta si apre il fumetto per fare domande.
 
+Una volta per visita, come terza frase, Bit ricorda **chi ha collaborato**: «Queste persone hanno collaborato al progetto per aiutarci tra di noi. Perché non collabori anche tu? 🥹», con avatar e nomi dei contributori del repository su GitHub (ognuno porta al suo profilo) e i pulsanti «Aggiungi una risorsa» e «Il progetto su GitHub». Lo stesso messaggio compare se gli si chiede «chi ha collaborato?». L'elenco arriva da GitHub Pages a ogni pubblicazione (`site.github.contributors`), quindi chi collabora in futuro compare da solo; se in locale l'elenco è vuoto, Bit lo chiede a GitHub dal browser.
+
 Dal 15 ottobre al 1° novembre è un gatto nero con il cappello da strega e si sposta volando sulla scopa. Per provarlo: `?gatto=strega` in fondo all'indirizzo.
 
 **Cosa modificare, senza toccare codice**
@@ -367,6 +369,7 @@ Dal 15 ottobre al 1° novembre è un gatto nero con il cappello da strega e si s
 | cambiare i pulsanti suggeriti | `suggerimenti:` |
 | cambiare o aggiungere le battute che dice da solo | `battute:` (gruppi `sempre`, `mattina`, `pranzo`, `pomeriggio`, `sera`, `notte`, `strega`, `materia`, `dorme`; si possono usare `{ora}`, `{nome}`, `{materia}`) |
 | spegnere le battute | `assistente.chiacchiere: false` in `_config.yml` |
+| cambiare il messaggio sui collaboratori | `collaborazione:` (l'elenco delle persone arriva da solo dai contributori GitHub, bot esclusi) |
 | rinominarlo o spegnerlo | `assistente.nome` / `assistente.enabled` in `_config.yml` |
 
 **Misurare se viene usato.** Se lo script di analytics è Simple Analytics, Bit invia solo dei conteggi anonimi: `bit_aperto`, `bit_risposta`, `bit_non_capito` (mai il testo delle domande). Tanti `bit_non_capito` indicano alias o FAQ da aggiungere.

@@ -286,6 +286,19 @@
      * ctx.materia: la materia della pagina aperta (se c'è), così "prove" o
      * "registrazioni" senza nome si riferiscono a quella.
      */
+    /** Il messaggio sui collaboratori, con i pulsanti per contribuire. L'elenco lo aggiunge l'interfaccia. */
+    function collabAnswer(db) {
+      return {
+        kind: "collaboratori",
+        people: true,
+        text: db.collaborazione || "Queste persone hanno collaborato al progetto. Perché non collabori anche tu?",
+        actions: [
+          linkAction(db, "Aggiungi una risorsa", "/risorsa/"),
+          db.repo ? { label: "Il progetto su GitHub", href: "https://github.com/" + db.repo, external: true } : null,
+        ].filter(Boolean),
+      };
+    }
+
     function answer(db, q, ctx) {
       ctx = ctx || {};
       var qn = norm(q);
@@ -314,6 +327,8 @@
       }
 
       if (intent && ctx.materia && !year) return materiaAnswer(db, ctx.materia, intent);
+
+      if (faq && faq.collaboratori) return collabAnswer(db);
 
       if (faq) {
         return {
@@ -375,7 +390,7 @@
       };
     }
 
-    return { build: build, answer: answer, norm: norm };
+    return { build: build, answer: answer, norm: norm, collabAnswer: collabAnswer };
   })();
 
   if (typeof module !== "undefined" && module.exports) {
@@ -691,6 +706,71 @@
     return el;
   }
 
+  /** Avatar e nomi dei collaboratori, ognuno porta al suo profilo GitHub. */
+  function peopleList(people) {
+    var MAX = 12;
+    var box = document.createElement("ul");
+    box.className = "bit-people";
+    box.setAttribute("aria-label", "Chi ha collaborato");
+    people.slice(0, MAX).forEach(function (p) {
+      var li = document.createElement("li");
+      var a = document.createElement("a");
+      a.href = p.url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.title = p.login;
+      var img = document.createElement("img");
+      img.src = p.avatar + (p.avatar.indexOf("?") >= 0 ? "&" : "?") + "s=64";
+      img.alt = "";
+      img.width = 32;
+      img.height = 32;
+      img.loading = "lazy";
+      var name = document.createElement("span");
+      name.textContent = p.login;
+      a.appendChild(img);
+      a.appendChild(name);
+      li.appendChild(a);
+      box.appendChild(li);
+    });
+    if (people.length > MAX) {
+      var more = document.createElement("li");
+      more.className = "bit-people-more";
+      more.textContent = "e altri " + (people.length - MAX);
+      box.appendChild(more);
+    }
+    return box;
+  }
+
+  /**
+   * I collaboratori: di solito arrivano già in assistente.json (da GitHub Pages);
+   * se l'elenco è vuoto (es. sviluppo in locale) si chiedono a GitHub dal browser.
+   */
+  var peoplePromise = null;
+  function loadPeople(db) {
+    if (peoplePromise) return peoplePromise;
+    var clean = function (list) {
+      return (list || []).filter(function (c) { return c && c.login && c.type !== "Bot" && c.login.indexOf("[bot]") < 0; });
+    };
+    if (db.collaboratori && db.collaboratori.length) {
+      peoplePromise = Promise.resolve(clean(db.collaboratori));
+      return peoplePromise;
+    }
+    var cached = getItem("sessionStorage", "bit-collaboratori");
+    if (cached) {
+      try { peoplePromise = Promise.resolve(JSON.parse(cached)); return peoplePromise; } catch (e) { /* niente */ }
+    }
+    if (!db.repo) return Promise.resolve([]);
+    peoplePromise = fetch("https://api.github.com/repos/" + db.repo + "/contributors?per_page=100")
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (list) {
+        var people = clean(list).map(function (c) { return { login: c.login, avatar: c.avatar_url, url: c.html_url }; });
+        setItem("sessionStorage", "bit-collaboratori", JSON.stringify(people));
+        return people;
+      })
+      .catch(function () { peoplePromise = null; return []; });
+    return peoplePromise;
+  }
+
   /** Bit dice qualcosa: il testo si scrive lettera per lettera, poi compaiono i pulsanti. */
   function speak(text, actions, opts) {
     opts = opts || {};
@@ -701,6 +781,10 @@
     if (!opts.silent) live.textContent = text;
     var showActions = function () {
       say.textContent = text;
+      if (opts.people && opts.people.length) {
+        actionsBox.appendChild(peopleList(opts.people));
+        actionsBox.hidden = false;
+      }
       if (actions && actions.length) {
         actions.forEach(function (a) { actionsBox.appendChild(makeAction(a)); });
         actionsBox.hidden = false;
@@ -754,7 +838,10 @@
     speak("…", []);
     loadDb().then(function (db) {
       var a = Engine.answer(db, q, { materia: currentMateria(db) });
-      setTimeout(function () { speak(a.text, a.actions); }, reduced ? 0 : 280);
+      var people = a.people ? loadPeople(db) : Promise.resolve(null);
+      people.then(function (list) {
+        setTimeout(function () { speak(a.text, a.actions, { people: list }); }, reduced ? 0 : 280);
+      });
       track(a.kind === "non-capito" ? "bit_non_capito" : "bit_risposta");
     }).catch(function () {
       speak("Non riesco a leggere l'elenco delle materie. Controlla la connessione e riprova.", []);
@@ -835,8 +922,17 @@
     ambient = !!opts.ambient;
     if (!ambient) lastInteraction = Date.now();
     bubble.hidden = false;
-    bubble.classList.toggle("bit-bubble-short", !!(opts.short || opts.ambient));
+    bubble.classList.toggle("bit-bubble-short", !!((opts.short || opts.ambient) && !opts.rich));
+    bubble.classList.toggle("bit-bubble-rich", !!opts.rich);
     if (!follow) follow = requestAnimationFrame(followLoop);
+    if (opts.rich) {
+      // messaggio di Bit con pulsanti (es. i collaboratori): niente campo di testo
+      bubble.dataset.short = "1";
+      asked.hidden = true;
+      speak(opts.text, opts.actions || [], { silent: ambient, people: opts.people });
+      autoClose = setTimeout(function () { closeBubble(false); }, opts.ms || 15000);
+      return;
+    }
     if (opts.short || opts.ambient) {
       bubble.dataset.short = "1";
       asked.hidden = true;
@@ -874,6 +970,17 @@
   }
 
   bubble.querySelector(".bit-x").addEventListener("click", function () { closeBubble(true); });
+  // Un messaggio spontaneo non si chiude mentre ci si passa sopra o lo si usa da tastiera.
+  var holdAmbient = function () { if (ambient) clearTimeout(autoClose); };
+  var releaseAmbient = function () {
+    if (!ambient) return;
+    clearTimeout(autoClose);
+    autoClose = setTimeout(function () { closeBubble(false); }, 4000);
+  };
+  bubble.addEventListener("mouseenter", holdAmbient);
+  bubble.addEventListener("focusin", holdAmbient);
+  bubble.addEventListener("mouseleave", releaseAmbient);
+  bubble.addEventListener("focusout", function (e) { if (!bubble.contains(e.relatedTarget)) releaseAmbient(); });
   // Toccando un fumetto breve (una battuta, "Eccolo!") si apre quello per fare domande.
   bubble.addEventListener("click", function () {
     if (bubble.classList.contains("bit-bubble-short")) openBubble();
@@ -1217,6 +1324,18 @@
       return null;
     }
 
+    // Il messaggio sui collaboratori: una volta per visita, come terza frase.
+    function collabTurn(db) {
+      if (said !== 2 || getItem("sessionStorage", "bit-collab-detto")) return Promise.resolve(false);
+      return loadPeople(db).then(function (people) {
+        if (!people.length || talking) return false;
+        setItem("sessionStorage", "bit-collab-detto", "1");
+        var a = Engine.collabAnswer(db);
+        openBubble({ ambient: true, rich: true, text: a.text, actions: a.actions, people: people, ms: 15000 });
+        return true;
+      });
+    }
+
     function catOnScreen() {
       var r = cat.getBoundingClientRect();
       var navBottom = nav ? Math.max(0, nav.getBoundingClientRect().bottom) : 0;
@@ -1238,14 +1357,18 @@
       if (walker && walker.mode() === "jump") return;
       busy = true;
       loadDb().then(function (db) {
-        busy = false;
-        if (talking) return;
-        var line = pickLine(db);
-        if (!line) return;
-        said++;
-        // la seconda dopo 30 secondi, poi ogni 45-60 secondi
-        nextAt = Date.now() + (said === 1 ? 30000 : 45000 + Math.random() * 15000);
-        openBubble({ ambient: true, text: line, ms: 5000 });
+        return collabTurn(db).then(function (done) {
+          busy = false;
+          if (talking && !done) return;
+          if (!done) {
+            var line = pickLine(db);
+            if (!line) return;
+            openBubble({ ambient: true, text: line, ms: 5000 });
+          }
+          said++;
+          // la seconda dopo 30 secondi, poi ogni 45-60 secondi
+          nextAt = Date.now() + (said === 1 ? 30000 : 45000 + Math.random() * 15000);
+        });
       }).catch(function () { busy = false; });
     }, 500);
   }

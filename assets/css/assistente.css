@@ -416,6 +416,73 @@ html.bit-moneta-nascosta #btn-container {
   margin: 0;
 }
 
+/* Messaggio di Bit con pulsanti (es. i collaboratori): niente campo di testo */
+.bit-bubble-rich .bit-form,
+.bit-bubble-rich .bit-stay,
+.bit-bubble-rich .bit-asked {
+  display: none;
+}
+
+/* Chi ha collaborato: avatar con cornice a pixel e nome */
+.bit-people {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 8px;
+  width: 100%;
+  margin: 2px 0 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.bit-people a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 58px;
+  color: var(--bit-text);
+  text-decoration: none;
+}
+
+.bit-people img {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+  background: var(--bit-surface);
+  box-shadow:
+    0 -2px 0 0 var(--bit-text),
+    0 2px 0 0 var(--bit-text),
+    -2px 0 0 0 var(--bit-text),
+    2px 0 0 0 var(--bit-text);
+}
+
+.bit-people span {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "VT323", ui-monospace, monospace;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.bit-people a:hover span,
+.bit-people a:focus-visible span {
+  text-decoration: underline;
+}
+
+.bit-people a:focus-visible {
+  outline: 2px solid var(--bit-mark);
+  outline-offset: 2px;
+}
+
+.bit-people-more {
+  align-self: center;
+  font-family: "VT323", ui-monospace, monospace;
+  font-size: 15px;
+  color: var(--bit-muted);
+}
+
 .bit-action:focus-visible,
 .bit-send:focus-visible,
 .bit-x:focus-visible,
