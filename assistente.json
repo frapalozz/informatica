@@ -40,5 +40,6 @@ sitemap: false
   ],
   "alias": {{ site.data.assistente.alias | jsonify }},
   "faq": {{ site.data.assistente.faq | jsonify }},
-  "suggerimenti": {{ site.data.assistente.suggerimenti | jsonify }}
+  "suggerimenti": {{ site.data.assistente.suggerimenti | jsonify }},
+  "battute": {{ site.data.assistente.battute | jsonify }}
 }

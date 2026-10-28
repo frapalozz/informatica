@@ -87,3 +87,43 @@ faq:
 
   - domande: ["grazie", "perfetto", "ottimo"]
     risposta: "Di niente! Se ti serve altro sono qui."
+
+# Battute: se nessuno lo cerca per un po' (assistente.chiacchiere in _config.yml),
+# Bit dice una di queste frasi in un fumetto che sparisce da solo.
+# Si possono usare {ora}, {nome} e {materia} (la materia della pagina aperta).
+battute:
+  sempre:
+    - "Ho provato a fare il merge con il mio pisolino. Conflitto."
+    - "Un gatto non ha bug. Ha funzionalità non documentate."
+    - "Ho trovato un bug. L'ho mangiato."
+    - "Il mio linguaggio preferito? Il MIAOssembly."
+    - "Vorrei imparare Python, ma i serpenti mi mettono ansia."
+    - "Sto facendo debug di questa pagina. Spoiler: è tutto a posto."
+    - "Ctrl+Z funziona anche nella vita? Chiedo per un amico."
+    - "Se ti serve qualcosa, miao. Cioè: chiedi pure."
+    - "Le prove passate sono il miglior amico dello studente. Dopo di me, ovviamente."
+    - "Ricordati di fare una pausa. Io ne faccio sedici al giorno."
+    - "Ho chiesto a una paperella di gomma di spiegarmi la ricorsione. Mi ha rimandato a me stesso."
+    - "Sono in modalità risparmio energetico. Si chiama anche: gatto."
+    - "while (studi) { ce_la_fai++; }"
+    - "Mi hanno detto di stare fuori dalla tastiera. Non ho capito perché."
+  notte:
+    - "Sono le {ora}... anche tu sotto esame?"
+    - "Di notte i gatti vedono benissimo. Gli studenti un po' meno: fra poco a nanna!"
+    - "Alle {ora} il codice compila meglio. O almeno così si dice."
+  mattina:
+    - "Buongiorno! Io ho già fatto tre pisolini, tu il caffè?"
+    - "Mattinata produttiva? Io ho già spinto una penna giù dal tavolo."
+  strega:
+    - "Ho preso la patente per la scopa. Non chiedermi della retromarcia."
+    - "Dolcetto o scherzetto? Accetto anche croccantini."
+    - "Questo cappello mi dà poteri magici: per esempio, trovo le prove passate."
+    - "Bu! Ti ho spaventato? Va bene, ero io, Bit."
+  materia:
+    - "Stai studiando {materia}? Se ti serve qualcosa, chiedimi pure."
+    - "{materia}, eh? Coraggio, ce la puoi fare."
+    - "Ho sentito che {materia} piace tanto ai gatti. Me lo sono inventato, ma tu continua."
+  dorme:
+    - "Zzz... sto sognando un array infinito di croccantini..."
+    - "Zzz... ricorsione... ricorsione... ricorsione..."
+    - "Zzz... cinque minuti ancora..."

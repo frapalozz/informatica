@@ -20,7 +20,7 @@
 
   <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
   {% if site.snow %}<script src="{{ '/assets/js/snow.js' | relative_url }}" defer></script>{% endif %}
-  {% if site.assistente.enabled %}<script src="{{ '/assets/js/assistente.js' | relative_url }}" data-dati="{{ '/assistente.json' | relative_url }}" data-nome="{{ site.assistente.nome | default: 'Bit' | escape }}" defer></script>{% endif %}
+  {% if site.assistente.enabled %}<script src="{{ '/assets/js/assistente.js' | relative_url }}" data-dati="{{ '/assistente.json' | relative_url }}" data-nome="{{ site.assistente.nome | default: 'Bit' | escape }}" data-chiacchiere="{{ site.assistente.chiacchiere | default: 45 }}" defer></script>{% endif %}
   {% if site.invader %}<script src="{{ '/assets/js/invader.js' | relative_url }}" defer></script>{% endif %}
   {% if site.donation_url != "" %}<script src="{{ '/assets/js/donation.js' | relative_url }}" defer></script>{% endif %}
   {% if site.analytics_script != "" %}<script src="{{ site.analytics_script }}" async defer></script>{% endif %}

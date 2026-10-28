@@ -354,6 +354,8 @@ Bit è un gattino pixel che aiuta a trovare le cose. Gira per la pagina, su desk
 
 Capisce domande come «prove di algoritmi», «registrazioni SO», «slide di logica», «materie del 2° anno», anche con errori di battitura. Nella pagina di una materia basta scrivere «prove» o «registrazioni». Il pulsante **Portami lì** fa camminare Bit fino al punto giusto della pagina (o apre la pagina), lo evidenzia e Bit dice «Eccolo!».
 
+Se nessuno lo cerca per un po' (45 secondi la prima volta, poi a intervalli più lunghi, al massimo 5 volte per pagina) Bit **dice una battuta** in un fumetto breve che sparisce da solo: cose da gatto e da informatico, frasi diverse di notte, al mattino, ad Halloween, sulla pagina di una materia e quando dorme. Non parla mentre si sta scrivendo in un campo della pagina, non ruba il focus e non disturba i lettori di schermo; toccando la battuta si apre il fumetto per fare domande.
+
 Dal 15 ottobre al 1° novembre è un gatto nero con il cappello da strega e si sposta volando sulla scopa. Per provarlo: `?gatto=strega` in fondo all'indirizzo.
 
 **Cosa modificare, senza toccare codice**
@@ -363,6 +365,8 @@ Dal 15 ottobre al 1° novembre è un gatto nero con il cappello da strega e si s
 | che capisca un altro nome di una materia | aggiungi l'alias in `alias:` (chiave = nome del file in `_materie/`) |
 | una nuova risposta (es. orari, regolamenti) | aggiungi una voce in `faq:` con le frasi che la attivano e i link |
 | cambiare i pulsanti suggeriti | `suggerimenti:` |
+| cambiare o aggiungere le battute che dice da solo | `battute:` (gruppi `sempre`, `notte`, `mattina`, `strega`, `materia`, `dorme`; si possono usare `{ora}`, `{nome}`, `{materia}`) |
+| cambiare ogni quanto parla da solo | `assistente.chiacchiere` in `_config.yml` (secondi, `0` = mai) |
 | rinominarlo o spegnerlo | `assistente.nome` / `assistente.enabled` in `_config.yml` |
 
 **Misurare se viene usato.** Se lo script di analytics è Simple Analytics, Bit invia solo dei conteggi anonimi: `bit_aperto`, `bit_risposta`, `bit_non_capito` (mai il testo delle domande). Tanti `bit_non_capito` indicano alias o FAQ da aggiungere.

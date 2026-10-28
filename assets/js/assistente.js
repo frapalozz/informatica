@@ -389,6 +389,9 @@
   var script = document.currentScript;
   var DATA_URL = (script && script.getAttribute("data-dati")) || "/assistente.json";
   var NOME = (script && script.getAttribute("data-nome")) || "Bit";
+  // Dopo quanti secondi senza essere cercato Bit dice una battuta (0 = mai).
+  var CHIACCHIERE = parseFloat(script && script.getAttribute("data-chiacchiere"));
+  if (isNaN(CHIACCHIERE)) CHIACCHIERE = 45;
 
   var mq = function (q) { return !!(window.matchMedia && window.matchMedia(q).matches); };
   var reduced = mq("(prefers-reduced-motion: reduce)");
@@ -701,7 +704,7 @@
     clearTimeout(autoClose);
     actionsBox.innerHTML = "";
     actionsBox.hidden = true;
-    live.textContent = text;
+    if (!opts.silent) live.textContent = text;
     var showActions = function () {
       say.textContent = text;
       if (actions && actions.length) {
@@ -751,6 +754,7 @@
   function ask(q) {
     q = String(q || "").trim();
     if (!q) return;
+    lastInteraction = Date.now();
     asked.textContent = "Tu: " + q;
     asked.hidden = false;
     speak("…", []);
@@ -827,24 +831,32 @@
     follow = requestAnimationFrame(followLoop);
   }
 
+  var ambient = false;     // battuta detta da solo: Bit non si ferma e non ruba il focus
+
   function openBubble(opts) {
     opts = opts || {};
     hideHint();
     clearTimeout(autoClose);
     var wasOpen = talking;
     talking = true;
+    ambient = !!opts.ambient;
+    if (!ambient) lastInteraction = Date.now();
     bubble.hidden = false;
-    bubble.classList.toggle("bit-bubble-short", !!opts.short);
-    cat.setAttribute("aria-expanded", "true");
-    if (walker) walker.onTalk(true);
+    bubble.classList.toggle("bit-bubble-short", !!(opts.short || opts.ambient));
     if (!follow) follow = requestAnimationFrame(followLoop);
-    if (opts.short) {
+    if (opts.short || opts.ambient) {
       bubble.dataset.short = "1";
       asked.hidden = true;
-      speak(opts.text, []);
-      autoClose = setTimeout(function () { closeBubble(false); }, 2600);
+      if (!ambient) {
+        cat.setAttribute("aria-expanded", "true");
+        if (walker) walker.onTalk(true);
+      }
+      speak(opts.text, [], { silent: ambient });
+      autoClose = setTimeout(function () { closeBubble(false); }, opts.ms || 2600);
       return;
     }
+    cat.setAttribute("aria-expanded", "true");
+    if (walker) walker.onTalk(true);
     if (!wasOpen || bubble.dataset.short === "1") {
       greet();
       track("bit_aperto");
@@ -858,6 +870,8 @@
   function closeBubble(returnFocus) {
     if (!talking) return;
     talking = false;
+    if (!ambient) lastInteraction = Date.now();
+    ambient = false;
     clearTimeout(autoClose);
     if (typing) { clearInterval(typing); typing = null; }
     bubble.hidden = true;
@@ -867,6 +881,10 @@
   }
 
   bubble.querySelector(".bit-x").addEventListener("click", function () { closeBubble(true); });
+  // Toccando un fumetto breve (una battuta, "Eccolo!") si apre quello per fare domande.
+  bubble.addEventListener("click", function () {
+    if (bubble.classList.contains("bit-bubble-short")) openBubble();
+  });
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && talking) closeBubble(true);
   });
@@ -1147,6 +1165,7 @@
     requestAnimationFrame(tick);
 
     return {
+      mode: function () { return s.mode; },
       onTalk: function (open) {
         s.talking = open;
         if (!open) { s.mode = "sit"; s.until = performance.now() + rand(1500, 3000); }
@@ -1163,6 +1182,78 @@
         }, 450);
       },
     };
+  }
+
+  // ══════════════════════════════════════════════════════════
+  //  Battute: se nessuno lo cerca per un po', Bit dice qualcosa da solo
+  // ══════════════════════════════════════════════════════════
+  var lastInteraction = Date.now();
+
+  function startChatter() {
+    if (!(CHIACCHIERE > 0)) return;
+    var MAX_PER_PAGE = 5;
+    var said = 0;
+    var gap = CHIACCHIERE * 1000;
+
+    function recent() {
+      try { return JSON.parse(getItem("sessionStorage", "bit-battute") || "[]"); } catch (e) { return []; }
+    }
+
+    function pickLine(db) {
+      var b = db.battute || {};
+      var now = new Date(), h = now.getHours();
+      var ora = h + ":" + String(now.getMinutes()).padStart(2, "0");
+      var materia = currentMateria(db);
+      var groups = [];
+      if (walker && walker.mode() === "sleep") groups.push(b.dorme);
+      else {
+        if ((h >= 23 || h < 5) && Math.random() < 0.6) groups.push(b.notte);
+        if (h >= 6 && h < 10 && Math.random() < 0.4) groups.push(b.mattina);
+        if (witch && Math.random() < 0.5) groups.push(b.strega);
+        if (materia && Math.random() < 0.25) groups.push(b.materia);
+        groups.push(b.sempre);
+      }
+      var already = recent();
+      for (var g = 0; g < groups.length; g++) {
+        var list = (groups[g] || []).filter(function (t) { return already.indexOf(t) < 0; });
+        if (!list.length) list = groups[g] || [];
+        if (!list.length) continue;
+        var line = list[Math.floor(Math.random() * list.length)];
+        setItem("sessionStorage", "bit-battute", JSON.stringify(already.concat([line]).slice(-12)));
+        return line
+          .replace(/\{ora\}/g, ora)
+          .replace(/\{nome\}/g, NOME)
+          .replace(/\{materia\}/g, materia ? materia.t : "questa materia");
+      }
+      return null;
+    }
+
+    function catOnScreen() {
+      var r = cat.getBoundingClientRect();
+      var navBottom = nav ? Math.max(0, nav.getBoundingClientRect().bottom) : 0;
+      return r.bottom > navBottom + 20 && r.top < window.innerHeight - 20 && r.right > 0 && r.left < window.innerWidth;
+    }
+
+    function busyTyping() {
+      var a = document.activeElement;
+      return !!(a && !bubble.contains(a) && (a.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)));
+    }
+
+    setInterval(function () {
+      if (said >= MAX_PER_PAGE || document.hidden || talking || busyTyping()) return;
+      if (Date.now() - lastInteraction < gap) return;
+      if (!cat.classList.contains("bit-ready") || !catOnScreen()) return;
+      if (walker && walker.mode() === "jump") return;
+      loadDb().then(function (db) {
+        if (talking) return;
+        var line = pickLine(db);
+        if (!line) return;
+        said++;
+        lastInteraction = Date.now();
+        gap = CHIACCHIERE * 1000 * (1.6 + Math.random() * 1.2);
+        openBubble({ ambient: true, text: line, ms: 5000 });
+      }).catch(function () { /* niente battute senza dati */ });
+    }, 2000);
   }
 
   // ── Avvio ──────────────────────────────────────────────────
@@ -1196,4 +1287,5 @@
     setTimeout(showHint, 1500);
   }
   onArrival();
+  startChatter();
 })();

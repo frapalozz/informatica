@@ -428,8 +428,10 @@ html.bit-moneta-nascosta #btn-container {
 
 /* "Eccolo!" dopo "Portami lì": solo la frase */
 .bit-bubble-short {
-  width: auto;
+  width: max-content;
+  max-width: min(250px, calc(100vw - 24px));
   padding: 8px 14px;
+  cursor: pointer; /* toccandolo si apre il fumetto per fare domande */
 }
 
 .bit-bubble-short .bit-x,
