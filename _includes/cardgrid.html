@@ -2,7 +2,8 @@
   Griglia di card + campo di ricerca.
   Parametri: anno ("1" | "2" | "3" | "extra") e percorso (slug del corso).
   Vengono renderizzate tutte le materie del corso; main.js mostra solo quelle dell'anno
-  corrente, oppure – quando si cerca – tutte quelle di 1°-3° anno che combaciano.
+  corrente. Durante la ricerca include gli anni 1°-3° oppure, nella pagina Extra,
+  solo le risorse Extra corrispondenti.
 {%- endcomment -%}
 {%- assign materie = site.materie | sort: "ordine" -%}
 <section data-cardgrid data-anno="{{ include.anno }}" class="relative max-w-screen-2xl w-full center px-3.5 md:px-4 lg:px-6 xl:px-8 flex flex-col items-center mt-2 z-[60]">
