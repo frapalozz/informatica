@@ -38,7 +38,8 @@
         var anno = card.getAttribute("data-anno");
         var ok = q === ""
           ? anno === current
-          : (anno === "1" || anno === "2" || anno === "3") && card.getAttribute("data-title").indexOf(q) > -1;
+          : (current === "extra" ? anno === "extra" : (anno === "1" || anno === "2" || anno === "3"))
+            && card.getAttribute("data-title").indexOf(q) > -1;
         card.classList.toggle("hidden", !ok);
         if (ok) visible++;
       });
