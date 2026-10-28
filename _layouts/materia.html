@@ -19,18 +19,18 @@ layout: default
       <p class="text-sm dark:text-zinc-400 text-zinc-600 cursor-default">{{ page.descrizione }}</p>
 
       {% if page.webex %}
-      <a href="{{ page.webex }}" class="dark:bg-white bg-black px-5 py-3 dark:text-zinc-900 text-zinc-100 font-bold text-lg border-0 rounded-md mt-5 mb-3">{% if is_extra %}Visualizza Risorsa{% else %}Webex{% endif %}</a>
+      <a href="{{ page.webex }}" data-bit-voce="webex" class="dark:bg-white bg-black px-5 py-3 dark:text-zinc-900 text-zinc-100 font-bold text-lg border-0 rounded-md mt-5 mb-3">{% if is_extra %}Visualizza Risorsa{% else %}Webex{% endif %}</a>
       {% endif %}
 
       {% unless is_extra %}
         {% if page.materiale %}
-          {% include materia-row.html titolo="Materiale didattico" voce=page.materiale %}
+          {% include materia-row.html titolo="Materiale didattico" voce=page.materiale id="materiale" %}
         {% endif %}
         {% if page.registrazioni %}
-          {% include materia-row.html titolo="Registrazioni" voce=page.registrazioni %}
+          {% include materia-row.html titolo="Registrazioni" voce=page.registrazioni id="registrazioni" %}
         {% endif %}
         {% if page.prove %}
-          {% include materia-row.html titolo="Prove passate" voce=page.prove %}
+          {% include materia-row.html titolo="Prove passate" voce=page.prove id="prove" %}
         {% endif %}
       {% endunless %}
     </div>

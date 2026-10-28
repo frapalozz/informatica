@@ -1,5 +1,5 @@
 <div class="w-full h-[2px] rounded-xl dark:bg-zinc-700 bg-zinc-400 mt-3 mb-3"></div>
-<div class="flex flex-row justify-between items-center w-full">
-  <p class="dark:text-white text-black font-semibold text-lg cursor-default">{{ include.titolo }}</p>
+<div class="flex flex-row justify-between items-center w-full"{% if include.id %} data-bit-voce="{{ include.id }}"{% endif %}>
+  <p data-bit-perch class="dark:text-white text-black font-semibold text-lg cursor-default">{{ include.titolo }}</p>
   {% include res-link.html url=include.voce.url label=include.voce.label class="font-medium text-lg dark:text-white/65 text-black/65" %}
 </div>

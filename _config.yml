@@ -43,6 +43,13 @@ snow: true            # neve da dicembre a febbraio
 advent_of_code: true  # link "Advent Of Code" dall'1 al 25 dicembre
 invader: true         # easter egg: dopo 1 minuto sul sito (solo desktop) un alieno pixel spara al cursore
 
+# Bit, l'assistente del sito: un gattino che gira per le pagine (su desktop) o
+# resta in un angolo (su telefono) e risponde alle domande sulle materie.
+# Nessuna AI e nessun costo: usa le materie e _data/assistente.yml.
+assistente:
+  enabled: true
+  nome: "Bit"
+
 # ── Pagina "Aggiungi risorsa" ──
 # Il sito è statico: non può salvare su Notion come la versione Next.js.
 # 1) Con `endpoint` (es. Formspree: https://formspree.io/f/xxxxxxx) il form

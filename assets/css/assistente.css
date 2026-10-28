@@ -1,0 +1,436 @@
+/* Bit, l'assistente del sito (assets/js/assistente.js).
+   CSS normale, non Tailwind: non serve ricompilare main.css. */
+
+:root {
+  --bit-bg: #f5f5f4;
+  --bit-surface: #e7e5e4;
+  --bit-text: #0c0a09;
+  --bit-muted: #57534e;
+  --bit-border: #a8a29e;
+  --bit-accent: #0c0a09;
+  --bit-accent-text: #fafaf9;
+  --bit-mark: #d97706;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bit-bg: #1c1917;
+    --bit-surface: #292524;
+    --bit-text: #fafaf9;
+    --bit-muted: #a8a29e;
+    --bit-border: #44403c;
+    --bit-accent: #fafaf9;
+    --bit-accent-text: #0c0a09;
+    --bit-mark: #f59e0b;
+  }
+}
+
+/* ── Gattino ─────────────────────────────────────────────── */
+
+.bit-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: 80;
+  pointer-events: none;
+}
+
+.bit-cat {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  pointer-events: none; /* solo i pixel disegnati sono cliccabili */
+  opacity: 0;
+  will-change: transform;
+}
+
+.bit-cat.bit-ready {
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.bit-cat:focus-visible {
+  outline: 3px solid var(--bit-mark);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.bit-sprite {
+  display: block;
+}
+
+.bit-sprite rect {
+  pointer-events: auto;
+}
+
+.bit-cat[data-dir="-1"] .bit-sprite {
+  transform: scaleX(-1);
+}
+
+.bit-f,
+.bit-hat {
+  display: none;
+}
+
+.bit-cat[data-frame="walk1"] .bit-f-walk1,
+.bit-cat[data-frame="walk2"] .bit-f-walk2,
+.bit-cat[data-frame="sit"] .bit-f-sit,
+.bit-cat[data-frame="play"] .bit-f-play,
+.bit-cat[data-frame="sleep"] .bit-f-sleep,
+.bit-cat[data-frame="ride"] .bit-f-ride {
+  display: inline;
+}
+
+.bit-cat[data-skin="witch"] .bit-hat {
+  display: inline;
+}
+
+/* Su telefono (o con "riduci movimento") resta seduto in un angolo. */
+.bit-cat.bit-docked {
+  position: fixed;
+  top: auto;
+  left: 12px;
+  bottom: 12px;
+  transform: none !important;
+  pointer-events: auto;
+  z-index: 95;
+}
+
+.bit-cat.bit-docked .bit-sprite rect {
+  pointer-events: none;
+}
+
+/* Colori: arancione tigrato, e gatto nero con cappello ad Halloween. */
+.bit-cat {
+  --bit-outline: #141414;
+  --bit-fur: #f2b16a;
+  --bit-stripe: #d9813a;
+  --bit-patch: #d9813a;
+  --bit-chest: #ffffff;
+  --bit-eye: #2a1608;
+  --bit-nose: #f39ab0;
+}
+
+.bit-cat[data-skin="witch"] {
+  --bit-outline: #0a0a0a;
+  --bit-fur: #2e2e33;
+  --bit-stripe: #26262b;
+  --bit-patch: #26262b;
+  --bit-chest: #2e2e33;
+  --bit-eye: #f59e0b;
+  --bit-nose: #4a4a50;
+  --bit-hat: #45306e;
+  --bit-band: #e8761c;
+  --bit-broom: #9a5b2c;
+  --bit-straw: #e8b64c;
+  --bit-straw-shade: #b9832a;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* contorno chiaro, altrimenti il gatto nero sparisce sullo sfondo scuro */
+  .bit-cat[data-skin="witch"] {
+    --bit-outline: #8b8494;
+    --bit-fur: #35303d;
+    --bit-stripe: #2c2833;
+    --bit-patch: #2c2833;
+    --bit-chest: #35303d;
+  }
+}
+
+/* Zzz mentre dorme */
+.bit-zzz {
+  display: none;
+  position: absolute;
+  bottom: 18px;
+  right: 2px;
+  font-family: "VT323", ui-monospace, monospace;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--bit-muted);
+}
+
+.bit-cat[data-dir="-1"] .bit-zzz {
+  right: auto;
+  left: 2px;
+}
+
+.bit-cat[data-frame="sleep"] .bit-zzz {
+  display: block;
+}
+
+.bit-zzz span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  animation: bit-zzz 3s steps(6) infinite;
+}
+
+.bit-zzz span:nth-child(2) { animation-delay: 1s; }
+.bit-zzz span:nth-child(3) { animation-delay: 2s; }
+
+@keyframes bit-zzz {
+  0% { opacity: 0; transform: translate(0, 0); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: translate(10px, -22px); }
+}
+
+/* Fumetto di benvenuto, una volta sola */
+.bit-hint {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  width: max-content;
+  max-width: 220px;
+  padding: 6px 10px;
+  border: 2px solid var(--bit-text);
+  border-radius: 8px;
+  background: var(--bit-bg);
+  color: var(--bit-text);
+  font-family: "VT323", ui-monospace, monospace;
+  font-size: 18px;
+  line-height: 1.1;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  pointer-events: none;
+}
+
+.bit-hint.bit-hint-on {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Il punto indicato da "Portami lì" */
+.bit-highlight {
+  outline: 3px solid var(--bit-mark);
+  outline-offset: 6px;
+  border-radius: 6px;
+  animation: bit-pulse 0.8s ease-in-out 3;
+}
+
+@keyframes bit-pulse {
+  50% { outline-offset: 2px; outline-color: transparent; }
+}
+
+/* ── Chat ───────────────────────────────────────────────── */
+
+.bit-panel {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 96;
+  width: min(380px, calc(100vw - 24px));
+  max-height: min(560px, calc(100vh - 140px));
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--bit-border);
+  border-radius: 12px;
+  background: var(--bit-bg);
+  color: var(--bit-text);
+  font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.bit-panel[hidden] {
+  display: none;
+}
+
+/* con il gatto nell'angolo, la chat si apre sopra di lui */
+.bit-panel.bit-panel-docked {
+  bottom: 68px;
+}
+
+.bit-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px 10px 16px;
+  border-bottom: 2px solid var(--bit-border);
+}
+
+.bit-title {
+  margin: 0;
+  font-family: "VT323", ui-monospace, monospace;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.bit-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bit-btn-text,
+.bit-close {
+  border: 0;
+  background: none;
+  color: var(--bit-muted);
+  font: inherit;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.bit-btn-text {
+  font-size: 12px;
+  padding: 6px 8px;
+}
+
+.bit-close {
+  width: 32px;
+  height: 32px;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.bit-btn-text:hover,
+.bit-close:hover {
+  color: var(--bit-text);
+  background: var(--bit-surface);
+}
+
+.bit-log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bit-msg p {
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.45;
+  max-width: 92%;
+}
+
+.bit-msg-bit p {
+  background: var(--bit-surface);
+  border-top-left-radius: 2px;
+}
+
+.bit-msg-me {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bit-msg-me p {
+  background: var(--bit-accent);
+  color: var(--bit-accent-text);
+  border-top-right-radius: 2px;
+}
+
+.bit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.bit-action {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1.5px solid var(--bit-border);
+  border-radius: 999px;
+  background: none;
+  color: var(--bit-text);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bit-action:hover {
+  border-color: var(--bit-text);
+}
+
+.bit-action-go {
+  background: var(--bit-accent);
+  border-color: var(--bit-accent);
+  color: var(--bit-accent-text);
+}
+
+.bit-form {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px 12px;
+  border-top: 2px solid var(--bit-border);
+}
+
+.bit-input {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 12px;
+  border: 1.5px solid var(--bit-border);
+  border-radius: 8px;
+  background: var(--bit-bg);
+  color: var(--bit-text);
+  font: inherit;
+  font-size: 16px; /* niente zoom automatico su iPhone */
+}
+
+.bit-input:focus {
+  outline: 2px solid var(--bit-mark);
+  outline-offset: 1px;
+}
+
+.bit-send {
+  padding: 0 14px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--bit-accent);
+  color: var(--bit-accent-text);
+  font: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.bit-action:focus-visible,
+.bit-send:focus-visible,
+.bit-close:focus-visible,
+.bit-btn-text:focus-visible {
+  outline: 2px solid var(--bit-mark);
+  outline-offset: 2px;
+}
+
+.bit-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  /* sotto la barra del sito, sopra il gatto */
+  .bit-panel {
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-height: calc(100vh - 190px);
+    max-height: calc(100dvh - 190px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bit-zzz span { animation: none; opacity: 1; }
+  .bit-zzz span:nth-child(2) { transform: translate(5px, -9px); }
+  .bit-zzz span:nth-child(3) { transform: translate(10px, -18px); }
+  .bit-highlight { animation: none; }
+}
