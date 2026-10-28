@@ -345,7 +345,7 @@ Nel footer compare "● N utenti online" (visitatori con il sito aperto e in pri
 
 ## Bit, l'assistente del sito
 
-Bit è un gattino pixel che aiuta a trovare le cose. Gira per la pagina, su desktop e su telefono (cammina sui titoli, si siede, si addormenta, guarda il cursore). Con "riduci movimento", o se il visitatore sceglie "Mettilo nell'angolo" nella chat, resta seduto in basso a sinistra; su telefono, in quel caso, il pulsante "Prendi una Moneta" viene nascosto per non stargli addosso. Cliccandolo, Bit si ferma e gli compare sopra un **fumetto pixel**: scrive le risposte lettera per lettera, con i pulsanti e il campo per fare domande dentro il fumetto. Si chiude con ×, con Esc o toccando altrove.
+Bit è un gattino pixel che aiuta a trovare le cose. Gira per la pagina, su desktop e su telefono (cammina sui titoli, si siede, si addormenta, guarda il cursore). Con "riduci movimento", o se il visitatore sceglie "Mettilo nell'angolo" nel fumetto, resta seduto in basso a sinistra; su telefono, in quel caso, il pulsante "Prendi una Moneta" viene nascosto per non stargli addosso. Cliccandolo, Bit si ferma e gli compare sopra un **fumetto pixel**: scrive le risposte lettera per lettera, con i pulsanti e il campo per fare domande dentro il fumetto. Si chiude con ×, con Esc o toccando altrove.
 
 **Non usa AI e non costa niente.** Le risposte vengono da:
 
