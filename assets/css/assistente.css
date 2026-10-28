@@ -192,36 +192,6 @@ html.bit-moneta-nascosta #btn-container {
   100% { opacity: 0; transform: translate(10px, -22px); }
 }
 
-/* Fumetto di benvenuto, una volta sola */
-.bit-hint {
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 0;
-  width: max-content;
-  max-width: 220px;
-  padding: 5px 9px 4px;
-  background: var(--bit-bg);
-  color: var(--bit-text);
-  box-shadow:
-    0 -2px 0 0 var(--bit-text),
-    0 2px 0 0 var(--bit-text),
-    -2px 0 0 0 var(--bit-text),
-    2px 0 0 0 var(--bit-text);
-  font-family: "VT323", ui-monospace, monospace;
-  font-size: 18px;
-  line-height: 1.1;
-  text-align: left;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
-  pointer-events: none;
-}
-
-.bit-hint.bit-hint-on {
-  opacity: 1;
-  visibility: visible;
-}
-
 /* Il punto indicato da "Portami lì" */
 .bit-highlight {
   outline: 3px solid var(--bit-mark);
@@ -428,8 +398,10 @@ html.bit-moneta-nascosta #btn-container {
 
 /* "Eccolo!" dopo "Portami lì": solo la frase */
 .bit-bubble-short {
-  width: auto;
+  width: max-content;
+  max-width: min(250px, calc(100vw - 24px));
   padding: 8px 14px;
+  cursor: pointer; /* toccandolo si apre il fumetto per fare domande */
 }
 
 .bit-bubble-short .bit-x,

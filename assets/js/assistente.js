@@ -389,6 +389,8 @@
   var script = document.currentScript;
   var DATA_URL = (script && script.getAttribute("data-dati")) || "/assistente.json";
   var NOME = (script && script.getAttribute("data-nome")) || "Bit";
+  // Battute da solo: la prima subito, la seconda dopo 30 s, poi ogni 45-60 s ("false" = mai).
+  var CHIACCHIERE = !/^(false|0|no)$/i.test((script && script.getAttribute("data-chiacchiere")) || "");
 
   var mq = function (q) { return !!(window.matchMedia && window.matchMedia(q).matches); };
   var reduced = mq("(prefers-reduced-motion: reduce)");
@@ -625,10 +627,6 @@
   cat.dataset.dir = "1";
   cat.innerHTML = spriteSvg() + '<span class="bit-zzz" aria-hidden="true"><span>z</span><span>z</span><span>z</span></span>';
 
-  var hint = document.createElement("span");
-  hint.className = "bit-hint";
-  hint.setAttribute("aria-hidden", "true");
-  hint.textContent = mobile ? "Ciao! Toccami se cerchi qualcosa" : "Ciao! Cliccami se cerchi qualcosa";
 
   // Il fumetto: esce dalla testa di Bit e lo segue.
   var bubble = document.createElement("div");
@@ -656,7 +654,6 @@
     '  <rect x="3" y="3" width="1" height="1" class="bit-tail-ink"/>' +
     "</svg>";
 
-  cat.appendChild(hint);
   layer.appendChild(cat);
   document.body.appendChild(layer);
   document.body.appendChild(bubble);
@@ -701,7 +698,7 @@
     clearTimeout(autoClose);
     actionsBox.innerHTML = "";
     actionsBox.hidden = true;
-    live.textContent = text;
+    if (!opts.silent) live.textContent = text;
     var showActions = function () {
       say.textContent = text;
       if (actions && actions.length) {
@@ -751,6 +748,7 @@
   function ask(q) {
     q = String(q || "").trim();
     if (!q) return;
+    lastInteraction = Date.now();
     asked.textContent = "Tu: " + q;
     asked.hidden = false;
     speak("…", []);
@@ -827,24 +825,31 @@
     follow = requestAnimationFrame(followLoop);
   }
 
+  var ambient = false;     // battuta detta da solo: Bit non si ferma e non ruba il focus
+
   function openBubble(opts) {
     opts = opts || {};
-    hideHint();
     clearTimeout(autoClose);
     var wasOpen = talking;
     talking = true;
+    ambient = !!opts.ambient;
+    if (!ambient) lastInteraction = Date.now();
     bubble.hidden = false;
-    bubble.classList.toggle("bit-bubble-short", !!opts.short);
-    cat.setAttribute("aria-expanded", "true");
-    if (walker) walker.onTalk(true);
+    bubble.classList.toggle("bit-bubble-short", !!(opts.short || opts.ambient));
     if (!follow) follow = requestAnimationFrame(followLoop);
-    if (opts.short) {
+    if (opts.short || opts.ambient) {
       bubble.dataset.short = "1";
       asked.hidden = true;
-      speak(opts.text, []);
-      autoClose = setTimeout(function () { closeBubble(false); }, 2600);
+      if (!ambient) {
+        cat.setAttribute("aria-expanded", "true");
+        if (walker) walker.onTalk(true);
+      }
+      speak(opts.text, [], { silent: ambient });
+      autoClose = setTimeout(function () { closeBubble(false); }, opts.ms || 2600);
       return;
     }
+    cat.setAttribute("aria-expanded", "true");
+    if (walker) walker.onTalk(true);
     if (!wasOpen || bubble.dataset.short === "1") {
       greet();
       track("bit_aperto");
@@ -858,6 +863,8 @@
   function closeBubble(returnFocus) {
     if (!talking) return;
     talking = false;
+    if (!ambient) lastInteraction = Date.now();
+    ambient = false;
     clearTimeout(autoClose);
     if (typing) { clearInterval(typing); typing = null; }
     bubble.hidden = true;
@@ -867,6 +874,10 @@
   }
 
   bubble.querySelector(".bit-x").addEventListener("click", function () { closeBubble(true); });
+  // Toccando un fumetto breve (una battuta, "Eccolo!") si apre quello per fare domande.
+  bubble.addEventListener("click", function () {
+    if (bubble.classList.contains("bit-bubble-short")) openBubble();
+  });
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && talking) closeBubble(true);
   });
@@ -879,14 +890,6 @@
   window.addEventListener("resize", placeBubble);
   if (window.visualViewport) window.visualViewport.addEventListener("resize", placeBubble);
 
-  // ── Fumetto di benvenuto (una volta per visitatore) ──────────
-  function hideHint() { hint.classList.remove("bit-hint-on"); }
-  function showHint() {
-    if (getItem("localStorage", "bit-salutato")) return;
-    setItem("localStorage", "bit-salutato", "1");
-    hint.classList.add("bit-hint-on");
-    setTimeout(hideHint, 6000);
-  }
 
   // ── "Portami lì" ───────────────────────────────────────────
   function samePage(url) {
@@ -1092,7 +1095,6 @@
         s.perch = p.el;
         s.relX = rand(0, Math.max(0, p.right - p.left - W));
         cat.classList.add("bit-ready");
-        setTimeout(showHint, 1500);
       }
       var maxRel = Math.max(0, p.right - p.left - W);
       s.relX = clamp(s.relX, 0, maxRel);
@@ -1147,6 +1149,7 @@
     requestAnimationFrame(tick);
 
     return {
+      mode: function () { return s.mode; },
       onTalk: function (open) {
         s.talking = open;
         if (!open) { s.mode = "sit"; s.until = performance.now() + rand(1500, 3000); }
@@ -1163,6 +1166,88 @@
         }, 450);
       },
     };
+  }
+
+  // ══════════════════════════════════════════════════════════
+  //  Battute: se nessuno lo cerca per un po', Bit dice qualcosa da solo
+  // ══════════════════════════════════════════════════════════
+  var lastInteraction = Date.now();
+
+  function startChatter() {
+    if (!CHIACCHIERE) return;
+    var said = 0;
+    var nextAt = 0; // la prima battuta: appena Bit è sulla pagina
+
+    function recent() {
+      try { return JSON.parse(getItem("sessionStorage", "bit-battute") || "[]"); } catch (e) { return []; }
+    }
+
+    function pickLine(db) {
+      // Alla primissima visita la prima frase è una presentazione.
+      if (said === 0 && !getItem("localStorage", "bit-salutato")) {
+        setItem("localStorage", "bit-salutato", "1");
+        return "Ciao, sono " + NOME + "! " + (mobile ? "Toccami" : "Cliccami") + " se cerchi qualcosa.";
+      }
+      var b = db.battute || {};
+      var now = new Date(), h = now.getHours();
+      var ora = h + ":" + String(now.getMinutes()).padStart(2, "0");
+      var materia = currentMateria(db);
+      var groups = [];
+      if (walker && walker.mode() === "sleep") groups.push(b.dorme);
+      else {
+        // momento della giornata: notte 23-6, mattina 6-12, pranzo 12-14, pomeriggio 14-18, sera 18-23
+        var momento = h >= 23 || h < 6 ? "notte" : h < 12 ? "mattina" : h < 14 ? "pranzo" : h < 18 ? "pomeriggio" : "sera";
+        if (Math.random() < 0.5) groups.push(b[momento]);
+        if (witch && Math.random() < 0.5) groups.push(b.strega);
+        if (materia && Math.random() < 0.25) groups.push(b.materia);
+        groups.push(b.sempre);
+      }
+      var already = recent();
+      for (var g = 0; g < groups.length; g++) {
+        var list = (groups[g] || []).filter(function (t) { return already.indexOf(t) < 0; });
+        if (!list.length) list = groups[g] || [];
+        if (!list.length) continue;
+        var line = list[Math.floor(Math.random() * list.length)];
+        setItem("sessionStorage", "bit-battute", JSON.stringify(already.concat([line]).slice(-12)));
+        return line
+          .replace(/\{ora\}/g, ora)
+          .replace(/\{nome\}/g, NOME)
+          .replace(/\{materia\}/g, materia ? materia.t : "questa materia");
+      }
+      return null;
+    }
+
+    function catOnScreen() {
+      var r = cat.getBoundingClientRect();
+      var navBottom = nav ? Math.max(0, nav.getBoundingClientRect().bottom) : 0;
+      return r.bottom > navBottom + 20 && r.top < window.innerHeight - 20 && r.right > 0 && r.left < window.innerWidth;
+    }
+
+    function busyTyping() {
+      var a = document.activeElement;
+      return !!(a && !bubble.contains(a) && (a.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)));
+    }
+
+    var busy = false;
+    setInterval(function () {
+      if (busy || document.hidden || talking || busyTyping()) return;
+      if (Date.now() < nextAt) return;
+      // dopo che qualcuno ha parlato con Bit, almeno 30 secondi di silenzio
+      if (said > 0 && Date.now() - lastInteraction < 30000) return;
+      if (!cat.classList.contains("bit-ready") || !catOnScreen()) return;
+      if (walker && walker.mode() === "jump") return;
+      busy = true;
+      loadDb().then(function (db) {
+        busy = false;
+        if (talking) return;
+        var line = pickLine(db);
+        if (!line) return;
+        said++;
+        // la seconda dopo 30 secondi, poi ogni 45-60 secondi
+        nextAt = Date.now() + (said === 1 ? 30000 : 45000 + Math.random() * 15000);
+        openBubble({ ambient: true, text: line, ms: 5000 });
+      }).catch(function () { busy = false; });
+    }, 500);
   }
 
   // ── Avvio ──────────────────────────────────────────────────
@@ -1193,7 +1278,7 @@
     cat.classList.add("bit-docked", "bit-ready");
     // Su telefono il pulsante "Prendi una Moneta" starebbe addosso al gatto: lo nascondiamo.
     if (mobile) document.documentElement.classList.add("bit-moneta-nascosta");
-    setTimeout(showHint, 1500);
   }
   onArrival();
+  startChatter();
 })();
