@@ -286,6 +286,19 @@
      * ctx.materia: la materia della pagina aperta (se c'è), così "prove" o
      * "registrazioni" senza nome si riferiscono a quella.
      */
+    /** Il messaggio sui collaboratori, con i pulsanti per contribuire. L'elenco lo aggiunge l'interfaccia. */
+    function collabAnswer(db) {
+      return {
+        kind: "collaboratori",
+        people: true,
+        text: db.collaborazione || "Queste persone hanno collaborato al progetto. Perché non collabori anche tu?",
+        actions: [
+          linkAction(db, "Aggiungi una risorsa", "/risorsa/"),
+          db.repo ? { label: "Il progetto su GitHub", href: "https://github.com/" + db.repo, external: true } : null,
+        ].filter(Boolean),
+      };
+    }
+
     function answer(db, q, ctx) {
       ctx = ctx || {};
       var qn = norm(q);
@@ -314,6 +327,8 @@
       }
 
       if (intent && ctx.materia && !year) return materiaAnswer(db, ctx.materia, intent);
+
+      if (faq && faq.collaboratori) return collabAnswer(db);
 
       if (faq) {
         return {
@@ -375,7 +390,7 @@
       };
     }
 
-    return { build: build, answer: answer, norm: norm };
+    return { build: build, answer: answer, norm: norm, collabAnswer: collabAnswer };
   })();
 
   if (typeof module !== "undefined" && module.exports) {
@@ -691,6 +706,241 @@
     return el;
   }
 
+  // 10 gattini pixel (12x11) per l'elenco dei collaboratori, scelti a caso per ogni persona.
+  var KITTENS = [
+    { // arancione tigrato
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offafaafaffo",
+        "offffaaffffo",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "offffwwffffo",
+        "offfwnnwfffo",
+        ".offwwwwffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#f2b16a", a: "#d9813a", b: "#3a3a3a", w: "#ffffff", y: "#6abf69", k: "#141414", n: "#f39ab0", p: "#f7a5b8"}
+    },
+    { // grigio tigrato
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offafaafaffo",
+        "offffaaffffo",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "offffwwffffo",
+        "offfwnnwfffo",
+        ".offwwwwffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#bdbdbd", a: "#7d7d7d", b: "#3a3a3a", w: "#ffffff", y: "#e8c547", k: "#141414", n: "#f39ab0", p: "#f7a5b8"}
+    },
+    { // nero
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offffffffffo",
+        "offffffffffo",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "offffffffffo",
+        "offffnnffffo",
+        ".offffffffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#0a0a0a", f: "#2e2e33", a: "#d9813a", b: "#3a3a3a", w: "#ffffff", y: "#f59e0b", k: "#141414", n: "#55505c", p: "#55505c"}
+    },
+    { // bianco
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offffffffffo",
+        "offffffffffo",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "offffwwffffo",
+        "offfwnnwfffo",
+        ".offwwwwffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#fafafa", a: "#d9813a", b: "#3a3a3a", w: "#fafafa", y: "#5bb5e0", k: "#141414", n: "#f39ab0", p: "#f7a5b8"}
+    },
+    { // calico
+      rows: [
+        ".o........o.",
+        "opo......obo",
+        "oapooooobbpo",
+        "oaaafffbbbfo",
+        "oaafffffbbfo",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "offffwwffffo",
+        "offfwnnwfffo",
+        ".offwwwwffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#fafafa", a: "#e8913a", b: "#3a3a3a", w: "#fafafa", y: "#6abf69", k: "#141414", n: "#f39ab0", p: "#f7a5b8"}
+    },
+    { // siamese
+      rows: [
+        ".o........o.",
+        "obo......obo",
+        "obboooooobbo",
+        "offffffffffo",
+        "offffffffffo",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "offffbbffffo",
+        "offfbnnbfffo",
+        ".offbbbbffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#efe3cc", a: "#d9813a", b: "#6b4a35", w: "#ffffff", y: "#5bb5e0", k: "#141414", n: "#3b2a20", p: "#f7a5b8"}
+    },
+    { // tuxedo
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offffffffffo",
+        "offffffffffo",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "offfwwwwfffo",
+        "offwwnnwwffo",
+        ".ofwwwwwwfo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#0a0a0a", f: "#2e2e33", a: "#d9813a", b: "#3a3a3a", w: "#fafafa", y: "#6abf69", k: "#141414", n: "#f39ab0", p: "#f39ab0"}
+    },
+    { // grigio e bianco
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offffwwffffo",
+        "offffwwffffo",
+        "ofyyffffyyfo",
+        "ofykfwwfykfo",
+        "offfwwwwfffo",
+        "offfwnnwfffo",
+        ".offwwwwffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#9a9a9a", a: "#d9813a", b: "#3a3a3a", w: "#fafafa", y: "#e8c547", k: "#141414", n: "#f39ab0", p: "#f7a5b8"}
+    },
+    { // tigrato marrone
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offafaafaffo",
+        "oaffaaaaffao",
+        "ofyyffffyyfo",
+        "ofykffffykfo",
+        "oafffwwfffao",
+        "offfwnnwfffo",
+        ".offwwwwffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#a07c56", a: "#5e4630", b: "#3a3a3a", w: "#efe3cc", y: "#6abf69", k: "#141414", n: "#f39ab0", p: "#f7a5b8"}
+    },
+    { // rosso felice
+      rows: [
+        ".o........o.",
+        "opo......opo",
+        "oppooooooppo",
+        "offffffffffo",
+        "offffffffffo",
+        "offffffffffo",
+        "ofkkffffkkfo",
+        "offffwwffffo",
+        "offfwnnwfffo",
+        ".offwwwwffo.",
+        "..oooooooo.."
+      ],
+      c: {o: "#141414", f: "#e07a3f", a: "#b85a26", b: "#3a3a3a", w: "#fde7d2", y: "#6abf69", k: "#141414", n: "#f39ab0", p: "#f39ab0"}
+    }
+  ];
+
+  function kittenSvg() {
+    var k = KITTENS[Math.floor(Math.random() * KITTENS.length)];
+    var out = "";
+    k.rows.forEach(function (row, y) {
+      for (var x = 0; x < row.length; x++) {
+        var c = k.c[row[x]];
+        if (c) out += '<rect x="' + x + '" y="' + y + '" width="1" height="1" fill="' + c + '"/>';
+      }
+    });
+    return '<svg viewBox="0 0 12 11" width="36" height="33" shape-rendering="crispEdges" aria-hidden="true" focusable="false">' + out + "</svg>";
+  }
+
+  /** Un gattino pixel (a caso fra 10) e il nome di ogni collaboratore, che porta al suo profilo GitHub. */
+  function peopleList(people) {
+    var MAX = 12;
+    var box = document.createElement("ul");
+    box.className = "bit-people";
+    box.setAttribute("aria-label", "Chi ha collaborato");
+    people.slice(0, MAX).forEach(function (p) {
+      var li = document.createElement("li");
+      var a = document.createElement("a");
+      a.href = p.url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.title = p.login;
+      a.innerHTML = kittenSvg();
+      var name = document.createElement("span");
+      name.textContent = p.login;
+      a.appendChild(name);
+      li.appendChild(a);
+      box.appendChild(li);
+    });
+    if (people.length > MAX) {
+      var more = document.createElement("li");
+      more.className = "bit-people-more";
+      more.textContent = "e altri " + (people.length - MAX);
+      box.appendChild(more);
+    }
+    return box;
+  }
+
+  /**
+   * I collaboratori: di solito arrivano già in assistente.json (da GitHub Pages);
+   * se l'elenco è vuoto (es. sviluppo in locale) si chiedono a GitHub dal browser.
+   */
+  var peoplePromise = null;
+  function loadPeople(db) {
+    if (peoplePromise) return peoplePromise;
+    var clean = function (list) {
+      return (list || []).filter(function (c) { return c && c.login && c.type !== "Bot" && c.login.indexOf("[bot]") < 0; });
+    };
+    if (db.collaboratori && db.collaboratori.length) {
+      peoplePromise = Promise.resolve(clean(db.collaboratori));
+      return peoplePromise;
+    }
+    var cached = getItem("sessionStorage", "bit-collaboratori");
+    if (cached) {
+      try { peoplePromise = Promise.resolve(JSON.parse(cached)); return peoplePromise; } catch (e) { /* niente */ }
+    }
+    if (!db.repo) return Promise.resolve([]);
+    peoplePromise = fetch("https://api.github.com/repos/" + db.repo + "/contributors?per_page=100")
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (list) {
+        var people = clean(list).map(function (c) { return { login: c.login, avatar: c.avatar_url, url: c.html_url }; });
+        setItem("sessionStorage", "bit-collaboratori", JSON.stringify(people));
+        return people;
+      })
+      .catch(function () { peoplePromise = null; return []; });
+    return peoplePromise;
+  }
+
   /** Bit dice qualcosa: il testo si scrive lettera per lettera, poi compaiono i pulsanti. */
   function speak(text, actions, opts) {
     opts = opts || {};
@@ -701,6 +951,10 @@
     if (!opts.silent) live.textContent = text;
     var showActions = function () {
       say.textContent = text;
+      if (opts.people && opts.people.length) {
+        actionsBox.appendChild(peopleList(opts.people));
+        actionsBox.hidden = false;
+      }
       if (actions && actions.length) {
         actions.forEach(function (a) { actionsBox.appendChild(makeAction(a)); });
         actionsBox.hidden = false;
@@ -754,7 +1008,10 @@
     speak("…", []);
     loadDb().then(function (db) {
       var a = Engine.answer(db, q, { materia: currentMateria(db) });
-      setTimeout(function () { speak(a.text, a.actions); }, reduced ? 0 : 280);
+      var people = a.people ? loadPeople(db) : Promise.resolve(null);
+      people.then(function (list) {
+        setTimeout(function () { speak(a.text, a.actions, { people: list }); }, reduced ? 0 : 280);
+      });
       track(a.kind === "non-capito" ? "bit_non_capito" : "bit_risposta");
     }).catch(function () {
       speak("Non riesco a leggere l'elenco delle materie. Controlla la connessione e riprova.", []);
@@ -835,8 +1092,17 @@
     ambient = !!opts.ambient;
     if (!ambient) lastInteraction = Date.now();
     bubble.hidden = false;
-    bubble.classList.toggle("bit-bubble-short", !!(opts.short || opts.ambient));
+    bubble.classList.toggle("bit-bubble-short", !!((opts.short || opts.ambient) && !opts.rich));
+    bubble.classList.toggle("bit-bubble-rich", !!opts.rich);
     if (!follow) follow = requestAnimationFrame(followLoop);
+    if (opts.rich) {
+      // messaggio di Bit con pulsanti (es. i collaboratori): niente campo di testo
+      bubble.dataset.short = "1";
+      asked.hidden = true;
+      speak(opts.text, opts.actions || [], { silent: ambient, people: opts.people });
+      autoClose = setTimeout(function () { closeBubble(false); }, opts.ms || 15000);
+      return;
+    }
     if (opts.short || opts.ambient) {
       bubble.dataset.short = "1";
       asked.hidden = true;
@@ -874,6 +1140,17 @@
   }
 
   bubble.querySelector(".bit-x").addEventListener("click", function () { closeBubble(true); });
+  // Un messaggio spontaneo non si chiude mentre ci si passa sopra o lo si usa da tastiera.
+  var holdAmbient = function () { if (ambient) clearTimeout(autoClose); };
+  var releaseAmbient = function () {
+    if (!ambient) return;
+    clearTimeout(autoClose);
+    autoClose = setTimeout(function () { closeBubble(false); }, 4000);
+  };
+  bubble.addEventListener("mouseenter", holdAmbient);
+  bubble.addEventListener("focusin", holdAmbient);
+  bubble.addEventListener("mouseleave", releaseAmbient);
+  bubble.addEventListener("focusout", function (e) { if (!bubble.contains(e.relatedTarget)) releaseAmbient(); });
   // Toccando un fumetto breve (una battuta, "Eccolo!") si apre quello per fare domande.
   bubble.addEventListener("click", function () {
     if (bubble.classList.contains("bit-bubble-short")) openBubble();
@@ -1217,6 +1494,24 @@
       return null;
     }
 
+    // Il messaggio sui collaboratori gira insieme alle battute, ma esce più spesso
+    // di ciascuna di loro: circa una volta su 5-6, mai come prima frase né due volte di fila.
+    var COLLAB_PROBABILITY = 0.18;
+    var lastWasCollab = false;
+    function collabTurn(db) {
+      if (said === 0 || lastWasCollab || Math.random() >= COLLAB_PROBABILITY) {
+        lastWasCollab = false;
+        return Promise.resolve(false);
+      }
+      return loadPeople(db).then(function (people) {
+        if (!people.length || talking) return false;
+        lastWasCollab = true;
+        var a = Engine.collabAnswer(db);
+        openBubble({ ambient: true, rich: true, text: a.text, actions: a.actions, people: people, ms: 15000 });
+        return true;
+      });
+    }
+
     function catOnScreen() {
       var r = cat.getBoundingClientRect();
       var navBottom = nav ? Math.max(0, nav.getBoundingClientRect().bottom) : 0;
@@ -1238,14 +1533,18 @@
       if (walker && walker.mode() === "jump") return;
       busy = true;
       loadDb().then(function (db) {
-        busy = false;
-        if (talking) return;
-        var line = pickLine(db);
-        if (!line) return;
-        said++;
-        // la seconda dopo 30 secondi, poi ogni 45-60 secondi
-        nextAt = Date.now() + (said === 1 ? 30000 : 45000 + Math.random() * 15000);
-        openBubble({ ambient: true, text: line, ms: 5000 });
+        return collabTurn(db).then(function (done) {
+          busy = false;
+          if (talking && !done) return;
+          if (!done) {
+            var line = pickLine(db);
+            if (!line) return;
+            openBubble({ ambient: true, text: line, ms: 5000 });
+          }
+          said++;
+          // la seconda dopo 30 secondi, poi ogni 45-60 secondi
+          nextAt = Date.now() + (said === 1 ? 30000 : 45000 + Math.random() * 15000);
+        });
       }).catch(function () { busy = false; });
     }, 500);
   }

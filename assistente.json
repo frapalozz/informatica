@@ -39,6 +39,21 @@ sitemap: false
     {%- endfor %}
   ],
   "alias": {{ site.data.assistente.alias | jsonify }},
+  "repo": {{ site.risorsa.github_repo | jsonify }},
+  "collaborazione": {{ site.data.assistente.collaborazione | jsonify }},
+  {%- comment -%}
+    Chi ha collaborato: i contributori del repository su GitHub, forniti da GitHub Pages
+    (plugin github-metadata) a ogni pubblicazione. I bot sono esclusi.
+  {%- endcomment -%}
+  {%- assign primo = true %}
+  "collaboratori": [
+    {%- for c in site.github.contributors -%}
+      {%- if c.type == "Bot" or c.login contains "[bot]" -%}{%- continue -%}{%- endif -%}
+      {%- unless primo -%},{%- endunless -%}
+      {%- assign primo = false %}
+    { "login": {{ c.login | jsonify }}, "avatar": {{ c.avatar_url | jsonify }}, "url": {{ c.html_url | jsonify }} }
+    {%- endfor %}
+  ],
   "faq": {{ site.data.assistente.faq | jsonify }},
   "suggerimenti": {{ site.data.assistente.suggerimenti | jsonify }},
   "battute": {{ site.data.assistente.battute | jsonify }}

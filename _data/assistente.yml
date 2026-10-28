@@ -36,6 +36,11 @@ alias:
   Agent_Based_Adaptive_Modelling: ["abam", "agent based"]
   Complex_System_Design: ["csd", "complex systems"]
 
+# Messaggio sui collaboratori (i contributori del repository su GitHub, presi in automatico).
+# Bit lo dice da solo tra le battute (più spesso di ciascuna: circa una volta su 5-6)
+# e quando gli si chiede "chi ha collaborato?".
+collaborazione: "Queste persone hanno collaborato al progetto per aiutarci tra di noi. Perché non collabori anche tu? 🥹"
+
 # Domande frequenti. Bit risponde quando la domanda contiene una delle frasi
 # in `domande` (maiuscole e accenti non contano).
 # Nei link si possono usare: @whatsapp, @telegram, @whiteboard, @donazione, @autore
@@ -46,6 +51,9 @@ faq:
     link:
       - label: "Aggiungi risorsa"
         url: "/risorsa/"
+
+  - domande: ["chi ha collaborato", "collaboratori", "contributori", "chi ha contribuito", "chi ha aiutato", "ringraziamenti", "come posso collaborare", "come collaborare", "come posso contribuire"]
+    collaboratori: true   # mostra il messaggio "collaborazione" con l'elenco dei collaboratori
 
   - domande: ["whatsapp", "telegram", "gruppo", "gruppi", "chat degli studenti"]
     risposta: "Ci sono i gruppi degli studenti, dove puoi chiedere a chi ha già dato l'esame."
