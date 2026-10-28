@@ -20,11 +20,12 @@ La home permette di scegliere il corso (**Informatica** o **Computer Science**).
 8. [Cambiare gli anni di un corso](#cambiare-gli-anni-di-un-corso)
 9. [Il form "Aggiungi risorsa" (per i visitatori)](#il-form-aggiungi-risorsa-per-i-visitatori)
 10. [Configurazione del sito](#configurazione-del-sito)
-11. [Stile e CSS (Tailwind)](#stile-e-css-tailwind)
-12. [Pubblicare su GitHub Pages](#pubblicare-su-github-pages)
-13. [Vecchi URL e redirect](#vecchi-url-e-redirect)
-14. [Risoluzione dei problemi](#risoluzione-dei-problemi)
-15. [Differenze rispetto alla versione Next.js](#differenze-rispetto-alla-versione-nextjs)
+11. [Bit, l'assistente del sito](#bit-lassistente-del-sito)
+12. [Stile e CSS (Tailwind)](#stile-e-css-tailwind)
+13. [Pubblicare su GitHub Pages](#pubblicare-su-github-pages)
+14. [Vecchi URL e redirect](#vecchi-url-e-redirect)
+15. [Risoluzione dei problemi](#risoluzione-dei-problemi)
+16. [Differenze rispetto alla versione Next.js](#differenze-rispetto-alla-versione-nextjs)
 
 ---
 
@@ -34,7 +35,8 @@ La home permette di scegliere il corso (**Informatica** o **Computer Science**).
 .
 ├── _config.yml                 Configurazione del sito (titolo, link, funzioni opzionali)
 ├── _data/
-│   └── corsi.yml               Elenco dei corsi (nome, descrizione, icona, anni attivi)
+│   ├── corsi.yml               Elenco dei corsi (nome, descrizione, icona, anni attivi)
+│   └── assistente.yml          Bit: FAQ, suggerimenti, alias delle materie
 ├── _materie/                   Collection: UNA materia per file
 │   ├── informatica/            Materie del corso Informatica
 │   │   ├── Matematica_discreta.md
@@ -71,13 +73,16 @@ La home permette di scegliere il corso (**Informatica** o **Computer Science**).
 │   └── extra.html
 ├── index.html                  Home (usa il layout `home`)
 ├── risorsa.html                Pagina con il form "Aggiungi risorsa"
+├── assistente.json             Dati per Bit (generato da Liquid: materie + _data/assistente.yml)
 ├── 404.html                    Pagina di errore
 ├── manifest.webmanifest        Manifest PWA (generato da Liquid)
 ├── favicon.ico
 ├── assets/
 │   ├── css/main.css            CSS Tailwind COMPILATO (da committare, non modificare a mano)
+│   ├── css/assistente.css      Stile di Bit, l'assistente (CSS normale, non Tailwind)
 │   ├── js/
 │   │   ├── main.js             Ricerca, "Aggiornato X giorni fa", toggle "altro", form, popup
+│   │   ├── assistente.js       Bit, l'assistente: gattino + chat senza AI
 │   │   ├── donation.js         Mini-gioco delle monete
 │   │   ├── invader.js          Easter egg: alieno pixel dopo 1 minuto (solo desktop)
 │   │   └── snow.js             Neve (dicembre–febbraio)
@@ -302,6 +307,7 @@ Tutto in `_config.yml`:
 | `donation_url` | Pulsante "Prendi una Moneta" e link del popup (vuoto = disattivato) |
 | `analytics_script` | Script di analytics (vuoto = nessuno) |
 | `adsense_account` | Meta tag Google AdSense (vuoto = nessuno) |
+| `assistente.enabled`, `assistente.nome` | Bit, l'assistente del sito (vedi sotto) |
 | `snow` | Neve da dicembre a febbraio |
 | `invader` | Easter egg: dopo 1 minuto sul sito (solo desktop) compare un alieno pixel che spara al cursore; cliccandolo esplode e torna dopo un altro minuto |
 | `advent_of_code` | Link "Advent Of Code" dall'1 al 25 dicembre |
@@ -336,6 +342,34 @@ Nel footer compare "● N utenti online" (visitatori con il sito aperto e in pri
 - Con una sola persona online vedrai "1". Se i tracker non rispondono il contatore resta nascosto.
 - La libreria è fissata a `@trystero-p2p/torrent@0.25.3` (override con `trystero_url`). Se la aggiorni, ricontrolla l'API di `joinRoom` e `onPeerJoin` nel README di Trystero.
 - Se il contatore non compare, apri la console del browser: gli errori sono stampati con il prefisso `[live-users]`.
+
+## Bit, l'assistente del sito
+
+Bit è un gattino pixel che aiuta a trovare le cose. Su desktop gira per la pagina (cammina sui titoli, si siede, si addormenta, guarda il cursore); su telefono, o con "riduci movimento", resta seduto nell'angolo in basso a sinistra. Cliccandolo si apre una chat.
+
+**Non usa AI e non costa niente.** Le risposte vengono da:
+
+- le materie in `_materie/` (titolo, anno, materiale, registrazioni, prove, extra), raccolte da Jekyll in `/assistente.json` a ogni build;
+- `_data/assistente.yml`: domande frequenti, suggerimenti mostrati all'apertura e **alias** delle materie (sigle e nomi usati dagli studenti, es. `SO`, `asd`, `database`).
+
+Capisce domande come «prove di algoritmi», «registrazioni SO», «slide di logica», «materie del 2° anno», anche con errori di battitura. Nella pagina di una materia basta scrivere «prove» o «registrazioni». Il pulsante **Portami lì** fa camminare Bit fino al punto giusto della pagina (o apre la pagina) e lo evidenzia.
+
+Dal 15 ottobre al 1° novembre è un gatto nero con il cappello da strega e si sposta volando sulla scopa. Per provarlo: `?gatto=strega` in fondo all'indirizzo.
+
+**Cosa modificare, senza toccare codice**
+
+| Vuoi… | Modifica |
+|---|---|
+| che capisca un altro nome di una materia | aggiungi l'alias in `alias:` (chiave = nome del file in `_materie/`) |
+| una nuova risposta (es. orari, regolamenti) | aggiungi una voce in `faq:` con le frasi che la attivano e i link |
+| cambiare i pulsanti suggeriti | `suggerimenti:` |
+| rinominarlo o spegnerlo | `assistente.nome` / `assistente.enabled` in `_config.yml` |
+
+**Misurare se viene usato.** Se lo script di analytics è Simple Analytics, Bit invia solo dei conteggi anonimi: `bit_aperto`, `bit_risposta`, `bit_non_capito` (mai il testo delle domande). Tanti `bit_non_capito` indicano alias o FAQ da aggiungere.
+
+I punti a cui Bit può portare nella pagina di una materia sono marcati con `data-bit-voce` (`materiale`, `registrazioni`, `prove`, `webex`); i testi su cui cammina, oltre ai titoli, con `data-bit-perch`.
+
+---
 
 ## Stile e CSS (Tailwind)
 

@@ -1,0 +1,44 @@
+---
+layout: null
+permalink: /assistente.json
+sitemap: false
+---
+{%- comment -%}
+  Dati per Bit, l'assistente del sito (assets/js/assistente.js).
+  Generato da Jekyll a ogni build: materie da _materie/, FAQ e alias da _data/assistente.yml.
+{%- endcomment -%}
+{
+  "base": {{ site.baseurl | jsonify }},
+  "link": {
+    "whatsapp": {{ site.whatsapp_url | jsonify }},
+    "telegram": {{ site.telegram_url | jsonify }},
+    "whiteboard": {{ site.whiteboard_url | jsonify }},
+    "donazione": {{ site.donation_url | jsonify }},
+    "autore": {{ site.author_url | jsonify }}
+  },
+  "corsi": {
+    {%- for c in site.data.corsi %}
+    {{ c[0] | jsonify }}: { "nome": {{ c[1].nome | jsonify }}, "anni": {{ c[1].anni | jsonify }} }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  },
+  "materie": [
+    {%- for m in site.materie %}
+    {
+      "t": {{ m.title | jsonify }},
+      "u": {{ m.url | jsonify }},
+      "slug": {{ m.slug | jsonify }},
+      "c": {{ m.percorso | jsonify }},
+      "a": {{ m.anno | jsonify }},
+      "s": {{ m.semestre | jsonify }},
+      "webex": {{ m.webex | jsonify }},
+      "materiale": {{ m.materiale | jsonify }},
+      "registrazioni": {{ m.registrazioni | jsonify }},
+      "prove": {{ m.prove | jsonify }},
+      "extra": {{ m.extra | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ],
+  "alias": {{ site.data.assistente.alias | jsonify }},
+  "faq": {{ site.data.assistente.faq | jsonify }},
+  "suggerimenti": {{ site.data.assistente.suggerimenti | jsonify }}
+}

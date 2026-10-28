@@ -16,13 +16,14 @@ Sito statico per gli studenti UNICAM (https://informatica.palozz.com) che raccog
 |---|---|
 | `_config.yml` | Configurazione del sito, link social, funzioni opzionali, collection `materie` |
 | `_data/corsi.yml` | Corsi di laurea (slug, nome, descrizione, icona, anni attivi) |
+| `_data/assistente.yml` | Bit, l'assistente: FAQ, suggerimenti, alias delle materie (sigle come "SO", "asd") |
 | `_materie/<slug>/*.md` | **Una materia per file**, solo front matter. È qui che avviene quasi ogni modifica |
 | `<slug>/1anno.html`, `2anno.html`, …, `extra.html` | Pagine elenco per anno (layout `anno`), una per ogni anno in `corsi.yml` |
 | `prove/*.md` | Pagine "Prove passate" (layout `prove`) |
 | `assets/prove/<materia>/` | PDF e immagini delle prove passate |
 | `_layouts/` | `default`, `home`, `anno`, `materia`, `prove` |
 | `_includes/` | Componenti (card, cardgrid, hero, navbar, footer…) |
-| `assets/js/` | `main.js` (ricerca, "aggiornato X giorni fa", popup), `live-users.js`, `snow.js`, `invader.js` (easter egg), `donation.js` |
+| `assets/js/` | `main.js` (ricerca, "aggiornato X giorni fa", popup), `assistente.js` (Bit, l'assistente), `live-users.js`, `snow.js`, `invader.js` (easter egg), `donation.js` |
 | `tailwind/input.css`, `tailwind.config.js` | Sorgenti del CSS |
 
 Slug dei corsi attuali: `informatica` (anni 1–3) e `computer-science` (anni 1–2).
@@ -66,6 +67,7 @@ Convenzioni:
 - Label ricorrenti: `Moodle` per elearning.unicam.it, `Classroom`, `Notion`, `Amazon` (libri), `pdf`, `Webex`.
 - Le materie con `anno: "extra"` usano anche `semestre: "extra"` e mostrano solo il pulsante "Visualizza Risorsa" (`webex`).
 - Quando modifichi una materia aggiorna `aggiornamento` con la data di oggi.
+- Se aggiungi una materia con una sigla o un soprannome comune, aggiungilo anche in `alias:` di `_data/assistente.yml`, così Bit la riconosce.
 - Usa la sintassi YAML a blocchi come nei file esistenti e virgolette doppie per le stringhe.
 
 ## Prove passate

@@ -1,0 +1,89 @@
+# ─────────────────────────────────────────────────────────────
+#  Bit, l'assistente del sito (assets/js/assistente.js)
+#  Niente AI: risponde con le materie in _materie/ e con questo file.
+#  Si attiva e si rinomina da _config.yml → assistente.
+# ─────────────────────────────────────────────────────────────
+
+# Pulsanti suggeriti all'apertura della chat (testo = domanda inviata).
+suggerimenti:
+  - "Prove passate di Algoritmi"
+  - "Materie del 1° anno"
+  - "Registrazioni di Sistemi Operativi"
+  - "Come aggiungo una risorsa?"
+
+# Altri nomi con cui gli studenti chiamano le materie.
+# Chiave = nome del file in _materie/ (senza .md). Le sigle di 2 lettere
+# valgono solo se scritte da sole o in maiuscolo (es. "SO", "BD").
+alias:
+  Algoritmi_e_Strutture: ["asd", "algoritmi", "algo"]
+  Sistemi_Operativi: ["so", "sistemi"]
+  Basi_di_Dati: ["bd", "database", "data base", "db", "sql"]
+  Architettura_Elaboratori: ["architettura", "arch"]
+  Internet_Reti_Sicurezza: ["reti", "rete", "sicurezza", "networking"]
+  Ignegneria_del_Software: ["ingegneria", "ids", "software engineering"]
+  Linguaggi_e_Compilatori: ["compilatori", "linguaggi"]
+  Matematica_discreta: ["discreta"]
+  Matematica_logica: ["logica"]
+  Metodologie_di_Programmazione: ["mdp", "metodologie"]
+  Paradigmi_Avanzati_di_Programmazione: ["pap", "paradigmi"]
+  Probabilita_e_Statistica: ["probabilita", "statistica"]
+  Programmazione: ["prog"]
+  Ricerca_Operativa: ["ro", "ricerca operativa"]
+  Fondamenti_Informatica: ["fondamenti"]
+  Diritto_Prodotti_Digitali: ["diritto"]
+  Machine_Learning: ["ml"]
+  Multiagent_System_Lab: ["mas", "multiagent"]
+  Agent_Based_Adaptive_Modelling: ["abam", "agent based"]
+  Complex_System_Design: ["csd", "complex systems"]
+
+# Domande frequenti. Bit risponde quando la domanda contiene una delle frasi
+# in `domande` (maiuscole e accenti non contano).
+# Nei link si possono usare: @whatsapp, @telegram, @whiteboard, @donazione, @autore
+# oppure un percorso del sito (es. /risorsa/) o un indirizzo completo.
+faq:
+  - domande: ["aggiungere una risorsa", "aggiungo una risorsa", "aggiungere risorsa", "aggiungo risorsa", "caricare appunti", "carico appunti", "contribuire", "link rotto", "link non funziona", "segnalare", "manca"]
+    risposta: "Puoi proporre appunti, link o prove dal modulo «Aggiungi risorsa». Arriva direttamente a chi gestisce il sito."
+    link:
+      - label: "Aggiungi risorsa"
+        url: "/risorsa/"
+
+  - domande: ["whatsapp", "telegram", "gruppo", "gruppi", "chat degli studenti"]
+    risposta: "Ci sono i gruppi degli studenti, dove puoi chiedere a chi ha già dato l'esame."
+    link:
+      - label: "Gruppo WhatsApp"
+        url: "@whatsapp"
+      - label: "Gruppo Telegram"
+        url: "@telegram"
+
+  - domande: ["whiteboard", "lavagna"]
+    risposta: "C'è una lavagna online condivisa: utile per risolvere esercizi insieme."
+    link:
+      - label: "Apri la Whiteboard"
+        url: "@whiteboard"
+
+  - domande: ["donazione", "donare", "offrire un caffe", "supportare il sito", "sostenere il sito", "paypal"]
+    risposta: "Il sito è gratuito. Se ti è stato utile, puoi offrire un caffè a chi lo gestisce."
+    link:
+      - label: "Offri un caffè"
+        url: "@donazione"
+
+  - domande: ["chi ha fatto", "chi gestisce", "chi ha creato", "autore", "contattare", "contatti"]
+    risposta: "Il sito è curato da Palozz, insieme agli studenti che segnalano le risorse."
+    link:
+      - label: "palozz.com"
+        url: "@autore"
+
+  - domande: ["extra", "corsi online", "roadmap", "risorse esterne"]
+    risposta: "Nella sezione Extra ci sono corsi e guide gratuite che non fanno parte del piano di studi."
+    link:
+      - label: "Extra di Informatica"
+        url: "/informatica/extra/"
+
+  - domande: ["cosa sai fare", "come funzioni", "aiuto", "help", "chi sei"]
+    risposta: "Sono Bit, il gatto del sito. Chiedimi una materia e cosa ti serve, per esempio «prove di algoritmi» o «registrazioni SO», e ti porto dove trovarlo."
+
+  - domande: ["ciao", "buongiorno", "buonasera", "salve", "hey"]
+    risposta: "Ciao! Di quale materia ti serve qualcosa?"
+
+  - domande: ["grazie", "perfetto", "ottimo"]
+    risposta: "Di niente! Se ti serve altro sono qui."

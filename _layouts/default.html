@@ -2,6 +2,7 @@
 <html lang="{{ site.lang | default: 'it' }}">
 <head>
   {% include head.html %}
+  {% if site.assistente.enabled %}<link rel="stylesheet" href="{{ '/assets/css/assistente.css' | relative_url }}">{% endif %}
 </head>
 <body class="dark:bg-stone-950 bg-stone-100 min-h-screen flex flex-col justify-between items-center relative z-0">
   {% if site.snow %}<canvas id="snow-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-50 hidden" aria-hidden="true"></canvas>{% endif %}
@@ -19,6 +20,7 @@
 
   <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
   {% if site.snow %}<script src="{{ '/assets/js/snow.js' | relative_url }}" defer></script>{% endif %}
+  {% if site.assistente.enabled %}<script src="{{ '/assets/js/assistente.js' | relative_url }}" data-dati="{{ '/assistente.json' | relative_url }}" data-nome="{{ site.assistente.nome | default: 'Bit' | escape }}" defer></script>{% endif %}
   {% if site.invader %}<script src="{{ '/assets/js/invader.js' | relative_url }}" defer></script>{% endif %}
   {% if site.donation_url != "" %}<script src="{{ '/assets/js/donation.js' | relative_url }}" defer></script>{% endif %}
   {% if site.analytics_script != "" %}<script src="{{ site.analytics_script }}" async defer></script>{% endif %}
