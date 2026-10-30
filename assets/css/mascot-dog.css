@@ -22,6 +22,10 @@
   background:#fff8de; color:#292524; box-shadow:3px 3px 0 #a8a29e;
   pointer-events:none; font:12px/1.4 ui-monospace,"Courier New",monospace;
 }
+.mascot-dog-hover-credit {
+  display:block; margin-top:7px; padding-top:5px; border-top:1px dashed #a8a29e;
+  color:#675445; font-size:9px; font-weight:bold;
+}
 .mascot-dog-speech[hidden], .mascot-dog-panel[hidden] { display:none; }
 .mascot-dog-panel {
   position:fixed; left:12px; bottom:85px; z-index:3;
