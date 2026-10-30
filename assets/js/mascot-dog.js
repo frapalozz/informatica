@@ -125,7 +125,14 @@
       queue = lines ? lines(Math.random, lastPhrase) : ["Bau! L'esame lo passa chi studia."];
     }
     lastPhrase = queue.shift();
-    speech.textContent = lastPhrase;
+    speech.replaceChildren();
+    var line = document.createElement("span");
+    line.textContent = lastPhrase;
+    var credit = document.createElement("small");
+    credit.className = "mascot-dog-hover-credit";
+    credit.textContent = "Created by Berserk-hub150";
+    speech.appendChild(line);
+    speech.appendChild(credit);
     speech.hidden = false;
     placeSpeech();
     phraseTimer = setTimeout(function () {
