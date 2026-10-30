@@ -1,0 +1,73 @@
+/* Buddy shares Bit's JS locomotion, positions, jumps, sitting and pointer reactions.
+   Only the artwork changes. Original 6x6 sprite sheet from ComputerScience,
+   pinned to a source commit for reproducible artwork. */
+.bit-cat.is-buddy {
+  pointer-events: auto;
+  position: absolute;
+  cursor: pointer;
+}
+.bit-cat.is-buddy .bit-dog-original {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  display: block;
+  width: var(--buddy-sprite-width, 71px);
+  height: 100%;
+  background-image: url("https://raw.githubusercontent.com/Berserk-hub150/ComputerScience/a571e6e451da57fa370cdc8a698e02e58e737d6d/assets/img/pixel-dog.png");
+  background-repeat: no-repeat;
+  background-size: 600% 600%;
+  background-position: 0% 80%;
+  image-rendering: pixelated;
+  transform: translateX(-50%) scaleX(-1);
+  pointer-events: none;
+}
+.bit-cat.is-buddy[data-dir="-1"] .bit-dog-original {
+  transform: translateX(-50%) scaleX(1);
+}
+.bit-cat.is-buddy[data-frame="walk1"] .bit-dog-original { background-position: 20% 20%; }
+.bit-cat.is-buddy[data-frame="walk2"] .bit-dog-original { background-position: 80% 20%; }
+.bit-cat.is-buddy[data-frame="sit"] .bit-dog-original   { background-position: 0% 80%; }
+.bit-cat.is-buddy[data-frame="play"] .bit-dog-original  { background-position: 40% 80%; }
+.bit-cat.is-buddy[data-frame="sleep"] .bit-dog-original { background-position: 0% 100%; }
+.bit-cat.is-buddy[data-frame="ride"] .bit-dog-original  { background-position: 40% 40%; }
+.bit-cat.is-buddy.bit-docked { pointer-events: auto; }
+
+/* Dog-only phrases on hover, without a second animation loop. */
+.buddy-hover-speech {
+  position: fixed;
+  z-index: 102;
+  top: 0;
+  left: 0;
+  max-width: min(265px, calc(100vw - 20px));
+  padding: 9px 11px;
+  border: 2px solid #292524;
+  border-radius: 6px;
+  background: #fff9e9;
+  color: #292524;
+  box-shadow: 3px 3px 0 #a8a29e;
+  font: 12px/1.4 ui-monospace, "Courier New", monospace;
+  pointer-events: none;
+}
+.buddy-hover-speech[hidden] { display: none; }
+.buddy-hover-speech small {
+  display: block;
+  margin-top: 8px;
+  padding-top: 5px;
+  border-top: 1px dashed #a8a29e;
+  font-size: 10px;
+  font-weight: bold;
+  color: #675445;
+}
+.buddy-panel-credit {
+  margin: 12px 0 0;
+  padding: 8px 0 0;
+  border-top: 1px dashed var(--bit-border);
+  color: var(--bit-muted);
+  font: 11px/1.5 ui-monospace, "Courier New", monospace;
+}
+.buddy-panel-credit a { color: inherit; font-weight: bold; text-decoration: underline; }
+.bit-bubble-short .buddy-panel-credit { display: none; }
+.buddy-panel-credit a:focus-visible { outline: 2px solid var(--bit-mark); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .bit-cat.is-buddy, .buddy-hover-speech { animation: none !important; transition: none !important; }
+}
