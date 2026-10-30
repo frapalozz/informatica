@@ -54,9 +54,17 @@
       "data-chiacchiere": current.getAttribute("data-chiacchiere") || "true"
     });
   } else {
+    // Buddy usa il motore originale di Bit per camminate, salti, pose,
+    // titoli, sonno, puntatore e comportamento del fumetto.
     load(current.getAttribute("data-banter-script"), {}, function () {
-      load(current.getAttribute("data-dog-script"), {
-        "data-dati": current.getAttribute("data-dati") || ""
+      load(current.getAttribute("data-cat-script"), {
+        "data-dati": current.getAttribute("data-dati") || "",
+        "data-nome": "Buddy",
+        "data-chiacchiere": "false",
+        "data-mascot": "dog"
+      }, function () {
+        // Solo battute e crediti: nessun secondo loop di movimento.
+        load(current.getAttribute("data-dog-script"));
       });
     });
   }
