@@ -404,6 +404,8 @@
   var script = document.currentScript;
   var DATA_URL = (script && script.getAttribute("data-dati")) || "/assistente.json";
   var NOME = (script && script.getAttribute("data-nome")) || "Bit";
+  // Buddy riutilizza lo stesso identico motore di movimento di Bit.
+  var isDog = !!(script && script.getAttribute("data-mascot") === "dog");
   // Battute da solo: la prima subito, la seconda dopo 30 s, poi ogni 45-60 s ("false" = mai).
   var CHIACCHIERE = !/^(false|0|no)$/i.test((script && script.getAttribute("data-chiacchiere")) || "");
 
@@ -633,14 +635,16 @@
 
   var cat = document.createElement("button");
   cat.type = "button";
-  cat.className = "bit-cat" + (reduced ? " bit-docked" : "");
+  cat.className = "bit-cat" + (isDog ? " is-buddy" : "") + (reduced ? " bit-docked" : "");
+  if (isDog) { cat.style.width = W + "px"; cat.style.height = H + "px"; }
   cat.setAttribute("aria-label", "Parla con " + NOME + ", l'assistente del sito");
   cat.setAttribute("aria-expanded", "false");
   cat.setAttribute("aria-controls", "bit-bubble");
   cat.dataset.skin = skin;
   cat.dataset.frame = "sit";
   cat.dataset.dir = "1";
-  cat.innerHTML = spriteSvg() + '<span class="bit-zzz" aria-hidden="true"><span>z</span><span>z</span><span>z</span></span>';
+  cat.innerHTML = (isDog ? '<span class="bit-dog-original" aria-hidden="true"></span>' : spriteSvg()) +
+    '<span class="bit-zzz" aria-hidden="true"><span>z</span><span>z</span><span>z</span></span>';
 
 
   // Il fumetto: esce dalla testa di Bit e lo segue.
@@ -1555,7 +1559,7 @@
     else closeBubble(false);
   });
 
-  var stayKey = "bit-in-angolo";
+  var stayKey = isDog ? "buddy-in-angolo" : "bit-in-angolo";
   function applyStay() {
     var stay = getItem("localStorage", stayKey) === "1";
     if (stayBtn) stayBtn.textContent = stay ? "Fallo girare" : "Mettilo nell'angolo";
