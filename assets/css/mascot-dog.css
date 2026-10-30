@@ -1,0 +1,57 @@
+/* Buddy uses the original 6x6 pixel-dog.png spritesheet from ComputerScience,
+   pinned to a source commit rather than copying a lower-quality approximation. */
+.mascot-dog { position:fixed; inset:0; z-index:105; pointer-events:none; }
+.mascot-dog-actor {
+  position:fixed; top:0; left:0; z-index:1;
+  width:90px; height:57px; padding:0; margin:0;
+  background:transparent; border:0; cursor:pointer;
+  pointer-events:auto; outline-offset:5px; will-change:transform;
+  transform:translate3d(12px,calc(100dvh - 140px),0);
+}
+.mascot-dog-actor:focus-visible { outline:3px dashed #a65f0e; }
+.mascot-dog-sprite {
+  display:block; width:90px; height:57px;
+  background-image:url("https://raw.githubusercontent.com/Berserk-hub150/ComputerScience/a571e6e451da57fa370cdc8a698e02e58e737d6d/assets/img/pixel-dog.png");
+  background-repeat:no-repeat; background-size:600% 600%;
+  background-position:0% 80%; image-rendering:pixelated;
+  transform:scaleX(-1);
+}
+.mascot-dog-speech {
+  position:fixed; z-index:2; max-width:min(245px, calc(100vw - 20px));
+  border:2px solid #292524; border-radius:6px; padding:9px 12px;
+  background:#fff8de; color:#292524; box-shadow:3px 3px 0 #a8a29e;
+  pointer-events:none; font:12px/1.4 ui-monospace,"Courier New",monospace;
+}
+.mascot-dog-speech[hidden], .mascot-dog-panel[hidden] { display:none; }
+.mascot-dog-panel {
+  position:fixed; left:12px; bottom:85px; z-index:3;
+  width:min(355px, calc(100vw - 24px)); max-height:min(560px, calc(100dvh - 110px));
+  overflow:auto; padding:13px; border:2px solid #292524; border-radius:10px;
+  background:#fffdf7; color:#292524; box-shadow:5px 5px 0 #a8a29e;
+  pointer-events:auto; font:12px/1.5 ui-monospace,"Courier New",monospace;
+}
+.mascot-dog-heading { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.mascot-dog-heading strong { font-size:22px; letter-spacing:-1px; }
+.mascot-dog-close { background:transparent; color:inherit; border:0; font-size:25px; cursor:pointer; }
+.mascot-dog-panel p { margin:9px 0; }
+.mascot-dog-panel label { display:block; margin:12px 0 4px; font-weight:bold; }
+.mascot-dog-panel input {
+  display:block; width:100%; padding:10px 8px;
+  border:2px solid #78716c; border-radius:5px;
+  background:white; color:#292524; font-size:16px;
+}
+.mascot-dog-results { list-style:none; padding:0; margin:10px 0; max-height:170px; overflow:auto; }
+.mascot-dog-results li { margin:4px 0; }
+.mascot-dog-results a { display:block; padding:5px 8px; color:#4f3280; text-decoration:none; background:#f5f0e8; border-radius:4px; }
+.mascot-dog-results a:hover { text-decoration:underline; background:#efe3cb; }
+.mascot-dog-positions { display:flex; flex-wrap:wrap; gap:5px; border:0; padding:4px 0; margin:10px 0; }
+.mascot-dog-positions legend { font-weight:bold; margin-bottom:4px; }
+.mascot-dog-positions button {
+  padding:6px; background:#fffdf7; border:1px solid #78716c;
+  border-radius:5px; color:#292524; cursor:pointer; font-size:11px;
+}
+.mascot-dog-positions button[aria-pressed="true"] { background:#ffe28d; border-color:#292524; font-weight:bold; }
+.mascot-dog-panel .mascot-dog-credit { border-top:1px dashed #a8a29e; padding-top:9px; font-size:10px; }
+.mascot-dog-credit a { font-weight:bold; color:#56318a; text-decoration:underline; }
+@media(max-width:480px) { .mascot-dog-panel { bottom:136px; max-height:calc(100dvh - 156px); } }
+@media(prefers-reduced-motion:reduce) { .mascot-dog *, .mascot-dog *::before { animation:none!important; transition:none!important; } }
