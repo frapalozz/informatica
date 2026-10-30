@@ -5,7 +5,7 @@
   if (!current) return;
   var KEY = "informatica-mascot";
   var choice = "cat";
-  try { if (localStorage.getItem(KEY) === "dog") choice = "dog"; } catch (_) {}
+  try { if (localStorage.getItem(KEY) === "dog") choice = "dog"; } catch (_) { try { if (sessionStorage.getItem(KEY) === "dog") choice = "dog"; } catch (_) {} }
 
   function load(src, attributes, onLoad) {
     var node = document.createElement("script");
