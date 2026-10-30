@@ -636,7 +636,7 @@
   var cat = document.createElement("button");
   cat.type = "button";
   cat.className = "bit-cat" + (isDog ? " is-buddy" : "") + (reduced ? " bit-docked" : "");
-  if (isDog) { cat.style.width = W + "px"; cat.style.height = H + "px"; }
+  if (isDog) { cat.style.width = W + "px"; cat.style.height = H + "px"; cat.style.setProperty("--buddy-sprite-width", (H * 90 / 57).toFixed(1) + "px"); }
   cat.setAttribute("aria-label", "Parla con " + NOME + ", l'assistente del sito");
   cat.setAttribute("aria-expanded", "false");
   cat.setAttribute("aria-controls", "bit-bubble");
