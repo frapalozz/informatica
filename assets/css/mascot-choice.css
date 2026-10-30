@@ -16,7 +16,7 @@
   color: #292524;
   font-family: ui-monospace, "Courier New", monospace;
 }
-.mascot-selector-label { margin: 0 5px; font: bold 9px/1.1 inherit; letter-spacing: .08em; }
+.mascot-selector-label { margin: 0 5px; font: bold 9px/1.1 ui-monospace, "Courier New", monospace; letter-spacing: .08em; }
 .mascot-selector-button {
   border: 1px solid #a8a29e;
   border-radius: 5px;
