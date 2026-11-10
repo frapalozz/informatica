@@ -16,4 +16,8 @@ materiale:
 registrazioni:
   url: "https://elearning.unicam.it/course/view.php?id=837"
   label: "Moodle"
+extra:
+  - nome: "Notes Palozzi"
+    label: "Obsidian"
+    url: "https://share.note.sx/cjuhqcb3#mLAXRVAYP03Gr7uIrIVlZz4iows0uvXn8AyWgN9PyGA"
 ---
