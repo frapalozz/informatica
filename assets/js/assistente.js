@@ -403,9 +403,6 @@
   // ══════════════════════════════════════════════════════════
   var script = document.currentScript;
   var DATA_URL = (script && script.getAttribute("data-dati")) || "/assistente.json";
-  var NOME = (script && script.getAttribute("data-nome")) || "Bit";
-  // Buddy riutilizza lo stesso identico motore di movimento di Bit.
-  var isDog = !!(script && script.getAttribute("data-mascot") === "dog");
   // Battute da solo: la prima subito, la seconda dopo 30 s, poi ogni 45-60 s ("false" = mai).
   var CHIACCHIERE = !/^(false|0|no)$/i.test((script && script.getAttribute("data-chiacchiere")) || "");
 
@@ -423,6 +420,22 @@
   function setItem(kind, key, value) {
     try { var s = store(kind); if (s) { if (value === null) s.removeItem(key); else s.setItem(key, value); } } catch (e) { /* niente */ }
   }
+
+  // ── Mascotte: il gatto (Bit) o il cane (Buddy) ─────────────
+  // Stesso motore per tutti e due: cambiano solo lo sprite, il nome e le battute.
+  // La scelta si fa dal fumetto e resta salvata; ?mascotte=cane|gatto la forza.
+  var MASCOTTE_KEY = "bit-mascotte";
+  function pickMascotte() {
+    var forced = null;
+    try { forced = new URLSearchParams(window.location.search).get("mascotte"); } catch (e) { /* niente */ }
+    if (forced === "cane" || forced === "gatto") return forced;
+    return getItem("localStorage", MASCOTTE_KEY) === "cane" ? "cane" : "gatto";
+  }
+  var mascotte = pickMascotte();
+  var isDog = mascotte === "cane";
+  var NOME = isDog
+    ? (script && script.getAttribute("data-nome-cane")) || "Buddy"
+    : (script && script.getAttribute("data-nome")) || "Bit";
 
   function track(name) {
     try { if (typeof window.sa_event === "function") window.sa_event(name); } catch (e) { /* niente */ }
@@ -449,7 +462,8 @@
     var d = new Date(), month = d.getMonth(), day = d.getDate();
     return (month === 9 && day >= 15) || (month === 10 && day === 1) ? "witch" : "orange";
   }
-  var skin = pickSkin();
+  // Il cane non ha il costume da strega (niente cappello né scopa).
+  var skin = isDog ? "dog" : pickSkin();
   var witch = skin === "witch";
 
   // Sprite 22x18, rivolti a destra. o contorno, f pelo, a strisce, b macchie, w petto,
@@ -635,15 +649,20 @@
 
   var cat = document.createElement("button");
   cat.type = "button";
-  cat.className = "bit-cat" + (isDog ? " is-buddy" : "") + (reduced ? " bit-docked" : "");
-  if (isDog) { cat.style.width = W + "px"; cat.style.height = H + "px"; cat.style.setProperty("--buddy-sprite-width", (H * 90 / 57).toFixed(1) + "px"); }
+  cat.className = "bit-cat" + (reduced ? " bit-docked" : "");
+  if (isDog) {
+    // Il foglio del cane ha fotogrammi 90x57: stessa altezza del gatto, proporzioni originali.
+    cat.style.width = W + "px";
+    cat.style.height = H + "px";
+    cat.style.setProperty("--bit-dog-w", (H * 90 / 57).toFixed(1) + "px");
+  }
   cat.setAttribute("aria-label", "Parla con " + NOME + ", l'assistente del sito");
   cat.setAttribute("aria-expanded", "false");
   cat.setAttribute("aria-controls", "bit-bubble");
   cat.dataset.skin = skin;
   cat.dataset.frame = "sit";
   cat.dataset.dir = "1";
-  cat.innerHTML = (isDog ? '<span class="bit-dog-original" aria-hidden="true"></span>' : spriteSvg()) +
+  cat.innerHTML = (isDog ? '<span class="bit-dog" aria-hidden="true"></span>' : spriteSvg()) +
     '<span class="bit-zzz" aria-hidden="true"><span>z</span><span>z</span><span>z</span></span>';
 
 
@@ -665,7 +684,11 @@
     '  <input id="bit-input" class="bit-input" type="text" maxlength="160" placeholder="Chiedimi qualcosa…">' +
     '  <button type="submit" class="bit-send" aria-label="Chiedi">▸</button>' +
     "</form>" +
-    (!reduced ? '<button type="button" class="bit-stay" data-bit-stay></button>' : "") +
+    '<div class="bit-foot">' +
+    '  <button type="button" class="bit-stay" data-bit-switch>' + (isDog ? "Torna al gatto" : "Prova il cane") + "</button>" +
+    (!reduced ? '  <button type="button" class="bit-stay" data-bit-stay></button>' : "") +
+    "</div>" +
+    (isDog ? '<p class="bit-credit">Sprite e battute di <a href="https://github.com/Berserk-hub150" target="_blank" rel="noopener">Berserk-hub150</a></p>' : "") +
     '<svg class="bit-tail" viewBox="0 0 7 4" width="21" height="12" shape-rendering="crispEdges" aria-hidden="true">' +
     '  <rect x="0" y="0" width="7" height="1" class="bit-tail-ink"/><rect x="1" y="0" width="5" height="1" class="bit-tail-fill"/>' +
     '  <rect x="1" y="1" width="5" height="1" class="bit-tail-ink"/><rect x="2" y="1" width="3" height="1" class="bit-tail-fill"/>' +
@@ -684,6 +707,7 @@
   var form = bubble.querySelector(".bit-form");
   var input = bubble.querySelector(".bit-input");
   var stayBtn = bubble.querySelector("[data-bit-stay]");
+  var switchBtn = bubble.querySelector("[data-bit-switch]");
   var nav = document.querySelector("header.nav");
 
   // ── Il fumetto ─────────────────────────────────────────────
@@ -1469,7 +1493,9 @@
         setItem("localStorage", "bit-salutato", "1");
         return "Ciao, sono " + NOME + "! " + (mobile ? "Toccami" : "Cliccami") + " se cerchi qualcosa.";
       }
+      // Il cane ha le sue battute, divise negli stessi gruppi (battute.cane in _data/assistente.yml).
       var b = db.battute || {};
+      if (isDog) b = b.cane || {};
       var now = new Date(), h = now.getHours();
       var ora = h + ":" + String(now.getMinutes()).padStart(2, "0");
       var materia = currentMateria(db);
@@ -1486,6 +1512,8 @@
       var already = recent();
       for (var g = 0; g < groups.length; g++) {
         var list = (groups[g] || []).filter(function (t) { return already.indexOf(t) < 0; });
+        // Gruppo già detto tutto di recente: passa al successivo, ripete solo se è l'ultimo.
+        if (!list.length && g < groups.length - 1) continue;
         if (!list.length) list = groups[g] || [];
         if (!list.length) continue;
         var line = list[Math.floor(Math.random() * list.length)];
@@ -1559,7 +1587,18 @@
     else closeBubble(false);
   });
 
-  var stayKey = isDog ? "buddy-in-angolo" : "bit-in-angolo";
+  if (switchBtn) {
+    switchBtn.addEventListener("click", function () {
+      setItem("localStorage", MASCOTTE_KEY, isDog ? null : "cane");
+      track(isDog ? "bit_mascotte_gatto" : "bit_mascotte_cane");
+      // Senza ?mascotte= nell'indirizzo, altrimenti la scelta verrebbe ignorata.
+      var url = window.location.href.replace(/([?&])mascotte=[^&#]*&?/, "$1").replace(/[?&](#|$)/, "$1");
+      if (url === window.location.href) window.location.reload();
+      else window.location.replace(url);
+    });
+  }
+
+  var stayKey = "bit-in-angolo";
   function applyStay() {
     var stay = getItem("localStorage", stayKey) === "1";
     if (stayBtn) stayBtn.textContent = stay ? "Fallo girare" : "Mettilo nell'angolo";

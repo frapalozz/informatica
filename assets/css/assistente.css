@@ -90,6 +90,32 @@
   display: inline;
 }
 
+/* Il cane (Buddy): stesso motore del gatto, cambia solo il disegno.
+   Foglio 6x6 di Berserk-hub150, fissato a un commit per non cambiare all'improvviso. */
+.bit-cat[data-skin="dog"] {
+  pointer-events: auto; /* lo sprite è un'immagine: è cliccabile tutto il riquadro */
+}
+
+.bit-dog {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: var(--bit-dog-w, 71px);
+  height: 100%;
+  background: url("https://raw.githubusercontent.com/Berserk-hub150/ComputerScience/a571e6e451da57fa370cdc8a698e02e58e737d6d/assets/img/pixel-dog.png") no-repeat 0% 80% / 600% 600%;
+  image-rendering: pixelated;
+  transform: translateX(-50%) scaleX(-1);
+}
+
+.bit-cat[data-dir="-1"] .bit-dog { transform: translateX(-50%); }
+.bit-cat[data-frame="walk1"] .bit-dog { background-position: 20% 20%; }
+.bit-cat[data-frame="walk2"] .bit-dog { background-position: 80% 20%; }
+.bit-cat[data-frame="sit"] .bit-dog   { background-position: 0% 80%; }
+.bit-cat[data-frame="play"] .bit-dog  { background-position: 40% 80%; }
+.bit-cat[data-frame="sleep"] .bit-dog { background-position: 0% 100%; }
+.bit-cat[data-frame="ride"] .bit-dog  { background-position: 40% 40%; }
+
 /* Su telefono (o con "riduci movimento") resta seduto in un angolo. */
 .bit-cat.bit-docked {
   position: fixed;
@@ -382,9 +408,28 @@ html.bit-moneta-nascosta #btn-container {
   cursor: pointer;
 }
 
+.bit-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.bit-credit {
+  margin: 6px 0 0;
+  color: var(--bit-muted);
+  font-size: 10px;
+  text-align: right;
+}
+
+.bit-credit a {
+  color: inherit;
+  font-weight: bold;
+}
+
 .bit-stay {
   display: block;
-  margin: 8px 0 0 auto;
+  margin: 0;
   padding: 0;
   border: 0;
   background: none;
@@ -406,7 +451,8 @@ html.bit-moneta-nascosta #btn-container {
 
 .bit-bubble-short .bit-x,
 .bit-bubble-short .bit-form,
-.bit-bubble-short .bit-stay,
+.bit-bubble-short .bit-foot,
+.bit-bubble-short .bit-credit,
 .bit-bubble-short .bit-actions,
 .bit-bubble-short .bit-asked {
   display: none;
@@ -418,7 +464,8 @@ html.bit-moneta-nascosta #btn-container {
 
 /* Messaggio di Bit con pulsanti (es. i collaboratori): niente campo di testo */
 .bit-bubble-rich .bit-form,
-.bit-bubble-rich .bit-stay,
+.bit-bubble-rich .bit-foot,
+.bit-bubble-rich .bit-credit,
 .bit-bubble-rich .bit-asked {
   display: none;
 }
@@ -484,7 +531,8 @@ html.bit-moneta-nascosta #btn-container {
 .bit-action:focus-visible,
 .bit-send:focus-visible,
 .bit-x:focus-visible,
-.bit-stay:focus-visible {
+.bit-stay:focus-visible,
+.bit-credit a:focus-visible {
   outline: 2px solid var(--bit-mark);
   outline-offset: 3px;
 }
