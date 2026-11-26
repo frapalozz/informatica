@@ -3,8 +3,26 @@ layout: default
 title: "Pagina non trovata"
 permalink: /404.html
 ---
-<main class="flex flex-col items-center justify-center w-full dark:text-white text-black mt-10 mb-10 relative z-[60]">
+<main id="pagina-404" class="flex flex-col items-center justify-center w-full dark:text-white text-black mt-10 mb-10 relative z-[60]">
   <h1 class="text-4xl font-bold">404</h1>
   <p class="mt-2">Questa pagina non esiste.</p>
   <a href="{{ '/' | relative_url }}" class="underline mt-4">Torna alla home</a>
 </main>
+
+{%- if site.battaglia.enabled %}
+{%- comment -%}
+  La battaglia tra cani e gatti: la mostra assets/js/battaglia.js a chi arriva dai siti
+  in battaglia.siti (_config.yml) o a chi apre /battaglia/. Per tutti gli altri resta il 404 normale.
+{%- endcomment %}
+<link rel="stylesheet" href="{{ '/assets/css/battaglia.css' | relative_url }}">
+<section id="battaglia" class="battaglia" hidden>
+  <div class="battaglia-testa">
+    <h1>404</h1>
+    <p>Arrivi da <strong class="battaglia-sito">onlycam</strong>? Qui c'è una guerra tra cani e gatti.</p>
+    <p class="battaglia-punti" aria-live="polite">Gatti <span data-punti="gatto">0</span> · Cani <span data-punti="cane">0</span></p>
+  </div>
+  <div class="battaglia-arena" aria-hidden="true"></div>
+  <a class="battaglia-entra" href="{{ '/' | relative_url }}" hidden>Ok, ho capito: fammi entrare</a>
+</section>
+<script src="{{ '/assets/js/battaglia.js' | relative_url }}" data-siti="{{ site.battaglia.siti | jsonify | escape }}" data-base="{{ site.baseurl }}" defer></script>
+{%- endif %}

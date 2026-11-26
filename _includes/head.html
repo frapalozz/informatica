@@ -10,6 +10,25 @@
 {%- endif -%}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{%- if site.battaglia.enabled and site.battaglia.siti.size > 0 %}
+<script>
+  /* Chi arriva dai siti in battaglia.siti (_config.yml) va al 404 con cani e gatti che combattono
+     (assets/js/battaglia.js). La pagina che voleva aprire resta salvata per il pulsante "Entra". */
+  (function () {
+    try {
+      if (!document.referrer) return;
+      var host = new URL(document.referrer).hostname.replace(/^www\./, "");
+      var siti = {{ site.battaglia.siti | jsonify }};
+      if (!siti.some(function (s) { return host === s || host.slice(-s.length - 1) === "." + s; })) return;
+      try {
+        sessionStorage.setItem("battaglia-da", location.pathname + location.search + location.hash);
+        sessionStorage.setItem("battaglia-sito", host);
+      } catch (e) { /* niente */ }
+      location.replace({{ '/battaglia/' | relative_url | jsonify }});
+    } catch (e) { /* niente */ }
+  })();
+</script>
+{%- endif %}
 <title>{{ full_title }}</title>
 <meta name="description" content="{{ site.description | escape }}">
 <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">

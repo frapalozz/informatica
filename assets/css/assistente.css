@@ -68,7 +68,7 @@
   pointer-events: auto;
 }
 
-.bit-cat[data-dir="-1"] .bit-sprite {
+:is(.bit-cat, .bit-fighter)[data-dir="-1"] .bit-sprite {
   transform: scaleX(-1);
 }
 
@@ -77,12 +77,12 @@
   display: none;
 }
 
-.bit-cat[data-frame="walk1"] .bit-f-walk1,
-.bit-cat[data-frame="walk2"] .bit-f-walk2,
-.bit-cat[data-frame="sit"] .bit-f-sit,
-.bit-cat[data-frame="play"] .bit-f-play,
-.bit-cat[data-frame="sleep"] .bit-f-sleep,
-.bit-cat[data-frame="ride"] .bit-f-ride {
+:is(.bit-cat, .bit-fighter)[data-frame="walk1"] .bit-f-walk1,
+:is(.bit-cat, .bit-fighter)[data-frame="walk2"] .bit-f-walk2,
+:is(.bit-cat, .bit-fighter)[data-frame="sit"] .bit-f-sit,
+:is(.bit-cat, .bit-fighter)[data-frame="play"] .bit-f-play,
+:is(.bit-cat, .bit-fighter)[data-frame="sleep"] .bit-f-sleep,
+:is(.bit-cat, .bit-fighter)[data-frame="ride"] .bit-f-ride {
   display: inline;
 }
 
@@ -108,13 +108,13 @@
   transform: translateX(-50%) scaleX(-1);
 }
 
-.bit-cat[data-dir="-1"] .bit-dog { transform: translateX(-50%); }
-.bit-cat[data-frame="walk1"] .bit-dog { background-position: 20% 20%; }
-.bit-cat[data-frame="walk2"] .bit-dog { background-position: 80% 20%; }
-.bit-cat[data-frame="sit"] .bit-dog   { background-position: 0% 80%; }
-.bit-cat[data-frame="play"] .bit-dog  { background-position: 40% 80%; }
-.bit-cat[data-frame="sleep"] .bit-dog { background-position: 0% 100%; }
-.bit-cat[data-frame="ride"] .bit-dog  { background-position: 40% 40%; }
+:is(.bit-cat, .bit-fighter)[data-dir="-1"] .bit-dog { transform: translateX(-50%); }
+:is(.bit-cat, .bit-fighter)[data-frame="walk1"] .bit-dog { background-position: 20% 20%; }
+:is(.bit-cat, .bit-fighter)[data-frame="walk2"] .bit-dog { background-position: 80% 20%; }
+:is(.bit-cat, .bit-fighter)[data-frame="sit"] .bit-dog   { background-position: 0% 80%; }
+:is(.bit-cat, .bit-fighter)[data-frame="play"] .bit-dog  { background-position: 40% 80%; }
+:is(.bit-cat, .bit-fighter)[data-frame="sleep"] .bit-dog { background-position: 0% 100%; }
+:is(.bit-cat, .bit-fighter)[data-frame="ride"] .bit-dog  { background-position: 40% 40%; }
 
 /* Su telefono (o con "riduci movimento") resta seduto in un angolo. */
 .bit-cat.bit-docked {
@@ -143,8 +143,10 @@ html.bit-moneta-nascosta #btn-container {
   }
 }
 
-/* Colori: arancione tigrato, e gatto nero con cappello ad Halloween. */
-.bit-cat {
+/* Colori: arancione tigrato, e gatto nero con cappello ad Halloween.
+   .bit-fighter sono i gatti della battaglia (assets/js/battaglia.js). */
+.bit-cat,
+.bit-fighter {
   --bit-outline: #141414;
   --bit-fur: #f2b16a;
   --bit-stripe: #d9813a;
