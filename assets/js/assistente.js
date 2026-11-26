@@ -423,13 +423,19 @@
 
   // ── Mascotte: il gatto (Bit) o il cane (Buddy) ─────────────
   // Stesso motore per tutti e due: cambiano solo lo sprite, il nome e le battute.
-  // La scelta si fa dal fumetto e resta salvata; ?mascotte=cane|gatto la forza.
+  // Chi non ha ancora scelto trova a caso il gatto o il cane: estratto una volta per visita
+  // (sessionStorage), così non cambia da una pagina all'altra. La scelta fatta dal fumetto
+  // resta salvata (localStorage); ?mascotte=cane|gatto la forza.
   var MASCOTTE_KEY = "bit-mascotte";
+  function valid(m) { return m === "cane" || m === "gatto" ? m : null; }
   function pickMascotte() {
     var forced = null;
     try { forced = new URLSearchParams(window.location.search).get("mascotte"); } catch (e) { /* niente */ }
-    if (forced === "cane" || forced === "gatto") return forced;
-    return getItem("localStorage", MASCOTTE_KEY) === "cane" ? "cane" : "gatto";
+    var m = valid(forced) || valid(getItem("localStorage", MASCOTTE_KEY)) || valid(getItem("sessionStorage", MASCOTTE_KEY));
+    if (m) return m;
+    m = Math.random() < 0.5 ? "cane" : "gatto";
+    setItem("sessionStorage", MASCOTTE_KEY, m);
+    return m;
   }
   var mascotte = pickMascotte();
   var isDog = mascotte === "cane";
@@ -685,7 +691,7 @@
     '  <button type="submit" class="bit-send" aria-label="Chiedi">▸</button>' +
     "</form>" +
     '<div class="bit-foot">' +
-    '  <button type="button" class="bit-stay" data-bit-switch>' + (isDog ? "Torna al gatto" : "Prova il cane") + "</button>" +
+    '  <button type="button" class="bit-stay" data-bit-switch>' + (isDog ? "Passa al gatto" : "Passa al cane") + "</button>" +
     (!reduced ? '  <button type="button" class="bit-stay" data-bit-stay></button>' : "") +
     "</div>" +
     (isDog ? '<p class="bit-credit">Sprite e battute di <a href="https://github.com/Berserk-hub150" target="_blank" rel="noopener">Berserk-hub150</a></p>' : "") +
@@ -1589,7 +1595,7 @@
 
   if (switchBtn) {
     switchBtn.addEventListener("click", function () {
-      setItem("localStorage", MASCOTTE_KEY, isDog ? null : "cane");
+      setItem("localStorage", MASCOTTE_KEY, isDog ? "gatto" : "cane");
       track(isDog ? "bit_mascotte_gatto" : "bit_mascotte_cane");
       // Senza ?mascotte= nell'indirizzo, altrimenti la scelta verrebbe ignorata.
       var url = window.location.href.replace(/([?&])mascotte=[^&#]*&?/, "$1").replace(/[?&](#|$)/, "$1");
