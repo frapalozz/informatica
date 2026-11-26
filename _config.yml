@@ -51,6 +51,13 @@ assistente:
   nome: "Bit"
   chiacchiere: true # battute da solo: la prima subito, la seconda dopo 30 s, poi ogni 45-60 s (false = mai)
 
+# Easter egg: chi arriva da uno di questi siti (anche sottodomini) finisce su una pagina 404
+# con cani e gatti che combattono; dopo qualche secondo può entrare comunque.
+# Si vede anche aprendo /battaglia/. Funziona solo se il browser dice da dove arriva (referrer).
+battaglia:
+  enabled: true
+  siti: []
+
 # ── Pagina "Aggiungi risorsa" ──
 # Il sito è statico: non può salvare su Notion come la versione Next.js.
 # 1) Con `endpoint` (es. Formspree: https://formspree.io/f/xxxxxxx) il form
