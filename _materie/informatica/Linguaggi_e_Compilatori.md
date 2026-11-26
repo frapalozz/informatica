@@ -6,7 +6,7 @@ redirect_from: ["/Linguaggi_e_Compilatori/"]
 ordine: 16
 anno: "3"
 semestre: "1"
-aggiornamento: "2026-01-10"
+aggiornamento: "2026-11-26"
 immagine: "https://art.pixilart.com/sr20733dbe4f7aws3.png"
 corso: ["Informatica"]
 descrizione: "In informatica, i linguaggi e i compilatori sono elementi fondamentali per la programmazione e l'esecuzione di software. I linguaggi di programmazione sono strumenti che permettono agli sviluppatori di scrivere istruzioni che un computer può comprendere ed eseguire. I compilatori, invece, sono programmi che traducono il codice scritto in un linguaggio di programmazione in un linguaggio che il computer può direttamente eseguire, chiamato linguaggio macchina."
@@ -39,4 +39,7 @@ extra:
   - nome: "Webex Tutorato"
     label: "Webex"
     url: "https://unicam.webex.com/meet/aula05.tutorato"
+  - nome: "LL(1) Resolver"
+    label: "Sito"
+    url: "https://ll1-resolver.palozz.com"
 ---
