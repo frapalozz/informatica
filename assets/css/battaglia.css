@@ -1,0 +1,134 @@
+/* La battaglia tra cani e gatti sulla pagina 404 (assets/js/battaglia.js).
+   CSS normale, non Tailwind: non serve ricompilare main.css.
+   Sprite e colori di gatti e cani vengono da assistente.css (.bit-fighter). */
+
+.battaglia {
+  position: relative;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(1100px, calc(100vw - 24px));
+  margin: 24px auto 40px;
+  color: var(--bit-text);
+  text-align: center;
+}
+
+.battaglia[hidden] {
+  display: none;
+}
+
+.battaglia-testa h1 {
+  margin: 0;
+  font-family: "VT323", ui-monospace, monospace;
+  font-size: 64px;
+  line-height: 1;
+}
+
+.battaglia-testa p {
+  margin: 6px 0 0;
+}
+
+.battaglia-punti {
+  font-family: "VT323", ui-monospace, monospace;
+  font-size: 26px;
+}
+
+.battaglia-arena {
+  position: relative;
+  width: 100%;
+  height: min(60vh, 520px);
+  min-height: 300px;
+  margin-top: 16px;
+  overflow: hidden;
+  border: 2px solid var(--bit-text);
+  border-radius: 8px;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 23px, var(--bit-surface) 23px 24px),
+    repeating-linear-gradient(90deg, transparent 0 23px, var(--bit-surface) 23px 24px),
+    var(--bit-bg);
+  box-shadow: 4px 4px 0 var(--bit-border);
+}
+
+.bit-fighter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.bit-fighter .bit-sprite {
+  display: block;
+}
+
+.battaglia-emoji {
+  display: block;
+  font-size: 36px;
+  line-height: 45px;
+  text-align: center;
+}
+
+.bit-fighter[data-dir="-1"] .battaglia-emoji {
+  transform: scaleX(-1);
+}
+
+.bit-fighter[data-frame="sleep"] {
+  opacity: 0.75;
+}
+
+.battaglia-nuvola {
+  position: absolute;
+  z-index: 10000;
+  padding: 2px 8px;
+  border: 2px solid var(--bit-text);
+  border-radius: 6px;
+  background: var(--bit-bg);
+  color: var(--bit-text);
+  font-family: "VT323", ui-monospace, monospace;
+  font-size: 22px;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(-50%, -100%);
+  animation: battaglia-pop 0.9s ease-out forwards;
+}
+
+@keyframes battaglia-pop {
+  0%   { transform: translate(-50%, -80%) scale(0.4); opacity: 0; }
+  20%  { transform: translate(-50%, -110%) scale(1.15); opacity: 1; }
+  70%  { transform: translate(-50%, -120%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -150%) scale(0.9); opacity: 0; }
+}
+
+.battaglia-entra {
+  margin-top: 18px;
+  padding: 10px 16px;
+  border: 2px solid var(--bit-text);
+  border-radius: 6px;
+  background: var(--bit-accent);
+  color: var(--bit-accent-text);
+  font-weight: bold;
+  box-shadow: 3px 3px 0 var(--bit-border);
+  animation: battaglia-entra 0.4s ease-out;
+}
+
+.battaglia-entra[hidden] {
+  display: none;
+}
+
+.battaglia-entra:focus-visible {
+  outline: 3px solid var(--bit-mark);
+  outline-offset: 3px;
+}
+
+@keyframes battaglia-entra {
+  from { transform: translateY(8px); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .battaglia-nuvola,
+  .battaglia-entra {
+    animation: none;
+  }
+}

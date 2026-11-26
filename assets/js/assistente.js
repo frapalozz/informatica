@@ -649,6 +649,10 @@
       '" shape-rendering="crispEdges" aria-hidden="true" focusable="false">' + g + "</svg>";
   }
 
+  // Lo sprite del gatto serve anche alla battaglia tra cani e gatti (assets/js/battaglia.js).
+  window.BitSprite = { svg: spriteSvg };
+  try { document.dispatchEvent(new Event("bit-sprite")); } catch (e) { /* niente */ }
+
   // ── DOM ────────────────────────────────────────────────────
   var layer = document.createElement("div");
   layer.className = "bit-layer";
