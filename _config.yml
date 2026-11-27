@@ -109,4 +109,5 @@ exclude:
   - README.md
   - AGENTS.md
   - CLAUDE.md
+  - cloudflare
   - vendor

@@ -215,6 +215,7 @@
     "  neofetch           info sul sistema",
     "  studia             fa quello che dice",
     "  exit               torna al sito",
+    "Dal terminale del tuo PC:  bash <(curl -s informatica.palozz.com/terminale)",
     "E qualche comando nascosto, che non elenco: sei tu l'informatico."
   ].join("\n");
 
