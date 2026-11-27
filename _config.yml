@@ -44,6 +44,13 @@ advent_of_code: true  # link "Advent Of Code" dall'1 al 25 dicembre
 invader: false        # easter egg: dopo 1 minuto sul sito (solo desktop) un alieno pixel spara al cursore (true per riattivarlo)
 terminale: true       # easter egg: codice Konami (↑↑↓↓←→←→BA) o #terminale nell'indirizzo: il sito diventa un terminale
 
+# Chat tra chi è sul sito, nel terminale (comando `chat` o pagina /terminale/).
+# Peer-to-peer sulla stessa stanza del contatore online (serve live_users.enabled): nessun server, nessuno storico.
+# Chi naviga normalmente vede solo la mascotte fare versi ("gatto-217: miao bau…").
+# Le parole vietate diventano versi di animali (assets/js/moderazione.js). false = spenta subito.
+chat:
+  enabled: true
+
 # Bit, l'assistente del sito: un gattino che gira per le pagine (su desktop) o
 # resta in un angolo (su telefono) e risponde alle domande sulle materie.
 # Nessuna AI e nessun costo: usa le materie e _data/assistente.yml.

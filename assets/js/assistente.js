@@ -1591,6 +1591,24 @@
     }, 500);
   }
 
+  // ── Chat (assets/js/chat.js): chi naviga normalmente sente solo versi ──
+  // "gatto-217: miao mrrr miao?" — il messaggio vero si legge nel terminale.
+  var VERSI_CHAT = isDog ? ["bau", "woof", "arf", "grrr", "bau bau", "auuu", "wof"] : ["miao", "mrrr", "miau", "prrr", "mew", "miaooo", "mrrrao"];
+  var ultimaChat = 0;
+  window.BitChat = {
+    dice: function (nick, testo) {
+      if (talking && !ambient) return;              // qualcuno sta parlando con la mascotte: non interrompere
+      if (Date.now() - ultimaChat < 4000) return;   // al massimo un messaggio ogni 4 secondi
+      ultimaChat = Date.now();
+      var parole = String(testo).split(/\s+/).filter(Boolean).length;
+      var n = Math.max(1, Math.min(8, parole));
+      var versi = [];
+      for (var i = 0; i < n; i++) versi.push(VERSI_CHAT[Math.floor(Math.random() * VERSI_CHAT.length)]);
+      var fine = (String(testo).match(/[?!]+\s*$/) || [""])[0].trim();
+      openBubble({ ambient: true, text: nick + ": " + versi.join(" ") + (fine || ""), ms: 5000 });
+    }
+  };
+
   // ── Avvio ──────────────────────────────────────────────────
   cat.addEventListener("click", function () {
     if (!talking || bubble.classList.contains("bit-bubble-short")) openBubble();

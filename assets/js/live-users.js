@@ -44,6 +44,10 @@
   var notify = function () {
     try { window.dispatchEvent(new Event("live-users:change")); } catch (e) { /* browser molto vecchi */ }
   };
+  // La stanza è condivisa con la chat (assets/js/chat.js): la annuncia, e annuncia chi entra ed esce.
+  var emit = function (name, detail) {
+    try { window.dispatchEvent(new CustomEvent("live-users:" + name, { detail: detail })); } catch (e) { /* niente */ }
+  };
   var bind = function (obj, name, fn) {
     if (typeof obj[name] === "function") obj[name](fn); else obj[name] = fn;
   };
@@ -78,8 +82,10 @@
       onJoinError: function (d) { warn("connessione a un peer fallita (TURN non valido o rete che blocca la porta?)", d); }
     });
     // Trystero >= 0.25: callback come proprietà. Versioni precedenti: metodi che accettano il callback.
-    bind(room, "onPeerJoin", render);
-    bind(room, "onPeerLeave", render);
+    bind(room, "onPeerJoin", function (id) { render(); emit("peer-join", id); });
+    bind(room, "onPeerLeave", function (id) { render(); emit("peer-leave", id); });
+    window.LiveUsers = { room: room, selfId: mod.selfId };
+    emit("room", room);
     warmUntil = Date.now() + 4000;
     setTimeout(render, 4100);
     render();
@@ -88,6 +94,8 @@
   var leave = function () {
     if (!room) return;
     var r = room; room = null;
+    window.LiveUsers = null;
+    emit("room", null);
     r.leave();
   };
 

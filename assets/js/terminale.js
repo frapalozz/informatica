@@ -144,6 +144,7 @@
 
   function closeTerminal() {
     if (!open) return;
+    esciChat(true);
     open = false;
     box.remove();
     document.documentElement.classList.remove("terminale-aperto");
@@ -154,7 +155,9 @@
     try { window.history.replaceState(null, "", window.location.pathname + window.location.search); } catch (e) { /* niente */ }
   }
 
-  function updatePrompt() { promptEl.textContent = "studente@unicam:" + show(cwd) + "$ "; }
+  function updatePrompt() {
+    promptEl.textContent = inChat ? "[chat] " + window.Chat.nick() + "> " : "studente@unicam:" + show(cwd) + "$ ";
+  }
 
   function print(text, cls) {
     var p = document.createElement("pre");
@@ -179,9 +182,10 @@
     if (e.key !== "Enter") return;
     var line = input.value;
     input.value = "";
-    print(promptEl.textContent + line, "terminale-eco");
     if (line.trim()) { history.push(line); }
     hIndex = history.length;
+    if (inChat) { scriviChat(line.trim()); return; }
+    print(promptEl.textContent + line, "terminale-eco");
     run(line.trim());
   }
 
@@ -206,6 +210,8 @@
     "  cat <materia>      mostra le risorse di una materia",
     "  open <materia>     apre la pagina della materia",
     "  pwd · whoami · date · echo · clear · history",
+    "  chat               chatta con chi sta usando il sito adesso",
+    "  who                chi è online",
     "  neofetch           info sul sistema",
     "  studia             fa quello che dice",
     "  exit               torna al sito",
@@ -228,6 +234,8 @@
       case "clear": case "cls": out.innerHTML = ""; break;
       case "history": print(history.map(function (h, i) { return "  " + (i + 1) + "  " + h; }).join("\n")); break;
       case "neofetch": neofetch(); break;
+      case "chat": case "talk": case "irc": entraChat(); break;
+      case "who": case "w": case "users": who(); break;
       case "studia": studia(); break;
       case "sudo": sudo(args); break;
       case "rm": rm(args); break;
@@ -341,6 +349,97 @@
     print("rm: impossibile rimuovere '" + (args[args.length - 1] || "") + "': gli appunti degli altri non si cancellano.", "terminale-errore");
   }
 
+  // ── Chat con chi è sul sito (assets/js/chat.js) ─────────────
+  var inChat = false, staccaChat = null;
+
+  function chatDisponibile() {
+    if (!window.Chat) { print("La chat è spenta su questo sito.", "terminale-errore"); return false; }
+    if (window.Chat.stato() === "spenta") {
+      print("La chat non è disponibile: il contatore online è spento, oppure il tuo browser ha\nDo Not Track o Global Privacy Control attivo (e allora non ti colleghiamo a nessuno).", "terminale-errore");
+      return false;
+    }
+    return true;
+  }
+
+  function who() {
+    if (!chatDisponibile()) return;
+    var chi = window.Chat.chi();
+    print("Online adesso (" + chi.length + "):\n" + chi.map(function (n) { return "  " + n; }).join("\n") +
+      (window.Chat.stato() === "connessione" ? "\n(mi sto ancora collegando agli altri…)" : ""));
+  }
+
+  function ora(t) {
+    var d = new Date(t || Date.now());
+    return ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+  }
+
+  function stampaMessaggio(m) {
+    var p = print("");
+    p.classList.add("terminale-msg");
+    if (m.mio) p.classList.add("terminale-mio");
+    var t = document.createElement("span"); t.className = "terminale-ora"; t.textContent = "[" + ora(m.quando) + "] ";
+    var n = document.createElement("span"); n.className = "terminale-nick"; n.textContent = m.nick + ": ";
+    p.appendChild(t); p.appendChild(n); p.appendChild(document.createTextNode(m.testo));
+  }
+
+  function entraChat() {
+    if (inChat || !chatDisponibile()) return;
+    inChat = true;
+    box.classList.add("terminale-chat");
+    print([
+      "── Chat di informatica.palozz.com ──",
+      "Scrivi e premi Invio. Comandi: /who  /nick <nome>  /mute <nome>  /unmute <nome>  /clear  /esci",
+      "I messaggi arrivano solo a chi è online adesso e non vengono salvati da nessuna parte.",
+      "Chi è sul sito senza terminale sente solo la mascotte fare versi."
+    ].join("\n"), "terminale-dir");
+    window.Chat.ultimi().slice(-15).forEach(stampaMessaggio);
+    if (window.Chat.stato() === "connessione") print("Mi sto collegando agli altri…");
+    else who();
+    staccaChat = window.Chat.ascolta(function (ev) {
+      if (ev.tipo === "messaggio") { if (!ev.mio) stampaMessaggio(ev); }
+      else if (ev.tipo === "entra") print("→ " + ev.nick + " è entrato", "terminale-sistema");
+      else if (ev.tipo === "esce") print("← " + ev.nick + " è uscito", "terminale-sistema");
+      else if (ev.tipo === "nick") print("~ " + ev.prima + " ora si chiama " + ev.nick, "terminale-sistema");
+      else if (ev.tipo === "stato" && window.Chat.stato() === "attiva") print("Collegato.", "terminale-sistema");
+    });
+    updatePrompt();
+  }
+
+  function esciChat(silenzioso) {
+    if (!inChat) return;
+    inChat = false;
+    if (staccaChat) staccaChat();
+    staccaChat = null;
+    if (box) box.classList.remove("terminale-chat");
+    if (!silenzioso) { print("Uscito dalla chat."); updatePrompt(); }
+  }
+
+  function scriviChat(line) {
+    if (!line) return;
+    if (line.charAt(0) === "/") {
+      var parti = line.slice(1).split(/\s+/), c = parti.shift().toLowerCase(), arg = parti.join(" ");
+      print(promptEl.textContent + line, "terminale-eco");
+      if (c === "esci" || c === "exit" || c === "quit" || c === "q") esciChat(false);
+      else if (c === "who" || c === "w") who();
+      else if (c === "clear") out.innerHTML = "";
+      else if (c === "nick") {
+        var n = window.Chat.nick(arg);
+        if (n) { print("Ora ti chiami " + n + "."); updatePrompt(); }
+        else if (n === false) print("Quel nome è riservato.", "terminale-errore");
+        else print("Nome non valido: 3-20 caratteri tra lettere, numeri, - e _ (e niente parolacce).", "terminale-errore");
+      }
+      else if (c === "mute") { if (arg) { window.Chat.muta(arg); print("Non vedrai più i messaggi di " + arg + "."); } }
+      else if (c === "unmute") { if (arg) { window.Chat.smuta(arg); print("Di nuovo visibili i messaggi di " + arg + "."); } }
+      else if (c === "help") print("/who  /nick <nome>  /mute <nome>  /unmute <nome>  /clear  /esci");
+      else print("Comando sconosciuto: /" + c + ". Prova /help.", "terminale-errore");
+      return;
+    }
+    var esito = window.Chat.invia(line);
+    if (esito === "ok") stampaMessaggio(window.Chat.ultimi().slice(-1)[0]);
+    else if (esito === "offline") print("Non sei ancora collegato. Riprova tra un attimo.", "terminale-errore");
+    else if (esito === "troppo-veloce") print("Piano! Un messaggio alla volta.", "terminale-errore");
+  }
+
   // ── rm -rf / : il sito crolla, Bit rimette tutto a posto ────
   function crollo() {
     print("Rimozione di / in corso…", "terminale-errore");
@@ -398,6 +497,16 @@
   if (/^#terminale$/i.test(window.location.hash)) {
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", openTerminal);
     else openTerminal();
+  }
+  // La pagina /terminale/ apre il terminale direttamente nella chat.
+  var auto = document.querySelector("[data-terminale-auto]");
+  if (auto) {
+    var avvia = function () {
+      openTerminal();
+      loadData().then(function () { if (auto.getAttribute("data-terminale-auto") === "chat") run("chat"); });
+    };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", avvia);
+    else avvia();
   }
   window.addEventListener("hashchange", function () {
     if (/^#terminale$/i.test(window.location.hash)) openTerminal();
