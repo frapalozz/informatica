@@ -93,3 +93,9 @@ html.terminale-aperto { overflow: hidden; }
   .terminale { animation: none; }
   .terminale-cade { transition: none; }
 }
+
+/* Chat (comando `chat` e pagina /terminale/) */
+.terminale-msg .terminale-ora { color: #2f9e4f; }
+.terminale-msg .terminale-nick { color: #ffb347; text-shadow: 0 0 6px rgba(255, 179, 71, 0.45); }
+.terminale-mio .terminale-nick { color: #6bc5ff; text-shadow: 0 0 6px rgba(107, 197, 255, 0.45); }
+.terminale-sistema { color: #2f9e4f; }
