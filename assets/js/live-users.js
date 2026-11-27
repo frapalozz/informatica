@@ -65,7 +65,9 @@
   };
 
   var roomConfig = function () {
-    var cfg = { appId: appId };
+    // Più tracker insieme: se uno è lento o giù, ci si trova lo stesso
+    // (trackerRedundancy nelle versioni vecchie di Trystero, relayRedundancy in quelle nuove).
+    var cfg = { appId: appId, trackerRedundancy: 4, relayRedundancy: 4 };
     if (relay) {
       // Solo relay: nessun candidato con il tuo IP viene mai offerto agli altri peer.
       cfg.rtcConfig = {
@@ -77,7 +79,7 @@
   };
 
   var join = function () {
-    if (room || !mod || document.hidden) return;
+    if (room || !mod || (document.hidden && !window.LiveUsersKeep)) return;
     room = mod.joinRoom(roomConfig(), roomId, {
       onJoinError: function (d) { warn("connessione a un peer fallita (TURN non valido o rete che blocca la porta?)", d); }
     });
@@ -103,8 +105,13 @@
     import(src).then(function (m) {
       mod = m;
       join();
+      // Scheda nascosta: si esce dalla stanza solo dopo 30 secondi (cambiare scheda un attimo non ti
+      // fa sparire per gli altri), e mai mentre la chat del terminale è aperta (window.LiveUsersKeep).
+      var hideTimer = null;
       document.addEventListener("visibilitychange", function () {
-        if (document.hidden) leave(); else join();
+        clearTimeout(hideTimer);
+        if (!document.hidden) { join(); return; }
+        hideTimer = setTimeout(function () { if (document.hidden && !window.LiveUsersKeep) leave(); }, 30000);
       });
       window.addEventListener("pagehide", leave);
     }).catch(function (err) {
