@@ -179,6 +179,12 @@ battute:
     - "Ho fatto refactoring del divano: ora tutti i cuscini sono miei."
     - "La mia lista di cose da fare: dormire, mangiare, dormire. Tutto completato."
     - "Leggere il messaggio d'errore fino in fondo risolve metà dei problemi. L'altra metà, un pisolino."
+    # Indizi sul terminale segreto (codice Konami, assets/js/terminale.js): mai detto chiaro.
+    - "Un vecchio gatto mi ha detto: su, su, giù, giù, sinistra, destra, sinistra, destra, B, A. Pare che si apra un nuovo mondo."
+    - "Ho sentito che chi preme ↑ ↑ ↓ ↓ ← → ← → B A diventa un vero informatico. Io non ho le dita per provarci."
+    - "Nei videogiochi di una volta c'era una combinazione segreta. Dicono che funzioni anche su questo sito…"
+    - "Psst. Le frecce della tastiera non servono solo a scorrere la pagina. Su, su, giù, giù… il resto lo sai."
+    - "Sotto questo sito c'è un terminale. Io ci dormo sopra, è caldo. Per entrarci serve il codice dei vecchi giochi."
   mattina:
     - "Buongiorno! Io ho già fatto tre pisolini, tu il caffè?"
     - "Mattinata produttiva? Io ho già spinto una penna giù dal tavolo."
@@ -395,6 +401,11 @@ battute:
       - "Io faccio il giro. Tu sempre alla prima slide?"
       - "Bro, ho quattro zampe e seguo più lezioni di te."
       - "Va bene tutto, ma il Dada quando?"
+      # Indizi sul terminale segreto (codice Konami): mai detto chiaro.
+      - "Uno al Dada mi ha sussurrato: su, su, giù, giù, sinistra, destra, sinistra, destra, B, A. Poi è sparito dentro uno schermo verde."
+      - "Dicono che con ↑ ↑ ↓ ↓ ← → ← → B A si apra un altro mondo. Ci ho provato con le zampe: niente."
+      - "Konami? Pensavo fosse un ramen. Invece pare che qui apra qualcosa di segreto."
+      - "Bau! Ho fiutato un terminale nascosto. Il codice lo conoscono solo quelli che giocavano col NES."
     mattina:
       - "Le {ora} e sei già sveglio? Chi sei, il prof?"
       - "Lezione alle 9 e tu stai su Colle Paradiso alle 8:59. Classico."

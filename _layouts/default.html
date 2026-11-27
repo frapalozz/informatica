@@ -22,6 +22,7 @@
   {% if site.snow %}<script src="{{ '/assets/js/snow.js' | relative_url }}" defer></script>{% endif %}
   {% if site.assistente.enabled %}<script src="{{ '/assets/js/assistente.js' | relative_url }}" data-dati="{{ '/assistente.json' | relative_url }}" data-nome="{{ site.assistente.nome | default: 'Bit' | escape }}" data-nome-cane="{{ site.assistente.nome_cane | default: 'Buddy' | escape }}" data-chiacchiere="{{ site.assistente.chiacchiere }}" defer></script>{% endif %}
   {% if site.invader %}<script src="{{ '/assets/js/invader.js' | relative_url }}" defer></script>{% endif %}
+  {% if site.terminale %}<script src="{{ '/assets/js/terminale.js' | relative_url }}" data-dati="{{ '/assistente.json' | relative_url }}" data-css="{{ '/assets/css/terminale.css' | relative_url }}" data-base="{{ site.baseurl }}" defer></script>{% endif %}
   {% if site.donation_url != "" %}<script src="{{ '/assets/js/donation.js' | relative_url }}" defer></script>{% endif %}
   {% if site.analytics_script != "" %}<script src="{{ site.analytics_script }}" async defer></script>{% endif %}
 </body>

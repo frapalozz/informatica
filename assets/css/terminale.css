@@ -1,0 +1,95 @@
+/* Easter egg del terminale (assets/js/terminale.js).
+   CSS normale, caricato solo quando il terminale si apre: non serve ricompilare main.css. */
+
+.terminale {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  overflow-y: auto;
+  padding: 24px clamp(16px, 4vw, 48px);
+  background: #050805;
+  color: #39ff6a;
+  font-family: "VT323", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 22px;
+  line-height: 1.25;
+  text-shadow: 0 0 6px rgba(57, 255, 106, 0.45);
+  cursor: text;
+  animation: terminale-accendi 0.35s ease-out;
+}
+
+/* Linee di scansione da vecchio monitor */
+.terminale::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.18) 0 1px, transparent 1px 3px);
+}
+
+.terminale-linea {
+  margin: 0;
+  font: inherit;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.terminale-bit { color: #ffb347; text-shadow: 0 0 6px rgba(255, 179, 71, 0.5); margin-bottom: 12px; }
+.terminale-eco { color: #b6ffc8; }
+.terminale-errore { color: #ff6b6b; text-shadow: 0 0 6px rgba(255, 107, 107, 0.45); }
+.terminale-dir { color: #6bc5ff; text-shadow: 0 0 6px rgba(107, 197, 255, 0.45); }
+
+.terminale-riga {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+}
+
+.terminale-prompt { white-space: pre; color: #b6ffc8; }
+
+.terminale-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-shadow: inherit;
+  caret-color: #39ff6a;
+}
+
+html.terminale-aperto { overflow: hidden; }
+
+/* rm -rf / : i pezzi del sito cadono e tornano a posto */
+.terminale-cade {
+  transition: transform 1.2s cubic-bezier(0.5, 0, 0.75, 0);
+  will-change: transform;
+}
+
+.terminale-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  z-index: 10001;
+  transform: translateX(-50%);
+  padding: 10px 16px;
+  border: 2px solid #39ff6a;
+  border-radius: 6px;
+  background: #050805;
+  color: #39ff6a;
+  font-family: "VT323", ui-monospace, monospace;
+  font-size: 22px;
+  box-shadow: 4px 4px 0 rgba(57, 255, 106, 0.35);
+}
+
+@keyframes terminale-accendi {
+  0%   { opacity: 0; transform: scaleY(0.02); filter: brightness(3); }
+  60%  { opacity: 1; transform: scaleY(1.02); }
+  100% { transform: none; filter: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminale { animation: none; }
+  .terminale-cade { transition: none; }
+}
