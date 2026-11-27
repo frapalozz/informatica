@@ -22,7 +22,6 @@
       if (!siti.some(function (s) { return host === s || host.slice(-s.length - 1) === "." + s; })) return;
       try {
         sessionStorage.setItem("battaglia-da", location.pathname + location.search + location.hash);
-        sessionStorage.setItem("battaglia-sito", host);
       } catch (e) { /* niente */ }
       location.replace({{ '/battaglia/' | relative_url | jsonify }});
     } catch (e) { /* niente */ }
