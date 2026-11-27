@@ -18,16 +18,13 @@
   var direct = /\/battaglia\/?$/.test(window.location.pathname);
   if (!from && !direct) return; // un 404 qualunque: resta quello normale
 
-  var sito = get("battaglia-sito");
   drop("battaglia-da");
-  drop("battaglia-sito");
 
   // Il pulsante "Entra" porta alla pagina che si voleva aprire (solo indirizzi di questo sito).
   var enter = section.querySelector(".battaglia-entra");
   if (from && from.charAt(0) === "/" && from.charAt(1) !== "/" && !/^\/battaglia\/?$/.test(from)) enter.href = from;
   else enter.href = BASE + "/";
 
-  if (sito) section.querySelector(".battaglia-sito").textContent = sito;
   var normal = document.getElementById("pagina-404");
   if (normal) normal.style.display = "none"; // ha "flex" di Tailwind: hidden non basta
   section.hidden = false;
