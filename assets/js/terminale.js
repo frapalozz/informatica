@@ -385,6 +385,7 @@
   function entraChat() {
     if (inChat || !chatDisponibile()) return;
     inChat = true;
+    window.LiveUsersKeep = true; // con la chat aperta resto collegato anche se cambio scheda
     box.classList.add("terminale-chat");
     print([
       "── Chat di informatica.palozz.com ──",
@@ -400,7 +401,8 @@
       else if (ev.tipo === "entra") print("→ " + ev.nick + " è entrato", "terminale-sistema");
       else if (ev.tipo === "esce") print("← " + ev.nick + " è uscito", "terminale-sistema");
       else if (ev.tipo === "nick") print("~ " + ev.prima + " ora si chiama " + ev.nick, "terminale-sistema");
-      else if (ev.tipo === "stato" && window.Chat.stato() === "attiva") print("Collegato.", "terminale-sistema");
+      else if (ev.tipo === "stato" && ev.stato === "attiva") print("Collegato.", "terminale-sistema");
+      else if (ev.tipo === "stato" && ev.stato === "persa") print("Connessione persa, mi ricollego…", "terminale-errore");
     });
     updatePrompt();
   }
@@ -408,6 +410,7 @@
   function esciChat(silenzioso) {
     if (!inChat) return;
     inChat = false;
+    window.LiveUsersKeep = false;
     if (staccaChat) staccaChat();
     staccaChat = null;
     if (box) box.classList.remove("terminale-chat");
@@ -436,7 +439,8 @@
     }
     var esito = window.Chat.invia(line);
     if (esito === "ok") stampaMessaggio(window.Chat.ultimi().slice(-1)[0]);
-    else if (esito === "offline") print("Non sei ancora collegato. Riprova tra un attimo.", "terminale-errore");
+    else if (esito === "in-coda") print("(non collegato: \"" + line + "\" parte appena torna la connessione)", "terminale-sistema");
+    else if (esito === "offline") print("Non sei collegato e ci sono già troppi messaggi in coda. Riprova tra un attimo.", "terminale-errore");
     else if (esito === "troppo-veloce") print("Piano! Un messaggio alla volta.", "terminale-errore");
   }
 

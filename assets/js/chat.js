@@ -43,6 +43,8 @@
   var muti = {};          // nickname → true
   var ascoltatori = [];
   var ultimoInvio = 0;
+  var coda = [];          // messaggi scritti mentre la connessione era giù: partono appena torna
+  var eraCollegato = false;
   var ULTIMI_KEY = "chat-ultimi";
   var ultimi = [];
   try { ultimi = JSON.parse(get("sessionStorage", ULTIMI_KEY) || "[]"); } catch (e) { ultimi = []; }
@@ -73,7 +75,11 @@
 
   function collega(r) {
     room = r; nomi = {}; arrivi = {};
-    if (!r) { avvisa({ tipo: "stato" }); return; }
+    if (!r) {
+      avvisa({ tipo: "stato", stato: eraCollegato ? "persa" : "connessione" });
+      return;
+    }
+    eraCollegato = true;
     selfId = window.LiveUsers && window.LiveUsers.selfId;
     aChat = azione(r, "chat");
     aNick = azione(r, "nick");
@@ -87,7 +93,7 @@
     });
     aChat.on(function (d, peer) { ricevi(d, peer); });
     try { aNick.send({ nick: mioNick }); } catch (e) { /* nessuno ancora */ }
-    avvisa({ tipo: "stato" });
+    avvisa({ tipo: "stato", stato: "attiva" });
   }
 
   function ricevi(d, peer) {
@@ -122,7 +128,11 @@
     invia: function (testo) {
       testo = String(testo || "").replace(/[\u0000-\u001f\u007f]/g, " ").trim().slice(0, MAX_TESTO);
       if (!testo) return "vuoto";
-      if (!room) return "offline";
+      if (!room) {
+        if (coda.length >= 5) return "offline";
+        coda.push(testo);
+        return "in-coda";
+      }
       if (Date.now() - ultimoInvio < PAUSA_INVIO) return "troppo-veloce";
       ultimoInvio = Date.now();
       aChat.send({ t: testo });
@@ -156,6 +166,16 @@
   window.addEventListener("live-users:room", function (e) { collega(e.detail); });
   window.addEventListener("live-users:peer-join", function (e) {
     if (room && aNick) try { aNick.send({ nick: mioNick }, e.detail); } catch (err) { /* niente */ }
+    // Appena c'è di nuovo qualcuno, partono i messaggi rimasti in coda.
+    if (room && aChat && coda.length) {
+      var da = coda; coda = [];
+      setTimeout(function () {
+        da.forEach(function (t) {
+          aChat.send({ t: t });
+          registra({ tipo: "messaggio", nick: mioNick, testo: M.pulisci(t), quando: Date.now(), mio: true });
+        });
+      }, 500);
+    }
   });
   window.addEventListener("live-users:peer-leave", function (e) {
     var n = nomi[e.detail];
